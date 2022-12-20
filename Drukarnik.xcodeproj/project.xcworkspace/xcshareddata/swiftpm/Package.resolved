@@ -1,0 +1,23 @@
+{
+  "pins" : [
+    {
+      "identity" : "belarusianlacinka",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/pikoshyk/belarusianlacinka",
+      "state" : {
+        "branch" : "main",
+        "revision" : "20ed54865d9d7f3b87367fda8ad4fe217f0e7cb9"
+      }
+    },
+    {
+      "identity" : "keyboardkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/pikoshyk/KeyboardKit.git",
+      "state" : {
+        "revision" : "90f1d21266a2a4bddd54acf0746607234977931d",
+        "version" : "6.6.0"
+      }
+    }
+  ],
+  "version" : 2
+}

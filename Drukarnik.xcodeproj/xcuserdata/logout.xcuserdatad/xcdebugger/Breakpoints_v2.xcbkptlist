@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "64FB5A8B-F7B0-479F-BF97-7639C72464C3"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "17FB8F09-0F7A-42D5-B99D-D2B1F26AC9B9"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Drukarnik/AppDelegate.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "application(_:didFinishLaunchingWithOptions:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5C7A4608-777F-44BE-8BA6-B57486FB0B2C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Keyboard/KeyboardViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5311C437-C8A6-4499-8A13-2106830B3887"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Keyboard/Keyboards/DKLocalization.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "processedWord(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DAE38420-76EC-491A-843A-EAE22C8570B2"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Keyboard/Keyboards/DKByKeyboardAppearance.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
+            landmarkName = "buttonText(for:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C23B41E4-20F5-4521-B5F0-70ABDF40B150"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Keyboard/Keyboards/DKByKeyboardAppearance.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "buttonText(for:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1FB497D0-C29F-4C8F-8CE7-990A2EB9B8A7"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Keyboard/Keyboards/DKByKeyboardAppearance.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "buttonText(for:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6C6C1D03-F7B0-44B3-B658-454B0916F7E1"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../Library/Developer/Xcode/DerivedData/Drukarnik-bajywjfuepxalsebxoaiwexhvhrp/SourcePackages/checkouts/KeyboardKit/Sources/KeyboardKit/Actions/KeyboardAction+Button.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "standardButtonText(for:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "6C6C1D03-F7B0-44B3-B658-454B0916F7E1 - e22b93fac2250ada"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "KeyboardKit.KeyboardAction.standardButtonText(for: KeyboardKit.KeyboardContext) -&gt; Swift.Optional&lt;Swift.String&gt;"
+                  moduleName = "Keyboard"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/logout/Library/Developer/Xcode/DerivedData/Drukarnik-bajywjfuepxalsebxoaiwexhvhrp/SourcePackages/checkouts/KeyboardKit/Sources/KeyboardKit/Actions/KeyboardAction+Button.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "316">
+               </Location>
+               <Location
+                  uuid = "6C6C1D03-F7B0-44B3-B658-454B0916F7E1 - e22b93fac2250ada"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "KeyboardKit.KeyboardAction.standardButtonText(for: KeyboardKit.KeyboardContext) -&gt; Swift.Optional&lt;Swift.String&gt;"
+                  moduleName = "Keyboard"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/logout/Library/Developer/Xcode/DerivedData/Drukarnik-bajywjfuepxalsebxoaiwexhvhrp/SourcePackages/checkouts/KeyboardKit/Sources/KeyboardKit/Actions/KeyboardAction+Button.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "1184">
+               </Location>
+               <Location
+                  uuid = "6C6C1D03-F7B0-44B3-B658-454B0916F7E1 - e22b93fac2250ada"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "KeyboardKit.KeyboardAction.standardButtonText(for: KeyboardKit.KeyboardContext) -&gt; Swift.Optional&lt;Swift.String&gt;"
+                  moduleName = "Keyboard"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/logout/Library/Developer/Xcode/DerivedData/Drukarnik-bajywjfuepxalsebxoaiwexhvhrp/SourcePackages/checkouts/KeyboardKit/Sources/KeyboardKit/Actions/KeyboardAction+Button.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "1356">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
