@@ -28,10 +28,22 @@ class DKByLacinInputSetProvider: LocalizedInputSetProvider {
     }
 
     var numericInputSet: NumericInputSet {
-        baseProvider.numericInputSet
+        let currency = "$"
+        return NumericInputSet(rows: [
+            .init("1234567890"),
+            .init(phone: "-/:;()\(currency)&@\"", pad: "@#\(currency)&*()‘\""),
+            .init(phone: ".,?!‘", pad: "%-+=/;:!?")
+        ])
     }
 
     var symbolicInputSet: SymbolicInputSet {
-        baseProvider.symbolicInputSet
+        let currencies = ["$", "€", "£"]
+        return SymbolicInputSet(rows: [
+            .init(phone: "[]{}#%^*+=", pad: "1234567890"),
+            .init(
+                phone: "_\\|~<>\(currencies.joined())•",
+                pad: "\(currencies.joined())_^[]{}"),
+            .init(phone: ".,?!‘", pad: "§|~…\\<>!?")
+        ])
     }
 }

@@ -11,8 +11,17 @@ class DKByCalloutActionProvider: KeyboardKit.BaseCalloutActionProvider {
     
     open override func calloutActionString(for char: String) -> String {
         switch char {
-        case ".": return ".,?!-@"
-        case "$": return "$€¥₿"
+        case ".": return ".,?!-…"
+        case "$": return "$€£¥₩₽₿¢"
+        case "-": return "-–—•"
+        case "/": return "/\\"
+        case "&": return "&§"
+        case "\"": return "\"”“„»«"
+        case "?": return "?¿"
+        case "!": return "!¡"
+        case "‘": return "‘’‘`"
+        case "%": return "%‰"
+        case "=": return "=≠≈"
         default: return ""
         }
     }
