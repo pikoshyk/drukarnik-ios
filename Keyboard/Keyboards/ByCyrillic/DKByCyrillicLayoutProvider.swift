@@ -23,13 +23,13 @@ class DKByCyrillicLayoutProvider: StandardKeyboardLayoutProvider {
         let layout = super.keyboardLayout(for: context)
 
         if context.keyboardType.isAlphabetic {
-            let lacinKeyboardItem = KeyboardLayoutItem(
+            let latinKeyboardItem = KeyboardLayoutItem(
                 action: .custom(named: DKByKeyboardLayout.latin.rawValue),
                 size: KeyboardLayoutItemSize(
                     width: layout.itemRows.last?.first?.size.width ?? .percentage(1.5),
                     height: layout.idealItemHeight),
                 insets: layout.idealItemInsets)
-            layout.itemRows.insert(lacinKeyboardItem, before: .space)
+            layout.itemRows.insert(latinKeyboardItem, before: .keyboardType(.emojis))
 
             if context.deviceType != .pad {
                 let itemDot = KeyboardLayoutItem(

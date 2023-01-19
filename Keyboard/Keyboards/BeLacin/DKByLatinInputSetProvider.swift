@@ -7,7 +7,7 @@
 
 import KeyboardKit
     
-class DKByLacinInputSetProvider: LocalizedInputSetProvider {
+class DKByLatinInputSetProvider: LocalizedInputSetProvider {
     
     public let localeKey: String = DKByKeyboardLayout.latin.localeIdentifier
 
@@ -30,7 +30,7 @@ class DKByLacinInputSetProvider: LocalizedInputSetProvider {
     var numericInputSet: NumericInputSet {
         let currency = "$"
         return NumericInputSet(rows: [
-            .init("1234567890"),
+            .init(chars: "1234567890"),
             .init(phone: "-/:;()\(currency)&@\"", pad: "@#\(currency)&*()‘\""),
             .init(phone: ".,?!‘", pad: "%-+=/;:!?")
         ])

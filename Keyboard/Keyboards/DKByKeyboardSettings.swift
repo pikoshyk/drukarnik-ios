@@ -30,14 +30,16 @@ case cyrillic
 }
 
 class DKByKeyboardSettingsKeys {
-    class var keyboardLayout: String { "keyboard_layout" }
+    class var keyboardLayout: String { "DKByKeyboardSettings.keyboard_layout" }
+    class var interfaceTransliteration: String { "DKByKeyboardSettings.interface_transliteration" }
 }
 
 class DKByKeyboardSettings: Any {
     static let shared = DKByKeyboardSettings()
 
     lazy var userDefaults = UserDefaults.standard
-    fileprivate var _layout: DKByKeyboardLayout?
+    fileprivate var _keybaordLayout: DKByKeyboardLayout?
+    fileprivate var _interfaceTransliteration: DKByKeyboardLayout?
     
     static let lacinkaConverter = BLConverter()
     
@@ -46,18 +48,35 @@ class DKByKeyboardSettings: Any {
     
     var keyboardLayout: DKByKeyboardLayout {
         get {
-            if let layout = self._layout {
+            if let layout = self._keybaordLayout {
                 return layout
             }
-            let layout = DKByKeyboardLayout(rawValue: self.userDefaults.string(forKey: DKByKeyboardSettingsKeys.keyboardLayout) ?? DKByKeyboardLayout.latin.rawValue)
-            self._layout = layout ?? .latin
-            return self._layout!
+            let keybaordLayout = DKByKeyboardLayout(rawValue: self.userDefaults.string(forKey: DKByKeyboardSettingsKeys.keyboardLayout) ?? DKByKeyboardLayout.latin.rawValue)
+            self._keybaordLayout = keybaordLayout ?? .latin
+            return self._keybaordLayout!
         }
         set {
-            self._layout = newValue
+            self._keybaordLayout = newValue
             self.userDefaults.set(newValue.rawValue, forKey: DKByKeyboardSettingsKeys.keyboardLayout)
             self.userDefaults.synchronize()
         }
     }
+    
+    var interfaceTransliteration: DKByKeyboardLayout {
+        get {
+            if let interfaceTransliteration = self._interfaceTransliteration {
+                return interfaceTransliteration
+            }
+            let interfaceTransliteration = DKByKeyboardLayout(rawValue: self.userDefaults.string(forKey: DKByKeyboardSettingsKeys.interfaceTransliteration) ?? DKByKeyboardLayout.latin.rawValue)
+            self._interfaceTransliteration = interfaceTransliteration ?? .latin
+            return self._interfaceTransliteration!
+        }
+        set {
+            self._interfaceTransliteration = newValue
+            self.userDefaults.set(newValue.rawValue, forKey: DKByKeyboardSettingsKeys.interfaceTransliteration)
+            self.userDefaults.synchronize()
+        }
+    }
+    
     
 }

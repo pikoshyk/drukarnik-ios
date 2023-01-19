@@ -14,43 +14,46 @@ class KeyboardViewController: KeyboardInputViewController {
         
         let keyboardLayout = DKByKeyboardSettings.shared.keyboardLayout
         self.keyboardContext.locale = keyboardLayout.locale
-        
-        switch(keyboardLayout) {
-        case .cyrillic:
-            self.inputSetProvider = DKByCyrillicInputSetProvider()
-            if let calloutActionProvide = try? DKByCyrillicCalloutActionProvider() {
-                self.calloutActionProvider = calloutActionProvide
-            }
-            self.keyboardLayoutProvider = DKByCyrillicLayoutProvider()
-        case .latin:
-            self.inputSetProvider = DKByLacinInputSetProvider()
-            if let calloutActionProvide = try? DKByLacinCalloutActionProvider() {
-                self.calloutActionProvider = calloutActionProvide
-            }
-            self.keyboardLayoutProvider = DKByLacinLayoutProvider()
-        }
-
+        self.keyboardLayout = keyboardLayout
         self.keyboardActionHandler = DKByActionHandler(inputViewController: self, swicthKeyboardBlock: { keyboardLayout in
             DKByKeyboardSettings.shared.keyboardLayout = keyboardLayout
+            self.keyboardLayout = keyboardLayout
+        })
+        self.keyboardAppearance = DKByKeyboardAppearance(context: self.keyboardContext)
+        super.viewDidLoad()
+    }
+    
+    var keyboardLayout: DKByKeyboardLayout? {
+        didSet {
+            guard let keyboardLayout = keyboardLayout else {
+                return
+            }
             self.keyboardContext.locale = keyboardLayout.locale
-            switch(keyboardLayout) {
+
+            switch keyboardLayout {
             case .latin:
-                self.inputSetProvider = DKByLacinInputSetProvider()
-                if let calloutActionProvide = try? DKByLacinCalloutActionProvider() {
+                self.inputSetProvider = DKByLatinInputSetProvider()
+                if let calloutActionProvide = try? DKByLatinCalloutActionProvider() {
                     self.calloutActionProvider = calloutActionProvide
                 }
-                self.keyboardLayoutProvider = DKByLacinLayoutProvider()
+                self.keyboardLayoutProvider = DKByLatinLayoutProvider()
+                self.autocompleteProvider = DKByLatinAutocompleteProvider()
+                
             case .cyrillic:
                 self.inputSetProvider = DKByCyrillicInputSetProvider()
                 if let calloutActionProvide = try? DKByCyrillicCalloutActionProvider() {
                     self.calloutActionProvider = calloutActionProvide
                 }
                 self.keyboardLayoutProvider = DKByCyrillicLayoutProvider()
+                self.autocompleteProvider = DKByCyrillycAutocompleteProvider()
             }
+            
+            self.autocompleteProvider.autocompleteSuggestions(for: self.autocompleteText ?? "") { result in
+                self.autocompleteContext.suggestions = (try? result.get()) ?? []
+            }
+
             self.keyboardContext.sync(with: self)
-        })
-        self.keyboardAppearance = DKByKeyboardAppearance(context: self.keyboardContext)
-        super.viewDidLoad()
+        }
     }
     
     /**

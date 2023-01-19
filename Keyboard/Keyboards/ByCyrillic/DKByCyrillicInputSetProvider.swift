@@ -30,7 +30,7 @@ class DKByCyrillicInputSetProvider: LocalizedInputSetProvider {
     var numericInputSet: NumericInputSet {
         let currency = "$"
         return NumericInputSet(rows: [
-            .init("1234567890"),
+            .init(chars: "1234567890"),
             .init(phone: "-/:;()\(currency)&@\"", pad: "@#\(currency)&*()‘\""),
             .init(phone: ".,?!‘", pad: "%-+=/;:!?")
         ])

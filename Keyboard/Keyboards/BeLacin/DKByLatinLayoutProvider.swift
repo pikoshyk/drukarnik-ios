@@ -8,16 +8,16 @@
 import Foundation
 import KeyboardKit
 
-class DKByLacinLayoutProvider: StandardKeyboardLayoutProvider {
+class DKByLatinLayoutProvider: StandardKeyboardLayoutProvider {
     
     
     init(dictationReplacement: KeyboardAction? = nil) {
-        let inputSetProvider = DKByLacinInputSetProvider()
-        super.init(inputSetProvider: inputSetProvider, dictationReplacement: dictationReplacement)
+        let inputSetProvider = DKByLatinInputSetProvider()
+        super.init(keyboardContext: <#KeyboardContext#>, inputSetProvider: inputSetProvider, dictationReplacement: dictationReplacement)
     }
     
-    private override init(inputSetProvider: InputSetProvider, dictationReplacement: KeyboardAction? = nil) {
-        super.init(inputSetProvider: inputSetProvider, dictationReplacement: dictationReplacement)
+    private override init(keyboardContext: KeyboardContext, inputSetProvider: InputSetProvider, dictationReplacement: KeyboardAction? = nil) {
+        super.init(keyboardContext: <#KeyboardContext#>, inputSetProvider: inputSetProvider, dictationReplacement: dictationReplacement)
     }
 
     override func keyboardLayout(for context: KeyboardContext) -> KeyboardLayout {
@@ -30,7 +30,7 @@ class DKByLacinLayoutProvider: StandardKeyboardLayoutProvider {
                     width: layout.itemRows.last?.first?.size.width ?? .percentage(1.5),
                     height: layout.idealItemHeight),
                 insets: layout.idealItemInsets)
-            layout.itemRows.insert(cyrillicKeyboardItem, before: .space)
+            layout.itemRows.insert(cyrillicKeyboardItem, before: .keyboardType(.emojis))
 
             if context.deviceType != .pad {
                 let itemDot = KeyboardLayoutItem(

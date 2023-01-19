@@ -7,7 +7,7 @@
 
 import KeyboardKit
 
-class DKByLacinCalloutActionProvider: DKByCalloutActionProvider, KeyboardKit.LocalizedService {
+class DKByLatinCalloutActionProvider: DKByCalloutActionProvider, KeyboardKit.LocalizedService {
     
     public let localeKey: String = DKByKeyboardLayout.latin.localeIdentifier
     

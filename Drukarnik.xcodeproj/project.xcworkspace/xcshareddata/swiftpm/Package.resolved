@@ -12,10 +12,10 @@
     {
       "identity" : "keyboardkit",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/pikoshyk/KeyboardKit.git",
+      "location" : "https://github.com/KeyboardKit/KeyboardKit.git",
       "state" : {
-        "revision" : "90f1d21266a2a4bddd54acf0746607234977931d",
-        "version" : "6.6.0"
+        "revision" : "f6051dd751de85320a4411c74f2a6e6d6ea48577",
+        "version" : "6.9.3"
       }
     }
   ],

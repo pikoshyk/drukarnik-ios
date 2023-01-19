@@ -9,13 +9,18 @@ import BelarusianLacinka
 import UIKit
 
 class DKLocalization: Any {
-    static func processedWord(_ word: String) -> String {
+    static func processedWord(_ word: String, convert: Bool = true) -> String {
         var convertedWord = word
+        if convert == false {
+            return convertedWord
+        }
+
         if DKByKeyboardSettings.shared.keyboardLayout == .latin {
             convertedWord = DKByKeyboardSettings.lacinkaConverter.convert(text: word, direction: .toLacin, version: .traditional, orthograpy: .academic)
         }
         return convertedWord
     }
+    
     class var keyboaredButtonSpace: String { Self.processedWord("ДРУКАРНІК") }
     class var keyboaredButtonSearch: String { Self.processedWord("Пошук") }
     class var keyboaredButtonDone: String { Self.processedWord("Добра") }
