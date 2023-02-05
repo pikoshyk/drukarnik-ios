@@ -14,8 +14,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/KeyboardKit/KeyboardKit.git",
       "state" : {
-        "revision" : "f6051dd751de85320a4411c74f2a6e6d6ea48577",
-        "version" : "6.9.3"
+        "revision" : "e61becab4cd168beee8ac8674409da7a8b901ef9",
+        "version" : "6.9.4"
       }
     }
   ],

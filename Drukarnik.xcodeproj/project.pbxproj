@@ -7,39 +7,63 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B2073D072945F599008B43E4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2073CFE2945F599008B43E4 /* ViewController.swift */; };
-		B2073D082945F599008B43E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2073CFF2945F599008B43E4 /* Assets.xcassets */; };
-		B2073D092945F599008B43E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2073D002945F599008B43E4 /* LaunchScreen.storyboard */; };
-		B2073D0A2945F599008B43E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2073D022945F599008B43E4 /* Main.storyboard */; };
 		B2073D0B2945F599008B43E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2073D042945F599008B43E4 /* AppDelegate.swift */; };
 		B2073D0D2945F599008B43E4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2073D062945F599008B43E4 /* SceneDelegate.swift */; };
-		B2073D0F2945F62C008B43E4 /* DKByCyrillicLayoutProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2073D0E2945F62C008B43E4 /* DKByCyrillicLayoutProvider.swift */; };
-		B21A248A29360C7700C056E5 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21A248929360C7700C056E5 /* KeyboardViewController.swift */; };
+		B2073D0F2945F62C008B43E4 /* DKCyrillicLayoutProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2073D0E2945F62C008B43E4 /* DKCyrillicLayoutProvider.swift */; };
+		B21A248A29360C7700C056E5 /* DKKeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21A248929360C7700C056E5 /* DKKeyboardViewController.swift */; };
 		B21A248E29360C7700C056E5 /* Keyboard.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = B21A248729360C7600C056E5 /* Keyboard.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		B21A2499293610EA00C056E5 /* DKKeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21A2498293610EA00C056E5 /* DKKeyboardView.swift */; };
-		B22FC9E72950A90400B31E4A /* DKByKeyboardAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22FC9E62950A90400B31E4A /* DKByKeyboardAppearance.swift */; };
-		B22FC9E92950A94500B31E4A /* DKByActionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22FC9E82950A94400B31E4A /* DKByActionHandler.swift */; };
-		B22FC9EB2950C16800B31E4A /* DKByKeyboardSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22FC9EA2950C16800B31E4A /* DKByKeyboardSettings.swift */; };
+		B22DC4D32979FB7000D9AC39 /* Installation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B22DC4D22979FB7000D9AC39 /* Installation.storyboard */; };
+		B22DC4D5297A01E700D9AC39 /* DKSettingsTransliterationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22DC4D4297A01E700D9AC39 /* DKSettingsTransliterationTableViewCell.swift */; };
+		B22DC4D7297A133500D9AC39 /* DKSettingsLanguagesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22DC4D6297A133500D9AC39 /* DKSettingsLanguagesTableViewCell.swift */; };
+		B22DC4DA297A14C400D9AC39 /* DKSettingsLanguagesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22DC4D9297A14C400D9AC39 /* DKSettingsLanguagesTableViewController.swift */; };
+		B22DC4DC297A1E5800D9AC39 /* DKSettingsLanguageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22DC4DB297A1E5800D9AC39 /* DKSettingsLanguageTableViewCell.swift */; };
+		B22FC9E72950A90400B31E4A /* DKKeyboardAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22FC9E62950A90400B31E4A /* DKKeyboardAppearance.swift */; };
+		B22FC9E92950A94500B31E4A /* DKActionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22FC9E82950A94400B31E4A /* DKActionHandler.swift */; };
 		B22FC9EE29510C6900B31E4A /* BelarusianLacinka in Frameworks */ = {isa = PBXBuildFile; productRef = B22FC9ED29510C6900B31E4A /* BelarusianLacinka */; };
-		B22FC9F029510CAD00B31E4A /* DKLocalization.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22FC9EF29510CAD00B31E4A /* DKLocalization.swift */; };
+		B22FC9F029510CAD00B31E4A /* DKLocalizationKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22FC9EF29510CAD00B31E4A /* DKLocalizationKeyboard.swift */; };
 		B22FC9F229510FB900B31E4A /* BelarusianLacinka in Frameworks */ = {isa = PBXBuildFile; productRef = B22FC9F129510FB900B31E4A /* BelarusianLacinka */; };
-		B22FC9F42951A9F100B31E4A /* DKByCalloutActionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22FC9F32951A9F100B31E4A /* DKByCalloutActionProvider.swift */; };
-		B263A887293E01F70024242C /* DKByCyrillicCalloutActionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B263A885293E01F70024242C /* DKByCyrillicCalloutActionProvider.swift */; };
-		B263A888293E01F70024242C /* DKByCyrillicInputSetProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B263A886293E01F70024242C /* DKByCyrillicInputSetProvider.swift */; };
-		B28C524D2954519C0025D49A /* DKByCyrillicAutocompleteProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28C524C2954519C0025D49A /* DKByCyrillicAutocompleteProvider.swift */; };
-		B28C524F295455DE0025D49A /* DKByLatinAutocompleteProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28C524E295455DE0025D49A /* DKByLatinAutocompleteProvider.swift */; };
-		B28C5253295624CF0025D49A /* DKAboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28C52502956243A0025D49A /* DKAboutViewController.swift */; };
+		B22FC9F42951A9F100B31E4A /* DKCalloutActionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22FC9F32951A9F100B31E4A /* DKCalloutActionProvider.swift */; };
+		B263A887293E01F70024242C /* DKCyrillicCalloutActionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B263A885293E01F70024242C /* DKCyrillicCalloutActionProvider.swift */; };
+		B263A888293E01F70024242C /* DKCyrillicInputSetProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B263A886293E01F70024242C /* DKCyrillicInputSetProvider.swift */; };
+		B282B8F229812D4B001244DE /* UITextDocumentProxy+FullText.swift in Sources */ = {isa = PBXBuildFile; fileRef = B282B8F129812D4B001244DE /* UITextDocumentProxy+FullText.swift */; };
+		B282B8F429812FB5001244DE /* StandardAutocompleteSuggestion+FullText.swift in Sources */ = {isa = PBXBuildFile; fileRef = B282B8F329812FB5001244DE /* StandardAutocompleteSuggestion+FullText.swift */; };
+		B282B8F629813275001244DE /* DKAutocompleteToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B282B8F529813275001244DE /* DKAutocompleteToolbar.swift */; };
+		B282B8F8298141AF001244DE /* AutocompleteProvider+Transliteration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B282B8F7298141AF001244DE /* AutocompleteProvider+Transliteration.swift */; };
+		B28C524D2954519C0025D49A /* DKCyrillicAutocompleteProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28C524C2954519C0025D49A /* DKCyrillicAutocompleteProvider.swift */; };
+		B28C524F295455DE0025D49A /* DKLatinAutocompleteProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28C524E295455DE0025D49A /* DKLatinAutocompleteProvider.swift */; };
 		B28C525E295625C90025D49A /* UIColor+Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28C525C295625C90025D49A /* UIColor+Tools.swift */; };
 		B28C525F295625C90025D49A /* NSAttributedString+Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28C525D295625C90025D49A /* NSAttributedString+Tools.swift */; };
 		B2AC43AD2945F21400ACC32E /* KeyboardKit in Frameworks */ = {isa = PBXBuildFile; productRef = B2AC43AC2945F21400ACC32E /* KeyboardKit */; };
-		B2AF577B294FEBF900E7CF2F /* DKByLatinInputSetProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AF577A294FEBF900E7CF2F /* DKByLatinInputSetProvider.swift */; };
-		B2AF577D294FECD500E7CF2F /* DKByLatinCalloutActionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AF577C294FECD500E7CF2F /* DKByLatinCalloutActionProvider.swift */; };
-		B2AF577F294FEE4200E7CF2F /* DKByLatinLayoutProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AF577E294FEE4200E7CF2F /* DKByLatinLayoutProvider.swift */; };
-		B2B2092529794FB600D4D5DC /* DKLocalization.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B2092429794FB600D4D5DC /* DKLocalization.swift */; };
-		B2B20928297952CE00D4D5DC /* BLBelarusianTransliterationChoiceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2B20926297952C900D4D5DC /* BLBelarusianTransliterationChoiceViewController.xib */; };
+		B2AF577B294FEBF900E7CF2F /* DKLatinInputSetProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AF577A294FEBF900E7CF2F /* DKLatinInputSetProvider.swift */; };
+		B2AF577D294FECD500E7CF2F /* DKLatinCalloutActionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AF577C294FECD500E7CF2F /* DKLatinCalloutActionProvider.swift */; };
+		B2AF577F294FEE4200E7CF2F /* DKLatinLayoutProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AF577E294FEE4200E7CF2F /* DKLatinLayoutProvider.swift */; };
+		B2B2092D29796D0400D4D5DC /* DKInstallationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B2092C29796D0400D4D5DC /* DKInstallationViewController.swift */; };
+		B2B2093329796D7F00D4D5DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2B2092F29796D7F00D4D5DC /* LaunchScreen.storyboard */; };
+		B2B2093429796D7F00D4D5DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2B2093029796D7F00D4D5DC /* Assets.xcassets */; };
+		B2B2093529796D7F00D4D5DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2B2093129796D7F00D4D5DC /* Main.storyboard */; };
+		B2B2093729796D8600D4D5DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2B2093029796D7F00D4D5DC /* Assets.xcassets */; };
+		B2B2093A29796F0F00D4D5DC /* DKAboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B2093929796F0F00D4D5DC /* DKAboutViewController.swift */; };
+		B2B2094129796F3000D4D5DC /* BLBelarusianTransliterationChoiceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2B2093F29796F3000D4D5DC /* BLBelarusianTransliterationChoiceViewController.xib */; };
+		B2B2094229796F3000D4D5DC /* BLBelarusianTransliterationChoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B2094029796F3000D4D5DC /* BLBelarusianTransliterationChoiceViewController.swift */; };
+		B2B2094529796F8300D4D5DC /* DKLocalizationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B2094429796F8300D4D5DC /* DKLocalizationApp.swift */; };
+		B2B209472979724000D4D5DC /* DKSettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B209462979724000D4D5DC /* DKSettingsTableViewController.swift */; };
 		B2B35510295662EC0006B8B1 /* CALayer+Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B3550F295662EC0006B8B1 /* CALayer+Tools.swift */; };
-		B2B35512295896070006B8B1 /* BLBelarusianTransliterationChoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B35511295896070006B8B1 /* BLBelarusianTransliterationChoiceViewController.swift */; };
-		B2B355132958A0870006B8B1 /* DKByKeyboardSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22FC9EA2950C16800B31E4A /* DKByKeyboardSettings.swift */; };
+		B2B9756A297B52A800ED68D2 /* additional_languages.json in Resources */ = {isa = PBXBuildFile; fileRef = B2B97569297B52A800ED68D2 /* additional_languages.json */; };
+		B2B9756B297B52A800ED68D2 /* additional_languages.json in Resources */ = {isa = PBXBuildFile; fileRef = B2B97569297B52A800ED68D2 /* additional_languages.json */; };
+		B2DDCF4C298C3E3000902EE6 /* DKSettingsBelarusianCyrillicTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DDCF4B298C3E3000902EE6 /* DKSettingsBelarusianCyrillicTypeTableViewCell.swift */; };
+		B2DDCF50298C769500902EE6 /* DKTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DDCF4F298C769500902EE6 /* DKTabBarController.swift */; };
+		B2DDCF52298C779500902EE6 /* DKConvertorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DDCF51298C779400902EE6 /* DKConvertorTableViewController.swift */; };
+		B2DDCF56298D2AC100902EE6 /* DKSettingsBelarusianLatinTypeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DDCF55298D2AC100902EE6 /* DKSettingsBelarusianLatinTypeTableViewController.swift */; };
+		B2DDCF58298D2ADE00902EE6 /* DKSettingsBelarusianCyrillicTypeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DDCF57298D2ADE00902EE6 /* DKSettingsBelarusianCyrillicTypeTableViewController.swift */; };
+		B2DDCF5A298D37C300902EE6 /* DKSettingsBelarusianLatinTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DDCF59298D37C300902EE6 /* DKSettingsBelarusianLatinTypeTableViewCell.swift */; };
+		B2E6875A297F3723005C31B9 /* DKKeyboardSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E68759297F3723005C31B9 /* DKKeyboardSettings.swift */; };
+		B2E6875B297F3723005C31B9 /* DKKeyboardSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E68759297F3723005C31B9 /* DKKeyboardSettings.swift */; };
+		B2E68761297F37B2005C31B9 /* DKAdditionalLanguages.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E68760297F37B2005C31B9 /* DKAdditionalLanguages.swift */; };
+		B2E68762297F37B2005C31B9 /* DKAdditionalLanguages.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E68760297F37B2005C31B9 /* DKAdditionalLanguages.swift */; };
+		B2E68764297F37D1005C31B9 /* DKAdditionalLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E68763297F37D1005C31B9 /* DKAdditionalLanguage.swift */; };
+		B2E68765297F37D1005C31B9 /* DKAdditionalLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E68763297F37D1005C31B9 /* DKAdditionalLanguage.swift */; };
+		B2E68767297F4174005C31B9 /* DKAdditionalLanguage+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E68766297F4174005C31B9 /* DKAdditionalLanguage+Localization.swift */; };
 		B2F8569F2952942800CADE71 /* KeyboardKit in Frameworks */ = {isa = PBXBuildFile; productRef = B2F8569E2952942800CADE71 /* KeyboardKit */; };
 /* End PBXBuildFile section */
 
@@ -68,38 +92,62 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		B2073CFE2945F599008B43E4 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B2073CFF2945F599008B43E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		B2073D012945F599008B43E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		B2073D032945F599008B43E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B202A5202989975600E5F57A /* DrukarnikDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DrukarnikDebug.entitlements; sourceTree = "<group>"; };
 		B2073D042945F599008B43E4 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B2073D052945F599008B43E4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B2073D062945F599008B43E4 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B2073D0E2945F62C008B43E4 /* DKByCyrillicLayoutProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKByCyrillicLayoutProvider.swift; sourceTree = "<group>"; };
+		B2073D0E2945F62C008B43E4 /* DKCyrillicLayoutProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKCyrillicLayoutProvider.swift; sourceTree = "<group>"; };
 		B21A246929360B3600C056E5 /* Drukarnik.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Drukarnik.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B21A248729360C7600C056E5 /* Keyboard.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Keyboard.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		B21A248929360C7700C056E5 /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
+		B21A248929360C7700C056E5 /* DKKeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKKeyboardViewController.swift; sourceTree = "<group>"; };
 		B21A248B29360C7700C056E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B21A2498293610EA00C056E5 /* DKKeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKKeyboardView.swift; sourceTree = "<group>"; };
-		B22FC9E62950A90400B31E4A /* DKByKeyboardAppearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKByKeyboardAppearance.swift; sourceTree = "<group>"; };
-		B22FC9E82950A94400B31E4A /* DKByActionHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKByActionHandler.swift; sourceTree = "<group>"; };
-		B22FC9EA2950C16800B31E4A /* DKByKeyboardSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKByKeyboardSettings.swift; sourceTree = "<group>"; };
-		B22FC9EF29510CAD00B31E4A /* DKLocalization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKLocalization.swift; sourceTree = "<group>"; };
-		B22FC9F32951A9F100B31E4A /* DKByCalloutActionProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKByCalloutActionProvider.swift; sourceTree = "<group>"; };
-		B263A885293E01F70024242C /* DKByCyrillicCalloutActionProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKByCyrillicCalloutActionProvider.swift; sourceTree = "<group>"; };
-		B263A886293E01F70024242C /* DKByCyrillicInputSetProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKByCyrillicInputSetProvider.swift; sourceTree = "<group>"; };
-		B28C524C2954519C0025D49A /* DKByCyrillicAutocompleteProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKByCyrillicAutocompleteProvider.swift; sourceTree = "<group>"; };
-		B28C524E295455DE0025D49A /* DKByLatinAutocompleteProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKByLatinAutocompleteProvider.swift; sourceTree = "<group>"; };
-		B28C52502956243A0025D49A /* DKAboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKAboutViewController.swift; sourceTree = "<group>"; };
+		B22DC4D22979FB7000D9AC39 /* Installation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Installation.storyboard; sourceTree = "<group>"; };
+		B22DC4D4297A01E700D9AC39 /* DKSettingsTransliterationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKSettingsTransliterationTableViewCell.swift; sourceTree = "<group>"; };
+		B22DC4D6297A133500D9AC39 /* DKSettingsLanguagesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKSettingsLanguagesTableViewCell.swift; sourceTree = "<group>"; };
+		B22DC4D9297A14C400D9AC39 /* DKSettingsLanguagesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKSettingsLanguagesTableViewController.swift; sourceTree = "<group>"; };
+		B22DC4DB297A1E5800D9AC39 /* DKSettingsLanguageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKSettingsLanguageTableViewCell.swift; sourceTree = "<group>"; };
+		B22FC9E62950A90400B31E4A /* DKKeyboardAppearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKKeyboardAppearance.swift; sourceTree = "<group>"; };
+		B22FC9E82950A94400B31E4A /* DKActionHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKActionHandler.swift; sourceTree = "<group>"; };
+		B22FC9EF29510CAD00B31E4A /* DKLocalizationKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKLocalizationKeyboard.swift; sourceTree = "<group>"; };
+		B22FC9F32951A9F100B31E4A /* DKCalloutActionProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKCalloutActionProvider.swift; sourceTree = "<group>"; };
+		B263A885293E01F70024242C /* DKCyrillicCalloutActionProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKCyrillicCalloutActionProvider.swift; sourceTree = "<group>"; };
+		B263A886293E01F70024242C /* DKCyrillicInputSetProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKCyrillicInputSetProvider.swift; sourceTree = "<group>"; };
+		B282B8F129812D4B001244DE /* UITextDocumentProxy+FullText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextDocumentProxy+FullText.swift"; sourceTree = "<group>"; };
+		B282B8F329812FB5001244DE /* StandardAutocompleteSuggestion+FullText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StandardAutocompleteSuggestion+FullText.swift"; sourceTree = "<group>"; };
+		B282B8F529813275001244DE /* DKAutocompleteToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKAutocompleteToolbar.swift; sourceTree = "<group>"; };
+		B282B8F7298141AF001244DE /* AutocompleteProvider+Transliteration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AutocompleteProvider+Transliteration.swift"; sourceTree = "<group>"; };
+		B28C524C2954519C0025D49A /* DKCyrillicAutocompleteProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKCyrillicAutocompleteProvider.swift; sourceTree = "<group>"; };
+		B28C524E295455DE0025D49A /* DKLatinAutocompleteProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKLatinAutocompleteProvider.swift; sourceTree = "<group>"; };
 		B28C525C295625C90025D49A /* UIColor+Tools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Tools.swift"; sourceTree = "<group>"; };
 		B28C525D295625C90025D49A /* NSAttributedString+Tools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Tools.swift"; sourceTree = "<group>"; };
-		B2AF577A294FEBF900E7CF2F /* DKByLatinInputSetProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKByLatinInputSetProvider.swift; sourceTree = "<group>"; };
-		B2AF577C294FECD500E7CF2F /* DKByLatinCalloutActionProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKByLatinCalloutActionProvider.swift; sourceTree = "<group>"; };
-		B2AF577E294FEE4200E7CF2F /* DKByLatinLayoutProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKByLatinLayoutProvider.swift; sourceTree = "<group>"; };
-		B2B2092429794FB600D4D5DC /* DKLocalization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKLocalization.swift; sourceTree = "<group>"; };
-		B2B20926297952C900D4D5DC /* BLBelarusianTransliterationChoiceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BLBelarusianTransliterationChoiceViewController.xib; sourceTree = "<group>"; };
+		B2AF577A294FEBF900E7CF2F /* DKLatinInputSetProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKLatinInputSetProvider.swift; sourceTree = "<group>"; };
+		B2AF577C294FECD500E7CF2F /* DKLatinCalloutActionProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKLatinCalloutActionProvider.swift; sourceTree = "<group>"; };
+		B2AF577E294FEE4200E7CF2F /* DKLatinLayoutProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKLatinLayoutProvider.swift; sourceTree = "<group>"; };
+		B2B2092C29796D0400D4D5DC /* DKInstallationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKInstallationViewController.swift; sourceTree = "<group>"; };
+		B2B2092F29796D7F00D4D5DC /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B2B2093029796D7F00D4D5DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B2B2093129796D7F00D4D5DC /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		B2B2093229796D7F00D4D5DC /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B2B2093929796F0F00D4D5DC /* DKAboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKAboutViewController.swift; sourceTree = "<group>"; };
+		B2B2093F29796F3000D4D5DC /* BLBelarusianTransliterationChoiceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BLBelarusianTransliterationChoiceViewController.xib; sourceTree = "<group>"; };
+		B2B2094029796F3000D4D5DC /* BLBelarusianTransliterationChoiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BLBelarusianTransliterationChoiceViewController.swift; sourceTree = "<group>"; };
+		B2B2094429796F8300D4D5DC /* DKLocalizationApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKLocalizationApp.swift; sourceTree = "<group>"; };
+		B2B209462979724000D4D5DC /* DKSettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKSettingsTableViewController.swift; sourceTree = "<group>"; };
 		B2B3550F295662EC0006B8B1 /* CALayer+Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Tools.swift"; sourceTree = "<group>"; };
-		B2B35511295896070006B8B1 /* BLBelarusianTransliterationChoiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLBelarusianTransliterationChoiceViewController.swift; sourceTree = "<group>"; };
+		B2B97569297B52A800ED68D2 /* additional_languages.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = additional_languages.json; sourceTree = "<group>"; };
+		B2DDCF4829899BF700902EE6 /* DrukarnikRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DrukarnikRelease.entitlements; sourceTree = "<group>"; };
+		B2DDCF4929899D1700902EE6 /* KeyboardDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KeyboardDebug.entitlements; sourceTree = "<group>"; };
+		B2DDCF4A29899D3600902EE6 /* KeyboardRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KeyboardRelease.entitlements; sourceTree = "<group>"; };
+		B2DDCF4B298C3E3000902EE6 /* DKSettingsBelarusianCyrillicTypeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKSettingsBelarusianCyrillicTypeTableViewCell.swift; sourceTree = "<group>"; };
+		B2DDCF4F298C769500902EE6 /* DKTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKTabBarController.swift; sourceTree = "<group>"; };
+		B2DDCF51298C779400902EE6 /* DKConvertorTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKConvertorTableViewController.swift; sourceTree = "<group>"; };
+		B2DDCF55298D2AC100902EE6 /* DKSettingsBelarusianLatinTypeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKSettingsBelarusianLatinTypeTableViewController.swift; sourceTree = "<group>"; };
+		B2DDCF57298D2ADE00902EE6 /* DKSettingsBelarusianCyrillicTypeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKSettingsBelarusianCyrillicTypeTableViewController.swift; sourceTree = "<group>"; };
+		B2DDCF59298D37C300902EE6 /* DKSettingsBelarusianLatinTypeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKSettingsBelarusianLatinTypeTableViewCell.swift; sourceTree = "<group>"; };
+		B2E68759297F3723005C31B9 /* DKKeyboardSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKKeyboardSettings.swift; sourceTree = "<group>"; };
+		B2E68760297F37B2005C31B9 /* DKAdditionalLanguages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKAdditionalLanguages.swift; sourceTree = "<group>"; };
+		B2E68763297F37D1005C31B9 /* DKAdditionalLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKAdditionalLanguage.swift; sourceTree = "<group>"; };
+		B2E68766297F4174005C31B9 /* DKAdditionalLanguage+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DKAdditionalLanguage+Localization.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,18 +175,20 @@
 		B2073CFD2945F599008B43E4 /* Drukarnik */ = {
 			isa = PBXGroup;
 			children = (
-				B2073CFE2945F599008B43E4 /* ViewController.swift */,
-				B2B2092429794FB600D4D5DC /* DKLocalization.swift */,
-				B2073D062945F599008B43E4 /* SceneDelegate.swift */,
-				B28C52502956243A0025D49A /* DKAboutViewController.swift */,
-				B2B35511295896070006B8B1 /* BLBelarusianTransliterationChoiceViewController.swift */,
-				B2073CFF2945F599008B43E4 /* Assets.xcassets */,
-				B2073D002945F599008B43E4 /* LaunchScreen.storyboard */,
-				B2073D022945F599008B43E4 /* Main.storyboard */,
-				B2B20926297952C900D4D5DC /* BLBelarusianTransliterationChoiceViewController.xib */,
-				B2073D042945F599008B43E4 /* AppDelegate.swift */,
-				B2073D052945F599008B43E4 /* Info.plist */,
+				B2B2094329796F8300D4D5DC /* Localization */,
+				B2E68758297F36F3005C31B9 /* Settings */,
+				B2B2093829796F0F00D4D5DC /* ScreenAbout */,
+				B2B2093B29796F2300D4D5DC /* ScreenSettings */,
+				B2B2092B29796D0400D4D5DC /* ScreenInstallation */,
+				B2B2093E29796F3000D4D5DC /* ScreenTransliteration */,
+				B2DDCF4D298C6FC500902EE6 /* ScreenConvertor */,
+				B2DDCF4E298C762800902EE6 /* ScreeenTabs */,
 				B28C525B295625C90025D49A /* Categories */,
+				B2B2092E29796D7F00D4D5DC /* Resources */,
+				B2073D042945F599008B43E4 /* AppDelegate.swift */,
+				B2073D062945F599008B43E4 /* SceneDelegate.swift */,
+				B2DDCF4829899BF700902EE6 /* DrukarnikRelease.entitlements */,
+				B202A5202989975600E5F57A /* DrukarnikDebug.entitlements */,
 			);
 			path = Drukarnik;
 			sourceTree = SOURCE_ROOT;
@@ -146,6 +196,7 @@
 		B21A246029360B3600C056E5 = {
 			isa = PBXGroup;
 			children = (
+				B2073CFD2945F599008B43E4 /* Drukarnik */,
 				B21A248829360C7700C056E5 /* Keyboard */,
 				B21A246A29360B3600C056E5 /* Products */,
 				B21A249329360CB000C056E5 /* Frameworks */,
@@ -164,11 +215,10 @@
 		B21A248829360C7700C056E5 /* Keyboard */ = {
 			isa = PBXGroup;
 			children = (
-				B2073CFD2945F599008B43E4 /* Drukarnik */,
 				B263A882293E01F70024242C /* Keyboards */,
-				B21A248929360C7700C056E5 /* KeyboardViewController.swift */,
-				B21A2498293610EA00C056E5 /* DKKeyboardView.swift */,
 				B21A248B29360C7700C056E5 /* Info.plist */,
+				B2DDCF4A29899D3600902EE6 /* KeyboardRelease.entitlements */,
+				B2DDCF4929899D1700902EE6 /* KeyboardDebug.entitlements */,
 			);
 			path = Keyboard;
 			sourceTree = "<group>";
@@ -180,40 +230,54 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B22DC4D8297A14AB00D9AC39 /* Languages */ = {
+			isa = PBXGroup;
+			children = (
+				B22DC4DB297A1E5800D9AC39 /* DKSettingsLanguageTableViewCell.swift */,
+				B22DC4D9297A14C400D9AC39 /* DKSettingsLanguagesTableViewController.swift */,
+			);
+			path = Languages;
+			sourceTree = "<group>";
+		};
 		B263A882293E01F70024242C /* Keyboards */ = {
 			isa = PBXGroup;
 			children = (
-				B22FC9E62950A90400B31E4A /* DKByKeyboardAppearance.swift */,
-				B22FC9E82950A94400B31E4A /* DKByActionHandler.swift */,
-				B22FC9EF29510CAD00B31E4A /* DKLocalization.swift */,
-				B22FC9EA2950C16800B31E4A /* DKByKeyboardSettings.swift */,
-				B22FC9F32951A9F100B31E4A /* DKByCalloutActionProvider.swift */,
-				B263A883293E01F70024242C /* BeLacin */,
-				B263A884293E01F70024242C /* ByCyrillic */,
+				B263A884293E01F70024242C /* Cyrillic */,
+				B263A883293E01F70024242C /* Lacin */,
+				B22FC9E62950A90400B31E4A /* DKKeyboardAppearance.swift */,
+				B22FC9E82950A94400B31E4A /* DKActionHandler.swift */,
+				B22FC9EF29510CAD00B31E4A /* DKLocalizationKeyboard.swift */,
+				B22FC9F32951A9F100B31E4A /* DKCalloutActionProvider.swift */,
+				B21A248929360C7700C056E5 /* DKKeyboardViewController.swift */,
+				B21A2498293610EA00C056E5 /* DKKeyboardView.swift */,
+				B282B8F529813275001244DE /* DKAutocompleteToolbar.swift */,
+				B282B8F129812D4B001244DE /* UITextDocumentProxy+FullText.swift */,
+				B282B8F7298141AF001244DE /* AutocompleteProvider+Transliteration.swift */,
+				B282B8F329812FB5001244DE /* StandardAutocompleteSuggestion+FullText.swift */,
 			);
 			path = Keyboards;
 			sourceTree = "<group>";
 		};
-		B263A883293E01F70024242C /* BeLacin */ = {
+		B263A883293E01F70024242C /* Lacin */ = {
 			isa = PBXGroup;
 			children = (
-				B2AF577A294FEBF900E7CF2F /* DKByLatinInputSetProvider.swift */,
-				B2AF577C294FECD500E7CF2F /* DKByLatinCalloutActionProvider.swift */,
-				B2AF577E294FEE4200E7CF2F /* DKByLatinLayoutProvider.swift */,
-				B28C524E295455DE0025D49A /* DKByLatinAutocompleteProvider.swift */,
+				B2AF577A294FEBF900E7CF2F /* DKLatinInputSetProvider.swift */,
+				B2AF577C294FECD500E7CF2F /* DKLatinCalloutActionProvider.swift */,
+				B2AF577E294FEE4200E7CF2F /* DKLatinLayoutProvider.swift */,
+				B28C524E295455DE0025D49A /* DKLatinAutocompleteProvider.swift */,
 			);
-			path = BeLacin;
+			path = Lacin;
 			sourceTree = "<group>";
 		};
-		B263A884293E01F70024242C /* ByCyrillic */ = {
+		B263A884293E01F70024242C /* Cyrillic */ = {
 			isa = PBXGroup;
 			children = (
-				B263A886293E01F70024242C /* DKByCyrillicInputSetProvider.swift */,
-				B263A885293E01F70024242C /* DKByCyrillicCalloutActionProvider.swift */,
-				B2073D0E2945F62C008B43E4 /* DKByCyrillicLayoutProvider.swift */,
-				B28C524C2954519C0025D49A /* DKByCyrillicAutocompleteProvider.swift */,
+				B263A886293E01F70024242C /* DKCyrillicInputSetProvider.swift */,
+				B263A885293E01F70024242C /* DKCyrillicCalloutActionProvider.swift */,
+				B2073D0E2945F62C008B43E4 /* DKCyrillicLayoutProvider.swift */,
+				B28C524C2954519C0025D49A /* DKCyrillicAutocompleteProvider.swift */,
 			);
-			path = ByCyrillic;
+			path = Cyrillic;
 			sourceTree = "<group>";
 		};
 		B28C525B295625C90025D49A /* Categories */ = {
@@ -224,6 +288,118 @@
 				B28C525D295625C90025D49A /* NSAttributedString+Tools.swift */,
 			);
 			path = Categories;
+			sourceTree = "<group>";
+		};
+		B2B2092B29796D0400D4D5DC /* ScreenInstallation */ = {
+			isa = PBXGroup;
+			children = (
+				B2B2092C29796D0400D4D5DC /* DKInstallationViewController.swift */,
+			);
+			path = ScreenInstallation;
+			sourceTree = "<group>";
+		};
+		B2B2092E29796D7F00D4D5DC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B2B2093029796D7F00D4D5DC /* Assets.xcassets */,
+				B2B2092F29796D7F00D4D5DC /* LaunchScreen.storyboard */,
+				B2B2093129796D7F00D4D5DC /* Main.storyboard */,
+				B22DC4D22979FB7000D9AC39 /* Installation.storyboard */,
+				B2B97569297B52A800ED68D2 /* additional_languages.json */,
+				B2B2093229796D7F00D4D5DC /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B2B2093829796F0F00D4D5DC /* ScreenAbout */ = {
+			isa = PBXGroup;
+			children = (
+				B2B2093929796F0F00D4D5DC /* DKAboutViewController.swift */,
+			);
+			path = ScreenAbout;
+			sourceTree = "<group>";
+		};
+		B2B2093B29796F2300D4D5DC /* ScreenSettings */ = {
+			isa = PBXGroup;
+			children = (
+				B2DDCF53298D2AA400902EE6 /* BelarusianCyrillicType */,
+				B2DDCF54298D2AA400902EE6 /* BelarusianLatinType */,
+				B22DC4D8297A14AB00D9AC39 /* Languages */,
+				B22DC4D4297A01E700D9AC39 /* DKSettingsTransliterationTableViewCell.swift */,
+				B2DDCF4B298C3E3000902EE6 /* DKSettingsBelarusianCyrillicTypeTableViewCell.swift */,
+				B2DDCF59298D37C300902EE6 /* DKSettingsBelarusianLatinTypeTableViewCell.swift */,
+				B22DC4D6297A133500D9AC39 /* DKSettingsLanguagesTableViewCell.swift */,
+				B2B209462979724000D4D5DC /* DKSettingsTableViewController.swift */,
+			);
+			path = ScreenSettings;
+			sourceTree = "<group>";
+		};
+		B2B2093E29796F3000D4D5DC /* ScreenTransliteration */ = {
+			isa = PBXGroup;
+			children = (
+				B2B2093F29796F3000D4D5DC /* BLBelarusianTransliterationChoiceViewController.xib */,
+				B2B2094029796F3000D4D5DC /* BLBelarusianTransliterationChoiceViewController.swift */,
+			);
+			path = ScreenTransliteration;
+			sourceTree = "<group>";
+		};
+		B2B2094329796F8300D4D5DC /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				B2B2094429796F8300D4D5DC /* DKLocalizationApp.swift */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
+		B2DDCF4D298C6FC500902EE6 /* ScreenConvertor */ = {
+			isa = PBXGroup;
+			children = (
+				B2DDCF51298C779400902EE6 /* DKConvertorTableViewController.swift */,
+			);
+			path = ScreenConvertor;
+			sourceTree = "<group>";
+		};
+		B2DDCF4E298C762800902EE6 /* ScreeenTabs */ = {
+			isa = PBXGroup;
+			children = (
+				B2DDCF4F298C769500902EE6 /* DKTabBarController.swift */,
+			);
+			path = ScreeenTabs;
+			sourceTree = "<group>";
+		};
+		B2DDCF53298D2AA400902EE6 /* BelarusianCyrillicType */ = {
+			isa = PBXGroup;
+			children = (
+				B2DDCF57298D2ADE00902EE6 /* DKSettingsBelarusianCyrillicTypeTableViewController.swift */,
+			);
+			path = BelarusianCyrillicType;
+			sourceTree = "<group>";
+		};
+		B2DDCF54298D2AA400902EE6 /* BelarusianLatinType */ = {
+			isa = PBXGroup;
+			children = (
+				B2DDCF55298D2AC100902EE6 /* DKSettingsBelarusianLatinTypeTableViewController.swift */,
+			);
+			path = BelarusianLatinType;
+			sourceTree = "<group>";
+		};
+		B2E68758297F36F3005C31B9 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				B2E6875F297F37A2005C31B9 /* Languages */,
+				B2E68759297F3723005C31B9 /* DKKeyboardSettings.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		B2E6875F297F37A2005C31B9 /* Languages */ = {
+			isa = PBXGroup;
+			children = (
+				B2E68760297F37B2005C31B9 /* DKAdditionalLanguages.swift */,
+				B2E68763297F37D1005C31B9 /* DKAdditionalLanguage.swift */,
+				B2E68766297F4174005C31B9 /* DKAdditionalLanguage+Localization.swift */,
+			);
+			path = Languages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -322,10 +498,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B2073D0A2945F599008B43E4 /* Main.storyboard in Resources */,
-				B2B20928297952CE00D4D5DC /* BLBelarusianTransliterationChoiceViewController.xib in Resources */,
-				B2073D082945F599008B43E4 /* Assets.xcassets in Resources */,
-				B2073D092945F599008B43E4 /* LaunchScreen.storyboard in Resources */,
+				B22DC4D32979FB7000D9AC39 /* Installation.storyboard in Resources */,
+				B2B2093529796D7F00D4D5DC /* Main.storyboard in Resources */,
+				B2B2094129796F3000D4D5DC /* BLBelarusianTransliterationChoiceViewController.xib in Resources */,
+				B2B2093329796D7F00D4D5DC /* LaunchScreen.storyboard in Resources */,
+				B2B2093429796D7F00D4D5DC /* Assets.xcassets in Resources */,
+				B2B9756A297B52A800ED68D2 /* additional_languages.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,6 +511,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2B2093729796D8600D4D5DC /* Assets.xcassets in Resources */,
+				B2B9756B297B52A800ED68D2 /* additional_languages.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,15 +524,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				B28C525F295625C90025D49A /* NSAttributedString+Tools.swift in Sources */,
-				B28C5253295624CF0025D49A /* DKAboutViewController.swift in Sources */,
+				B22DC4D5297A01E700D9AC39 /* DKSettingsTransliterationTableViewCell.swift in Sources */,
+				B2B2092D29796D0400D4D5DC /* DKInstallationViewController.swift in Sources */,
 				B2073D0B2945F599008B43E4 /* AppDelegate.swift in Sources */,
+				B2E68767297F4174005C31B9 /* DKAdditionalLanguage+Localization.swift in Sources */,
+				B2B2094229796F3000D4D5DC /* BLBelarusianTransliterationChoiceViewController.swift in Sources */,
+				B2DDCF58298D2ADE00902EE6 /* DKSettingsBelarusianCyrillicTypeTableViewController.swift in Sources */,
+				B2DDCF56298D2AC100902EE6 /* DKSettingsBelarusianLatinTypeTableViewController.swift in Sources */,
+				B2E68761297F37B2005C31B9 /* DKAdditionalLanguages.swift in Sources */,
+				B22DC4DC297A1E5800D9AC39 /* DKSettingsLanguageTableViewCell.swift in Sources */,
+				B2DDCF52298C779500902EE6 /* DKConvertorTableViewController.swift in Sources */,
+				B2B209472979724000D4D5DC /* DKSettingsTableViewController.swift in Sources */,
+				B2E6875A297F3723005C31B9 /* DKKeyboardSettings.swift in Sources */,
+				B2DDCF50298C769500902EE6 /* DKTabBarController.swift in Sources */,
+				B2DDCF4C298C3E3000902EE6 /* DKSettingsBelarusianCyrillicTypeTableViewCell.swift in Sources */,
 				B2B35510295662EC0006B8B1 /* CALayer+Tools.swift in Sources */,
-				B2073D072945F599008B43E4 /* ViewController.swift in Sources */,
-				B2B355132958A0870006B8B1 /* DKByKeyboardSettings.swift in Sources */,
+				B22DC4DA297A14C400D9AC39 /* DKSettingsLanguagesTableViewController.swift in Sources */,
+				B22DC4D7297A133500D9AC39 /* DKSettingsLanguagesTableViewCell.swift in Sources */,
 				B28C525E295625C90025D49A /* UIColor+Tools.swift in Sources */,
-				B2B35512295896070006B8B1 /* BLBelarusianTransliterationChoiceViewController.swift in Sources */,
-				B2B2092529794FB600D4D5DC /* DKLocalization.swift in Sources */,
+				B2E68764297F37D1005C31B9 /* DKAdditionalLanguage.swift in Sources */,
+				B2DDCF5A298D37C300902EE6 /* DKSettingsBelarusianLatinTypeTableViewCell.swift in Sources */,
+				B2B2094529796F8300D4D5DC /* DKLocalizationApp.swift in Sources */,
 				B2073D0D2945F599008B43E4 /* SceneDelegate.swift in Sources */,
+				B2B2093A29796F0F00D4D5DC /* DKAboutViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,21 +554,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B22FC9E72950A90400B31E4A /* DKByKeyboardAppearance.swift in Sources */,
-				B28C524D2954519C0025D49A /* DKByCyrillicAutocompleteProvider.swift in Sources */,
-				B22FC9E92950A94500B31E4A /* DKByActionHandler.swift in Sources */,
-				B263A887293E01F70024242C /* DKByCyrillicCalloutActionProvider.swift in Sources */,
-				B22FC9F029510CAD00B31E4A /* DKLocalization.swift in Sources */,
-				B263A888293E01F70024242C /* DKByCyrillicInputSetProvider.swift in Sources */,
-				B21A248A29360C7700C056E5 /* KeyboardViewController.swift in Sources */,
-				B2073D0F2945F62C008B43E4 /* DKByCyrillicLayoutProvider.swift in Sources */,
-				B2AF577B294FEBF900E7CF2F /* DKByLatinInputSetProvider.swift in Sources */,
-				B22FC9EB2950C16800B31E4A /* DKByKeyboardSettings.swift in Sources */,
-				B2AF577D294FECD500E7CF2F /* DKByLatinCalloutActionProvider.swift in Sources */,
+				B22FC9E72950A90400B31E4A /* DKKeyboardAppearance.swift in Sources */,
+				B28C524D2954519C0025D49A /* DKCyrillicAutocompleteProvider.swift in Sources */,
+				B282B8F8298141AF001244DE /* AutocompleteProvider+Transliteration.swift in Sources */,
+				B282B8F629813275001244DE /* DKAutocompleteToolbar.swift in Sources */,
+				B22FC9E92950A94500B31E4A /* DKActionHandler.swift in Sources */,
+				B263A887293E01F70024242C /* DKCyrillicCalloutActionProvider.swift in Sources */,
+				B22FC9F029510CAD00B31E4A /* DKLocalizationKeyboard.swift in Sources */,
+				B2E68762297F37B2005C31B9 /* DKAdditionalLanguages.swift in Sources */,
+				B263A888293E01F70024242C /* DKCyrillicInputSetProvider.swift in Sources */,
+				B21A248A29360C7700C056E5 /* DKKeyboardViewController.swift in Sources */,
+				B282B8F229812D4B001244DE /* UITextDocumentProxy+FullText.swift in Sources */,
+				B2E6875B297F3723005C31B9 /* DKKeyboardSettings.swift in Sources */,
+				B2073D0F2945F62C008B43E4 /* DKCyrillicLayoutProvider.swift in Sources */,
+				B2AF577B294FEBF900E7CF2F /* DKLatinInputSetProvider.swift in Sources */,
+				B2AF577D294FECD500E7CF2F /* DKLatinCalloutActionProvider.swift in Sources */,
+				B282B8F429812FB5001244DE /* StandardAutocompleteSuggestion+FullText.swift in Sources */,
 				B21A2499293610EA00C056E5 /* DKKeyboardView.swift in Sources */,
-				B2AF577F294FEE4200E7CF2F /* DKByLatinLayoutProvider.swift in Sources */,
-				B22FC9F42951A9F100B31E4A /* DKByCalloutActionProvider.swift in Sources */,
-				B28C524F295455DE0025D49A /* DKByLatinAutocompleteProvider.swift in Sources */,
+				B2E68765297F37D1005C31B9 /* DKAdditionalLanguage.swift in Sources */,
+				B2AF577F294FEE4200E7CF2F /* DKLatinLayoutProvider.swift in Sources */,
+				B22FC9F42951A9F100B31E4A /* DKCalloutActionProvider.swift in Sources */,
+				B28C524F295455DE0025D49A /* DKLatinAutocompleteProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,25 +595,6 @@
 			productRef = B2AC43B62945F4F100ACC32E /* KeyboardKit */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		B2073D002945F599008B43E4 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B2073D012945F599008B43E4 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		B2073D022945F599008B43E4 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B2073D032945F599008B43E4 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		B21A247B29360B3B00C056E5 /* Debug */ = {
@@ -536,26 +717,38 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = Drukarnik/DrukarnikDebug.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7ZYGH4G78Q;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 6EWLUZCTBU;
+				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
+				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "";
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Drukarnik/Info.plist;
+				INFOPLIST_FILE = Drukarnik/Resources/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Drukarnik;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = tmp.belanghelp.Drukarnik;
+				OTHER_SWIFT_FLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.belanghelp.drukarnik;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "K Development Drukarnik";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG MAIN_APP";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -568,26 +761,38 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = Drukarnik/DrukarnikRelease.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7ZYGH4G78Q;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 6EWLUZCTBU;
+				GCC_PREPROCESSOR_DEFINITIONS = "";
+				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "";
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Drukarnik/Info.plist;
+				INFOPLIST_FILE = Drukarnik/Resources/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Drukarnik;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = tmp.belanghelp.Drukarnik;
+				OTHER_SWIFT_FLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.belanghelp.drukarnik;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "K App Store Drukarnik";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = MAIN_APP;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -597,12 +802,15 @@
 		B21A249029360C7700C056E5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = Keyboard/KeyboardDebug.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7ZYGH4G78Q;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 6EWLUZCTBU;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Keyboard/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = Keyboard;
+				INFOPLIST_KEY_CFBundleDisplayName = Drukarnik;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -610,8 +818,10 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = tmp.belanghelp.Drukarnik.Keyboard;
+				PRODUCT_BUNDLE_IDENTIFIER = com.belanghelp.drukarnik.keyboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "K Development Drukarnik keyboard";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -622,12 +832,15 @@
 		B21A249129360C7700C056E5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = Keyboard/KeyboardRelease.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7ZYGH4G78Q;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 6EWLUZCTBU;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Keyboard/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = Keyboard;
+				INFOPLIST_KEY_CFBundleDisplayName = Drukarnik;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -635,8 +848,10 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = tmp.belanghelp.Drukarnik.Keyboard;
+				PRODUCT_BUNDLE_IDENTIFIER = com.belanghelp.drukarnik.keyboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "K App Store Drukarnik keyboard";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -697,7 +912,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/KeyboardKit/KeyboardKit.git";
 			requirement = {
-				kind = upToNextMinorVersion;
+				kind = versionRange;
+				maximumVersion = 10.0.0;
 				minimumVersion = 6.9.2;
 			};
 		};
