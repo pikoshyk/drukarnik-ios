@@ -17,7 +17,7 @@ class DKLatinCalloutActionProvider: DKCalloutActionProvider, KeyboardKit.Localiz
         let belarusian = true
 
         if belarusian {
-            let latinType = DKKeyboardSettings.shared.belarusianLatinType
+            let latinType = self.settings?.belarusianLatinType ?? .traditional
             switch char {
             case "l": symbols = self.appendUnknownSymbols(base: symbols, new: (latinType == .traditional) ? "lł" : "lĺ")
             case "n": symbols = self.appendUnknownSymbols(base: symbols, new: "nń")
@@ -29,7 +29,7 @@ class DKLatinCalloutActionProvider: DKCalloutActionProvider, KeyboardKit.Localiz
             }
         }
         
-        let extendedChars = DKKeyboardSettings.shared.supportedAdditionalLanguages.compactMap{ $0.layout == .latin ? $0.extendedChars(baseChar:char) : nil }.joined()
+        let extendedChars = (self.settings?.supportedAdditionalLanguages ?? []).compactMap{ $0.layout == .latin ? $0.extendedChars(baseChar:char) : nil }.joined()
         
         symbols = self.appendUnknownSymbols(base: symbols, new: extendedChars)
 

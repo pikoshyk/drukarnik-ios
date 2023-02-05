@@ -66,7 +66,7 @@ class DKKeyboardAppearance: StandardKeyboardAppearance {
     
     override func buttonText(for action: KeyboardAction) -> String? {
         switch action {
-        case .keyboardType(.alphabetic(.auto)): return DKKeyboardSettings.shared.keyboardLayout.label
+        case .keyboardType(.alphabetic(.auto)): return DKLocalizationKeyboard.settings?.keyboardLayout.label ?? ""
         case .custom(named: DKKeyboardLayout.latin.rawValue): return DKKeyboardLayout.latin.label
         case .custom(named: DKKeyboardLayout.cyrillic.rawValue): return DKKeyboardLayout.cyrillic.label
         case .space: return DKLocalizationKeyboard.keyboaredButtonSpace

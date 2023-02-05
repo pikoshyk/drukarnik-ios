@@ -10,13 +10,17 @@ import SwiftUI
 
 class DKKeyboardViewController: KeyboardInputViewController {
 
+    let settings = DKKeyboardSettings()
+    
     override func viewDidLoad() {
         
-        let keyboardLayout = DKKeyboardSettings.shared.keyboardLayout
+        DKLocalizationKeyboard.settings = self.settings
+
+        let keyboardLayout = self.settings.keyboardLayout
         self.keyboardContext.locale = keyboardLayout.locale
         self.keyboardLayout = keyboardLayout
         self.keyboardActionHandler = DKActionHandler(inputViewController: self, swicthKeyboardBlock: { keyboardLayout in
-            DKKeyboardSettings.shared.keyboardLayout = keyboardLayout
+            self.settings.keyboardLayout = keyboardLayout
             self.keyboardLayout = keyboardLayout
         })
         self.keyboardAppearance = DKKeyboardAppearance(keyboardContext: self.keyboardContext)
@@ -28,32 +32,40 @@ class DKKeyboardViewController: KeyboardInputViewController {
             guard let keyboardLayout = keyboardLayout else {
                 return
             }
-            self.keyboardContext.locale = keyboardLayout.locale
 
+            self.keyboardContext.locale = keyboardLayout.locale
+                
             switch keyboardLayout {
             case .latin:
                 self.inputSetProvider = DKLatinInputSetProvider()
-                if let calloutActionProvide = try? DKLatinCalloutActionProvider() {
+                if let calloutActionProvide = try? DKLatinCalloutActionProvider(settings: self.settings) {
                     self.calloutActionProvider = calloutActionProvide
                 }
                 self.keyboardLayoutProvider = DKLatinLayoutProvider(keyboardContext: self.keyboardContext)
-                self.autocompleteProvider = DKLatinAutocompleteProvider(textDocumentProxy: self.textDocumentProxy)
+                self.autocompleteProvider = DKLatinAutocompleteProvider(settings: self.settings, textDocumentProxy: self.textDocumentProxy)
                 
             case .cyrillic:
                 self.inputSetProvider = DKCyrillicInputSetProvider()
-                if let calloutActionProvide = try? DKCyrillicCalloutActionProvider() {
+                if let calloutActionProvide = try? DKCyrillicCalloutActionProvider(settings: self.settings) {
                     self.calloutActionProvider = calloutActionProvide
                 }
                 self.keyboardLayoutProvider = DKCyrillicLayoutProvider(keyboardContext: self.keyboardContext)
-                self.autocompleteProvider = DKCyrillycAutocompleteProvider(textDocumentProxy: self.textDocumentProxy)
+                self.autocompleteProvider = DKCyrillycAutocompleteProvider(settings: self.settings, textDocumentProxy: self.textDocumentProxy)
             }
-            
+                
             self.autocompleteProvider.autocompleteSuggestions(for: self.autocompleteText ?? "") { result in
                 self.autocompleteContext.suggestions = (try? result.get()) ?? []
             }
 
             self.keyboardContext.sync(with: self)
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        let keyboardLayout = self.keyboardLayout
+        self.settings.reloadSettings()
+        self.keyboardLayout = keyboardLayout
+        super.viewWillAppear(animated)
     }
     
     /**

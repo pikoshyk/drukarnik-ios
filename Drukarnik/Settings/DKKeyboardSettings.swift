@@ -45,16 +45,18 @@ class DKKeyboardSettingsKeys {
 }
 
 class DKKeyboardSettings: Any {
+#if MAIN_APP
     static let shared = DKKeyboardSettings()
-    
-    let userDefaultsGroupIdeintifier = "group.com.belanghelp.drukarnik"
+#endif
+    let lacinkaConverter = BLConverter()
 
+    let userDefaultsGroupIdeintifier = "group.com.belanghelp.drukarnik"
     lazy var userDefaults = UserDefaults(suiteName: self.userDefaultsGroupIdeintifier)!
     fileprivate var _keybaordLayout: DKKeyboardLayout?
     fileprivate var _interfaceTransliteration: DKKeyboardLayout?
     fileprivate var _supportedAdditionalLanguages: [DKAdditionalLanguage]?
 
-    fileprivate init() {
+    init() {
 #if MAIN_APP
 //        NotificationCenter.default.addObserver(forName: UserDefaults.didChangeNotification, object: nil, queue: OperationQueue.main) { notification in
 //            let center = CFNotificationCenterGetDarwinNotifyCenter()
@@ -70,6 +72,13 @@ class DKKeyboardSettings: Any {
         if self.userDefaults.stringArray(forKey: DKKeyboardSettingsKeys.additionalLanguageIds) == nil {
             self.supportedAdditionalLanguages = self.prefferedLanguages
         }
+    }
+    
+    func reloadSettings() {
+        self._keybaordLayout = nil
+        self._interfaceTransliteration = nil
+        self._belarusianLatinType = nil
+        self._belarusianCyrillicType = nil
     }
     
     var prefferedLanguages: [DKAdditionalLanguage] {

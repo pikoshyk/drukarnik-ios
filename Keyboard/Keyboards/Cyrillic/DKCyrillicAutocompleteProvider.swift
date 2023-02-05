@@ -10,16 +10,9 @@ import BelarusianLacinka
 import KeyboardKit
 import UIKit
 
-class DKCyrillycAutocompleteProvider: AutocompleteProvider {
+class DKCyrillycAutocompleteProvider: DKAutocompleteProvider {
     
-    var locale: Locale = DKKeyboardSettings.shared.keyboardLayout.locale
-    private var textDocumentProxy: UITextDocumentProxy
-    
-    init(textDocumentProxy: UITextDocumentProxy) {
-        self.textDocumentProxy = textDocumentProxy
-    }
-    
-    func autocompleteSuggestions(for word: String, completion: AutocompleteCompletion) {
+    override func autocompleteSuggestions(for word: String, completion: @escaping AutocompleteCompletion) {
 //        let word = text.components(separatedBy: CharacterSet(charactersIn: String.wordDelimiters.joined())).last ?? ""
 //        if word.isEmpty { return completion(.success([])) }
 //        completion(.success(self.suggestions(for: word)))
@@ -28,18 +21,6 @@ class DKCyrillycAutocompleteProvider: AutocompleteProvider {
         if text.isEmpty { return completion(.success([])) }
         completion(.success(self.transliteration(for: text, to: .toLacin)))
     }
-    
-    var canIgnoreWords: Bool { false }
-    var canLearnWords: Bool { false }
-    var ignoredWords: [String] = []
-    var learnedWords: [String] = []
-    
-    func hasIgnoredWord(_ word: String) -> Bool { false }
-    func hasLearnedWord(_ word: String) -> Bool { false }
-    func ignoreWord(_ word: String) {}
-    func learnWord(_ word: String) {}
-    func removeIgnoredWord(_ word: String) {}
-    func unlearnWord(_ word: String) {}
 }
 
 private extension DKCyrillycAutocompleteProvider {

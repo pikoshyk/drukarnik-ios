@@ -9,6 +9,13 @@ import KeyboardKit
 
 class DKCalloutActionProvider: KeyboardKit.BaseCalloutActionProvider {
     
+    weak var settings: DKKeyboardSettings?
+    
+    init(settings: DKKeyboardSettings) throws {
+        try super.init()
+        self.settings = settings
+    }
+    
     open override func calloutActionString(for char: String) -> String {
         switch char {
         case ".": return ".,?!-…"

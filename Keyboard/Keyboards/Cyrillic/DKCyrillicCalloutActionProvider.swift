@@ -18,7 +18,7 @@ class DKCyrillicCalloutActionProvider: DKCalloutActionProvider, KeyboardKit.Loca
 
 
         if belarusian {
-            let cyrillicType = DKKeyboardSettings.shared.belarusianCyrillicType
+            let cyrillicType = self.settings?.belarusianCyrillicType ?? .classic
             if cyrillicType == .classic {
                 switch char {
                 case "г": symbols = self.appendUnknownSymbols(base: symbols, new: "гґ")
@@ -27,7 +27,7 @@ class DKCyrillicCalloutActionProvider: DKCalloutActionProvider, KeyboardKit.Loca
             }
         }
 
-        let extendedChars = DKKeyboardSettings.shared.supportedAdditionalLanguages.compactMap{ $0.layout == .cyrillic ? $0.extendedChars(baseChar:char) : nil }.joined()
+        let extendedChars = (self.settings?.supportedAdditionalLanguages ?? []).compactMap{ $0.layout == .cyrillic ? $0.extendedChars(baseChar:char) : nil }.joined()
         
         symbols = self.appendUnknownSymbols(base: symbols, new: extendedChars)
 

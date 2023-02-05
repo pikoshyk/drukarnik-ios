@@ -445,8 +445,8 @@
             filePath = "Drukarnik/Settings/DKKeyboardSettings.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132"
+            startingLineNumber = "141"
+            endingLineNumber = "141"
             landmarkName = "interfaceTransliteration"
             landmarkType = "24">
          </BreakpointContent>
@@ -477,8 +477,8 @@
             filePath = "Drukarnik/Settings/DKKeyboardSettings.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
             landmarkName = "prefferedLanguages"
             landmarkType = "24">
          </BreakpointContent>
@@ -493,8 +493,8 @@
             filePath = "Drukarnik/Settings/DKKeyboardSettings.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
             landmarkName = "prefferedLanguages"
             landmarkType = "24">
          </BreakpointContent>
@@ -509,8 +509,8 @@
             filePath = "Drukarnik/Settings/DKKeyboardSettings.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
             landmarkName = "prefferedLanguages"
             landmarkType = "24">
          </BreakpointContent>
@@ -525,8 +525,8 @@
             filePath = "Drukarnik/Settings/DKKeyboardSettings.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
             landmarkName = "prefferedLanguages"
             landmarkType = "24">
          </BreakpointContent>
@@ -560,6 +560,22 @@
             startingLineNumber = "25"
             endingLineNumber = "25"
             landmarkName = "setupLocalization()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D56E7138-5369-45E7-9710-930FB199F98E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Keyboard/Keyboards/DKAutocompleteProvider.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "autocompleteSuggestions(for:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -10,8 +10,6 @@ import UIKit
 
 class DKLocalizationApp: Any {
     
-    static var lacinkaConverter = BLConverter()
-
     static func processedWord(_ word: String, convert: Bool = true) -> String {
         var convertedWord = word
         if convert == false {
@@ -21,7 +19,7 @@ class DKLocalizationApp: Any {
         if (DKKeyboardSettings.shared.interfaceTransliteration ?? DKKeyboardSettings.shared.defaultInterfaceTransliteration) == .latin {
             let latinType = DKKeyboardSettings.shared.belarusianLatinType
             let oldWord = " "+word
-            convertedWord = Self.lacinkaConverter.convert(text: oldWord, direction: .toLacin, version: latinType, orthograpy: .academic)
+            convertedWord = DKKeyboardSettings.shared.lacinkaConverter.convert(text: oldWord, direction: .toLacin, version: latinType, orthograpy: .academic)
             convertedWord.removeFirst()
         }
         return convertedWord

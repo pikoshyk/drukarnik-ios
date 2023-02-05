@@ -20,8 +20,8 @@ class DKAutocompleteToolbar {
         let controller = KeyboardInputViewController.shared
         let proxy = controller.textDocumentProxy
         let actionHandler = controller.keyboardActionHandler
-        
-        
+
+
         var fullTextReplace = false
         if let standardSuggestion = suggestion as? StandardAutocompleteSuggestion {
             fullTextReplace = standardSuggestion.fullTextReplace

@@ -8,7 +8,7 @@
 import Foundation
 import KeyboardKit
 
-class DKCyrillicLayoutProvider: StandardKeyboardLayoutProvider {
+class DKCyrillicLayoutProvider: DKKeyboardLayoutProvider {
     
     init(keyboardContext: KeyboardContext) {
         let inputSetProvider = DKCyrillicInputSetProvider()
@@ -26,19 +26,6 @@ class DKCyrillicLayoutProvider: StandardKeyboardLayoutProvider {
                     height: layout.idealItemHeight),
                 insets: layout.idealItemInsets)
             layout.itemRows.insert(latinKeyboardItem, before: .keyboardType(.emojis))
-
-            if context.deviceType != .pad {
-                let items = layout.itemRows.last?.filter { $0.action == .character(".") } ?? []
-                if items.count == 0 {
-                    let itemDot = KeyboardLayoutItem(
-                        action: .character("."),
-                        size: KeyboardLayoutItemSize(
-                            width: .inputPercentage(1),
-                            height: layout.idealItemHeight),
-                        insets: layout.idealItemInsets)
-                    layout.itemRows.insert(itemDot, after: .space)
-                }
-            }
         }
         return layout
     }

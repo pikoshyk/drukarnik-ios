@@ -24,6 +24,8 @@
 		B22FC9F029510CAD00B31E4A /* DKLocalizationKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22FC9EF29510CAD00B31E4A /* DKLocalizationKeyboard.swift */; };
 		B22FC9F229510FB900B31E4A /* BelarusianLacinka in Frameworks */ = {isa = PBXBuildFile; productRef = B22FC9F129510FB900B31E4A /* BelarusianLacinka */; };
 		B22FC9F42951A9F100B31E4A /* DKCalloutActionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22FC9F32951A9F100B31E4A /* DKCalloutActionProvider.swift */; };
+		B249D1A729905B0200668130 /* DKAutocompleteProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B249D1A629905B0200668130 /* DKAutocompleteProvider.swift */; };
+		B249D1A92990696400668130 /* DKKeyboardLayoutProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B249D1A82990696400668130 /* DKKeyboardLayoutProvider.swift */; };
 		B263A887293E01F70024242C /* DKCyrillicCalloutActionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B263A885293E01F70024242C /* DKCyrillicCalloutActionProvider.swift */; };
 		B263A888293E01F70024242C /* DKCyrillicInputSetProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B263A886293E01F70024242C /* DKCyrillicInputSetProvider.swift */; };
 		B282B8F229812D4B001244DE /* UITextDocumentProxy+FullText.swift in Sources */ = {isa = PBXBuildFile; fileRef = B282B8F129812D4B001244DE /* UITextDocumentProxy+FullText.swift */; };
@@ -110,6 +112,8 @@
 		B22FC9E82950A94400B31E4A /* DKActionHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKActionHandler.swift; sourceTree = "<group>"; };
 		B22FC9EF29510CAD00B31E4A /* DKLocalizationKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKLocalizationKeyboard.swift; sourceTree = "<group>"; };
 		B22FC9F32951A9F100B31E4A /* DKCalloutActionProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKCalloutActionProvider.swift; sourceTree = "<group>"; };
+		B249D1A629905B0200668130 /* DKAutocompleteProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKAutocompleteProvider.swift; sourceTree = "<group>"; };
+		B249D1A82990696400668130 /* DKKeyboardLayoutProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKKeyboardLayoutProvider.swift; sourceTree = "<group>"; };
 		B263A885293E01F70024242C /* DKCyrillicCalloutActionProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKCyrillicCalloutActionProvider.swift; sourceTree = "<group>"; };
 		B263A886293E01F70024242C /* DKCyrillicInputSetProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKCyrillicInputSetProvider.swift; sourceTree = "<group>"; };
 		B282B8F129812D4B001244DE /* UITextDocumentProxy+FullText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextDocumentProxy+FullText.swift"; sourceTree = "<group>"; };
@@ -244,10 +248,12 @@
 			children = (
 				B263A884293E01F70024242C /* Cyrillic */,
 				B263A883293E01F70024242C /* Lacin */,
+				B22FC9EF29510CAD00B31E4A /* DKLocalizationKeyboard.swift */,
 				B22FC9E62950A90400B31E4A /* DKKeyboardAppearance.swift */,
 				B22FC9E82950A94400B31E4A /* DKActionHandler.swift */,
-				B22FC9EF29510CAD00B31E4A /* DKLocalizationKeyboard.swift */,
 				B22FC9F32951A9F100B31E4A /* DKCalloutActionProvider.swift */,
+				B249D1A629905B0200668130 /* DKAutocompleteProvider.swift */,
+				B249D1A82990696400668130 /* DKKeyboardLayoutProvider.swift */,
 				B21A248929360C7700C056E5 /* DKKeyboardViewController.swift */,
 				B21A2498293610EA00C056E5 /* DKKeyboardView.swift */,
 				B282B8F529813275001244DE /* DKAutocompleteToolbar.swift */,
@@ -555,8 +561,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B22FC9E72950A90400B31E4A /* DKKeyboardAppearance.swift in Sources */,
+				B249D1A92990696400668130 /* DKKeyboardLayoutProvider.swift in Sources */,
 				B28C524D2954519C0025D49A /* DKCyrillicAutocompleteProvider.swift in Sources */,
 				B282B8F8298141AF001244DE /* AutocompleteProvider+Transliteration.swift in Sources */,
+				B249D1A729905B0200668130 /* DKAutocompleteProvider.swift in Sources */,
 				B282B8F629813275001244DE /* DKAutocompleteToolbar.swift in Sources */,
 				B22FC9E92950A94500B31E4A /* DKActionHandler.swift in Sources */,
 				B263A887293E01F70024242C /* DKCyrillicCalloutActionProvider.swift in Sources */,
