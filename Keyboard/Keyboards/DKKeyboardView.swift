@@ -23,7 +23,10 @@ struct DKKeyboardView: View {
     
     @State
     private var text = "Text"
-    
+
+//    @EnvironmentObject
+//    private var keyboardsettings: DKKeyboardSettings
+
     @EnvironmentObject
     private var autocompleteContext: AutocompleteContext
 

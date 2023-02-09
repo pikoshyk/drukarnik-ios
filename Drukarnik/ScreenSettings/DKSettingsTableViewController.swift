@@ -80,7 +80,7 @@ extension DKSettingsTableViewController {
     }
 
     func updateInterfaceLocalization() {
-        self.navigationItem.title = DKLocalizationApp.settingsTitle
+        self.navigationItem.title = DKLocalizationApp.settingsTitleFull
         self.tableView.reloadData()
     }
 }
