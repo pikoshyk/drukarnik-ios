@@ -31,14 +31,12 @@ class DKConverterTableViewController: UITableViewController {
             direction = .toCyrillic
         }
         if direction == .toLacin {
-            let text = " " + (self.cellCyrillicText.textView.text ?? "")
-            var convertedText = DKKeyboardSettings.shared.lacinkaConverter.convert(text: text, direction: .toLacin, version: self.converterVersion, orthograpy: self.converterOrthography)
-            convertedText.removeFirst()
+            let text = self.cellCyrillicText.textView.text ?? ""
+            let convertedText = DKKeyboardSettings.shared.lacinkaConverter.convert(text: text, direction: .toLacin, version: self.converterVersion, orthograpy: self.converterOrthography)
             self.cellLatinText.textView.text = convertedText
         } else {
-            let text = " " + (self.cellLatinText.textView.text ?? "")
-            var convertedText = DKKeyboardSettings.shared.lacinkaConverter.convert(text: text, direction: .toCyrillic, version: self.converterVersion, orthograpy: self.converterOrthography)
-            convertedText.removeFirst()
+            let text = self.cellLatinText.textView.text ?? ""
+            let convertedText = DKKeyboardSettings.shared.lacinkaConverter.convert(text: text, direction: .toCyrillic, version: self.converterVersion, orthograpy: self.converterOrthography)
             self.cellCyrillicText.textView.text = convertedText
         }
     }

@@ -69,21 +69,21 @@ class DKKeyboardAppearance: StandardKeyboardAppearance {
         case .keyboardType(.alphabetic(.auto)): return DKLocalizationKeyboard.settings?.keyboardLayout.label ?? ""
         case .custom(named: DKKeyboardLayout.latin.rawValue): return DKKeyboardLayout.latin.label
         case .custom(named: DKKeyboardLayout.cyrillic.rawValue): return DKKeyboardLayout.cyrillic.label
-        case .space: return DKLocalizationKeyboard.keyboaredButtonSpace
-        case .primary(.search): return DKLocalizationKeyboard.keyboaredButtonSearch
-        case .primary(.done): return DKLocalizationKeyboard.keyboaredButtonDone
-        case .primary(.go): return DKLocalizationKeyboard.keyboaredButtonGo
-        case .primary(.join): return DKLocalizationKeyboard.keyboaredButtonJoin
-        case .primary(.ok): return DKLocalizationKeyboard.keyboaredButtonOK
+        case .space: return DKLocalizationKeyboard.keyboardButtonSpace
+        case .primary(.search): return DKLocalizationKeyboard.keyboardButtonSearch
+        case .primary(.done): return DKLocalizationKeyboard.keyboardButtonDone
+        case .primary(.go): return DKLocalizationKeyboard.keyboardButtonGo
+        case .primary(.join): return DKLocalizationKeyboard.keyboardButtonJoin
+        case .primary(.ok): return DKLocalizationKeyboard.keyboardButtonOK
         case .primary(.newLine): return nil
         case .primary(.return): return nil
-        case .primary(.custom(title: "send")): return DKLocalizationKeyboard.keyboaredButtonSend
+        case .primary(.custom(title: "send")): return DKLocalizationKeyboard.keyboardButtonSend
         case .primary(.custom(title: "Google")): return "Google"
-        case .primary(.custom(title: "next")): return DKLocalizationKeyboard.keyboaredButtonNext
+        case .primary(.custom(title: "next")): return DKLocalizationKeyboard.keyboardButtonNext
         case .primary(.custom(title: "route")): return "Route"
         case .primary(.custom(title: "Yahoo")): return "Yahoo"
         case .primary(.custom(title: "emergencyCall")): return "Emergency"
-        case .primary(.custom(title: "continue")): return DKLocalizationKeyboard.keyboaredButtonContinue
+        case .primary(.custom(title: "continue")): return DKLocalizationKeyboard.keyboardButtonContinue
         case .primary(.custom(title: "unknown")): return "Unknown"
         default: return super.buttonText(for: action)
         }

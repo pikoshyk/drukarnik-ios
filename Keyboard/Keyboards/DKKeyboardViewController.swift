@@ -77,7 +77,7 @@ class DKKeyboardViewController: KeyboardInputViewController {
      */
     override func viewWillSetupKeyboard() {
         super.viewWillSetupKeyboard()
-        setup(with: DKKeyboardView())
+        setup(with: DKKeyboardView(keyboardSettings: self.settings))
     }
     
     override func updateViewConstraints() {

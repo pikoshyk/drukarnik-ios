@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JXz-zp-S51">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <accessibilityOverrides dynamicTypePreference="3"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -131,7 +132,7 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="YRs-RG-xHk"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="YRs-RG-xHk" firstAttribute="leading" secondItem="stc-gp-O9Z" secondAttribute="leading" constant="-16" id="6JD-61-J1I"/>
                             <constraint firstItem="YRs-RG-xHk" firstAttribute="trailing" secondItem="stc-gp-O9Z" secondAttribute="trailing" constant="16" id="Vym-hj-iqM"/>
@@ -158,7 +159,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Ps2-AY-4mD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                         <color key="sectionIndexBackgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="cellTransliteration" id="7yI-yf-lB2" customClass="DKSettingsTransliterationTableViewCell" customModule="Drukarnik" customModuleProvider="target">
@@ -197,6 +198,7 @@
                                         <constraint firstAttribute="bottomMargin" secondItem="2lN-dO-F3Y" secondAttribute="bottom" id="vqe-8e-j2V"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="labelTitle" destination="E7a-a5-LQA" id="YWu-F3-U3O"/>
                                     <outlet property="segmentedTransliteration" destination="Hi8-PL-6Yp" id="lAc-JQ-FHQ"/>
@@ -234,6 +236,7 @@
                                         <constraint firstAttribute="bottomMargin" secondItem="zEe-Zd-2cU" secondAttribute="bottom" id="u1e-7X-Ta6"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="labelLatinType" destination="PEB-Wx-3Lj" id="O9B-lI-4d9"/>
                                     <outlet property="labelTitle" destination="Lzy-2e-lBr" id="C0P-15-UI6"/>
@@ -272,6 +275,7 @@
                                         <constraint firstAttribute="trailingMargin" secondItem="oN1-nN-8j3" secondAttribute="trailing" id="y8F-Ze-IiY"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="labelCyrillicType" destination="IFL-5c-rTP" id="Gk1-TR-o7e"/>
                                     <outlet property="labelTitle" destination="UQv-9d-Zjj" id="k0Y-Rx-MoV"/>
@@ -310,6 +314,7 @@
                                         <constraint firstAttribute="bottomMargin" secondItem="jNK-jG-sJN" secondAttribute="bottom" id="tVb-jb-Ys9"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="labelLanguages" destination="uAn-Ym-YVS" id="Vmx-g7-duo"/>
                                     <outlet property="labelTitle" destination="9SC-JO-xaj" id="K8w-Qw-kiY"/>
@@ -337,7 +342,9 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="static" style="insetGrouped" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="rT2-Xm-uaL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                        <color key="separatorColor" systemColor="secondaryLabelColor"/>
+                        <color key="sectionIndexBackgroundColor" systemColor="secondarySystemGroupedBackgroundColor"/>
                         <sections>
                             <tableViewSection id="hfb-S4-6NP">
                                 <cells>
@@ -409,6 +416,7 @@
                                                 <constraint firstAttribute="bottomMargin" secondItem="ZXF-kX-022" secondAttribute="bottom" id="fxS-9T-iAH"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="labelCyrillic" destination="gcx-Qc-Qt2" id="3N0-mc-a9c"/>
                                             <outlet property="labelLatin" destination="WFr-Mu-nqf" id="1Bt-MZ-isA"/>
@@ -441,6 +449,7 @@
                                                 <constraint firstItem="NeW-0Y-5k7" firstAttribute="trailing" secondItem="UXq-mu-Pvi" secondAttribute="trailingMargin" id="tqO-ha-b0o"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" systemColor="secondarySystemFillColor"/>
                                         <connections>
                                             <outlet property="textView" destination="NeW-0Y-5k7" id="LBZ-TV-bCJ"/>
                                         </connections>
@@ -466,6 +475,7 @@
                                                 <constraint firstItem="n9e-AX-zEL" firstAttribute="trailing" secondItem="4ib-i5-HXN" secondAttribute="trailingMargin" id="afR-jI-Oah"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" systemColor="secondarySystemFillColor"/>
                                         <connections>
                                             <outlet property="textView" destination="n9e-AX-zEL" id="Pnh-1r-9Q2"/>
                                         </connections>
@@ -516,7 +526,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Uuk-rI-5Ct">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                         <color key="sectionIndexBackgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="cellLanguage" textLabel="mcW-lP-tC4" detailTextLabel="iFU-QO-X7F" style="IBUITableViewCellStyleSubtitle" id="DWH-SL-iUX" customClass="DKSettingsLanguageTableViewCell" customModule="Drukarnik" customModuleProvider="target">
@@ -542,6 +552,7 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="labelChars" destination="iFU-QO-X7F" id="W1P-AX-I1M"/>
                                     <outlet property="labelName" destination="mcW-lP-tC4" id="oT3-tY-bcL"/>
@@ -605,7 +616,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="zY1-ts-7F4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                         <color key="sectionIndexBackgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="187" id="O0e-3h-c2T">
@@ -628,6 +639,7 @@
                                         <constraint firstAttribute="bottomMargin" secondItem="MEc-D0-IzF" secondAttribute="bottom" id="RIb-5d-s71"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" textLabel="9Et-00-M3P" style="IBUITableViewCellStyleDefault" id="mlG-wu-aqb">
                                 <rect key="frame" x="0.0" y="237" width="414" height="43.5"/>
@@ -645,6 +657,7 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -665,7 +678,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="y3x-0B-2h5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                         <color key="sectionIndexBackgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="187" id="HMs-AN-MWS">
@@ -688,6 +701,7 @@
                                         <constraint firstAttribute="bottomMargin" secondItem="tGT-gr-ww8" secondAttribute="bottom" id="F6c-Sb-dLf"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" textLabel="MOI-5f-zc8" style="IBUITableViewCellStyleDefault" id="hR4-wA-1YP">
                                 <rect key="frame" x="0.0" y="237" width="414" height="43.5"/>
@@ -705,6 +719,7 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -734,6 +749,15 @@
         </systemColor>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="secondarySystemFillColor">
+            <color red="0.47058823529411764" green="0.47058823529411764" blue="0.50196078431372548" alpha="0.16" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="secondarySystemGroupedBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

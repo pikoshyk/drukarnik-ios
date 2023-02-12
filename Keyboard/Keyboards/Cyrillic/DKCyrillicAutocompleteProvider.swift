@@ -13,8 +13,7 @@ import UIKit
 class DKCyrillycAutocompleteProvider: DKAutocompleteProvider {
     
     override func autocompleteSuggestions(for word: String, completion: @escaping AutocompleteCompletion) {
-//        let word = text.components(separatedBy: CharacterSet(charactersIn: String.wordDelimiters.joined())).last ?? ""
-//        if word.isEmpty { return completion(.success([])) }
+        let word = word.components(separatedBy: CharacterSet(charactersIn: String.wordDelimiters.joined())).last ?? ""
 //        completion(.success(self.suggestions(for: word)))
 
         let text = word //self.textDocumentProxy.fullText ?? ""
@@ -34,7 +33,8 @@ private extension DKCyrillycAutocompleteProvider {
         StandardAutocompleteSuggestion(
             text: word,
             title: word,
-            subtitle: subtitle)
+            subtitle: subtitle
+        )
     }
 }
 

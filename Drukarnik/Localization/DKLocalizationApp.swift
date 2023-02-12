@@ -18,9 +18,7 @@ class DKLocalizationApp: Any {
         
         if (DKKeyboardSettings.shared.interfaceTransliteration ?? DKKeyboardSettings.shared.defaultInterfaceTransliteration) == .latin {
             let latinType = DKKeyboardSettings.shared.belarusianLatinType
-            let oldWord = " "+word
-            convertedWord = DKKeyboardSettings.shared.lacinkaConverter.convert(text: oldWord, direction: .toLacin, version: latinType, orthograpy: .academic)
-            convertedWord.removeFirst()
+            convertedWord = DKKeyboardSettings.shared.lacinkaConverter.convert(text: convertedWord, direction: .toLacin, version: latinType, orthograpy: .academic)
         }
         return convertedWord
     }

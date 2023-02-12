@@ -31,7 +31,7 @@
 		B282B8F229812D4B001244DE /* UITextDocumentProxy+FullText.swift in Sources */ = {isa = PBXBuildFile; fileRef = B282B8F129812D4B001244DE /* UITextDocumentProxy+FullText.swift */; };
 		B282B8F429812FB5001244DE /* StandardAutocompleteSuggestion+FullText.swift in Sources */ = {isa = PBXBuildFile; fileRef = B282B8F329812FB5001244DE /* StandardAutocompleteSuggestion+FullText.swift */; };
 		B282B8F629813275001244DE /* DKAutocompleteToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B282B8F529813275001244DE /* DKAutocompleteToolbar.swift */; };
-		B282B8F8298141AF001244DE /* AutocompleteProvider+Transliteration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B282B8F7298141AF001244DE /* AutocompleteProvider+Transliteration.swift */; };
+		B282B8F8298141AF001244DE /* DKAutocompleteProvider+Transliteration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B282B8F7298141AF001244DE /* DKAutocompleteProvider+Transliteration.swift */; };
 		B28C524D2954519C0025D49A /* DKCyrillicAutocompleteProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28C524C2954519C0025D49A /* DKCyrillicAutocompleteProvider.swift */; };
 		B28C524F295455DE0025D49A /* DKLatinAutocompleteProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28C524E295455DE0025D49A /* DKLatinAutocompleteProvider.swift */; };
 		B28C525E295625C90025D49A /* UIColor+Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28C525C295625C90025D49A /* UIColor+Tools.swift */; };
@@ -122,7 +122,7 @@
 		B282B8F129812D4B001244DE /* UITextDocumentProxy+FullText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextDocumentProxy+FullText.swift"; sourceTree = "<group>"; };
 		B282B8F329812FB5001244DE /* StandardAutocompleteSuggestion+FullText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StandardAutocompleteSuggestion+FullText.swift"; sourceTree = "<group>"; };
 		B282B8F529813275001244DE /* DKAutocompleteToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKAutocompleteToolbar.swift; sourceTree = "<group>"; };
-		B282B8F7298141AF001244DE /* AutocompleteProvider+Transliteration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AutocompleteProvider+Transliteration.swift"; sourceTree = "<group>"; };
+		B282B8F7298141AF001244DE /* DKAutocompleteProvider+Transliteration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DKAutocompleteProvider+Transliteration.swift"; sourceTree = "<group>"; };
 		B28C524C2954519C0025D49A /* DKCyrillicAutocompleteProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKCyrillicAutocompleteProvider.swift; sourceTree = "<group>"; };
 		B28C524E295455DE0025D49A /* DKLatinAutocompleteProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKLatinAutocompleteProvider.swift; sourceTree = "<group>"; };
 		B28C525C295625C90025D49A /* UIColor+Tools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Tools.swift"; sourceTree = "<group>"; };
@@ -264,7 +264,7 @@
 				B21A2498293610EA00C056E5 /* DKKeyboardView.swift */,
 				B282B8F529813275001244DE /* DKAutocompleteToolbar.swift */,
 				B282B8F129812D4B001244DE /* UITextDocumentProxy+FullText.swift */,
-				B282B8F7298141AF001244DE /* AutocompleteProvider+Transliteration.swift */,
+				B282B8F7298141AF001244DE /* DKAutocompleteProvider+Transliteration.swift */,
 				B282B8F329812FB5001244DE /* StandardAutocompleteSuggestion+FullText.swift */,
 			);
 			path = Keyboards;
@@ -575,7 +575,7 @@
 				B22FC9E72950A90400B31E4A /* DKKeyboardAppearance.swift in Sources */,
 				B249D1A92990696400668130 /* DKKeyboardLayoutProvider.swift in Sources */,
 				B28C524D2954519C0025D49A /* DKCyrillicAutocompleteProvider.swift in Sources */,
-				B282B8F8298141AF001244DE /* AutocompleteProvider+Transliteration.swift in Sources */,
+				B282B8F8298141AF001244DE /* DKAutocompleteProvider+Transliteration.swift in Sources */,
 				B249D1A729905B0200668130 /* DKAutocompleteProvider.swift in Sources */,
 				B282B8F629813275001244DE /* DKAutocompleteToolbar.swift in Sources */,
 				B22FC9E92950A94500B31E4A /* DKActionHandler.swift in Sources */,
@@ -916,8 +916,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pikoshyk/belarusianlacinka";
 			requirement = {
-				branch = main;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
 			};
 		};
 		B2AC43B32945F4BE00ACC32E /* XCRemoteSwiftPackageReference "KeyboardKit" */ = {

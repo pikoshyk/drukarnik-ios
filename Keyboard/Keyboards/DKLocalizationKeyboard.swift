@@ -25,15 +25,16 @@ class DKLocalizationKeyboard: Any {
         return convertedText
     }
 
-    class var keyboaredButtonSpace: String { Self.convert(text: "ДРУКАРНІК") }
-    class var keyboaredButtonSearch: String { Self.convert(text: "Пошук") }
-    class var keyboaredButtonDone: String { Self.convert(text: "Добра") }
-    class var keyboaredButtonGo: String { Self.convert(text: "Пачаць") }
-    class var keyboaredButtonJoin: String { "Join" }
-    class var keyboaredButtonOK: String { "OK" }
-    class var keyboaredButtonSend: String { Self.convert(text: "Адправіць") }
-    class var keyboaredButtonNext: String { Self.convert(text: "Далей") }
-    class var keyboaredButtonContinue: String { Self.convert(text: "Далей") }
+    class var keyboardButtonSpace: String { Self.convert(text: "ДРУКАРНІК") }
+    class var keyboardButtonSearch: String { Self.convert(text: "Пошук") }
+    class var keyboardButtonDone: String { Self.convert(text: "Добра") }
+    class var keyboardButtonGo: String { Self.convert(text: "Пачаць") }
+    class var keyboardButtonJoin: String { "Join" }
+    class var keyboardButtonOK: String { "OK" }
+    class var keyboardButtonSend: String { Self.convert(text: "Адправіць") }
+    class var keyboardButtonNext: String { Self.convert(text: "Далей") }
+    class var keyboardButtonContinue: String { Self.convert(text: "Далей") }
     
-    class var keyboaredButtonConvertText: String { Self.convert(text: "у лацінку →") }
+    class var keyboardButtonConvertToLatinText: String { Self.convert(text: "← Канвертаваць у лацінку") }
+    class var keyboardButtonConvertToCyrillicText: String { Self.convert(text: "← Канвертаваць у кірыліцу") }
 }

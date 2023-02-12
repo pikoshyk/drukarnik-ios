@@ -5,6 +5,7 @@
 //  Created by Logout on 29.11.22.
 //
 
+import BelarusianLacinka
 import KeyboardKit
 import SwiftUI
 
@@ -21,11 +22,9 @@ import SwiftUI
  */
 struct DKKeyboardView: View {
     
-    @State
-    private var text = "Text"
-
-//    @EnvironmentObject
-//    private var keyboardsettings: DKKeyboardSettings
+    @State private var text = "Text"
+    
+    var keyboardSettings: DKKeyboardSettings
 
     @EnvironmentObject
     private var autocompleteContext: AutocompleteContext
@@ -33,13 +32,20 @@ struct DKKeyboardView: View {
     @EnvironmentObject
     private var keyboardContext: KeyboardContext
     
+    init(keyboardSettings: DKKeyboardSettings) {
+        self.keyboardSettings = keyboardSettings
+    }
+    
     var body: some View {
         VStack(spacing: 0) {
             if keyboardContext.keyboardType != .emojis {
                 HStack(spacing: 8) {
-                    autocompleteToolbar
-//                    convertButton
-                }.frame(height: 50).padding(EdgeInsets(top: 0, leading: 2, bottom: 0, trailing: 2))
+                    convertButton
+                    Text(self.keyboardSettings.keyboardLayout == .cyrillic ? DKLocalizationKeyboard.keyboardButtonConvertToLatinText : DKLocalizationKeyboard.keyboardButtonConvertToCyrillicText)
+                        .foregroundColor(Color(.quaternaryLabel))
+                        .frame(maxWidth: .infinity, alignment: .leading)
+//                    autocompleteToolbar
+                }.frame(height: 50).padding(EdgeInsets(top: 4, leading: 3, bottom: 0, trailing: 0))
             }
             SystemKeyboard()
         }
@@ -55,12 +61,42 @@ private extension DKKeyboardView {
             suggestions: autocompleteContext.suggestions,
             locale: keyboardContext.locale,
             action: DKAutocompleteToolbar.standardActionFullText
-        ).frame(maxWidth: .infinity)
+        )
+        .frame(maxWidth: .infinity)
     }
     
     var convertButton: some View {
-        Button(DKLocalizationKeyboard.keyboaredButtonConvertText) {
-        }.foregroundColor(.white).buttonStyle(.bordered)
+        Button {
+            let settings = self.keyboardSettings
+            let converter = settings.lacinkaConverter
+            DispatchQueue.main.async {
+                if let fullText = self.keyboardContext.originalTextDocumentProxy.fullText {
+                    let direction: BelarusianLacinka.BLDirection = settings.keyboardLayout == .latin ? .toCyrillic : .toLacin
+                    let newText = converter.convert(text: fullText,
+                                                    direction: direction,
+                                                    version: settings.belarusianLatinType,
+                                                    orthograpy: settings.belarusianCyrillicType)
+                    
+                    let offset = (self.keyboardContext.originalTextDocumentProxy.documentContextAfterInput ?? "").count
+                    DispatchQueue.main.async {
+                        self.keyboardContext.textDocumentProxy.adjustTextPosition(byCharacterOffset: offset)
+                        DispatchQueue.main.async {
+                            self.keyboardContext.textDocumentProxy.replaceFullText(with: newText)
+                        }
+                    }
+                }
+            }
+        } label: {
+            let lettersSet = CharacterSet.letters
+            let fullText = self.keyboardContext.originalTextDocumentProxy.fullText ?? ""
+            if String(fullText.unicodeScalars.filter { lettersSet.contains($0) }).count > 0 {
+                Image("autotransliteration-active")
+            } else {
+                Image("autotransliteration-inactive")
+            }
+        }
+        .buttonStyle(.bordered)
+        .frame(width: 60.0)
     }
 
     /// This text field can be added to the VStack above, to

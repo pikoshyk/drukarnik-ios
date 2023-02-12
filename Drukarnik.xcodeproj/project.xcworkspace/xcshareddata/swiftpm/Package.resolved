@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/pikoshyk/belarusianlacinka",
       "state" : {
-        "branch" : "main",
-        "revision" : "20ed54865d9d7f3b87367fda8ad4fe217f0e7cb9"
+        "revision" : "19708380db9adb31fb80f5df496a23f8127ffd49",
+        "version" : "1.1.0"
       }
     },
     {
@@ -14,8 +14,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/KeyboardKit/KeyboardKit.git",
       "state" : {
-        "revision" : "09d29ab51623ce7132d31ec06ed1a12a614868a8",
-        "version" : "6.9.6"
+        "revision" : "382d87b494ad5c7cdb5f45a472aa6dbbf6b5ed0e",
+        "version" : "6.9.7"
       }
     }
   ],
