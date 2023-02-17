@@ -921,7 +921,7 @@
 			repositoryURL = "https://github.com/pikoshyk/belarusianlacinka";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
+				minimumVersion = 1.1.0;
 			};
 		};
 		B2AC43B32945F4BE00ACC32E /* XCRemoteSwiftPackageReference "KeyboardKit" */ = {
@@ -937,7 +937,7 @@
 			repositoryURL = "https://github.com/KeyboardKit/KeyboardKit.git";
 			requirement = {
 				kind = versionRange;
-				maximumVersion = 10.0.0;
+				maximumVersion = 7.0.0;
 				minimumVersion = 6.9.2;
 			};
 		};
