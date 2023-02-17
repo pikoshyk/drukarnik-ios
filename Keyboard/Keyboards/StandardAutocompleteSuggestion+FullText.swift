@@ -8,12 +8,12 @@
 import KeyboardKit
 
 extension StandardAutocompleteSuggestion {
-    var fullTextReplace: Bool {
+    var fullTextReplaceRequired: Bool {
         set {
-            self.additionalInfo["fullTextReplace"] = newValue
+            self.additionalInfo["fullTextReplaceRequired"] = newValue
         }
         get {
-            (self.additionalInfo["fullTextReplace"] as? Bool) ?? false
+            (self.additionalInfo["fullTextReplaceRequired"] as? Bool) ?? false
         }
     }
 }

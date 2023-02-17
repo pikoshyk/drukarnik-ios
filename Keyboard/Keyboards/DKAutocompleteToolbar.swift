@@ -14,7 +14,7 @@ class DKAutocompleteToolbar {
      This is the default action that will be used to trigger
      a text replacement when a `suggestion` is tapped.
      */
-    static func standardActionFullText(
+    static func standardActionWithFullTextAutocompleteSupport (
         for suggestion: AutocompleteSuggestion
     ) {
         let controller = KeyboardInputViewController.shared
@@ -22,11 +22,11 @@ class DKAutocompleteToolbar {
         let actionHandler = controller.keyboardActionHandler
 
 
-        var fullTextReplace = false
+        var fullTextReplaceRequired = false
         if let standardSuggestion = suggestion as? StandardAutocompleteSuggestion {
-            fullTextReplace = standardSuggestion.fullTextReplace
+            fullTextReplaceRequired = standardSuggestion.fullTextReplaceRequired
         }
-        if fullTextReplace {
+        if fullTextReplaceRequired {
             proxy.insertAutocompleteSuggestionFullText(suggestion)
         } else {
             proxy.insertAutocompleteSuggestion(suggestion)

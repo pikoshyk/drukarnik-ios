@@ -60,7 +60,7 @@ private extension DKKeyboardView {
         AutocompleteToolbar(
             suggestions: autocompleteContext.suggestions,
             locale: keyboardContext.locale,
-            action: DKAutocompleteToolbar.standardActionFullText
+            action: DKAutocompleteToolbar.standardActionWithFullTextAutocompleteSupport
         )
         .frame(maxWidth: .infinity)
     }
@@ -68,24 +68,11 @@ private extension DKKeyboardView {
     var convertButton: some View {
         Button {
             let settings = self.keyboardSettings
-            let converter = settings.lacinkaConverter
-            DispatchQueue.main.async {
-                if let fullText = self.keyboardContext.originalTextDocumentProxy.fullText {
-                    let direction: BelarusianLacinka.BLDirection = settings.keyboardLayout == .latin ? .toCyrillic : .toLacin
-                    let newText = converter.convert(text: fullText,
-                                                    direction: direction,
-                                                    version: settings.belarusianLatinType,
-                                                    orthograpy: settings.belarusianCyrillicType)
-                    
-                    let offset = (self.keyboardContext.originalTextDocumentProxy.documentContextAfterInput ?? "").count
-                    DispatchQueue.main.async {
-                        self.keyboardContext.textDocumentProxy.adjustTextPosition(byCharacterOffset: offset)
-                        DispatchQueue.main.async {
-                            self.keyboardContext.textDocumentProxy.replaceFullText(with: newText)
-                        }
-                    }
-                }
-            }
+            let direction: BelarusianLacinka.BLDirection = settings.keyboardLayout == .latin ? .toCyrillic : .toLacin
+            let version = settings.belarusianLatinType
+            let orthograpy = settings.belarusianCyrillicType
+
+            self.keyboardContext.convertAndReplaceFullText(converter: settings.lacinkaConverter, direction: direction, version: version, orthography: orthograpy)
         } label: {
             let lettersSet = CharacterSet.letters
             let fullText = self.keyboardContext.originalTextDocumentProxy.fullText ?? ""

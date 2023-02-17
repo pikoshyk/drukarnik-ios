@@ -27,7 +27,7 @@ extension DKAutocompleteProvider {
             ]
         }
         
-//        suggestion.fullTextReplace = true
+//        suggestion.fullTextReplaceRequired = true
         return suggestions
     }
 

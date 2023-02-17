@@ -38,11 +38,11 @@ class DKActionHandler: StandardKeyboardActionHandler {
         guard gesture == .tap else { return }
         guard action.shouldApplyAutocompleteSuggestion else { return }
         guard let suggestion = (autocompleteContext.suggestions.first { $0.isAutocomplete }) else { return }
-        var fullTextReplace = false
+        var fullTextReplaceRequired = false
         if let standardSuggestion = suggestion as? StandardAutocompleteSuggestion {
-            fullTextReplace = standardSuggestion.fullTextReplace
+            fullTextReplaceRequired = standardSuggestion.fullTextReplaceRequired
         }
-        if fullTextReplace {
+        if fullTextReplaceRequired {
             textDocumentProxy.insertAutocompleteSuggestionFullText(suggestion, tryInsertSpace: false)
         } else {
             textDocumentProxy.insertAutocompleteSuggestion(suggestion, tryInsertSpace: false)
