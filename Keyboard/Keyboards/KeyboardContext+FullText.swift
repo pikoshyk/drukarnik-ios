@@ -15,7 +15,7 @@ extension KeyboardContext {
                                    direction: BelarusianLacinka.BLDirection,
                                    version: BelarusianLacinka.BLVersion,
                                    orthography: BelarusianLacinka.BLOrthography) {
-        DispatchQueue.main.sync {
+        DispatchQueue.main.async {
             if let fullText = self.originalTextDocumentProxy.fullText {
                 let newText = converter.convert(text: fullText,
                                                 direction: direction,
