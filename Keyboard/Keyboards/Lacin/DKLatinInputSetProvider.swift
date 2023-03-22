@@ -25,6 +25,20 @@ class DKLatinInputSetProvider: LocalizedInputSetProvider {
                 padLowercased: ["z", "x", "c", "v", "b", "n", "m", ",", "."],
                 padUppercased: ["Z", "X", "C", "V", "B", "N", "M", ",", "."])
         ])
+        
+//    "łĺńźžćčśšŭ"
+//    "ŁĹŃŹŽĆČŚŠŬ"
+//        AlphabeticInputSet(rows: [
+//            .init(lowercased: ["q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "ŭ", "ń"],
+//                  uppercased: ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P", "Ŭ", "Ń"]),
+//            .init(lowercased: ["a", "s", "d", "f", "g", "h", "j", "k", "l", "ł", "ś", "š"],
+//                  uppercased: ["A", "S", "D", "F", "G", "H", "J", "K", "L", "Ł", "Ś", "Š"]),
+//            .init(
+//                phoneLowercased: ["z", "x", "c", "v", "b", "n", "m", "ź", "ž"], // , "ć", "č"
+//                phoneUppercased: ["Z", "X", "C", "V", "B", "N", "M", "Ź", "Ž"], // , "Ć", "Č"
+//                padLowercased: ["z", "x", "c", "v", "b", "n", "m", "ź", "ž", ",", "."],
+//                padUppercased: ["Z", "X", "C", "V", "B", "N", "M", "Ź", "Ž", ",", "."])
+//        ])
     }
 
     var numericInputSet: NumericInputSet {

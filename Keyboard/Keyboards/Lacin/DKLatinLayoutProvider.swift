@@ -28,6 +28,15 @@ class DKLatinLayoutProvider: DKKeyboardLayoutProvider {
                 insets: layout.idealItemInsets)
             layout.itemRows.insert(cyrillicKeyboardItem, before: .keyboardType(.emojis))
         }
+//        Disable emoji button on numeric keyboard
+//        else if context.keyboardType == .numeric {
+//            if let items = layout.itemRows.last {
+//                if let item = items.filter({ $0.action.isKeyboardTypeAction(.emojis) }).first {
+//                    layout.itemRows.remove(item)
+//                }
+//            }
+//        }
+
         return layout
     }
 }

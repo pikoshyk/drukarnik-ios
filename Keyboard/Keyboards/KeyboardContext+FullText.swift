@@ -23,8 +23,12 @@ extension KeyboardContext {
                                                 orthograpy: orthography)
                 
                 let offset = (self.originalTextDocumentProxy.documentContextAfterInput ?? "").count
-                self.textDocumentProxy.adjustTextPosition(byCharacterOffset: offset)
-                self.textDocumentProxy.replaceFullText(with: newText)
+                DispatchQueue.main.async {
+                    self.textDocumentProxy.adjustTextPosition(byCharacterOffset: offset)
+                    DispatchQueue.main.async {
+                        self.textDocumentProxy.replaceFullText(with: newText)
+                    }
+                }
             }
         }
 

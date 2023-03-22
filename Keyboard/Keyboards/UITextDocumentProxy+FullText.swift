@@ -25,11 +25,7 @@ extension UITextDocumentProxy {
     }
     
     var fullText: String? {
-        if self.documentContextBeforeInput == nil && self.documentContextAfterInput == nil {
-            return nil
-        }
-        
-        let text = (self.documentContextBeforeInput ?? "") + (self.documentContextAfterInput ?? "")
+        let text = self.documentContext
         return text
     }
 
