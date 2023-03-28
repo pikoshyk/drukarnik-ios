@@ -44,7 +44,6 @@
 		B2AF577D294FECD500E7CF2F /* DKLatinCalloutActionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AF577C294FECD500E7CF2F /* DKLatinCalloutActionProvider.swift */; };
 		B2AF577F294FEE4200E7CF2F /* DKLatinLayoutProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AF577E294FEE4200E7CF2F /* DKLatinLayoutProvider.swift */; };
 		B2B2092D29796D0400D4D5DC /* DKInstallationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B2092C29796D0400D4D5DC /* DKInstallationViewController.swift */; };
-		B2B2093329796D7F00D4D5DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2B2092F29796D7F00D4D5DC /* LaunchScreen.storyboard */; };
 		B2B2093429796D7F00D4D5DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2B2093029796D7F00D4D5DC /* Assets.xcassets */; };
 		B2B2093529796D7F00D4D5DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2B2093129796D7F00D4D5DC /* Main.storyboard */; };
 		B2B2093729796D8600D4D5DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2B2093029796D7F00D4D5DC /* Assets.xcassets */; };
@@ -135,7 +134,6 @@
 		B2AF577C294FECD500E7CF2F /* DKLatinCalloutActionProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKLatinCalloutActionProvider.swift; sourceTree = "<group>"; };
 		B2AF577E294FEE4200E7CF2F /* DKLatinLayoutProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKLatinLayoutProvider.swift; sourceTree = "<group>"; };
 		B2B2092C29796D0400D4D5DC /* DKInstallationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKInstallationViewController.swift; sourceTree = "<group>"; };
-		B2B2092F29796D7F00D4D5DC /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B2B2093029796D7F00D4D5DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B2B2093129796D7F00D4D5DC /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B2B2093229796D7F00D4D5DC /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -317,7 +315,6 @@
 			isa = PBXGroup;
 			children = (
 				B2B2093029796D7F00D4D5DC /* Assets.xcassets */,
-				B2B2092F29796D7F00D4D5DC /* LaunchScreen.storyboard */,
 				B2B2093129796D7F00D4D5DC /* Main.storyboard */,
 				B22DC4D22979FB7000D9AC39 /* Installation.storyboard */,
 				B2B97569297B52A800ED68D2 /* additional_languages.json */,
@@ -519,7 +516,6 @@
 				B22DC4D32979FB7000D9AC39 /* Installation.storyboard in Resources */,
 				B2B2093529796D7F00D4D5DC /* Main.storyboard in Resources */,
 				B2B2094129796F3000D4D5DC /* BLBelarusianTransliterationChoiceViewController.xib in Resources */,
-				B2B2093329796D7F00D4D5DC /* LaunchScreen.storyboard in Resources */,
 				B2B2093429796D7F00D4D5DC /* Assets.xcassets in Resources */,
 				B2B9756A297B52A800ED68D2 /* additional_languages.json in Resources */,
 			);
@@ -754,7 +750,6 @@
 				INFOPLIST_KEY_CFBundleDisplayName = Drukarnik;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
@@ -798,7 +793,6 @@
 				INFOPLIST_KEY_CFBundleDisplayName = Drukarnik;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
@@ -857,7 +851,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = Keyboard/KeyboardRelease.entitlements;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";

@@ -21,5 +21,10 @@
 			</array>
 		</dict>
 	</dict>
+	<key>UILaunchScreen</key>
+	<dict>
+		<key>UIColorName</key>
+		<string>LaunchScreenBackaroundColor</string>
+	</dict>
 </dict>
 </plist>
