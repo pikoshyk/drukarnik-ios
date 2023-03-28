@@ -15,14 +15,15 @@ extension KeyboardContext {
                                    direction: BelarusianLacinka.BLDirection,
                                    version: BelarusianLacinka.BLVersion,
                                    orthography: BelarusianLacinka.BLOrthography) {
+        
         DispatchQueue.main.async {
-            if let fullText = self.originalTextDocumentProxy.fullText {
+            if let fullText = self.mainTextDocumentProxy.documentContext {
                 let newText = converter.convert(text: fullText,
                                                 direction: direction,
                                                 version: version,
                                                 orthograpy: orthography)
-                
-                let offset = (self.originalTextDocumentProxy.documentContextAfterInput ?? "").count
+
+                let offset = (self.mainTextDocumentProxy.documentContextAfterInput ?? "").count
                 DispatchQueue.main.async {
                     self.textDocumentProxy.adjustTextPosition(byCharacterOffset: offset)
                     DispatchQueue.main.async {
@@ -31,6 +32,5 @@ extension KeyboardContext {
                 }
             }
         }
-
     }
 }

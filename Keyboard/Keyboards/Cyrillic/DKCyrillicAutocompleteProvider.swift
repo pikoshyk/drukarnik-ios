@@ -30,7 +30,7 @@ private extension DKCyrillycAutocompleteProvider {
     }
     
     func suggestion(_ word: String, subtitle: String? = nil) -> AutocompleteSuggestion {
-        StandardAutocompleteSuggestion(
+        AutocompleteSuggestion(
             text: word,
             title: word,
             subtitle: subtitle

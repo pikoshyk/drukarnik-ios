@@ -12,7 +12,12 @@ class DKActionHandler: StandardKeyboardActionHandler {
     var swicthKeyboardBlock: ((DKKeyboardLayout) -> Void)?
 
     init(inputViewController ivc: KeyboardInputViewController, spaceDragGestureHandler: DragGestureHandler? = nil, spaceDragSensitivity: SpaceDragSensitivity = .medium, swicthKeyboardBlock: @escaping(DKKeyboardLayout) -> Void) {
-        super.init(inputViewController: ivc, spaceDragGestureHandler: spaceDragGestureHandler, spaceDragSensitivity: spaceDragSensitivity)
+        super.init(keyboardController: ivc,
+                   keyboardContext: ivc.keyboardContext,
+                   keyboardBehavior: ivc.keyboardBehavior,
+                   keyboardFeedbackHandler: ivc.keyboardFeedbackHandler,
+                   autocompleteContext: ivc.autocompleteContext,
+                   spaceDragGestureHandler: spaceDragGestureHandler, spaceDragSensitivity: spaceDragSensitivity)
         self.swicthKeyboardBlock = swicthKeyboardBlock
     }
     
@@ -35,13 +40,11 @@ class DKActionHandler: StandardKeyboardActionHandler {
     open override func tryApplyAutocompleteSuggestion(before gesture: KeyboardGesture, on action: KeyboardAction) {
         if self.isSpaceCursorDrag(action) { return }
         if textDocumentProxy.isCursorAtNewWord { return }
-        guard gesture == .tap else { return }
+        guard gesture == .release else { return }
         guard action.shouldApplyAutocompleteSuggestion else { return }
         guard let suggestion = (autocompleteContext.suggestions.first { $0.isAutocomplete }) else { return }
         var fullTextReplaceRequired = false
-        if let standardSuggestion = suggestion as? StandardAutocompleteSuggestion {
-            fullTextReplaceRequired = standardSuggestion.fullTextReplaceRequired
-        }
+        fullTextReplaceRequired = suggestion.fullTextReplaceRequired
         if fullTextReplaceRequired {
             textDocumentProxy.insertAutocompleteSuggestionFullText(suggestion, tryInsertSpace: false)
         } else {

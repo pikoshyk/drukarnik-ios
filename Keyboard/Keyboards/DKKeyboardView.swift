@@ -24,7 +24,8 @@ struct DKKeyboardView: View {
     
     @State private var text = "Text"
     
-    var keyboardSettings: DKKeyboardSettings
+    unowned var keyboardSettings: DKKeyboardSettings
+    unowned var keyboardController: DKKeyboardViewController
 
     @EnvironmentObject
     private var autocompleteContext: AutocompleteContext
@@ -32,7 +33,8 @@ struct DKKeyboardView: View {
     @EnvironmentObject
     private var keyboardContext: KeyboardContext
     
-    init(keyboardSettings: DKKeyboardSettings) {
+    init(keyboardController: DKKeyboardViewController, keyboardSettings: DKKeyboardSettings) {
+        self.keyboardController = keyboardController
         self.keyboardSettings = keyboardSettings
     }
     
@@ -40,14 +42,14 @@ struct DKKeyboardView: View {
         VStack(spacing: 0) {
             if keyboardContext.keyboardType != .emojis {
                 HStack(spacing: 8) {
-                    convertButton
+                    convertButtonStyled
                     Text(self.keyboardSettings.keyboardLayout == .cyrillic ? DKLocalizationKeyboard.keyboardButtonConvertToLatinText : DKLocalizationKeyboard.keyboardButtonConvertToCyrillicText)
                         .foregroundColor(Color(.quaternaryLabel))
                         .frame(maxWidth: .infinity, alignment: .leading)
 //                    autocompleteToolbar
                 }.frame(height: 50).padding(EdgeInsets(top: 4, leading: 3, bottom: 0, trailing: 0))
             }
-            SystemKeyboard()
+            SystemKeyboard(controller: self.keyboardController, autocompleteToolbar: .none)
         }
     }
 }
@@ -60,9 +62,19 @@ private extension DKKeyboardView {
         AutocompleteToolbar(
             suggestions: autocompleteContext.suggestions,
             locale: keyboardContext.locale,
-            action: DKAutocompleteToolbar.standardActionWithFullTextAutocompleteSupport
+            suggestionAction: { suggestion in
+                DKAutocompleteToolbar.standardActionWithFullTextAutocompleteSupport(for: suggestion, keyboardController: self.keyboardController)
+            }
         )
         .frame(maxWidth: .infinity)
+    }
+
+    var convertButtonStyled: some View {
+//        if #available(iOS 15.0, *) {
+            return self.convertButton.buttonStyle(.bordered)
+//        }
+
+//        return self.convertButton.buttonStyle(.automatic)
     }
     
     var convertButton: some View {
@@ -71,25 +83,25 @@ private extension DKKeyboardView {
             let direction: BelarusianLacinka.BLDirection = settings.keyboardLayout == .latin ? .toCyrillic : .toLacin
             let version = settings.belarusianLatinType
             let orthograpy = settings.belarusianCyrillicType
-
+            
             self.keyboardContext.convertAndReplaceFullText(converter: settings.lacinkaConverter, direction: direction, version: version, orthography: orthograpy)
         } label: {
             let lettersSet = CharacterSet.letters
-            let fullText = self.keyboardContext.originalTextDocumentProxy.fullText ?? ""
+            let fullText = self.keyboardContext.mainTextDocumentProxy.documentContext ?? ""
             if String(fullText.unicodeScalars.filter { lettersSet.contains($0) }).count > 0 {
                 Image("autotransliteration-active")
             } else {
                 Image("autotransliteration-inactive")
             }
         }
-        .buttonStyle(.bordered)
         .frame(width: 60.0)
     }
+    
 
     /// This text field can be added to the VStack above, to
     /// test typing in a text field within the keyboard view.
     var textField: some View {
-        KeyboardTextField(text: $text) {
+        KeyboardTextField(text: $text, controller: self.keyboardController) {
             $0.placeholder = "Try typing here, press return to stop."
             $0.borderStyle = .roundedRect
             $0.autocapitalizationType = .sentences

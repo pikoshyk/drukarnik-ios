@@ -30,8 +30,7 @@
 		B263A887293E01F70024242C /* DKCyrillicCalloutActionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B263A885293E01F70024242C /* DKCyrillicCalloutActionProvider.swift */; };
 		B263A888293E01F70024242C /* DKCyrillicInputSetProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B263A886293E01F70024242C /* DKCyrillicInputSetProvider.swift */; };
 		B282B8F229812D4B001244DE /* UITextDocumentProxy+FullText.swift in Sources */ = {isa = PBXBuildFile; fileRef = B282B8F129812D4B001244DE /* UITextDocumentProxy+FullText.swift */; };
-		B282B8F429812FB5001244DE /* StandardAutocompleteSuggestion+FullText.swift in Sources */ = {isa = PBXBuildFile; fileRef = B282B8F329812FB5001244DE /* StandardAutocompleteSuggestion+FullText.swift */; };
-		B282B8F629813275001244DE /* DKAutocompleteToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B282B8F529813275001244DE /* DKAutocompleteToolbar.swift */; };
+		B282B8F429812FB5001244DE /* AutocompleteSuggestion+FullText.swift in Sources */ = {isa = PBXBuildFile; fileRef = B282B8F329812FB5001244DE /* AutocompleteSuggestion+FullText.swift */; };
 		B282B8F8298141AF001244DE /* DKAutocompleteProvider+Transliteration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B282B8F7298141AF001244DE /* DKAutocompleteProvider+Transliteration.swift */; };
 		B28C524D2954519C0025D49A /* DKCyrillicAutocompleteProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28C524C2954519C0025D49A /* DKCyrillicAutocompleteProvider.swift */; };
 		B28C524F295455DE0025D49A /* DKLatinAutocompleteProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28C524E295455DE0025D49A /* DKLatinAutocompleteProvider.swift */; };
@@ -57,6 +56,7 @@
 		B2B35510295662EC0006B8B1 /* CALayer+Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B3550F295662EC0006B8B1 /* CALayer+Tools.swift */; };
 		B2B9756A297B52A800ED68D2 /* additional_languages.json in Resources */ = {isa = PBXBuildFile; fileRef = B2B97569297B52A800ED68D2 /* additional_languages.json */; };
 		B2B9756B297B52A800ED68D2 /* additional_languages.json in Resources */ = {isa = PBXBuildFile; fileRef = B2B97569297B52A800ED68D2 /* additional_languages.json */; };
+		B2C4D80329D25374006FFCAA /* DKAutocompleteToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C4D80229D25374006FFCAA /* DKAutocompleteToolbar.swift */; };
 		B2DDCF4C298C3E3000902EE6 /* DKSettingsBelarusianCyrillicTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DDCF4B298C3E3000902EE6 /* DKSettingsBelarusianCyrillicTypeTableViewCell.swift */; };
 		B2DDCF50298C769500902EE6 /* DKTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DDCF4F298C769500902EE6 /* DKTabBarController.swift */; };
 		B2DDCF52298C779500902EE6 /* DKConverterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DDCF51298C779400902EE6 /* DKConverterTableViewController.swift */; };
@@ -122,8 +122,7 @@
 		B263A885293E01F70024242C /* DKCyrillicCalloutActionProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKCyrillicCalloutActionProvider.swift; sourceTree = "<group>"; };
 		B263A886293E01F70024242C /* DKCyrillicInputSetProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKCyrillicInputSetProvider.swift; sourceTree = "<group>"; };
 		B282B8F129812D4B001244DE /* UITextDocumentProxy+FullText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextDocumentProxy+FullText.swift"; sourceTree = "<group>"; };
-		B282B8F329812FB5001244DE /* StandardAutocompleteSuggestion+FullText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StandardAutocompleteSuggestion+FullText.swift"; sourceTree = "<group>"; };
-		B282B8F529813275001244DE /* DKAutocompleteToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKAutocompleteToolbar.swift; sourceTree = "<group>"; };
+		B282B8F329812FB5001244DE /* AutocompleteSuggestion+FullText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AutocompleteSuggestion+FullText.swift"; sourceTree = "<group>"; };
 		B282B8F7298141AF001244DE /* DKAutocompleteProvider+Transliteration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DKAutocompleteProvider+Transliteration.swift"; sourceTree = "<group>"; };
 		B28C524C2954519C0025D49A /* DKCyrillicAutocompleteProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKCyrillicAutocompleteProvider.swift; sourceTree = "<group>"; };
 		B28C524E295455DE0025D49A /* DKLatinAutocompleteProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKLatinAutocompleteProvider.swift; sourceTree = "<group>"; };
@@ -147,6 +146,7 @@
 		B2B209462979724000D4D5DC /* DKSettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKSettingsTableViewController.swift; sourceTree = "<group>"; };
 		B2B3550F295662EC0006B8B1 /* CALayer+Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Tools.swift"; sourceTree = "<group>"; };
 		B2B97569297B52A800ED68D2 /* additional_languages.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = additional_languages.json; sourceTree = "<group>"; };
+		B2C4D80229D25374006FFCAA /* DKAutocompleteToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKAutocompleteToolbar.swift; sourceTree = "<group>"; };
 		B2DDCF4829899BF700902EE6 /* DrukarnikRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DrukarnikRelease.entitlements; sourceTree = "<group>"; };
 		B2DDCF4929899D1700902EE6 /* KeyboardDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KeyboardDebug.entitlements; sourceTree = "<group>"; };
 		B2DDCF4A29899D3600902EE6 /* KeyboardRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KeyboardRelease.entitlements; sourceTree = "<group>"; };
@@ -264,10 +264,10 @@
 				B249D1A82990696400668130 /* DKKeyboardLayoutProvider.swift */,
 				B21A248929360C7700C056E5 /* DKKeyboardViewController.swift */,
 				B21A2498293610EA00C056E5 /* DKKeyboardView.swift */,
-				B282B8F529813275001244DE /* DKAutocompleteToolbar.swift */,
 				B282B8F129812D4B001244DE /* UITextDocumentProxy+FullText.swift */,
 				B282B8F7298141AF001244DE /* DKAutocompleteProvider+Transliteration.swift */,
-				B282B8F329812FB5001244DE /* StandardAutocompleteSuggestion+FullText.swift */,
+				B282B8F329812FB5001244DE /* AutocompleteSuggestion+FullText.swift */,
+				B2C4D80229D25374006FFCAA /* DKAutocompleteToolbar.swift */,
 				B227DE1E29993558001E29A7 /* KeyboardContext+FullText.swift */,
 			);
 			path = Keyboards;
@@ -577,10 +577,10 @@
 			files = (
 				B22FC9E72950A90400B31E4A /* DKKeyboardAppearance.swift in Sources */,
 				B249D1A92990696400668130 /* DKKeyboardLayoutProvider.swift in Sources */,
+				B2C4D80329D25374006FFCAA /* DKAutocompleteToolbar.swift in Sources */,
 				B28C524D2954519C0025D49A /* DKCyrillicAutocompleteProvider.swift in Sources */,
 				B282B8F8298141AF001244DE /* DKAutocompleteProvider+Transliteration.swift in Sources */,
 				B249D1A729905B0200668130 /* DKAutocompleteProvider.swift in Sources */,
-				B282B8F629813275001244DE /* DKAutocompleteToolbar.swift in Sources */,
 				B22FC9E92950A94500B31E4A /* DKActionHandler.swift in Sources */,
 				B263A887293E01F70024242C /* DKCyrillicCalloutActionProvider.swift in Sources */,
 				B22FC9F029510CAD00B31E4A /* DKLocalizationKeyboard.swift in Sources */,
@@ -593,7 +593,7 @@
 				B2073D0F2945F62C008B43E4 /* DKCyrillicLayoutProvider.swift in Sources */,
 				B2AF577B294FEBF900E7CF2F /* DKLatinInputSetProvider.swift in Sources */,
 				B2AF577D294FECD500E7CF2F /* DKLatinCalloutActionProvider.swift in Sources */,
-				B282B8F429812FB5001244DE /* StandardAutocompleteSuggestion+FullText.swift in Sources */,
+				B282B8F429812FB5001244DE /* AutocompleteSuggestion+FullText.swift in Sources */,
 				B21A2499293610EA00C056E5 /* DKKeyboardView.swift in Sources */,
 				B2E68765297F37D1005C31B9 /* DKAdditionalLanguage.swift in Sources */,
 				B2AF577F294FEE4200E7CF2F /* DKLatinLayoutProvider.swift in Sources */,
@@ -671,7 +671,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -725,7 +725,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -758,7 +758,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -802,7 +802,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -937,7 +937,7 @@
 			repositoryURL = "https://github.com/KeyboardKit/KeyboardKit.git";
 			requirement = {
 				kind = versionRange;
-				maximumVersion = 7.0.0;
+				maximumVersion = 7.0.1;
 				minimumVersion = 6.9.2;
 			};
 		};

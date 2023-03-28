@@ -15,23 +15,20 @@ class DKAutocompleteToolbar {
      a text replacement when a `suggestion` is tapped.
      */
     static func standardActionWithFullTextAutocompleteSupport (
-        for suggestion: AutocompleteSuggestion
+        for suggestion: AutocompleteSuggestion,
+        keyboardController: KeyboardInputViewController
     ) {
-        let controller = KeyboardInputViewController.shared
-        let proxy = controller.textDocumentProxy
-        let actionHandler = controller.keyboardActionHandler
+        let proxy = keyboardController.textDocumentProxy
+        let actionHandler = keyboardController.keyboardActionHandler
 
+        let fullTextReplaceRequired = suggestion.fullTextReplaceRequired
 
-        var fullTextReplaceRequired = false
-        if let standardSuggestion = suggestion as? StandardAutocompleteSuggestion {
-            fullTextReplaceRequired = standardSuggestion.fullTextReplaceRequired
-        }
         if fullTextReplaceRequired {
             proxy.insertAutocompleteSuggestionFullText(suggestion)
         } else {
             proxy.insertAutocompleteSuggestion(suggestion)
         }
-        actionHandler.handle(.tap, on: .character(""))
+        actionHandler.handle(.release, on: .character(""))
     }
     
 }

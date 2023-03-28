@@ -10,11 +10,6 @@ import SwiftUI
 
 class DKKeyboardAppearance: StandardKeyboardAppearance {
     
-    override func actionCalloutStyle() -> ActionCalloutStyle {
-        let style = super.actionCalloutStyle()
-        return style
-    }
-    
     override func buttonImage(for action: KeyboardAction) -> Image? {
         switch action {
         case .primary(.newLine): return .keyboardNewline(for: Locale.current)
@@ -27,7 +22,7 @@ class DKKeyboardAppearance: StandardKeyboardAppearance {
         case .primary(.custom(title: "continue")): return nil
         case .primary(.custom(title: "unknown")): return nil
 
-        case .return: return .keyboardNewline(for: Locale.current)
+//        case .return: return .keyboardNewline(for: Locale.current)
         default: return super.buttonImage(for: action)
         }
     }
@@ -87,10 +82,5 @@ class DKKeyboardAppearance: StandardKeyboardAppearance {
         case .primary(.custom(title: "unknown")): return "Unknown"
         default: return super.buttonText(for: action)
         }
-    }
-    
-    override func inputCalloutStyle() -> InputCalloutStyle {
-        let style = super.inputCalloutStyle()
-        return style
     }
 }

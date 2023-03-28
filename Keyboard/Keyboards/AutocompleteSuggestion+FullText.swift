@@ -1,5 +1,5 @@
 //
-//  StandardAutocompleteSuggestion+FullText.swift
+//  AutocompleteSuggestion+FullText.swift
 //  Keyboard
 //
 //  Created by Logout on 25.01.23.
@@ -7,7 +7,7 @@
 
 import KeyboardKit
 
-extension StandardAutocompleteSuggestion {
+extension AutocompleteSuggestion {
     var fullTextReplaceRequired: Bool {
         set {
             self.additionalInfo["fullTextReplaceRequired"] = newValue
