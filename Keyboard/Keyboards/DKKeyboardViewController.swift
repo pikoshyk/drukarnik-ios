@@ -14,6 +14,7 @@ class DKKeyboardViewController: KeyboardInputViewController {
     
     override func viewDidLoad() {
         
+        KeyboardKit.GestureButtonDefaults.longPressDelay = 0.3
         DKLocalizationKeyboard.settings = self.settings
 
         let keyboardLayout = self.settings.keyboardLayout
