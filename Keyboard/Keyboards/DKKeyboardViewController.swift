@@ -57,7 +57,7 @@ class DKKeyboardViewController: KeyboardInputViewController {
                 self.autocompleteContext.suggestions = (try? result.get()) ?? []
             }
 
-            self.keyboardContext.sync(with: self)
+//            self.keyboardContext.sync(with: self)
         }
     }
     
