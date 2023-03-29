@@ -13,6 +13,29 @@ class DKKeyboardLayoutProvider: StandardKeyboardLayoutProvider {
     override func keyboardLayout(for context: KeyboardContext) -> KeyboardLayout {
         let layout = super.keyboardLayout(for: context)
         
+        if context.deviceType == .pad {
+            if context.keyboardType.isAlphabetic {
+                if let items = layout.itemRows.last {
+                    let emojiKeyboardItem = KeyboardLayoutItem(
+                        action: .keyboardType(.emojis),
+                        size: KeyboardLayoutItemSize(
+                            width: layout.itemRows.last?.first?.size.width ?? .percentage(1.5),
+                            height: layout.idealItemHeight),
+                        insets: layout.idealItemInsets)
+                    
+                    if let item = items.filter({ $0.action == .nextKeyboard }).first {
+                        layout.itemRows.replace(item, with: emojiKeyboardItem)
+                    }
+                }
+            } else {
+                if let items = layout.itemRows.last {
+                    if let item = items.filter({ $0.action == .nextKeyboard }).first {
+                        layout.itemRows.remove(item)
+                    }
+                }
+            }
+        }
+
         //        if context.keyboardType.isAlphabetic {
         //            if context.deviceType != .pad {
         //                let items = layout.itemRows.last?.filter { $0.action == .character(".") } ?? []
