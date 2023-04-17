@@ -14,24 +14,15 @@ class DKKeyboardLayoutProvider: StandardKeyboardLayoutProvider {
         let layout = super.keyboardLayout(for: context)
         
         if context.deviceType == .pad {
-            if context.keyboardType.isAlphabetic {
-                if let items = layout.itemRows.last {
-                    let emojiKeyboardItem = KeyboardLayoutItem(
-                        action: .keyboardType(.emojis),
-                        size: KeyboardLayoutItemSize(
-                            width: layout.itemRows.last?.first?.size.width ?? .percentage(1.5),
-                            height: layout.idealItemHeight),
-                        insets: layout.idealItemInsets)
-                    
-                    if let item = items.filter({ $0.action == .nextKeyboard }).first {
-                        layout.itemRows.replace(item, with: emojiKeyboardItem)
-                    }
+            if let items = layout.itemRows.last {
+                let itemsToDelete: [KeyboardAction] = [.nextKeyboard, .keyboardType(.emojis)]
+                if let item = items.filter({ itemsToDelete.contains($0.action) }).first {
+                    layout.itemRows.remove(item)
                 }
-            } else {
-                if let items = layout.itemRows.last {
-                    if let item = items.filter({ $0.action == .nextKeyboard }).first {
-                        layout.itemRows.remove(item)
-                    }
+            }
+            if context.keyboardType.isAlphabetic {
+                if let emojiKeyboardItem = layout.keyboardLayoutSystemItem(action: .keyboardType(.emojis)) {
+                    layout.insertButtomItem(emojiKeyboardItem, at: 1)
                 }
             }
         }

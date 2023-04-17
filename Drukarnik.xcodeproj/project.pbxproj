@@ -55,6 +55,7 @@
 		B2B35510295662EC0006B8B1 /* CALayer+Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B3550F295662EC0006B8B1 /* CALayer+Tools.swift */; };
 		B2B9756A297B52A800ED68D2 /* additional_languages.json in Resources */ = {isa = PBXBuildFile; fileRef = B2B97569297B52A800ED68D2 /* additional_languages.json */; };
 		B2B9756B297B52A800ED68D2 /* additional_languages.json in Resources */ = {isa = PBXBuildFile; fileRef = B2B97569297B52A800ED68D2 /* additional_languages.json */; };
+		B2C25E8329D499E7002B3229 /* KeyboardLayout+Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C25E8229D499E7002B3229 /* KeyboardLayout+Buttons.swift */; };
 		B2C4D80329D25374006FFCAA /* DKAutocompleteToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C4D80229D25374006FFCAA /* DKAutocompleteToolbar.swift */; };
 		B2DDCF4C298C3E3000902EE6 /* DKSettingsBelarusianCyrillicTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DDCF4B298C3E3000902EE6 /* DKSettingsBelarusianCyrillicTypeTableViewCell.swift */; };
 		B2DDCF50298C769500902EE6 /* DKTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DDCF4F298C769500902EE6 /* DKTabBarController.swift */; };
@@ -144,6 +145,7 @@
 		B2B209462979724000D4D5DC /* DKSettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKSettingsTableViewController.swift; sourceTree = "<group>"; };
 		B2B3550F295662EC0006B8B1 /* CALayer+Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Tools.swift"; sourceTree = "<group>"; };
 		B2B97569297B52A800ED68D2 /* additional_languages.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = additional_languages.json; sourceTree = "<group>"; };
+		B2C25E8229D499E7002B3229 /* KeyboardLayout+Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyboardLayout+Buttons.swift"; sourceTree = "<group>"; };
 		B2C4D80229D25374006FFCAA /* DKAutocompleteToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKAutocompleteToolbar.swift; sourceTree = "<group>"; };
 		B2DDCF4829899BF700902EE6 /* DrukarnikRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DrukarnikRelease.entitlements; sourceTree = "<group>"; };
 		B2DDCF4929899D1700902EE6 /* KeyboardDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KeyboardDebug.entitlements; sourceTree = "<group>"; };
@@ -267,6 +269,7 @@
 				B282B8F329812FB5001244DE /* AutocompleteSuggestion+FullText.swift */,
 				B2C4D80229D25374006FFCAA /* DKAutocompleteToolbar.swift */,
 				B227DE1E29993558001E29A7 /* KeyboardContext+FullText.swift */,
+				B2C25E8229D499E7002B3229 /* KeyboardLayout+Buttons.swift */,
 			);
 			path = Keyboards;
 			sourceTree = "<group>";
@@ -582,6 +585,7 @@
 				B22FC9F029510CAD00B31E4A /* DKLocalizationKeyboard.swift in Sources */,
 				B2E68762297F37B2005C31B9 /* DKAdditionalLanguages.swift in Sources */,
 				B227DE1F29993558001E29A7 /* KeyboardContext+FullText.swift in Sources */,
+				B2C25E8329D499E7002B3229 /* KeyboardLayout+Buttons.swift in Sources */,
 				B263A888293E01F70024242C /* DKCyrillicInputSetProvider.swift in Sources */,
 				B21A248A29360C7700C056E5 /* DKKeyboardViewController.swift in Sources */,
 				B282B8F229812D4B001244DE /* UITextDocumentProxy+FullText.swift in Sources */,
@@ -740,7 +744,7 @@
 				CODE_SIGN_ENTITLEMENTS = Drukarnik/DrukarnikDebug.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 6EWLUZCTBU;
 				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
@@ -783,7 +787,7 @@
 				CODE_SIGN_ENTITLEMENTS = Drukarnik/DrukarnikRelease.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 6EWLUZCTBU;
 				GCC_PREPROCESSOR_DEFINITIONS = "";
@@ -823,7 +827,7 @@
 				CODE_SIGN_ENTITLEMENTS = Keyboard/KeyboardDebug.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 6EWLUZCTBU;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -853,7 +857,7 @@
 				CODE_SIGN_ENTITLEMENTS = Keyboard/KeyboardRelease.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 6EWLUZCTBU;
 				GENERATE_INFOPLIST_FILE = YES;

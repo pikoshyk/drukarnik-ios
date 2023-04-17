@@ -47,12 +47,14 @@ class DKKeyboardAppearance: StandardKeyboardAppearance {
         }
     }
     
-    override func buttonFont(for action: KeyboardAction) -> Font {
+    override func buttonFont(for action: KeyboardAction) -> KeyboardFont {
         switch(action) {
         case .space:
-            let rawFont = Font.system(size: 12.0)
-            let weight = Font.Weight.medium
-            return rawFont.weight(weight)
+            let size = buttonFontSize(for: action)
+            let buttonFontSize = size * 3 / 4
+            let font = KeyboardFont.system(size: buttonFontSize)
+            let weight = KeyboardFont.FontWeight.medium
+            return font.weight(weight)
         default:
             return super.buttonFont(for: action)
         }
