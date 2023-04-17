@@ -36,6 +36,7 @@
 		B28C524F295455DE0025D49A /* DKLatinAutocompleteProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28C524E295455DE0025D49A /* DKLatinAutocompleteProvider.swift */; };
 		B28C525E295625C90025D49A /* UIColor+Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28C525C295625C90025D49A /* UIColor+Tools.swift */; };
 		B28C525F295625C90025D49A /* NSAttributedString+Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28C525D295625C90025D49A /* NSAttributedString+Tools.swift */; };
+		B297601029ED7F5400FB5320 /* DKInstallationSharingDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B297600F29ED7F5400FB5320 /* DKInstallationSharingDataViewController.swift */; };
 		B299F70329908C0F00D6650A /* DKAboutLicensesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B299F70229908C0F00D6650A /* DKAboutLicensesTableViewController.swift */; };
 		B299F70529908CBF00D6650A /* DKConverterOptionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B299F70429908CBF00D6650A /* DKConverterOptionsTableViewCell.swift */; };
 		B299F7072990901300D6650A /* DKConverterGrowingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B299F7062990901300D6650A /* DKConverterGrowingTableViewCell.swift */; };
@@ -43,7 +44,7 @@
 		B2AF577B294FEBF900E7CF2F /* DKLatinInputSetProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AF577A294FEBF900E7CF2F /* DKLatinInputSetProvider.swift */; };
 		B2AF577D294FECD500E7CF2F /* DKLatinCalloutActionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AF577C294FECD500E7CF2F /* DKLatinCalloutActionProvider.swift */; };
 		B2AF577F294FEE4200E7CF2F /* DKLatinLayoutProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AF577E294FEE4200E7CF2F /* DKLatinLayoutProvider.swift */; };
-		B2B2092D29796D0400D4D5DC /* DKInstallationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B2092C29796D0400D4D5DC /* DKInstallationViewController.swift */; };
+		B2B2092D29796D0400D4D5DC /* DKInstallationDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B2092C29796D0400D4D5DC /* DKInstallationDescriptionViewController.swift */; };
 		B2B2093429796D7F00D4D5DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2B2093029796D7F00D4D5DC /* Assets.xcassets */; };
 		B2B2093529796D7F00D4D5DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2B2093129796D7F00D4D5DC /* Main.storyboard */; };
 		B2B2093729796D8600D4D5DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2B2093029796D7F00D4D5DC /* Assets.xcassets */; };
@@ -128,13 +129,14 @@
 		B28C524E295455DE0025D49A /* DKLatinAutocompleteProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKLatinAutocompleteProvider.swift; sourceTree = "<group>"; };
 		B28C525C295625C90025D49A /* UIColor+Tools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Tools.swift"; sourceTree = "<group>"; };
 		B28C525D295625C90025D49A /* NSAttributedString+Tools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Tools.swift"; sourceTree = "<group>"; };
+		B297600F29ED7F5400FB5320 /* DKInstallationSharingDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKInstallationSharingDataViewController.swift; sourceTree = "<group>"; };
 		B299F70229908C0F00D6650A /* DKAboutLicensesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKAboutLicensesTableViewController.swift; sourceTree = "<group>"; };
 		B299F70429908CBF00D6650A /* DKConverterOptionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKConverterOptionsTableViewCell.swift; sourceTree = "<group>"; };
 		B299F7062990901300D6650A /* DKConverterGrowingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKConverterGrowingTableViewCell.swift; sourceTree = "<group>"; };
 		B2AF577A294FEBF900E7CF2F /* DKLatinInputSetProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKLatinInputSetProvider.swift; sourceTree = "<group>"; };
 		B2AF577C294FECD500E7CF2F /* DKLatinCalloutActionProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKLatinCalloutActionProvider.swift; sourceTree = "<group>"; };
 		B2AF577E294FEE4200E7CF2F /* DKLatinLayoutProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKLatinLayoutProvider.swift; sourceTree = "<group>"; };
-		B2B2092C29796D0400D4D5DC /* DKInstallationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKInstallationViewController.swift; sourceTree = "<group>"; };
+		B2B2092C29796D0400D4D5DC /* DKInstallationDescriptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKInstallationDescriptionViewController.swift; sourceTree = "<group>"; };
 		B2B2093029796D7F00D4D5DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B2B2093129796D7F00D4D5DC /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B2B2093229796D7F00D4D5DC /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -309,7 +311,8 @@
 		B2B2092B29796D0400D4D5DC /* ScreenInstallation */ = {
 			isa = PBXGroup;
 			children = (
-				B2B2092C29796D0400D4D5DC /* DKInstallationViewController.swift */,
+				B2B2092C29796D0400D4D5DC /* DKInstallationDescriptionViewController.swift */,
+				B297600F29ED7F5400FB5320 /* DKInstallationSharingDataViewController.swift */,
 			);
 			path = ScreenInstallation;
 			sourceTree = "<group>";
@@ -542,7 +545,7 @@
 			files = (
 				B28C525F295625C90025D49A /* NSAttributedString+Tools.swift in Sources */,
 				B22DC4D5297A01E700D9AC39 /* DKSettingsTransliterationTableViewCell.swift in Sources */,
-				B2B2092D29796D0400D4D5DC /* DKInstallationViewController.swift in Sources */,
+				B2B2092D29796D0400D4D5DC /* DKInstallationDescriptionViewController.swift in Sources */,
 				B2073D0B2945F599008B43E4 /* AppDelegate.swift in Sources */,
 				B2E68767297F4174005C31B9 /* DKAdditionalLanguage+Localization.swift in Sources */,
 				B2B2094229796F3000D4D5DC /* BLBelarusianTransliterationChoiceViewController.swift in Sources */,
@@ -559,6 +562,7 @@
 				B2B35510295662EC0006B8B1 /* CALayer+Tools.swift in Sources */,
 				B22DC4DA297A14C400D9AC39 /* DKSettingsLanguagesTableViewController.swift in Sources */,
 				B299F70529908CBF00D6650A /* DKConverterOptionsTableViewCell.swift in Sources */,
+				B297601029ED7F5400FB5320 /* DKInstallationSharingDataViewController.swift in Sources */,
 				B22DC4D7297A133500D9AC39 /* DKSettingsLanguagesTableViewCell.swift in Sources */,
 				B28C525E295625C90025D49A /* UIColor+Tools.swift in Sources */,
 				B299F7072990901300D6650A /* DKConverterGrowingTableViewCell.swift in Sources */,

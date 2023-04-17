@@ -36,6 +36,8 @@ extension Notification.Name {
     static let belarusianCyrillicTypeChanged = Notification.Name("belarusianCyrillicTypeChanged")
     static let converterVersionChanged = Notification.Name("converterVersionChanged")
     static let converterOrthographyChanged = Notification.Name("converterOrthographyChanged")
+    static let shareTypingDataChanged = Notification.Name("shareTypingDataChanged")
+    static let keyboardInstallationCompletedChanged = Notification.Name("keyboardInstallationCompletedChanged")
 }
 
 class DKKeyboardSettingsKeys {
@@ -47,6 +49,8 @@ class DKKeyboardSettingsKeys {
     class var converterVersion: String { "DKKeyboardSettings.converter_version" }
     class var converterOrthography: String { "DKKeyboardSettings.converter_orthography" }
     class var autocompleteTransliteration: String { "DKKeyboardSettings.autocomplete_transliteration" }
+    class var shareTypingData: String { "DKKeyboardSettings.share_typing_data" }
+    class var keyboardInstallationCompleted: String { "DKKeyboardSettings.keyboard_installation_completed" }
 }
 
 class DKKeyboardSettings: Any {
@@ -112,7 +116,7 @@ class DKKeyboardSettings: Any {
 }
 
 extension DKKeyboardSettings { // App Settings
-
+    
     var converterVersion: BelarusianLacinka.BLVersion {
         get {
             let defaultValue = BelarusianLacinka.BLVersion.traditional
@@ -123,7 +127,7 @@ extension DKKeyboardSettings { // App Settings
             self.setter(key: DKKeyboardSettingsKeys.converterVersion, value: newValue.rawValue, notificationName: .converterVersionChanged)
         }
     }
-
+    
     var converterOrthography: BelarusianLacinka.BLOrthography {
         get {
             let defaultValue = BelarusianLacinka.BLOrthography.academic
@@ -134,7 +138,7 @@ extension DKKeyboardSettings { // App Settings
             self.setter(key: DKKeyboardSettingsKeys.converterOrthography, value: newValue.rawValue, notificationName: .converterOrthographyChanged)
         }
     }
-
+    
     var belarusianCyrillicType: BelarusianLacinka.BLOrthography {
         get {
             let defaultValue = self.defaultBelarusianCyrillicType
@@ -167,6 +171,28 @@ extension DKKeyboardSettings { // App Settings
         }
         set {
             self.setter(key: DKKeyboardSettingsKeys.interfaceTransliteration, value: newValue?.rawValue, notificationName: .interfaceTransliterationChanged)
+        }
+    }
+    
+    var shareTypingData: Bool {
+        get {
+            let defaultValue = false
+            let value = self.getter(key: DKKeyboardSettingsKeys.shareTypingData, defaultValue: defaultValue)
+            return value
+        }
+        set {
+            self.setter(key: DKKeyboardSettingsKeys.shareTypingData, value: newValue, notificationName: .shareTypingDataChanged)
+        }
+    }
+    
+    var keyboardInstallationCompleted: Bool {
+        get {
+            let defaultValue = false
+            let value = self.getter(key: DKKeyboardSettingsKeys.keyboardInstallationCompleted, defaultValue: defaultValue)
+            return value
+        }
+        set {
+            self.setter(key: DKKeyboardSettingsKeys.keyboardInstallationCompleted, value: newValue, notificationName: .keyboardInstallationCompletedChanged)
         }
     }
 }

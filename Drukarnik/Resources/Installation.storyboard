@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gbo-Ek-Ju8">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -9,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Installation Description View Controller-->
         <scene sceneID="VSj-ve-8Ur">
             <objects>
-                <viewController id="fjR-kQ-kwE" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DKInstallationDescriptionViewController" id="fjR-kQ-kwE" customClass="DKInstallationDescriptionViewController" customModule="Drukarnik" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="y7W-MA-36C">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -54,7 +55,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <segue destination="pIP-be-Ytv" kind="show" id="i13-0p-Ym5"/>
+                                                    <action selector="next" destination="fjR-kQ-kwE" eventType="touchUpInside" id="Azf-tL-zMN"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -81,21 +82,25 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="AKv-Nf-2Ue"/>
+                    <connections>
+                        <segue destination="pIP-be-Ytv" kind="show" identifier="shareTypingData" id="pSi-jX-4Km"/>
+                        <segue destination="Bi1-zK-DWA" kind="show" identifier="install" id="Cn7-6k-nKK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9I4-QK-hTY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="903" y="763"/>
         </scene>
-        <!--View Controller-->
+        <!--Installation Sharing Data View Controller-->
         <scene sceneID="ggf-2U-PZI">
             <objects>
-                <viewController id="pIP-be-Ytv" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DKInstallationSharingDataViewController" id="pIP-be-Ytv" customClass="DKInstallationSharingDataViewController" customModule="Drukarnik" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mOz-VT-zjc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Палепшыць Drukarnik" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y8I-mR-cZH">
-                                <rect key="frame" x="60.333333333333343" y="119.00000000000001" width="272.66666666666663" height="33.666666666666671"/>
+                                <rect key="frame" x="60.333333333333343" y="75" width="272.66666666666663" height="33.666666666666657"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -132,6 +137,9 @@
                                                         <integer key="value" value="8"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="onDisagree" destination="pIP-be-Ytv" eventType="touchUpInside" id="miM-yB-Y6H"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="na9-B9-tjY">
                                                 <rect key="frame" x="154" y="0.0" width="146" height="44"/>
@@ -146,6 +154,9 @@
                                                         <integer key="value" value="8"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="onAgree" destination="pIP-be-Ytv" eventType="touchUpInside" id="ZuU-Kj-ME9"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -171,7 +182,7 @@
                     <navigationItem key="navigationItem" id="jSu-oU-5dq"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <segue destination="Bi1-zK-DWA" kind="show" identifier="next" id="tx8-nf-SJg"/>
+                        <segue destination="Bi1-zK-DWA" kind="show" identifier="install" id="tx8-nf-SJg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mJY-dy-SLP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -181,9 +192,8 @@
         <!--Navigation Controller-->
         <scene sceneID="kUF-C9-UmT">
             <objects>
-                <navigationController id="gbo-Ek-Ju8" sceneMemberID="viewController">
+                <navigationController hidesBottomBarWhenPushed="YES" navigationBarHidden="YES" id="gbo-Ek-Ju8" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="SeE-ZD-WsH">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -203,7 +213,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Уключыць Drukarnik" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eDA-U9-YCg">
-                                <rect key="frame" x="70.666666666666671" y="119.00000000000001" width="251.66666666666663" height="33.666666666666671"/>
+                                <rect key="frame" x="70.666666666666671" y="75" width="251.66666666666663" height="33.666666666666657"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -255,7 +265,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Bbt-Rq-gDD">
                                                 <rect key="frame" x="62" y="0.0" width="238" height="44"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jSe-jk-wHl">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="introduction-settings-icon" translatesAutoresizingMaskIntoConstraints="NO" id="jSe-jk-wHl">
                                                         <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="jSe-jk-wHl" secondAttribute="height" multiplier="1:1" id="l6I-r4-M3s"/>
@@ -318,7 +328,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="2HP-WD-ozn">
                                                 <rect key="frame" x="62" y="0.0" width="238" height="44"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Tft-JL-vRf">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="introduction-drukarnik-icon" translatesAutoresizingMaskIntoConstraints="NO" id="Tft-JL-vRf">
                                                         <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="Tft-JL-vRf" secondAttribute="height" multiplier="1:1" id="RPt-8L-o0Q"/>
@@ -381,7 +391,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="8FM-sy-Q3q">
                                                 <rect key="frame" x="62" y="0.0" width="238" height="44"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jrD-Iu-U45">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="introduction-keyboard-icon" translatesAutoresizingMaskIntoConstraints="NO" id="jrD-Iu-U45">
                                                         <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="jrD-Iu-U45" secondAttribute="height" multiplier="1:1" id="2Mw-og-pwx"/>
@@ -501,7 +511,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="cnW-dR-jGO">
                                                 <rect key="frame" x="62" y="0.0" width="238" height="44"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Дазволіць поўны доступ" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LTE-eM-vcD">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Дазволіць поўны доступ (Allow Full Access)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LTE-eM-vcD">
                                                         <rect key="frame" x="0.0" y="0.0" width="238" height="44"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
@@ -595,9 +605,15 @@
             <point key="canvasLocation" x="2416" y="763"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Cn7-6k-nKK"/>
+    </inferredMetricsTieBreakers>
     <resources>
+        <image name="introduction-drukarnik-icon" width="44" height="44"/>
+        <image name="introduction-keyboard-icon" width="44" height="44"/>
+        <image name="introduction-settings-icon" width="44" height="44"/>
         <namedColor name="AccentColor">
-            <color red="0.9570000171661377" green="0.29800000786781311" blue="0.24300000071525574" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.95686274509803926" green="0.29411764705882354" blue="0.23921568627450981" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

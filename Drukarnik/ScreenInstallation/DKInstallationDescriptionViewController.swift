@@ -1,5 +1,5 @@
 //
-//  DKInstallationViewController.swift
+//  DKInstallationDescriptionViewController.swift
 //  Drukarnik
 //
 //  Created by Logout on 19.01.23.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DKInstallationViewController: UIViewController {
+class DKInstallationDescriptionViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -15,6 +15,15 @@ class DKInstallationViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func next() {
+        
+        var identifier = "shareTypingData"
+        if DKKeyboardSettings.shared.shareTypingData {
+            identifier = "install"
+        }
+        
+        self.performSegue(withIdentifier: identifier, sender: nil)
+    }
 
     /*
     // MARK: - Navigation
