@@ -15,9 +15,10 @@ class DKActionHandler: StandardKeyboardActionHandler {
         super.init(keyboardController: ivc,
                    keyboardContext: ivc.keyboardContext,
                    keyboardBehavior: ivc.keyboardBehavior,
-                   keyboardFeedbackHandler: ivc.keyboardFeedbackHandler,
+                   keyboardFeedbackSettings: ivc.keyboardFeedbackSettings,
                    autocompleteContext: ivc.autocompleteContext,
-                   spaceDragGestureHandler: spaceDragGestureHandler, spaceDragSensitivity: spaceDragSensitivity)
+                   spaceDragGestureHandler: spaceDragGestureHandler,
+                   spaceDragSensitivity: spaceDragSensitivity)
         self.swicthKeyboardBlock = swicthKeyboardBlock
     }
     
@@ -41,8 +42,8 @@ class DKActionHandler: StandardKeyboardActionHandler {
         if self.isSpaceCursorDrag(action) { return }
         if textDocumentProxy.isCursorAtNewWord { return }
         guard gesture == .release else { return }
-        guard action.shouldApplyAutocompleteSuggestion else { return }
-        guard let suggestion = (autocompleteContext.suggestions.first { $0.isAutocomplete }) else { return }
+        guard action.shouldApplyAutocorrectSuggestion else { return }
+        guard let suggestion = (autocompleteContext.suggestions.first { $0.isAutocorrect }) else { return }
         var fullTextReplaceRequired = false
         fullTextReplaceRequired = suggestion.fullTextReplaceRequired
         if fullTextReplaceRequired {

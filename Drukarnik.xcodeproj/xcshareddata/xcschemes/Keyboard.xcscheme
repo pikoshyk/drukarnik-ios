@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1410"
+   LastUpgradeVersion = "1500"
    wasCreatedForAppExtension = "YES"
    version = "2.0">
    <BuildAction
@@ -73,21 +73,13 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES"
+      askForAppToLaunch = "Yes"
       launchAutomaticallySubstyle = "2">
       <RemoteRunnable
          runnableDebuggingMode = "1"
          BundleIdentifier = "com.apple.mobilesafari"
          RemotePath = "/Applications/MobileSafari.app">
       </RemoteRunnable>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B21A248629360C7600C056E5"
-            BuildableName = "Keyboard.appex"
-            BlueprintName = "Keyboard"
-            ReferencedContainer = "container:Drukarnik.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
