@@ -9,10 +9,17 @@ import UIKit
 
 class DKInstallationSharingDataViewController: UIViewController {
 
+    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var descriptionLabel: UILabel!
+    @IBOutlet var questionLabel: UILabel!
+    @IBOutlet var actionButtonYes: UIButton!
+    @IBOutlet var actionButtonNo: UIButton!
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.setupLocalization()
     }
     
     @IBAction func onAgree() {
@@ -29,15 +36,23 @@ class DKInstallationSharingDataViewController: UIViewController {
         self.performSegue(withIdentifier: "install", sender: nil)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
+
+extension DKInstallationSharingDataViewController {
+    
+    func setupLocalization() {
+        NotificationCenter.default.addObserver(forName: .interfaceChanged, object: nil, queue: .main) { notification in
+            self.updateInterfaceLocalization()
+        }
+        self.updateInterfaceLocalization()
+    }
+
+    func updateInterfaceLocalization() {
+        self.titleLabel.text = DKLocalizationApp.installationSharingDataTitle
+        self.descriptionLabel.text = DKLocalizationApp.installationSharingDataDescription
+        self.questionLabel.text = DKLocalizationApp.installationSharingDataQuestion
+        self.actionButtonYes.setTitle(DKLocalizationApp.installationSharingDataActionButtonYes, for: .normal)
+        self.actionButtonNo.setTitle(DKLocalizationApp.installationSharingDataActionButtonNo, for: .normal)
+    }
+}
+

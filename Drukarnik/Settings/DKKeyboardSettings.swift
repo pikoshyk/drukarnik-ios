@@ -51,11 +51,27 @@ class DKKeyboardSettingsKeys {
     class var autocompleteTransliteration: String { "DKKeyboardSettings.autocomplete_transliteration" }
     class var shareTypingData: String { "DKKeyboardSettings.share_typing_data" }
     class var keyboardInstallationCompleted: String { "DKKeyboardSettings.keyboard_installation_completed" }
+    class var keyboardFeedbackAudio: String { "DKKeyboardSettings.keyboard_feedback_audio" }
+    class var keyboardFeedbackHaptic: String { "DKKeyboardSettings.keyboard_feedback_haptic" }
 }
 
 class DKKeyboardSettings: Any {
 #if MAIN_APP
     static let shared = DKKeyboardSettings()
+    
+    class func isKeyboardActivated() -> Bool {
+        let keyboardBundleID = "com.belanghelp.drukarnik.keyboard"
+        guard let keyboards = UserDefaults.standard.object(forKey: "AppleKeyboards") as? [String] else {
+            return false
+        }
+        for keyboard in keyboards {
+            if keyboard == keyboardBundleID {
+                Self.shared.keyboardInstallationCompleted = true
+                return true
+            }
+        }
+        return false
+    }
 #endif
     let lacinkaConverter = BLConverter()
     
@@ -63,7 +79,7 @@ class DKKeyboardSettings: Any {
     lazy var userDefaults = UserDefaults(suiteName: self.userDefaultsGroupIdeintifier)!
 
     lazy var availableAdditionalLanguages: [DKAdditionalLanguage] =  DKAdditionalLanguages.load()
-    let defaultInterfaceTransliteration: DKKeyboardLayout = .latin
+    let defaultInterfaceTransliteration: DKKeyboardLayout = .cyrillic
     let defaultBelarusianLatinType: BelarusianLacinka.BLVersion = .traditional
     let defaultBelarusianCyrillicType: BelarusianLacinka.BLOrthography = .academic
 
@@ -188,7 +204,7 @@ extension DKKeyboardSettings { // App Settings
     var keyboardInstallationCompleted: Bool {
         get {
             let defaultValue = false
-            let value = self.getter(key: DKKeyboardSettingsKeys.keyboardInstallationCompleted, defaultValue: defaultValue)
+            let value = (self.userDefaults.object(forKey: DKKeyboardSettingsKeys.keyboardInstallationCompleted) as? Bool) ?? defaultValue
             return value
         }
         set {
@@ -209,7 +225,29 @@ extension DKKeyboardSettings { // Keyboard Settings
             self.setter(key: DKKeyboardSettingsKeys.autocompleteTransliteration, value: newValue, notificationName: nil)
         }
     }
-    
+
+    var keyboardFeedbackAudio: Bool {
+        get {
+            let defaultValue = false
+            let value = self.getter(key: DKKeyboardSettingsKeys.keyboardFeedbackAudio, defaultValue: defaultValue)
+            return value
+        }
+        set {
+            self.setter(key: DKKeyboardSettingsKeys.keyboardFeedbackAudio, value: newValue, notificationName: nil)
+        }
+    }
+
+    var keyboardFeedbackHaptic: Bool {
+        get {
+            let defaultValue = false
+            let value = self.getter(key: DKKeyboardSettingsKeys.keyboardFeedbackHaptic, defaultValue: defaultValue)
+            return value
+        }
+        set {
+            self.setter(key: DKKeyboardSettingsKeys.keyboardFeedbackHaptic, value: newValue, notificationName: nil)
+        }
+    }
+
     var keyboardLayout: DKKeyboardLayout {
         get {
             let defaultValue = DKKeyboardLayout.latin

@@ -9,10 +9,14 @@ import UIKit
 
 class DKInstallationDescriptionViewController: UIViewController {
 
+    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var descriptionLabel: UILabel!
+    @IBOutlet var actionButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.setupLocalization()
     }
     
     @IBAction func next() {
@@ -24,15 +28,21 @@ class DKInstallationDescriptionViewController: UIViewController {
         
         self.performSegue(withIdentifier: identifier, sender: nil)
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
+
+extension DKInstallationDescriptionViewController {
+    
+    func setupLocalization() {
+        NotificationCenter.default.addObserver(forName: .interfaceChanged, object: nil, queue: .main) { notification in
+            self.updateInterfaceLocalization()
+        }
+        self.updateInterfaceLocalization()
+    }
+
+    func updateInterfaceLocalization() {
+        self.titleLabel.text = DKLocalizationApp.installationDescriptionTitle
+        self.descriptionLabel.text = DKLocalizationApp.installationDescriptionDescription
+        self.actionButton.setTitle(DKLocalizationApp.installationDescriptionActionButton, for: .normal)
+    }
+}
+

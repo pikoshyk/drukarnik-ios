@@ -11,7 +11,7 @@ import SwiftUI
 class DKKeyboardViewController: KeyboardInputViewController {
 
     let settings = DKKeyboardSettings()
-    
+
     override func viewDidLoad() {
         
         KeyboardKit.GestureButtonDefaults.longPressDelay = 0.3
@@ -20,20 +20,32 @@ class DKKeyboardViewController: KeyboardInputViewController {
         let keyboardLayout = self.settings.keyboardLayout
         self.keyboardContext.locale = keyboardLayout.locale
         self.keyboardLayout = keyboardLayout
-        self.keyboardActionHandler = DKActionHandler(inputViewController: self, swicthKeyboardBlock: { keyboardLayout in
-            self.settings.keyboardLayout = keyboardLayout
-            self.keyboardLayout = keyboardLayout
-        })
+        self.keyboardActionHandler = DKActionHandler(inputViewController: self, swicthKeyboardBlock: self.onSwitchKeyboardLayout)
         self.keyboardAppearance = DKKeyboardAppearance(keyboardContext: self.keyboardContext)
+        self.configureFeedback()
         super.viewDidLoad()
+    }
+    
+    private func onSwitchKeyboardLayout(_ keyboardLayout: DKKeyboardLayout) {
+        self.keyboardLayout = keyboardLayout
+        self.configureFeedback()
+    }
+    
+    private func configureFeedback() {
+        let audio: AudioFeedbackConfiguration = self.settings.keyboardFeedbackAudio ? .enabled : .noFeedback
+        let haptic: HapticFeedbackConfiguration = self.settings.keyboardFeedbackHaptic ? .enabled : .noFeedback
+        self.keyboardFeedbackSettings.audioConfiguration = audio
+        self.keyboardFeedbackSettings.hapticConfiguration = haptic
     }
     
     var keyboardLayout: DKKeyboardLayout? {
         didSet {
+
             guard let keyboardLayout = keyboardLayout else {
                 return
             }
 
+            self.settings.keyboardLayout = keyboardLayout
             self.keyboardContext.locale = keyboardLayout.locale
                 
             switch keyboardLayout {

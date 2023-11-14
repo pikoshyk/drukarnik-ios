@@ -10,13 +10,15 @@ import UIKit
 
 class DKLocalizationApp: Any {
     
-    static func processedWord(_ word: String, convert: Bool = true) -> String {
+    static func processedWord(_ word: String,
+                              convert: Bool = true,
+                              defaultInterfaceTransliteration: DKKeyboardLayout = DKKeyboardSettings.shared.defaultInterfaceTransliteration) -> String {
         var convertedWord = word
         if convert == false {
             return convertedWord
         }
         
-        if (DKKeyboardSettings.shared.interfaceTransliteration ?? DKKeyboardSettings.shared.defaultInterfaceTransliteration) == .latin {
+        if (DKKeyboardSettings.shared.interfaceTransliteration ?? defaultInterfaceTransliteration) == .latin {
             let latinType = DKKeyboardSettings.shared.belarusianLatinType
             convertedWord = DKKeyboardSettings.shared.lacinkaConverter.convert(text: convertedWord, direction: .toLacin, version: latinType, orthograpy: .academic)
         }
@@ -75,15 +77,40 @@ extension DKLocalizationApp { // About
 
 extension DKLocalizationApp { // Transliteration
     
-    class func transliterationTitle(direction: BLDirection) -> String { Self.processedWord("Беларуская мова", convert: direction == .toLacin) }
+    class func transliterationTitle(direction: BLDirection) -> String { Self.processedWord("Беларуская мова", convert: direction == .toLacin, defaultInterfaceTransliteration: .latin) }
     class var transliterationSegmentedLatin: String { "Łacinka" }
     class var transliterationSegmentedCyrillic: String { "Кірыліца" }
-    class func transliterationHistory(direction: BLDirection) -> String { Self.processedWord("Пачынаючы з позняга сярэднявечча (XVI ст.) беларуская мова мае апроч кірылічнага альфабэту яшчэ і ўласны лацінкавы альфабэт.", convert: direction == .toLacin) }
-    class func transliterationAppeal(direction: BLDirection) -> String { Self.processedWord("Абярыце транслітарацыю інтэрфейса", convert: direction == .toLacin) }
+    class func transliterationHistory(direction: BLDirection) -> String { Self.processedWord("Пачынаючы з позняга сярэднявечча (XVI ст.) беларуская мова мае апроч кірылічнага альфабэту яшчэ і ўласны лацінкавы альфабэт.", convert: direction == .toLacin, defaultInterfaceTransliteration: .latin) }
+    class func transliterationAppeal(direction: BLDirection) -> String { Self.processedWord("Абярыце транслітарацыю інтэрфейса", convert: direction == .toLacin, defaultInterfaceTransliteration: .latin) }
     class var transliterationButtonLatinTitle: String { "Łacinka" }
     class var transliterationButtonLatinSubtitle: String { "bełaruskaja" }
     class var transliterationButtonCyrillicTitle: String { "Кірыліца" }
     class var transliterationButtonCyrillicSubtitle: String { "беларуская" }
-    class func transliterationNote(direction: BLDirection) -> String { Self.processedWord("Пасля, у наладах, можна будзе змяніць транслітарацыю інтэрфейса на адваротную.", convert: direction == .toLacin) }
+    class func transliterationNote(direction: BLDirection) -> String { Self.processedWord("Пасля, у наладах, можна будзе змяніць транслітарацыю інтэрфейса на адваротную.", convert: direction == .toLacin, defaultInterfaceTransliteration: .latin) }
     
+}
+
+extension DKLocalizationApp { // Installation
+    // Description Screen
+    class var installationDescriptionTitle: String { Self.processedWord("Друкарнік") }
+    class var installationDescriptionDescription: String { Self.processedWord("Беларуская клавіятура, якая сумяшчае кірыліцу з беларускай лацінкай, мае дадатковыя літары для расейскай, украінскай, польскай ды іншых моў і нават эмаджы, то-бок адзіная клавіятура амаль на ўсе выпадкі жыцця беларуса і ў астатніх клавіятурах патрэбы больш няма.") }
+    class var installationDescriptionActionButton: String { Self.processedWord("Пачаць") }
+    
+    // SharingData Screen
+    class var installationSharingDataTitle: String { Self.processedWord("Палепшыць Друкарнік") }
+    class var installationSharingDataDescription: String { Self.processedWord("Вы можаце ананімна дзяліцца дадзенымі як і што набіраеце, у тым ліку, як часта выкарыстоўваеце пэўныя словы і іх паслядоўнасць. Гэта дапаможа нам паляпшаць набор тэксту і дадаваць новыя сучасныя словы ў падказкі.") }
+    class var installationSharingDataQuestion: String { Self.processedWord("Згодны дзяліцца?") }
+    class var installationSharingDataActionButtonYes: String { Self.processedWord("Так") }
+    class var installationSharingDataActionButtonNo: String { Self.processedWord("Не") }
+
+    // Keyboard Screen
+    class var installationKeyboardTitle: String { Self.processedWord("Уключыць клавіятуру") }
+    class var installationKeyboardDescription: String { Self.processedWord("Ніжэй дадзена паслядоўнасць крокаў, што неабходна зрабіць, каб уключыць клавіятуру «Друкарнік»:") }
+    class var installationKeyboardStep1: String { Self.processedWord("Перайсці ў Налады") }
+    class var installationKeyboardStep2: String { "Drukarnik" }
+    class var installationKeyboardStep2Helper: String { Self.processedWord("Перайсці сюды") }
+    class var installationKeyboardStep3: String { Self.processedWord("Клавіятуры") }
+    class var installationKeyboardStep4: String { Self.processedWord("Уключыць")+" «Drukarnik»" }
+    class var installationKeyboardStep5: String { Self.processedWord("Дазволіць поўны доступ")+" (Allow Full Access)" }
+    class var installationKeyboardStep6: String { Self.processedWord("Павярнуцца зноў сюды, каб завяршыць усталёўку") }
 }

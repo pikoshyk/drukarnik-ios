@@ -11,6 +11,8 @@ import UIKit
 
 class BLBelarusianTransliterationChoiceViewController: UIViewController {
     
+    static var isCurrentlyDisplayed = false
+    
     @IBOutlet fileprivate var labelTitle: UILabel!
     @IBOutlet fileprivate var labelHistory: UILabel!
     @IBOutlet fileprivate var labelAppeal: UILabel!
@@ -23,6 +25,11 @@ class BLBelarusianTransliterationChoiceViewController: UIViewController {
     fileprivate var completeBlock: ((_ interfaceTransliteration: DKKeyboardLayout) -> Void)?
     
     class func choiceInterfaceTransliteration(viewController: UIViewController, completeBlock: @escaping (_ interfaceTransliteration: DKKeyboardLayout) -> Void) {
+
+        if Self.isCurrentlyDisplayed {
+            return
+        }
+        
         let choiceViewControllerNib = UINib(nibName: "BLBelarusianTransliterationChoiceViewController", bundle: nil)
         let choiceViewController = choiceViewControllerNib.instantiate(withOwner: self).first as? BLBelarusianTransliterationChoiceViewController
         choiceViewController?.completeBlock = completeBlock
@@ -52,6 +59,11 @@ class BLBelarusianTransliterationChoiceViewController: UIViewController {
         self.updateInterface()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        Self.isCurrentlyDisplayed = true
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
@@ -73,6 +85,11 @@ class BLBelarusianTransliterationChoiceViewController: UIViewController {
         }
         self.completeBlock?(transliteration)
         self.completeBlock = nil
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        Self.isCurrentlyDisplayed = false
     }
     
     fileprivate func updateInterface() {

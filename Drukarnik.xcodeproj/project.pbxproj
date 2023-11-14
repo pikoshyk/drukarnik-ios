@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -27,6 +27,8 @@
 		B22FC9F42951A9F100B31E4A /* DKCalloutActionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22FC9F32951A9F100B31E4A /* DKCalloutActionProvider.swift */; };
 		B249D1A729905B0200668130 /* DKAutocompleteProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B249D1A629905B0200668130 /* DKAutocompleteProvider.swift */; };
 		B249D1A92990696400668130 /* DKKeyboardLayoutProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B249D1A82990696400668130 /* DKKeyboardLayoutProvider.swift */; };
+		B25CEE6C2B02B89F00BD1B8A /* DKInstallationNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25CEE6B2B02B89F00BD1B8A /* DKInstallationNavigationController.swift */; };
+		B25CEE6E2B02DBD400BD1B8A /* DKInstallationKeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25CEE6D2B02DBD400BD1B8A /* DKInstallationKeyboardViewController.swift */; };
 		B263A887293E01F70024242C /* DKCyrillicCalloutActionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B263A885293E01F70024242C /* DKCyrillicCalloutActionProvider.swift */; };
 		B263A888293E01F70024242C /* DKCyrillicInputSetProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B263A886293E01F70024242C /* DKCyrillicInputSetProvider.swift */; };
 		B282B8F229812D4B001244DE /* UITextDocumentProxy+FullText.swift in Sources */ = {isa = PBXBuildFile; fileRef = B282B8F129812D4B001244DE /* UITextDocumentProxy+FullText.swift */; };
@@ -120,6 +122,8 @@
 		B22FC9F32951A9F100B31E4A /* DKCalloutActionProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKCalloutActionProvider.swift; sourceTree = "<group>"; };
 		B249D1A629905B0200668130 /* DKAutocompleteProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKAutocompleteProvider.swift; sourceTree = "<group>"; };
 		B249D1A82990696400668130 /* DKKeyboardLayoutProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKKeyboardLayoutProvider.swift; sourceTree = "<group>"; };
+		B25CEE6B2B02B89F00BD1B8A /* DKInstallationNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKInstallationNavigationController.swift; sourceTree = "<group>"; };
+		B25CEE6D2B02DBD400BD1B8A /* DKInstallationKeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKInstallationKeyboardViewController.swift; sourceTree = "<group>"; };
 		B263A885293E01F70024242C /* DKCyrillicCalloutActionProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKCyrillicCalloutActionProvider.swift; sourceTree = "<group>"; };
 		B263A886293E01F70024242C /* DKCyrillicInputSetProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKCyrillicInputSetProvider.swift; sourceTree = "<group>"; };
 		B282B8F129812D4B001244DE /* UITextDocumentProxy+FullText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextDocumentProxy+FullText.swift"; sourceTree = "<group>"; };
@@ -311,8 +315,10 @@
 		B2B2092B29796D0400D4D5DC /* ScreenInstallation */ = {
 			isa = PBXGroup;
 			children = (
+				B25CEE6B2B02B89F00BD1B8A /* DKInstallationNavigationController.swift */,
 				B2B2092C29796D0400D4D5DC /* DKInstallationDescriptionViewController.swift */,
 				B297600F29ED7F5400FB5320 /* DKInstallationSharingDataViewController.swift */,
+				B25CEE6D2B02DBD400BD1B8A /* DKInstallationKeyboardViewController.swift */,
 			);
 			path = ScreenInstallation;
 			sourceTree = "<group>";
@@ -492,7 +498,7 @@
 				};
 			};
 			buildConfigurationList = B21A246429360B3600C056E5 /* Build configuration list for PBXProject "Drukarnik" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 15.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -549,6 +555,7 @@
 				B2073D0B2945F599008B43E4 /* AppDelegate.swift in Sources */,
 				B2E68767297F4174005C31B9 /* DKAdditionalLanguage+Localization.swift in Sources */,
 				B2B2094229796F3000D4D5DC /* BLBelarusianTransliterationChoiceViewController.swift in Sources */,
+				B25CEE6E2B02DBD400BD1B8A /* DKInstallationKeyboardViewController.swift in Sources */,
 				B2DDCF58298D2ADE00902EE6 /* DKSettingsBelarusianCyrillicTypeTableViewController.swift in Sources */,
 				B2DDCF56298D2AC100902EE6 /* DKSettingsBelarusianLatinTypeTableViewController.swift in Sources */,
 				B299F70329908C0F00D6650A /* DKAboutLicensesTableViewController.swift in Sources */,
@@ -561,6 +568,7 @@
 				B2DDCF4C298C3E3000902EE6 /* DKSettingsBelarusianCyrillicTypeTableViewCell.swift in Sources */,
 				B2B35510295662EC0006B8B1 /* CALayer+Tools.swift in Sources */,
 				B22DC4DA297A14C400D9AC39 /* DKSettingsLanguagesTableViewController.swift in Sources */,
+				B25CEE6C2B02B89F00BD1B8A /* DKInstallationNavigationController.swift in Sources */,
 				B299F70529908CBF00D6650A /* DKConverterOptionsTableViewCell.swift in Sources */,
 				B297601029ED7F5400FB5320 /* DKInstallationSharingDataViewController.swift in Sources */,
 				B22DC4D7297A133500D9AC39 /* DKSettingsLanguagesTableViewCell.swift in Sources */,
@@ -748,7 +756,7 @@
 				CODE_SIGN_ENTITLEMENTS = Drukarnik/DrukarnikDebug.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 6EWLUZCTBU;
 				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
@@ -791,7 +799,7 @@
 				CODE_SIGN_ENTITLEMENTS = Drukarnik/DrukarnikRelease.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 6EWLUZCTBU;
 				GCC_PREPROCESSOR_DEFINITIONS = "";
@@ -831,13 +839,14 @@
 				CODE_SIGN_ENTITLEMENTS = Keyboard/KeyboardDebug.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 6EWLUZCTBU;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Keyboard/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Drukarnik;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -849,6 +858,9 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "K Development Drukarnik keyboard";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -861,13 +873,14 @@
 				CODE_SIGN_ENTITLEMENTS = Keyboard/KeyboardRelease.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 6EWLUZCTBU;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Keyboard/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Drukarnik;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -879,6 +892,9 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "K App Store Drukarnik keyboard";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -939,7 +955,7 @@
 			repositoryURL = "https://github.com/KeyboardKit/KeyboardKit.git";
 			requirement = {
 				kind = versionRange;
-				maximumVersion = 8.0.0;
+				maximumVersion = 9.0.0;
 				minimumVersion = 7.2.1;
 			};
 		};

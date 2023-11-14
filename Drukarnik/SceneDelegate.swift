@@ -16,8 +16,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         guard let _ = (scene as? UIWindowScene) else { return }
     }
-
-    func askInterfaceTransliteration(windowScene: UIWindowScene, interval: TimeInterval = 1.0) {
+    
+    private func rootViewController(_ screne: UIScene) -> UIViewController? {
+        guard let windowScene = screne as? UIWindowScene else {
+            return nil
+        }
 
         var window: UIWindow?
         if #available(iOS 15.0, *) {
@@ -26,14 +29,32 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             window = windowScene.windows.filter {$0.isKeyWindow}.first
         }
         guard let viewController = window?.rootViewController else {
+            return nil
+        }
+        return viewController
+    }
+    
+    private func topViewController(_ scene: UIScene) -> UIViewController? {
+        var viewController = self.rootViewController(scene)
+        while let presentedViewController = viewController?.presentedViewController {
+            viewController = presentedViewController
+        }
+        return viewController
+    }
+    
+    func showKeyboardInstllationGuide(_ scene: UIScene) {
+        guard let viewController = self.rootViewController(scene) else {
             return
         }
+        DKInstallationNavigationController.show(on: viewController)
+    }
 
-        if DKKeyboardSettings.shared.interfaceTransliteration != nil {
-            return
-        }
+    func askInterfaceTransliteration(_ scene: UIScene, interval: TimeInterval = 0.5) {
 
         DispatchQueue.main.asyncAfter(deadline: .now() + interval) {
+            guard let viewController = self.topViewController(scene) else {
+                return
+            }
             BLBelarusianTransliterationChoiceViewController.choiceInterfaceTransliteration(viewController: viewController) { interfaceTransliteration in
                 DKKeyboardSettings.shared.interfaceTransliteration = interfaceTransliteration
             }
@@ -41,29 +62,23 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
-        
-        // Called as the scene is being released by the system.
-        // This occurs shortly after the scene enters the background, or when its session is discarded.
-        // Release any resources associated with this scene that can be re-created the next time the scene connects.
-        // The scene may re-connect later, as its session was not necessarily discarded (see `application:didDiscardSceneSessions` instead).
     }
 
     func sceneDidBecomeActive(_ scene: UIScene) {
-        // Called when the scene has moved from an inactive state to an active state.
-        // Use this method to restart any tasks that were paused (or not yet started) when the scene was inactive.
-
-        guard let windowScene = (scene as? UIWindowScene) else { return }
-        self.askInterfaceTransliteration(windowScene: windowScene)
+        if DKKeyboardSettings.shared.interfaceTransliteration == nil {
+            self.askInterfaceTransliteration(scene)
+        }
     }
 
     func sceneWillResignActive(_ scene: UIScene) {
-        // Called when the scene will move from an active state to an inactive state.
-        // This may occur due to temporary interruptions (ex. an incoming phone call).
     }
 
     func sceneWillEnterForeground(_ scene: UIScene) {
-        // Called as the scene transitions from the background to the foreground.
-        // Use this method to undo the changes made on entering the background.
+        
+        if DKKeyboardSettings.isKeyboardActivated() == false &&
+            DKKeyboardSettings.shared.keyboardInstallationCompleted == false {
+            self.showKeyboardInstllationGuide(scene)
+        }
     }
 
     func sceneDidEnterBackground(_ scene: UIScene) {
