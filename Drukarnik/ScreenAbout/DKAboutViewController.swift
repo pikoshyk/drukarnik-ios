@@ -9,7 +9,6 @@ import UIKit
 
 class DKAboutViewController: UIViewController {
 
-    @IBOutlet var labelSubscriptionDeveloper: UILabel!
     @IBOutlet var labelDescription: UILabel!
     @IBOutlet var textViewSupport: UITextView!
 
@@ -32,17 +31,6 @@ class DKAboutViewController: UIViewController {
                 self.textViewSupport.attributedText = attributedString
             }
         }
-    }
-    
-    func openTwitterAccount(account: String) {
-        let urlStr = "https://twitter.com/\(account)"
-        if let url = URL(string: urlStr) {
-            UIApplication.shared.open(url)
-        }
-    }
-    
-    @IBAction func onDeveloper() {
-        self.openTwitterAccount(account: "pikoshyk")
     }
     
 
@@ -70,7 +58,6 @@ extension DKAboutViewController {
 
     func updateInterfaceLocalization() {
         self.navigationItem.title = DKLocalizationApp.aboutTitle
-        self.labelSubscriptionDeveloper.text = DKLocalizationApp.aboutSubscriptionDeveloper
         self.labelDescription.text = DKLocalizationApp.aboutDescription
         self.updateSupportText()
     }

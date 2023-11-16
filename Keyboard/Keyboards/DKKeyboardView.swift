@@ -70,11 +70,11 @@ private extension DKKeyboardView {
     }
 
     var convertButtonStyled: some View {
-//        if #available(iOS 15.0, *) {
+        if #available(iOS 15.0, *) {
             return self.convertButton.buttonStyle(.bordered)
-//        }
+        }
 
-//        return self.convertButton.buttonStyle(.automatic)
+        return self.convertButton.buttonStyle(.automatic)
     }
     
     var convertButton: some View {

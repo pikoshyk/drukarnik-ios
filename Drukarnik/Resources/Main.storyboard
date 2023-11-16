@@ -11,11 +11,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Аб аплікацыі-->
+        <!--Пра аплікацыю-->
         <scene sceneID="WPI-gj-IZu">
             <objects>
                 <navigationController id="dUw-KR-UFu" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Аб аплікацыі" image="info.circle" catalog="system" id="aJf-zT-nKB">
+                    <tabBarItem key="tabBarItem" title="Пра аплікацыю" image="info.circle" catalog="system" id="aJf-zT-nKB">
                         <imageReference key="selectedImage" image="info.circle.fill" catalog="system" symbolScale="default"/>
                     </tabBarItem>
                     <navigationItem key="navigationItem" id="V9e-3W-dod"/>
@@ -31,7 +31,7 @@
             </objects>
             <point key="canvasLocation" x="-25" y="-759"/>
         </scene>
-        <!--Аб аплікацыі-->
+        <!--Пра аплікацыю-->
         <scene sceneID="q0g-h2-cmy">
             <objects>
                 <viewController id="KF0-Iy-CSB" customClass="DKAboutViewController" customModule="Drukarnik" customModuleProvider="target" sceneMemberID="viewController">
@@ -40,7 +40,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="stc-gp-O9Z">
-                                <rect key="frame" x="16" y="152" width="382" height="174"/>
+                                <rect key="frame" x="16" y="152" width="382" height="114"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dOk-uq-Ttb">
                                         <rect key="frame" x="0.0" y="0.0" width="382" height="18"/>
@@ -49,55 +49,13 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KVR-AX-heR">
-                                        <rect key="frame" x="0.0" y="34" width="382" height="140"/>
+                                        <rect key="frame" x="0.0" y="34" width="382" height="80"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="HCB-8p-QPm">
-                                                <rect key="frame" x="41" y="0.0" width="300" height="140"/>
+                                                <rect key="frame" x="41" y="0.0" width="300" height="80"/>
                                                 <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Aw2-2C-s9g">
-                                                        <rect key="frame" x="0.0" y="0.0" width="300" height="44"/>
-                                                        <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Developer" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="alD-jD-9Tl">
-                                                                <rect key="frame" x="0.0" y="0.0" width="142" height="44"/>
-                                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                                                                <nil key="textColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nDN-s1-T9s">
-                                                                <rect key="frame" x="158" y="0.0" width="142" height="44"/>
-                                                                <color key="tintColor" systemColor="systemCyanColor"/>
-                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="8" maxY="0.0"/>
-                                                                <state key="normal" title="Button" image="twitter-icon">
-                                                                    <attributedString key="attributedTitle">
-                                                                        <fragment content="@pikoshyk">
-                                                                            <attributes>
-                                                                                <font key="NSFont" size="14" name="SFMono-Regular"/>
-                                                                            </attributes>
-                                                                        </fragment>
-                                                                    </attributedString>
-                                                                </state>
-                                                                <buttonConfiguration key="configuration" style="tinted" image="twitter-icon" imagePadding="8">
-                                                                    <attributedString key="attributedTitle">
-                                                                        <fragment content="                      ">
-                                                                            <attributes>
-                                                                                <font key="NSFont" size="14" name="SFMono-Regular"/>
-                                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                                            </attributes>
-                                                                        </fragment>
-                                                                    </attributedString>
-                                                                </buttonConfiguration>
-                                                                <connections>
-                                                                    <action selector="onDeveloper" destination="KF0-Iy-CSB" eventType="touchUpInside" id="bBB-zI-v1w"/>
-                                                                </connections>
-                                                            </button>
-                                                        </subviews>
-                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="44" id="LMi-IO-Ty8"/>
-                                                        </constraints>
-                                                    </stackView>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Support" translatesAutoresizingMaskIntoConstraints="NO" id="Pe0-wo-873">
-                                                        <rect key="frame" x="0.0" y="60" width="300" height="80"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="300" height="80"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="80" id="o3A-z6-pZp"/>
@@ -111,21 +69,12 @@
                                                     <constraint firstAttribute="width" constant="300" id="EbA-ZE-YId"/>
                                                 </constraints>
                                             </stackView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="151" verticalHuggingPriority="251" text="@pikoshyk" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vt6-Ir-UcK">
-                                                <rect key="frame" x="244" y="13.5" width="89" height="17"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <color key="textColor" systemColor="systemCyanColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="HCB-8p-QPm" firstAttribute="top" secondItem="KVR-AX-heR" secondAttribute="top" id="DZc-4B-nqT"/>
                                             <constraint firstAttribute="bottom" secondItem="HCB-8p-QPm" secondAttribute="bottom" id="Kj8-P4-K4y"/>
-                                            <constraint firstItem="nDN-s1-T9s" firstAttribute="centerY" secondItem="Vt6-Ir-UcK" secondAttribute="centerY" id="c4V-tf-V8g"/>
                                             <constraint firstItem="HCB-8p-QPm" firstAttribute="centerX" secondItem="KVR-AX-heR" secondAttribute="centerX" id="ene-Rv-91F"/>
-                                            <constraint firstItem="nDN-s1-T9s" firstAttribute="leading" secondItem="Vt6-Ir-UcK" secondAttribute="leading" constant="-45" id="eoi-ry-uxt"/>
-                                            <constraint firstItem="nDN-s1-T9s" firstAttribute="trailing" secondItem="Vt6-Ir-UcK" secondAttribute="trailing" constant="8" id="oeY-72-pbz"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -139,12 +88,11 @@
                             <constraint firstItem="YRs-RG-xHk" firstAttribute="top" secondItem="stc-gp-O9Z" secondAttribute="top" constant="-8" id="YzA-LW-inn"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Аб аплікацыі" id="Sxr-3z-o19">
+                    <navigationItem key="navigationItem" title="Пра аплікацыю" id="Sxr-3z-o19">
                         <barButtonItem key="backBarButtonItem" title=" " id="caE-77-jd6"/>
                     </navigationItem>
                     <connections>
                         <outlet property="labelDescription" destination="dOk-uq-Ttb" id="dyw-WX-QFQ"/>
-                        <outlet property="labelSubscriptionDeveloper" destination="alD-jD-9Tl" id="WS1-tp-uIH"/>
                         <outlet property="textViewSupport" destination="Pe0-wo-873" id="pDz-td-be1"/>
                     </connections>
                 </viewController>
@@ -743,27 +691,23 @@
         <image name="keyboard-cyrillic-iphone" width="375" height="212"/>
         <image name="keyboard-latin-iphone" width="375" height="212"/>
         <image name="keyboard.fill" catalog="system" width="128" height="78"/>
-        <image name="twitter-icon" width="24" height="24"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="secondaryLabelColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="secondarySystemBackgroundColor">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="secondarySystemFillColor">
-            <color red="0.47058823529411764" green="0.47058823529411764" blue="0.50196078431372548" alpha="0.16" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.47058823529999999" green="0.47058823529999999" blue="0.50196078430000002" alpha="0.16" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="secondarySystemGroupedBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemCyanColor">
-            <color red="0.19607843137254902" green="0.67843137254901964" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

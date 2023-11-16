@@ -68,9 +68,8 @@ extension DKLocalizationApp { // Converter
 
 extension DKLocalizationApp { // About
     
-    class var aboutTitle: String { Self.processedWord("Аб аплікацыі") }
-    class var aboutSubscriptionDeveloper: String { Self.processedWord("Распрацоўшчык iOS аплікацыі") }
-    class var aboutDescription: String { Self.processedWord("Друкарнік - беларуская клавіятура.") }
+    class var aboutTitle: String { Self.processedWord("Пра аплікацыю") }
+    class var aboutDescription: String { Self.processedWord("Друкарнік — беларуская клавіятура, якая сумяшчае кірыліцу з беларускай лацінкай, мае дадатковыя літары для расейскай, украінскай, польскай ды іншых моў і нават эмаджы, то-бок адзіная клавіятура амаль на ўсе выпадкі жыцця беларуса.") }
     class var aboutSupportHtml: String { Self.processedWord("Праекту патрэбна дапамога: Android, UX/UI. Прапановы пісаць <a href=\"mailto:belanghelp@gmail.com\">сюды</a>.")}
     
 }
@@ -93,7 +92,7 @@ extension DKLocalizationApp { // Transliteration
 extension DKLocalizationApp { // Installation
     // Description Screen
     class var installationDescriptionTitle: String { Self.processedWord("Друкарнік") }
-    class var installationDescriptionDescription: String { Self.processedWord("Беларуская клавіятура, якая сумяшчае кірыліцу з беларускай лацінкай, мае дадатковыя літары для расейскай, украінскай, польскай ды іншых моў і нават эмаджы, то-бок адзіная клавіятура амаль на ўсе выпадкі жыцця беларуса і ў астатніх клавіятурах патрэбы больш няма.") }
+    class var installationDescriptionDescription: String { Self.processedWord("Беларуская клавіятура, якая сумяшчае кірыліцу з беларускай лацінкай, мае дадатковыя літары для расейскай, украінскай, польскай ды іншых моў і нават эмаджы, то-бок адзіная клавіятура амаль на ўсе выпадкі жыцця беларуса.") }
     class var installationDescriptionActionButton: String { Self.processedWord("Пачаць") }
     
     // SharingData Screen

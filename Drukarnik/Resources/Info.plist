@@ -26,5 +26,7 @@
 		<key>UIColorName</key>
 		<string>LaunchScreenBackaroundColor</string>
 	</dict>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
 </dict>
 </plist>
