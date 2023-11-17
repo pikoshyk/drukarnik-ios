@@ -104,12 +104,13 @@ extension DKLocalizationApp { // Installation
 
     // Keyboard Screen
     class var installationKeyboardTitle: String { Self.processedWord("Уключыць клавіятуру") }
-    class var installationKeyboardDescription: String { Self.processedWord("Ніжэй дадзена паслядоўнасць крокаў, што неабходна зрабіць, каб уключыць клавіятуру «Друкарнік»:") }
+    class var installationKeyboardDescription: String { Self.processedWord("Крокі, якія трэба зрабіць, каб уключыць клавіятуру «Друкарнік»:") }
     class var installationKeyboardStep1: String { Self.processedWord("Перайсці ў Налады") }
     class var installationKeyboardStep2: String { "Drukarnik" }
     class var installationKeyboardStep2Helper: String { Self.processedWord("Перайсці сюды") }
     class var installationKeyboardStep3: String { Self.processedWord("Клавіятуры") }
     class var installationKeyboardStep4: String { Self.processedWord("Уключыць")+" «Drukarnik»" }
-    class var installationKeyboardStep5: String { Self.processedWord("Дазволіць поўны доступ")+" (Allow Full Access)" }
-    class var installationKeyboardStep6: String { Self.processedWord("Павярнуцца зноў сюды, каб завяршыць усталёўку") }
+    class var installationKeyboardStep5: String { Self.processedWord("Даць шырокі доступ")+"\n(Allow Full Access)" }
+    class var installationKeyboardStep6: String { Self.processedWord("Вярнуцца зноў сюды, каб завяршыць усталёўку") }
 }
+
