@@ -8,6 +8,20 @@
 import BelarusianLacinka
 import UIKit
 
+enum DKKeyboardAutocapitalization: String, Codable{
+    case allCharacters
+    case sentences
+    case words
+    case none
+}
+
+enum DKKeyboardFeedback: String, Codable {
+    case none
+    case sound
+    case vibro
+    case soundAndVibro
+}
+
 enum DKKeyboardLayout: String, Codable {
 case latin
 case cyrillic
@@ -51,8 +65,8 @@ class DKKeyboardSettingsKeys {
     class var autocompleteTransliteration: String { "DKKeyboardSettings.autocomplete_transliteration" }
     class var shareTypingData: String { "DKKeyboardSettings.share_typing_data" }
     class var keyboardInstallationCompleted: String { "DKKeyboardSettings.keyboard_installation_completed" }
-    class var keyboardFeedbackAudio: String { "DKKeyboardSettings.keyboard_feedback_audio" }
-    class var keyboardFeedbackHaptic: String { "DKKeyboardSettings.keyboard_feedback_haptic" }
+    class var keyboardFeedback: String { "DKKeyboardSettings.keyboard_feedback" }
+    class var keyboardAutocapitalization: String { "DKKeyboardSettings.autocapitalization" }
 }
 
 class DKKeyboardSettings: Any {
@@ -226,25 +240,25 @@ extension DKKeyboardSettings { // Keyboard Settings
         }
     }
 
-    var keyboardFeedbackAudio: Bool {
+    var keyboardAutocapitalization: DKKeyboardAutocapitalization {
         get {
-            let defaultValue = false
-            let value = self.getter(key: DKKeyboardSettingsKeys.keyboardFeedbackAudio, defaultValue: defaultValue)
+            let defaultValue = DKKeyboardAutocapitalization.sentences
+            let value = self.getter(key: DKKeyboardSettingsKeys.keyboardAutocapitalization, defaultValue: defaultValue)
             return value
         }
         set {
-            self.setter(key: DKKeyboardSettingsKeys.keyboardFeedbackAudio, value: newValue, notificationName: nil)
+            self.setter(key: DKKeyboardSettingsKeys.keyboardAutocapitalization, value: newValue, notificationName: nil)
         }
     }
 
-    var keyboardFeedbackHaptic: Bool {
+    var keyboardFeedback: DKKeyboardFeedback {
         get {
-            let defaultValue = false
-            let value = self.getter(key: DKKeyboardSettingsKeys.keyboardFeedbackHaptic, defaultValue: defaultValue)
+            let defaultValue: DKKeyboardFeedback = .none
+            let value = self.getter(key: DKKeyboardSettingsKeys.keyboardFeedback, defaultValue: defaultValue)
             return value
         }
         set {
-            self.setter(key: DKKeyboardSettingsKeys.keyboardFeedbackHaptic, value: newValue, notificationName: nil)
+            self.setter(key: DKKeyboardSettingsKeys.keyboardFeedback, value: newValue, notificationName: nil)
         }
     }
 

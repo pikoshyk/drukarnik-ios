@@ -42,6 +42,9 @@
 		B299F70329908C0F00D6650A /* DKAboutLicensesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B299F70229908C0F00D6650A /* DKAboutLicensesTableViewController.swift */; };
 		B299F70529908CBF00D6650A /* DKConverterOptionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B299F70429908CBF00D6650A /* DKConverterOptionsTableViewCell.swift */; };
 		B299F7072990901300D6650A /* DKConverterGrowingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B299F7062990901300D6650A /* DKConverterGrowingTableViewCell.swift */; };
+		B29B0C322B0D4827003CA8A5 /* DKSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29B0C312B0D4827003CA8A5 /* DKSettingsView.swift */; };
+		B29B0C342B0D6E16003CA8A5 /* DKSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29B0C332B0D6E16003CA8A5 /* DKSettingsViewModel.swift */; };
+		B29B0C362B0D71C4003CA8A5 /* DKSettingsCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29B0C352B0D71C4003CA8A5 /* DKSettingsCellView.swift */; };
 		B2AC43AD2945F21400ACC32E /* KeyboardKit in Frameworks */ = {isa = PBXBuildFile; productRef = B2AC43AC2945F21400ACC32E /* KeyboardKit */; };
 		B2AF577B294FEBF900E7CF2F /* DKLatinInputSetProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AF577A294FEBF900E7CF2F /* DKLatinInputSetProvider.swift */; };
 		B2AF577D294FECD500E7CF2F /* DKLatinCalloutActionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AF577C294FECD500E7CF2F /* DKLatinCalloutActionProvider.swift */; };
@@ -137,6 +140,9 @@
 		B299F70229908C0F00D6650A /* DKAboutLicensesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKAboutLicensesTableViewController.swift; sourceTree = "<group>"; };
 		B299F70429908CBF00D6650A /* DKConverterOptionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKConverterOptionsTableViewCell.swift; sourceTree = "<group>"; };
 		B299F7062990901300D6650A /* DKConverterGrowingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKConverterGrowingTableViewCell.swift; sourceTree = "<group>"; };
+		B29B0C312B0D4827003CA8A5 /* DKSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKSettingsView.swift; sourceTree = "<group>"; };
+		B29B0C332B0D6E16003CA8A5 /* DKSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKSettingsViewModel.swift; sourceTree = "<group>"; };
+		B29B0C352B0D71C4003CA8A5 /* DKSettingsCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKSettingsCellView.swift; sourceTree = "<group>"; };
 		B2AF577A294FEBF900E7CF2F /* DKLatinInputSetProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKLatinInputSetProvider.swift; sourceTree = "<group>"; };
 		B2AF577C294FECD500E7CF2F /* DKLatinCalloutActionProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKLatinCalloutActionProvider.swift; sourceTree = "<group>"; };
 		B2AF577E294FEE4200E7CF2F /* DKLatinLayoutProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKLatinLayoutProvider.swift; sourceTree = "<group>"; };
@@ -312,6 +318,16 @@
 			path = Categories;
 			sourceTree = "<group>";
 		};
+		B29B0C302B0D4801003CA8A5 /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				B29B0C332B0D6E16003CA8A5 /* DKSettingsViewModel.swift */,
+				B29B0C312B0D4827003CA8A5 /* DKSettingsView.swift */,
+				B29B0C352B0D71C4003CA8A5 /* DKSettingsCellView.swift */,
+			);
+			path = SwiftUI;
+			sourceTree = "<group>";
+		};
 		B2B2092B29796D0400D4D5DC /* ScreenInstallation */ = {
 			isa = PBXGroup;
 			children = (
@@ -347,6 +363,7 @@
 		B2B2093B29796F2300D4D5DC /* ScreenSettings */ = {
 			isa = PBXGroup;
 			children = (
+				B29B0C302B0D4801003CA8A5 /* SwiftUI */,
 				B2DDCF53298D2AA400902EE6 /* BelarusianCyrillicType */,
 				B2DDCF54298D2AA400902EE6 /* BelarusianLatinType */,
 				B22DC4D8297A14AB00D9AC39 /* Languages */,
@@ -549,6 +566,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B29B0C342B0D6E16003CA8A5 /* DKSettingsViewModel.swift in Sources */,
 				B28C525F295625C90025D49A /* NSAttributedString+Tools.swift in Sources */,
 				B22DC4D5297A01E700D9AC39 /* DKSettingsTransliterationTableViewCell.swift in Sources */,
 				B2B2092D29796D0400D4D5DC /* DKInstallationDescriptionViewController.swift in Sources */,
@@ -571,8 +589,10 @@
 				B25CEE6C2B02B89F00BD1B8A /* DKInstallationNavigationController.swift in Sources */,
 				B299F70529908CBF00D6650A /* DKConverterOptionsTableViewCell.swift in Sources */,
 				B297601029ED7F5400FB5320 /* DKInstallationSharingDataViewController.swift in Sources */,
+				B29B0C362B0D71C4003CA8A5 /* DKSettingsCellView.swift in Sources */,
 				B22DC4D7297A133500D9AC39 /* DKSettingsLanguagesTableViewCell.swift in Sources */,
 				B28C525E295625C90025D49A /* UIColor+Tools.swift in Sources */,
+				B29B0C322B0D4827003CA8A5 /* DKSettingsView.swift in Sources */,
 				B299F7072990901300D6650A /* DKConverterGrowingTableViewCell.swift in Sources */,
 				B2E68764297F37D1005C31B9 /* DKAdditionalLanguage.swift in Sources */,
 				B2DDCF5A298D37C300902EE6 /* DKSettingsBelarusianLatinTypeTableViewCell.swift in Sources */,

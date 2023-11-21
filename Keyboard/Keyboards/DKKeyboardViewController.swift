@@ -8,6 +8,48 @@
 import KeyboardKit
 import SwiftUI
 
+extension DKKeyboardAutocapitalization {
+    var systemValue: Keyboard.AutocapitalizationType {
+        get {
+            switch self {
+            case .none: return .none
+            case .allCharacters: return .allCharacters
+            case .sentences: return .sentences
+            case .words: return .words
+            }
+        }
+        set {
+            switch newValue {
+            case .none: self = .none
+            case .allCharacters: self = .allCharacters
+            case .sentences: self = .sentences
+            case .words: self = .words
+            }
+        }
+    }
+}
+
+extension DKKeyboardFeedback {
+    var audioConfiguation: AudioFeedbackConfiguration {
+        switch self {
+        case .sound: fallthrough
+        case .soundAndVibro:
+            return .enabled
+        default:
+            return .disabled
+        }
+    }
+    var hapticConfiguation: HapticFeedbackConfiguration {
+        switch self {
+        case .vibro: fallthrough
+        case .soundAndVibro:
+            return .enabled
+        default:
+            return .disabled
+        }
+    }
+}
+
 class DKKeyboardViewController: KeyboardInputViewController {
 
     let settings = DKKeyboardSettings()
@@ -21,21 +63,20 @@ class DKKeyboardViewController: KeyboardInputViewController {
         self.keyboardContext.locale = keyboardLayout.locale
         self.keyboardLayout = keyboardLayout
         self.keyboardActionHandler = DKActionHandler(inputViewController: self, swicthKeyboardBlock: self.onSwitchKeyboardLayout)
-        self.keyboardAppearance = DKKeyboardAppearance(keyboardContext: self.keyboardContext)
-        self.configureFeedback()
+        self.keyboardStyleProvider = DKKeyboardAppearance(keyboardContext: self.keyboardContext)
+        self.configureKeyboard()
         super.viewDidLoad()
     }
     
     private func onSwitchKeyboardLayout(_ keyboardLayout: DKKeyboardLayout) {
         self.keyboardLayout = keyboardLayout
-        self.configureFeedback()
+        self.configureKeyboard()
     }
     
-    private func configureFeedback() {
-        let audio: AudioFeedbackConfiguration = self.settings.keyboardFeedbackAudio ? .enabled : .noFeedback
-        let haptic: HapticFeedbackConfiguration = self.settings.keyboardFeedbackHaptic ? .enabled : .noFeedback
-        self.keyboardFeedbackSettings.audioConfiguration = audio
-        self.keyboardFeedbackSettings.hapticConfiguration = haptic
+    private func configureKeyboard() {
+        self.keyboardFeedbackSettings.audioConfiguration = self.settings.keyboardFeedback.audioConfiguation
+        self.keyboardFeedbackSettings.hapticConfiguration = self.settings.keyboardFeedback.hapticConfiguation
+        self.keyboardContext.autocapitalizationTypeOverride = self.settings.keyboardAutocapitalization.systemValue
     }
     
     var keyboardLayout: DKKeyboardLayout? {
