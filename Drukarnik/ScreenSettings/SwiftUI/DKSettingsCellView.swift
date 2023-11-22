@@ -35,7 +35,7 @@ struct DKSettingsCellView<T: Hashable>: View {
                     Text(self.title)
                         .font(.headline)
                     Text(self.selectedOptionTitle)
-                        .font(.callout)
+                        .font(.subheadline)
                 }
                 Spacer()
                 Image(systemName: "chevron.right")

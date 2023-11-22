@@ -18,7 +18,7 @@ class DKAboutViewController: UIViewController {
     }
     
     func updateSupportText() {
-        let fontSize = 15.0
+        let fontSize = UIFont.preferredFont(forTextStyle: .body).pointSize
         let color = UIColor.secondaryLabel.webHexString()
         let opacity = UIColor.secondaryLabel.alpha
         let text = DKLocalizationApp.aboutSupportHtml
