@@ -8,7 +8,7 @@
 import KeyboardKit
 import SwiftUI
 
-class DKKeyboardAppearance: StandardKeyboardAppearance {
+class DKKeyboardAppearance: StandardKeyboardStyleProvider {
     
     override func buttonImage(for action: KeyboardAction) -> Image? {
         switch action {
@@ -27,7 +27,7 @@ class DKKeyboardAppearance: StandardKeyboardAppearance {
         }
     }
     
-    override func buttonStyle(for action: KeyboardAction, isPressed: Bool) -> KeyboardButtonStyle {
+    override func buttonStyle(for action: KeyboardAction, isPressed: Bool) -> KeyboardStyle.Button {
         switch(action) {
         case .custom(named: DKKeyboardLayout.latin.rawValue):
             fallthrough

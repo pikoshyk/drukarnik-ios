@@ -18,12 +18,12 @@ extension DKAutocompleteProvider {
         var suggestions: [AutocompleteSuggestion] = []
         if autocompleteTransliteration {
             suggestions = [
-                AutocompleteSuggestion(text: text, isAutocomplete: false, subtitle: nil),
-                AutocompleteSuggestion(text: convertedText, isAutocomplete: true, subtitle: nil),
+                AutocompleteSuggestion(text: text, isAutocorrect: false, subtitle: nil),
+                AutocompleteSuggestion(text: convertedText, isAutocorrect: true, subtitle: nil),
             ]
         } else {
             suggestions = [
-                AutocompleteSuggestion(text: convertedText ,isAutocomplete: false, subtitle: nil)
+                AutocompleteSuggestion(text: convertedText ,isAutocorrect: false, subtitle: nil)
             ]
         }
         

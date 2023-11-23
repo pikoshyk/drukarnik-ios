@@ -6,11 +6,11 @@
 //
 
 import KeyboardKit
-    
+
 class DKCyrillicInputSetProvider: LocalizedInputSetProvider {
     
     public let localeKey: String = DKKeyboardLayout.cyrillic.localeIdentifier
-
+    
     let baseProvider = EnglishInputSetProvider()
 
     var alphabeticInputSet: AlphabeticInputSet {
