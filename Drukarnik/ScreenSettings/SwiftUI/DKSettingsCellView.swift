@@ -26,7 +26,15 @@ struct DKSettingsCellView<T: Hashable>: View {
                 Button {
                     self.onChange(option.value)
                 } label: {
-                    Label(option.title, systemImage: option.value == self.selectedOption ? "checkmark" : "")
+                    Label(
+                        title: { Text(option.title) },
+                        icon: {
+                            if option.value == self.selectedOption {
+                                Image(systemName: "checkmark")
+                                    .foregroundColor(.accentColor)
+                            }
+                        }
+                    )
                 }
             }
         } label: {
@@ -40,6 +48,7 @@ struct DKSettingsCellView<T: Hashable>: View {
                 Spacer()
                 Image(systemName: "chevron.right")
                     .font(.body)
+                    .foregroundColor(.secondary)
             }
             .foregroundColor(.primary)
         }

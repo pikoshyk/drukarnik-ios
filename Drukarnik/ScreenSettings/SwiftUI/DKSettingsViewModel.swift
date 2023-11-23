@@ -16,6 +16,8 @@ struct DKSettingViewOption<T: Hashable> {
 
 class DKSettingsViewModel: ObservableObject {
     
+    var cancellableSinks: Set<AnyCancellable> = []
+    
     let navigationTitle = "Налады клавіятуры"
     
     let cyrillicTypeCellTitle = "Літары беларускай кірыліцы"
@@ -47,7 +49,7 @@ class DKSettingsViewModel: ObservableObject {
 
     let autocapitalizationCellTitle = "Аўтаматычна вялікая літара"
     lazy var autocapitalizationAvailableOptions: [DKSettingViewOption<DKKeyboardAutocapitalization>] = [
-        DKSettingViewOption(title: "Адключана", value: .none),
+        DKSettingViewOption(title: "Ніколі", value: .none),
         DKSettingViewOption(title: "Слова", value: .words),
         DKSettingViewOption(title: "Сказ", value: .sentences)
     ]
@@ -61,7 +63,7 @@ class DKSettingsViewModel: ObservableObject {
     
     let keyboardFeedbackCellTitle = "Водгук націскання кнопак"
     lazy var keyboardFeedbackAvailableOptions: [DKSettingViewOption<DKKeyboardFeedback>] = [
-        DKSettingViewOption(title: "Адключана", value: .none),
+        DKSettingViewOption(title: "Няма", value: .none),
         DKSettingViewOption(title: "Аудыя", value: .sound),
         DKSettingViewOption(title: "Вібрацыя", value: .vibro),
         DKSettingViewOption(title: "Аудыя і вібрацыя", value: .soundAndVibro)
@@ -73,8 +75,25 @@ class DKSettingsViewModel: ObservableObject {
             self.objectWillChange.send()
         }
     }
+    
+    let interfaceTransliterationCellTitle = "Транслітэрацыя інтэрфейсу"
+    @Published var interfaceTransliteration: DKKeyboardLayout = DKKeyboardSettings.shared.interfaceTransliteration ?? DKKeyboardSettings.shared.defaultInterfaceTransliteration {
+        didSet {
+            DKKeyboardSettings.shared.interfaceTransliteration = interfaceTransliteration
+        }
+    }
+    lazy var interfaceTransliterationOptions: [DKSettingViewOption<DKKeyboardLayout>] = [
+        DKSettingViewOption(title: "Łacinka", value: .latin),
+        DKSettingViewOption(title: "Кірыліца", value: .cyrillic),
+    ]
+    
+    let otherLanguagesCellTitle = "Падтрымка літар іншых моў"
+    @Published var otherLanguagesCellDescription: String = ""
+    let otherLanguagesViewModel = DKSettingsLanguagesViewModel()
 
     init() {
-        
+        self.otherLanguagesViewModel.$supportedLanguages.sink { otherLanguages in
+            self.otherLanguagesCellDescription = otherLanguages
+        }.store(in: &self.cancellableSinks)
     }
 }

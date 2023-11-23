@@ -9,14 +9,20 @@ import SwiftUI
 
 struct DKSettingsView: View {
     
-    @State var viewModel: DKSettingsViewModel
+    @StateObject var viewModel: DKSettingsViewModel
     
     var body: some View {
         List {
-            self.cellLettersCyrillic
-            self.cellLettersLatin
-            self.cellAutocapitalization
-            self.cellKeyboardFeedback
+            Section {
+                self.cellInterfaceTransliteration
+            }
+            Section {
+                self.cellLettersCyrillic
+                self.cellLettersLatin
+                self.cellNavigationOtherLanguages
+                self.cellAutocapitalization
+                self.cellKeyboardFeedback
+            }
         }
         .listStyle(.plain)
         .navigationTitle(self.viewModel.navigationTitle)
@@ -43,6 +49,46 @@ struct DKSettingsView: View {
     var cellKeyboardFeedback: some View {
         DKSettingsCellView(title: self.viewModel.keyboardFeedbackCellTitle, availableOptions: self.viewModel.keyboardFeedbackAvailableOptions, selectedOption: self.viewModel.keyboardFeedbackCurrent) { latinType in
             self.viewModel.keyboardFeedbackCurrent = latinType
+        }
+    }
+    
+    var cellInterfaceTransliteration: some View {
+        VStack(alignment: .leading) {
+            Text(self.viewModel.interfaceTransliterationCellTitle)
+                .font(.headline)
+            Picker("", selection: self.$viewModel.interfaceTransliteration) {
+                ForEach(self.viewModel.interfaceTransliterationOptions, id: \.value) { option in
+                    Text(option.title).tag(option.value)
+                }
+            }
+            .pickerStyle(.segmented)
+        }
+    }
+    
+    var cellNavigationOtherLanguages: some View {
+        ZStack {
+            self.cellOtherLanguages
+            NavigationLink {
+                DKSettingsLanguagesView(viewModel: self.viewModel.otherLanguagesViewModel)
+            } label: {
+                EmptyView()
+            }
+            .buttonStyle(PlainButtonStyle())
+        }
+    }
+    var cellOtherLanguages: some View {
+        HStack {
+            VStack(alignment: .leading, spacing: 4) {
+                Text(self.viewModel.otherLanguagesCellTitle)
+                    .font(.headline)
+                Text(self.viewModel.otherLanguagesCellDescription)
+                    .font(.subheadline)
+            }
+            Spacer()
+            Image(systemName: "chevron.right")
+                .font(.body)
+                .foregroundColor(.secondary)
+
         }
     }
 }

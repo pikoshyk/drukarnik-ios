@@ -29,6 +29,8 @@
 		B249D1A92990696400668130 /* DKKeyboardLayoutProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B249D1A82990696400668130 /* DKKeyboardLayoutProvider.swift */; };
 		B25CEE6C2B02B89F00BD1B8A /* DKInstallationNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25CEE6B2B02B89F00BD1B8A /* DKInstallationNavigationController.swift */; };
 		B25CEE6E2B02DBD400BD1B8A /* DKInstallationKeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25CEE6D2B02DBD400BD1B8A /* DKInstallationKeyboardViewController.swift */; };
+		B25D3B8A2B0EEDAF0000924B /* DKSettingsLanguagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25D3B892B0EEDAF0000924B /* DKSettingsLanguagesView.swift */; };
+		B25D3B8C2B0EEDEA0000924B /* DKSettingsLanguagesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25D3B8B2B0EEDEA0000924B /* DKSettingsLanguagesViewModel.swift */; };
 		B263A887293E01F70024242C /* DKCyrillicCalloutActionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B263A885293E01F70024242C /* DKCyrillicCalloutActionProvider.swift */; };
 		B263A888293E01F70024242C /* DKCyrillicInputSetProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B263A886293E01F70024242C /* DKCyrillicInputSetProvider.swift */; };
 		B282B8F229812D4B001244DE /* UITextDocumentProxy+FullText.swift in Sources */ = {isa = PBXBuildFile; fileRef = B282B8F129812D4B001244DE /* UITextDocumentProxy+FullText.swift */; };
@@ -127,6 +129,8 @@
 		B249D1A82990696400668130 /* DKKeyboardLayoutProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKKeyboardLayoutProvider.swift; sourceTree = "<group>"; };
 		B25CEE6B2B02B89F00BD1B8A /* DKInstallationNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKInstallationNavigationController.swift; sourceTree = "<group>"; };
 		B25CEE6D2B02DBD400BD1B8A /* DKInstallationKeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKInstallationKeyboardViewController.swift; sourceTree = "<group>"; };
+		B25D3B892B0EEDAF0000924B /* DKSettingsLanguagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKSettingsLanguagesView.swift; sourceTree = "<group>"; };
+		B25D3B8B2B0EEDEA0000924B /* DKSettingsLanguagesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKSettingsLanguagesViewModel.swift; sourceTree = "<group>"; };
 		B263A885293E01F70024242C /* DKCyrillicCalloutActionProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKCyrillicCalloutActionProvider.swift; sourceTree = "<group>"; };
 		B263A886293E01F70024242C /* DKCyrillicInputSetProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKCyrillicInputSetProvider.swift; sourceTree = "<group>"; };
 		B282B8F129812D4B001244DE /* UITextDocumentProxy+FullText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextDocumentProxy+FullText.swift"; sourceTree = "<group>"; };
@@ -324,6 +328,8 @@
 				B29B0C332B0D6E16003CA8A5 /* DKSettingsViewModel.swift */,
 				B29B0C312B0D4827003CA8A5 /* DKSettingsView.swift */,
 				B29B0C352B0D71C4003CA8A5 /* DKSettingsCellView.swift */,
+				B25D3B8B2B0EEDEA0000924B /* DKSettingsLanguagesViewModel.swift */,
+				B25D3B892B0EEDAF0000924B /* DKSettingsLanguagesView.swift */,
 			);
 			path = SwiftUI;
 			sourceTree = "<group>";
@@ -566,6 +572,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B25D3B8C2B0EEDEA0000924B /* DKSettingsLanguagesViewModel.swift in Sources */,
 				B29B0C342B0D6E16003CA8A5 /* DKSettingsViewModel.swift in Sources */,
 				B28C525F295625C90025D49A /* NSAttributedString+Tools.swift in Sources */,
 				B22DC4D5297A01E700D9AC39 /* DKSettingsTransliterationTableViewCell.swift in Sources */,
@@ -584,6 +591,7 @@
 				B2E6875A297F3723005C31B9 /* DKKeyboardSettings.swift in Sources */,
 				B2DDCF50298C769500902EE6 /* DKTabBarController.swift in Sources */,
 				B2DDCF4C298C3E3000902EE6 /* DKSettingsBelarusianCyrillicTypeTableViewCell.swift in Sources */,
+				B25D3B8A2B0EEDAF0000924B /* DKSettingsLanguagesView.swift in Sources */,
 				B2B35510295662EC0006B8B1 /* CALayer+Tools.swift in Sources */,
 				B22DC4DA297A14C400D9AC39 /* DKSettingsLanguagesTableViewController.swift in Sources */,
 				B25CEE6C2B02B89F00BD1B8A /* DKInstallationNavigationController.swift in Sources */,
