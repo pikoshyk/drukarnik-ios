@@ -17,13 +17,13 @@ extension KeyboardContext {
                                    orthography: BelarusianLacinka.BLOrthography) {
         
         DispatchQueue.main.async {
-            if let fullText = self.mainTextDocumentProxy.documentContext {
+            if let fullText = self.originalTextDocumentProxy.documentContext {
                 let newText = converter.convert(text: fullText,
                                                 direction: direction,
                                                 version: version,
                                                 orthograpy: orthography)
 
-                let offset = (self.mainTextDocumentProxy.documentContextAfterInput ?? "").count
+                let offset = (self.originalTextDocumentProxy.documentContextAfterInput ?? "").count
                 DispatchQueue.main.async {
                     self.textDocumentProxy.adjustTextPosition(byCharacterOffset: offset)
                     DispatchQueue.main.async {

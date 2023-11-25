@@ -15,6 +15,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+//            let vc = UIStoryboard(name: "DKKeyboardEmoji", bundle: Bundle.main).instantiateInitialViewController()
+//            vc?.loadView()
+//            application.keyWindow?.rootViewController = vc
+//        }
         return true
     }
 

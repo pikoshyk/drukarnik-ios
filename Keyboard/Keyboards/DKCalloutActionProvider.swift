@@ -12,7 +12,7 @@ class DKCalloutActionProvider: KeyboardKit.BaseCalloutActionProvider {
     weak var settings: DKKeyboardSettings?
     
     init(settings: DKKeyboardSettings) throws {
-        try super.init()
+        super.init()
         self.settings = settings
     }
     

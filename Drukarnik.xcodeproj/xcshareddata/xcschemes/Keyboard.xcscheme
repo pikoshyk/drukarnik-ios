@@ -57,6 +57,11 @@
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES"
       launchAutomaticallySubstyle = "2">
+      <RemoteRunnable
+         runnableDebuggingMode = "0"
+         BundleIdentifier = "ph.telegra.Telegraph"
+         RemotePath = "/var/containers/Bundle/Application/A8F3F6F6-5125-47CD-9298-668944D7F06A/Telegram.app">
+      </RemoteRunnable>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"

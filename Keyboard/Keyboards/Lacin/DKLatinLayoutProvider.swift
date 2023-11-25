@@ -10,10 +10,35 @@ import KeyboardKit
 
 class DKLatinLayoutProvider: DKKeyboardLayoutProvider {
     
-    
-    init(keyboardContext: KeyboardContext) {
-        let inputSetProvider = DKLatinInputSetProvider()
-        super.init(keyboardContext: keyboardContext, inputSetProvider: inputSetProvider)
+    static let latAlphabeticInputSet = InputSet(rows: [
+        .init(lowercased: ["q", "w", "e", "r", "t", "y", "u", "i", "o", "p"],
+              uppercased: ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"]),
+        .init(lowercased: ["a", "s", "d", "f", "g", "h", "j", "k", "l"],
+              uppercased: ["A", "S", "D", "F", "G", "H", "J", "K", "L"]),
+        .init(phoneLowercased: ["z", "x", "c", "v", "b", "n", "m"],
+              phoneUppercased: ["Z", "X", "C", "V", "B", "N", "M"],
+              padLowercased: ["z", "x", "c", "v", "b", "n", "m", ",", "."],
+              padUppercased: ["Z", "X", "C", "V", "B", "N", "M", ",", "."])
+    ])
+
+    static let latNumericInputSet =  InputSet(rows: [
+        .init(chars: "1234567890"),
+        .init(phone: "-/:;()$&@\"", pad: "@#$&*()'\""),
+        .init(phone: ".,?!'", pad: "%-+=/;:!?")
+    ])
+
+    static let latSymbolicInputSet = InputSet(rows: [
+        .init(phone: "[]{}#%^*+=", pad: "1234567890"),
+        .init(phone: "_\\|~<>$€£•", pad: "$€£_^[]{}"),
+        .init(phone: ".,?!'", pad: "§|~…\\<>!?")
+    ])
+
+    init() {
+        super.init(alphabeticInputSet: Self.latAlphabeticInputSet,
+                   numericInputSet: Self.latNumericInputSet,
+                   symbolicInputSet: Self.latSymbolicInputSet)
+        self.localeKey = DKKeyboardLayout.latin.localeIdentifier
+//        EnglishKeyboardLayoutProvider()
     }
     
     override func keyboardLayout(for context: KeyboardContext) -> KeyboardLayout {

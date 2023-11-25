@@ -30,7 +30,7 @@ extension DKKeyboardAutocapitalization {
 }
 
 extension DKKeyboardFeedback {
-    var audioConfiguation: AudioFeedbackConfiguration {
+    var audioConfiguation: AudioFeedback.Configuration {
         switch self {
         case .sound: fallthrough
         case .soundAndVibro:
@@ -39,7 +39,7 @@ extension DKKeyboardFeedback {
             return .disabled
         }
     }
-    var hapticConfiguation: HapticFeedbackConfiguration {
+    var hapticConfiguation: HapticFeedback.Configuration {
         switch self {
         case .vibro: fallthrough
         case .soundAndVibro:
@@ -53,17 +53,17 @@ extension DKKeyboardFeedback {
 class DKKeyboardViewController: KeyboardInputViewController {
 
     let settings = DKKeyboardSettings()
-
+    
     override func viewDidLoad() {
         
-        KeyboardKit.GestureButtonDefaults.longPressDelay = 0.3
+        KeyboardKit.Gestures.Defaults.longPressDelay = 0.3
         DKLocalizationKeyboard.settings = self.settings
 
         let keyboardLayout = self.settings.keyboardLayout
-        self.keyboardContext.locale = keyboardLayout.locale
+        self.state.keyboardContext.locale = keyboardLayout.locale
         self.keyboardLayout = keyboardLayout
-        self.keyboardActionHandler = DKActionHandler(inputViewController: self, swicthKeyboardBlock: self.onSwitchKeyboardLayout)
-        self.keyboardStyleProvider = DKKeyboardAppearance(keyboardContext: self.keyboardContext)
+        self.services.actionHandler = DKActionHandler(inputViewController: self, swicthKeyboardBlock: self.onSwitchKeyboardLayout)
+        self.services.styleProvider = DKKeyboardAppearance(keyboardContext: self.state.keyboardContext)
         self.configureKeyboard()
         super.viewDidLoad()
     }
@@ -74,9 +74,9 @@ class DKKeyboardViewController: KeyboardInputViewController {
     }
     
     private func configureKeyboard() {
-        self.keyboardFeedbackSettings.audioConfiguration = self.settings.keyboardFeedback.audioConfiguation
-        self.keyboardFeedbackSettings.hapticConfiguration = self.settings.keyboardFeedback.hapticConfiguation
-        self.keyboardContext.autocapitalizationTypeOverride = self.settings.keyboardAutocapitalization.systemValue
+        self.state.feedbackConfiguration.audioConfiguration = self.settings.keyboardFeedback.audioConfiguation
+        self.state.feedbackConfiguration.hapticConfiguration = self.settings.keyboardFeedback.hapticConfiguation
+        self.state.keyboardContext.autocapitalizationTypeOverride = self.settings.keyboardAutocapitalization.systemValue
     }
     
     var keyboardLayout: DKKeyboardLayout? {
@@ -87,31 +87,27 @@ class DKKeyboardViewController: KeyboardInputViewController {
             }
 
             self.settings.keyboardLayout = keyboardLayout
-            self.keyboardContext.locale = keyboardLayout.locale
-                
+            self.state.keyboardContext.locale = keyboardLayout.locale
+
             switch keyboardLayout {
             case .latin:
-                self.inputSetProvider = DKLatinInputSetProvider()
                 if let calloutActionProvide = try? DKLatinCalloutActionProvider(settings: self.settings) {
-                    self.calloutActionProvider = calloutActionProvide
+                    self.services.calloutActionProvider = calloutActionProvide
                 }
-                self.keyboardLayoutProvider = DKLatinLayoutProvider(keyboardContext: self.keyboardContext)
-                self.autocompleteProvider = DKLatinAutocompleteProvider(settings: self.settings, textDocumentProxy: self.textDocumentProxy)
-                
+                self.services.layoutProvider = DKLatinLayoutProvider()
+                self.services.autocompleteProvider = DKLatinAutocompleteProvider(settings: self.settings, textDocumentProxy: self.textDocumentProxy)
             case .cyrillic:
-                self.inputSetProvider = DKCyrillicInputSetProvider()
                 if let calloutActionProvide = try? DKCyrillicCalloutActionProvider(settings: self.settings) {
-                    self.calloutActionProvider = calloutActionProvide
+                    self.services.calloutActionProvider = calloutActionProvide
                 }
-                self.keyboardLayoutProvider = DKCyrillicLayoutProvider(keyboardContext: self.keyboardContext)
-                self.autocompleteProvider = DKCyrillycAutocompleteProvider(settings: self.settings, textDocumentProxy: self.textDocumentProxy)
-            }
-                
-            self.autocompleteProvider.autocompleteSuggestions(for: self.autocompleteText ?? "") { result in
-                self.autocompleteContext.suggestions = (try? result.get()) ?? []
+                self.services.layoutProvider = DKCyrillicLayoutProvider(keyboardContext: self.state.keyboardContext)
+                self.services.autocompleteProvider = DKCyrillycAutocompleteProvider(settings: self.settings, textDocumentProxy: self.textDocumentProxy)
             }
 
-//            self.keyboardContext.sync(with: self)
+            Task {
+                let result = try? await self.services.autocompleteProvider.autocompleteSuggestions(for: self.autocompleteText ?? "")
+                self.state.autocompleteContext.suggestions = result ?? []
+            }
         }
     }
     

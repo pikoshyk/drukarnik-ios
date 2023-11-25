@@ -14,8 +14,9 @@ class DKAutocompleteProvider: AutocompleteProvider {
     weak var settings: DKKeyboardSettings?
     weak var textDocumentProxy: UITextDocumentProxy?
 
-    func autocompleteSuggestions(for text: String, completion: @escaping KeyboardKit.AutocompleteCompletion) {
+    func autocompleteSuggestions(for text: String) async throws -> [Autocomplete.Suggestion] {
         assertionFailure("Method <autocompleteSuggestions(for:completion:)> must be overrided.")
+        return []
     }
     
     init(settings: DKKeyboardSettings, textDocumentProxy: UITextDocumentProxy) {

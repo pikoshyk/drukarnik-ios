@@ -15,11 +15,11 @@ class DKAutocompleteToolbar {
      a text replacement when a `suggestion` is tapped.
      */
     static func standardActionWithFullTextAutocompleteSupport (
-        for suggestion: AutocompleteSuggestion,
+        for suggestion: Autocomplete.Suggestion,
         keyboardController: KeyboardInputViewController
     ) {
         let proxy = keyboardController.textDocumentProxy
-        let actionHandler = keyboardController.keyboardActionHandler
+        let actionHandler = keyboardController.services.actionHandler
 
         let fullTextReplaceRequired = suggestion.fullTextReplaceRequired
 

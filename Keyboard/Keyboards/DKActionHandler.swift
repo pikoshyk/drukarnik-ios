@@ -11,21 +11,15 @@ import KeyboardKit
 class DKActionHandler: StandardKeyboardActionHandler {
     var swicthKeyboardBlock: ((DKKeyboardLayout) -> Void)?
 
-    init(inputViewController ivc: KeyboardInputViewController, spaceDragGestureHandler: DragGestureHandler? = nil, spaceDragSensitivity: SpaceDragSensitivity = .medium, swicthKeyboardBlock: @escaping(DKKeyboardLayout) -> Void) {
-        super.init(keyboardController: ivc,
-                   keyboardContext: ivc.keyboardContext,
-                   keyboardBehavior: ivc.keyboardBehavior,
-                   keyboardFeedbackSettings: ivc.keyboardFeedbackSettings,
-                   autocompleteContext: ivc.autocompleteContext,
-                   spaceDragGestureHandler: spaceDragGestureHandler,
-                   spaceDragSensitivity: spaceDragSensitivity)
+    convenience init(inputViewController controller: KeyboardInputViewController, swicthKeyboardBlock: @escaping(DKKeyboardLayout) -> Void) {
+        self.init(controller: controller)
         self.swicthKeyboardBlock = swicthKeyboardBlock
     }
     
     /**
      Try to handling a certain `gesture` n a certain `action`.
      */
-    open override func handle(_ gesture: KeyboardGesture, on action: KeyboardAction) {
+    open override func handle(_ gesture: Gestures.KeyboardGesture, on action: KeyboardAction) {
         if gesture == .release {
             autoreleasepool {
                 if action == .custom(named: DKKeyboardLayout.latin.rawValue) {
@@ -38,7 +32,9 @@ class DKActionHandler: StandardKeyboardActionHandler {
         super.handle(gesture, on: action)
     }
     
-    open override func tryApplyAutocompleteSuggestion(before gesture: KeyboardGesture, on action: KeyboardAction) {
+    open override func tryApplyAutocompleteSuggestion(before gesture: Gestures.KeyboardGesture, on action: KeyboardAction) {
+        let textDocumentProxy = self.keyboardContext.textDocumentProxy
+
         if self.isSpaceCursorDrag(action) { return }
         if textDocumentProxy.isCursorAtNewWord { return }
         guard gesture == .release else { return }
@@ -55,7 +51,6 @@ class DKActionHandler: StandardKeyboardActionHandler {
     
     func isSpaceCursorDrag(_ action: KeyboardAction) -> Bool {
         guard action == .space else { return false }
-        guard let handler = spaceDragGestureHandler as? SpaceCursorDragGestureHandler else { return false }
-        return handler.currentDragTextPositionOffset != 0
+        return self.spaceDragGestureHandler.currentDragTextPositionOffset != 0
     }
 }

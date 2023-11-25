@@ -11,19 +11,19 @@ import BelarusianLacinka
 
 extension DKAutocompleteProvider {
 
-    func transliteration(for text: String, to: BLDirection) -> [AutocompleteSuggestion] {
+    func transliteration(for text: String, to: BLDirection) -> [Autocomplete.Suggestion] {
         let convertedText = DKLocalizationKeyboard.convert(text: text, to: to)
         let autocompleteTransliteration = self.settings?.autocompleteTransliteration ?? true
 
-        var suggestions: [AutocompleteSuggestion] = []
+        var suggestions: [Autocomplete.Suggestion] = []
         if autocompleteTransliteration {
             suggestions = [
-                AutocompleteSuggestion(text: text, isAutocorrect: false, subtitle: nil),
-                AutocompleteSuggestion(text: convertedText, isAutocorrect: true, subtitle: nil),
+                Autocomplete.Suggestion(text: text, isAutocorrect: false, subtitle: nil),
+                Autocomplete.Suggestion(text: convertedText, isAutocorrect: true, subtitle: nil),
             ]
         } else {
             suggestions = [
-                AutocompleteSuggestion(text: convertedText ,isAutocorrect: false, subtitle: nil)
+                Autocomplete.Suggestion(text: convertedText ,isAutocorrect: false, subtitle: nil)
             ]
         }
         

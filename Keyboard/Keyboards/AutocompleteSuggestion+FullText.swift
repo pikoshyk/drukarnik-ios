@@ -7,7 +7,7 @@
 
 import KeyboardKit
 
-extension AutocompleteSuggestion {
+extension Autocomplete.Suggestion {
     var fullTextReplaceRequired: Bool {
         set {
             self.additionalInfo["fullTextReplaceRequired"] = newValue

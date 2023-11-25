@@ -10,7 +10,7 @@ import KeyboardKit
 
 extension UITextDocumentProxy {
     
-    func insertAutocompleteSuggestionFullText(_ suggestion: AutocompleteSuggestion, tryInsertSpace: Bool = true) {
+    func insertAutocompleteSuggestionFullText(_ suggestion: Autocomplete.Suggestion, tryInsertSpace: Bool = true) {
         replaceFullText(with: suggestion.text)
         guard tryInsertSpace else { return }
         tryInsertSpaceAfterAutocomplete()
