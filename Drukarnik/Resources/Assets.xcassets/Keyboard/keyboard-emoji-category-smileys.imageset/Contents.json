@@ -1,6 +1,16 @@
 {
   "images" : [
     {
+      "filename" : "keyboard-emoji-category-selected-smileys.pdf",
+      "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
       "filename" : "keyboard-emoji-category-smileys.pdf",
       "idiom" : "universal"
     }

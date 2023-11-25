@@ -1,6 +1,16 @@
 {
   "images" : [
     {
+      "filename" : "keyboard-emoji-category-selected-union.pdf",
+      "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
       "filename" : "keyboard-emoji-category-union.pdf",
       "idiom" : "universal"
     }

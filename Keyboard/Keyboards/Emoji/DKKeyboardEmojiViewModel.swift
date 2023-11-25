@@ -8,6 +8,7 @@
 import UIKit
 
 enum DKEmojiSectionType: Int {
+    case none = -1
     case resents = 0
     case smileys
     case animals
@@ -41,19 +42,51 @@ extension DKEmojiSection {
     }
 }
 
+protocol DKEmojiSectionDelegate {
+    func onSectionChanged(sectionId: DKEmojiSectionType)
+    func scrollToSection(sectionId: DKEmojiSectionType)
+}
+
+extension DKEmojiSectionDelegate {
+    func onSectionChanged(sectionId: DKEmojiSectionType) {}
+    func scrollToSection(sectionId: DKEmojiSectionType) {}
+}
+
 class DKKeyboardEmojiViewModel: Any {
     var sections: [DKEmojiSection]
-    
+    var headerDelegate: DKEmojiSectionDelegate?
+    var collectionDelegate: DKEmojiSectionDelegate?
+    var toolbarDelegate: DKEmojiSectionDelegate?
+
     @objc func onPress(_ emoji: String) {
         
     }
 
     @objc func onSectionPress(_ button: UIButton) {
-        let sectionId = DKEmojiSectionType(rawValue: button.tag)
+        guard let sectionId = DKEmojiSectionType(rawValue: button.tag) else {
+            return
+        }
+        UISelectionFeedbackGenerator().selectionChanged()
+        self.headerDelegate?.scrollToSection(sectionId: sectionId)
+        self.toolbarDelegate?.scrollToSection(sectionId: sectionId)
+        self.collectionDelegate?.scrollToSection(sectionId: sectionId)
+        self.headerDelegate?.onSectionChanged(sectionId: sectionId)
+        self.toolbarDelegate?.onSectionChanged(sectionId: sectionId)
+        self.collectionDelegate?.onSectionChanged(sectionId: sectionId)
+    }
+    
+    @objc func onAlphabeticalKeyboard() {
+        
     }
 
     @objc func onDelete() {
         
+    }
+    
+    func onSectionChanged(_ sectionId: DKEmojiSectionType) {
+        self.headerDelegate?.onSectionChanged(sectionId: sectionId)
+        self.toolbarDelegate?.onSectionChanged(sectionId: sectionId)
+        self.collectionDelegate?.onSectionChanged(sectionId: sectionId)
     }
 
     init() {
