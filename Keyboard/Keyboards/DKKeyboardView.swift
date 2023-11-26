@@ -38,7 +38,7 @@ struct DKKeyboardView: View {
             buttonView:  { $0.view },
             emojiKeyboard:  {
                 $0.view
-//                DKKeyboardEmojiView(viewModel: DKKeyboardEmojiViewModel())
+//                DKKeyboardEmojiView()
             },
             toolbar: { (autocompleteAction: (Autocomplete.Suggestion) -> Void,
                         style: KeyboardStyle.AutocompleteToolbar,

@@ -32,7 +32,6 @@ class DKKeyboardEmojiCollectionView: UICollectionView {
         self.showsHorizontalScrollIndicator = false
         self.backgroundColor = UIColor.clear
         self.register(DKKeyboardEmojiCollectionViewCell.self, forCellWithReuseIdentifier: DKKeyboardEmojiCollectionViewCell.reuseIdentifier)
-        self.updateLayout()
     }
     
     private func updateLayout() {

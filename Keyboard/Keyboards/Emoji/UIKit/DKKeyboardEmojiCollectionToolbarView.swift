@@ -43,13 +43,42 @@ extension UIImage {
 }
 
 class DKKeyboardEmojiCollectionToolbarView: UIStackView {
+    
     private let viewModel: DKKeyboardEmojiViewModel
+
+    var buttons: [DKEmojiSectionType: UIButton] = [:]
+    var backgroundButtonViews: [DKEmojiSectionType: UIView] = [:]
+
+    var activeSectionId: DKEmojiSectionType = .smileys {
+        didSet {
+            for sectionId in self.backgroundButtonViews.keys {
+                let currentSection = sectionId == self.activeSectionId
+                self.backgroundButtonViews[sectionId]?.isHidden = currentSection ? false : true
+                self.buttons[sectionId]?.tintColor = currentSection ? .label : .secondaryLabel
+            }
+        }
+    }
 
     init(_ viewModel: DKKeyboardEmojiViewModel) {
         self.viewModel = viewModel
+        for sectionId in self.viewModel.sections.map({ $0.id }) {
+            let view = UIView(frame: CGRect(x: 0, y: 0, width: 30.0, height: 30.0))
+            view.layer.cornerRadius = 15.0
+            view.clipsToBounds = true
+            view.backgroundColor = .quaternaryLabel
+            view.isHidden = true
+            self.backgroundButtonViews[sectionId] = view
+        }
         super.init(frame: .zero)
+        for view in self.backgroundButtonViews.values {
+            self.addSubview(view)
+        }
         self.viewModel.toolbarDelegate = self
         self.configureStackView()
+        
+        // update default section
+        self.backgroundButtonViews[self.activeSectionId]?.isHidden = false
+        self.buttons[self.activeSectionId]?.tintColor = .label
     }
     
     required init(coder: NSCoder) {
@@ -69,13 +98,14 @@ class DKKeyboardEmojiCollectionToolbarView: UIStackView {
         self.addArrangedSubview(self.buttonsStackView)
         self.addArrangedSubview(UIView.fixedSizeView(width: 20, height: 1))
 
+        self.layoutSubviews()
     }
     
     var buttonsStackView: UIStackView {
         let internalStackView = UIStackView()
         internalStackView.axis = .horizontal
         internalStackView.spacing = 0
-        internalStackView.distribution = .equalCentering
+        internalStackView.distribution = .fillEqually
 
         internalStackView.addArrangedSubview(self.buttonAlphabeticalKeyboard)
 //        internalStackView.addArrangedSubview(self.buttonCategoryRecent)
@@ -86,6 +116,7 @@ class DKKeyboardEmojiCollectionToolbarView: UIStackView {
         }
 
         internalStackView.addArrangedSubview(self.buttonDelete)
+
         return internalStackView
     }
     
@@ -105,6 +136,7 @@ class DKKeyboardEmojiCollectionToolbarView: UIStackView {
         button.setImage(image, for: .normal)
         button.tag = DKEmojiSectionType.resents.rawValue
         button.addTarget(self.viewModel, action: #selector(self.viewModel.onSectionPress(_:)), for: .touchUpInside)
+        self.buttons[.resents] = button
         return button
     }
     
@@ -114,6 +146,7 @@ class DKKeyboardEmojiCollectionToolbarView: UIStackView {
         button.tintColor = .label
         button.addTarget(self.viewModel, action: #selector(self.viewModel.onDelete), for: .touchUpInside)
         button.setImage(image, for: .normal)
+        
         return button
     }
     
@@ -124,13 +157,24 @@ class DKKeyboardEmojiCollectionToolbarView: UIStackView {
         button.tag = section.id.rawValue
         button.addTarget(self.viewModel, action: #selector(self.viewModel.onSectionPress(_:)), for: .touchUpInside)
         button.setImage(image, for: .normal)
+        self.buttons[section.id] = button
         return button
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        for sectionId in self.buttons.keys {
+            if let buttonCenter = self.buttons[sectionId]?.center, let backgroundView = self.backgroundButtonViews[sectionId] {
+                var center = CGPoint(x: buttonCenter.x + backgroundView.bounds.size.width/3.5, y: buttonCenter.y)
+                self.backgroundButtonViews[sectionId]?.center = center
+            }
+        }
     }
 }
 
 extension DKKeyboardEmojiCollectionToolbarView: DKEmojiSectionDelegate {
     func onSectionChanged(sectionId: DKEmojiSectionType) {
-        
+        self.activeSectionId = sectionId
     }
 }
 

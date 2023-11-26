@@ -26,7 +26,7 @@ class DKKeyboardEmojiCollectionViewCell: UICollectionViewCell {
     }
     
     private func configureCell() {
-        let fontSize = DKKeyboardEmojiCollectionView.cellSize / 1.1
+        let fontSize = DKKeyboardEmojiCollectionView.cellSize / 1.2
         self.label.font = UIFont.systemFont(ofSize: fontSize)
         self.contentView.addSubview(self.label)
         self.label.frame = CGRect(origin: CGPoint.zero,
@@ -51,7 +51,7 @@ class DKKeyboardEmojiCollectionViewCell: UICollectionViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        let fontSize = DKKeyboardEmojiCollectionView.cellSize / 1.1
+        let fontSize = DKKeyboardEmojiCollectionView.cellSize / 1.2
         if self.label.font.pointSize != fontSize {
             self.label.font = UIFont.systemFont(ofSize: fontSize)
             self.label.frame = CGRect(origin: CGPoint.zero,
