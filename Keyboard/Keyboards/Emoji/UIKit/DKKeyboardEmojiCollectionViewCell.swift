@@ -9,56 +9,66 @@ import UIKit
 
 class DKKeyboardEmojiCollectionViewCell: UICollectionViewCell {
     
-    private var emoji: String?
-    private let label = UILabel()
+    private var textLayer: CATextLayer?
 
     static let reuseIdentifier = "cellEmoji"
     override var reuseIdentifier: String? { Self.reuseIdentifier }
     
+    static func dequeue(from collectionView: UICollectionView, for indexPath: IndexPath) -> DKKeyboardEmojiCollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Self.reuseIdentifier, for: indexPath) as? DKKeyboardEmojiCollectionViewCell ?? DKKeyboardEmojiCollectionViewCell()
+        return cell
+
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.configureCell()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        self.configureCell()
     }
     
-    private func configureCell() {
-        let fontSize = DKKeyboardEmojiCollectionView.cellSize / 1.2
-        self.label.font = UIFont.systemFont(ofSize: fontSize)
-        self.contentView.addSubview(self.label)
-        self.label.frame = CGRect(origin: CGPoint.zero,
-                                  size: CGSize(width: fontSize*2, height: fontSize*2))
-        let center = CGPoint(x: DKKeyboardEmojiCollectionView.cellSize*1.25  / 2.0,
-                             y: DKKeyboardEmojiCollectionView.cellSize / 2.0)
-        self.label.center = center
-
-//        self.contentView.backgroundColor = UIColor.green
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.clearCell()
+    }
+    
+    private func clearCell() {
+        self.textLayer?.removeFromSuperlayer()
     }
     
     var emojiLabel: String? {
         get {
-            self.emoji
+            self.textLayer?.string as? String
         }
         set {
-            self.emoji = newValue
-            self.label.text = newValue
-            self.layoutSubviews()
+            self.clearCell()
+                
+            let fontSize = DKKeyboardEmojiCollectionView.cellSize / 1.2
+
+            self.layer.rasterizationScale = UIScreen.main.scale
+            let textLayer = CATextLayer()
+            textLayer.frame = CGRect.zero;
+            textLayer.font = CFBridgingRetain( UIFont.systemFont(ofSize: fontSize).fontName);
+            textLayer.fontSize = fontSize;
+            textLayer.alignmentMode = .center;
+            self.layer.addSublayer(textLayer)
+            self.textLayer = textLayer
+            self.layer.shouldRasterize = true
+            CATransaction.begin()
+            CATransaction.setDisableActions(true)
+            textLayer.string = newValue
+            CATransaction.commit()
         }
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
+    override func layoutSublayers(of layer: CALayer) {
+        super.layoutSublayers(of: layer)
+        CATransaction.begin()
+        CATransaction.setDisableActions(true)
         let fontSize = DKKeyboardEmojiCollectionView.cellSize / 1.2
-        if self.label.font.pointSize != fontSize {
-            self.label.font = UIFont.systemFont(ofSize: fontSize)
-            self.label.frame = CGRect(origin: CGPoint.zero,
-                                      size: CGSize(width: fontSize*2, height: fontSize*2))
-        }
-        let center = CGPoint(x: DKKeyboardEmojiCollectionView.cellSize*1.25  / 2.0,
-                             y: DKKeyboardEmojiCollectionView.cellSize / 2.0)
-        self.label.center = center
+        self.textLayer?.fontSize = fontSize
+        self.textLayer?.frame = layer.bounds
+        CATransaction.commit()
     }
 }

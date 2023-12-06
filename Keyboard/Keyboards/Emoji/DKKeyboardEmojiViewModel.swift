@@ -58,9 +58,9 @@ class DKKeyboardEmojiViewModel: Any {
     var collectionDelegate: DKEmojiSectionDelegate?
     var toolbarDelegate: DKEmojiSectionDelegate?
 
-    @objc func onPress(_ emoji: String) {
-        
-    }
+    var onAlphabeticalKeyboardBlock: (() -> Void)?
+    var onDeleteBlock: (() -> Void)?
+    var onEmojiBlock: ((String) -> Void)?
 
     @objc func onSectionPress(_ button: UIButton) {
         guard let sectionId = DKEmojiSectionType(rawValue: button.tag) else {
@@ -75,14 +75,6 @@ class DKKeyboardEmojiViewModel: Any {
         self.collectionDelegate?.onSectionChanged(sectionId: sectionId)
     }
     
-    @objc func onAlphabeticalKeyboard() {
-        
-    }
-
-    @objc func onDelete() {
-        
-    }
-    
     func onSectionChanged(_ sectionId: DKEmojiSectionType) {
         self.headerDelegate?.onSectionChanged(sectionId: sectionId)
         self.toolbarDelegate?.onSectionChanged(sectionId: sectionId)
@@ -95,6 +87,7 @@ class DKKeyboardEmojiViewModel: Any {
                            title: "Smileys & People",
                            imageName: "keyboard-emoji-category-smileys",
                            items: "😀😃😄😁😆😅😂🤣☺️😊😇🙂🙃😉😌😍😘😗😙😚😋😛😝😜🤪🤨🧐🤓😎🤩😏😒😞😔😟😕🙁☹️😣😖😫😩😢😭😤😠😡🤬🤯😳😱😨😰😥😓🤗🤔🤭🤫🤥😶😐😑😬🙄😯😦😧😮😲😴🤤😪😵🤐🤢🤮🤧😷🤒🤕🤑🤠😈👿👹👺🤡💩👻💀☠️👽👾🤖🎃😺😸😹😻😼😽🙀😿😾🤲👐🙌👏🤝👍👎👊✊🤛🤜🤞✌️🤟🤘👌👈👉👆👇☝️✋🤚🖐🖖👋🤙💪🖕✍️🙏💍💄💋👄👅👂👃👣👁👀🧠🗣👤👥👶👧🧒👦👩🧑👨👱‍♀️👱‍♂️🧔👵🧓👴👲👳‍♀️👳‍♂️🧕👮‍♀️👮‍♂️👷‍♀️👷‍♂️💂‍♀️💂‍♂️🕵️‍♀️🕵️‍♂️👩‍⚕️👨‍⚕️👩‍🌾👨‍🌾👩‍🍳👨‍🍳👩‍🎓👨‍🎓👩‍🎤👨‍🎤👩‍🏫👨‍🏫👩‍🏭👨‍🏭👩‍💻👨‍💻👩‍💼👨‍💼👩‍🔧👨‍🔧👩‍🔬👨‍🔬👩‍🎨👨‍🎨👩‍🚒👨‍🚒👩‍✈️👨‍✈️👩‍🚀👨‍🚀👩‍⚖️👨‍⚖️👰🤵👸🤴🤶🎅🧙‍♀️🧙‍♂️🧝‍♀️🧝‍♂️🧛‍♀️🧛‍♂️🧟‍♀️🧟‍♂️🧞‍♀️🧞‍♂️🧜‍♀️🧜‍♂️🧚‍♀️🧚‍♂️👼🤰🤱🙇‍♀️🙇‍♂️💁‍♀️💁‍♂️🙅‍♀️🙅‍♂️🙆‍♀️🙆‍♂️🙋‍♀️🙋‍♂️🤦‍♀️🤦‍♂️🤷‍♀️🤷‍♂️🙎‍♀️🙎‍♂️🙍‍♀️🙍‍♂️💇‍♀️💇‍♂️💆‍♀️💆‍♂️🧖‍♀️🧖‍♂️💅🤳💃🕺👯‍♀️👯‍♂️🕴🚶‍♀️🚶‍♂️🏃‍♀️🏃‍♂️👫👭👬💑👩‍❤️‍👩👨‍❤️‍👨💏👩‍❤️‍💋‍👩👨‍❤️‍💋‍👨👪👨‍👩‍👧👨‍👩‍👧‍👦👨‍👩‍👦‍👦👨‍👩‍👧‍👧👩‍👩‍👦👩‍👩‍👧👩‍👩‍👧‍👦👩‍👩‍👦‍👦👩‍👩‍👧‍👧👨‍👨‍👦👨‍👨‍👧👨‍👨‍👧‍👦👨‍👨‍👦‍👦👨‍👨‍👧‍👧👩‍👦👩‍👧👩‍👧‍👦👩‍👦‍👦👩‍👧‍👧👨‍👦👨‍👧👨‍👧‍👦👨‍👦‍👦👨‍👧‍👧🧥👚👕👖👔👗👙👘👠👡👢👞👟🧦🧤🧣🎩🧢👒🎓⛑👑👝👛👜💼🎒👓🕶🌂"),
+            
             DKEmojiSection(id: .animals,
                            title: "Animals & Nature",
                            imageName: "keyboard-emoji-category-animals",

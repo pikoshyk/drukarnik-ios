@@ -125,7 +125,9 @@ class DKKeyboardEmojiCollectionToolbarView: UIStackView {
         button.setTitle("ABC", for: .normal)
         button.setTitleColor(.secondaryLabel, for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .medium)
-        button.addTarget(self.viewModel, action: #selector(self.viewModel.onAlphabeticalKeyboard), for: .touchUpInside)
+        button.addAction(UIAction(handler: { action in
+            self.viewModel.onAlphabeticalKeyboardBlock?()
+        }), for: .touchUpInside)
         return button
     }
     
@@ -144,7 +146,9 @@ class DKKeyboardEmojiCollectionToolbarView: UIStackView {
         let image = UIImage(named: "keyboard-emoji-button-delete")!.resizePhone()!
         let button = UIButton()
         button.tintColor = .label
-        button.addTarget(self.viewModel, action: #selector(self.viewModel.onDelete), for: .touchUpInside)
+        button.addAction(UIAction(handler: { action in
+            self.viewModel.onDeleteBlock?()
+        }), for: .touchUpInside)
         button.setImage(image, for: .normal)
         
         return button
@@ -165,7 +169,7 @@ class DKKeyboardEmojiCollectionToolbarView: UIStackView {
         super.layoutSubviews()
         for sectionId in self.buttons.keys {
             if let buttonCenter = self.buttons[sectionId]?.center, let backgroundView = self.backgroundButtonViews[sectionId] {
-                var center = CGPoint(x: buttonCenter.x + backgroundView.bounds.size.width/3.5, y: buttonCenter.y)
+                let center = CGPoint(x: buttonCenter.x + backgroundView.bounds.size.width/3.5, y: buttonCenter.y)
                 self.backgroundButtonViews[sectionId]?.center = center
             }
         }

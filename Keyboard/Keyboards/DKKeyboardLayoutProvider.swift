@@ -13,12 +13,12 @@ class DKKeyboardLayoutProvider: InputSetBasedKeyboardLayoutProvider {
     override func keyboardLayout(for context: KeyboardContext) -> KeyboardLayout {
         let layout = super.keyboardLayout(for: context)
 
-        if let items = layout.itemRows.last {
-            let itemsToDelete: [KeyboardAction] = [.keyboardType(.emojis)]
-            if let item = items.filter({ itemsToDelete.contains($0.action) }).first {
-                layout.itemRows.remove(item)
-            }
-        }
+//        if let items = layout.itemRows.last {
+//            let itemsToDelete: [KeyboardAction] = [.keyboardType(.emojis)]
+//            if let item = items.filter({ itemsToDelete.contains($0.action) }).first {
+//                layout.itemRows.remove(item)
+//            }
+//        }
 
 //        if context.deviceType == .pad {
 //            if let items = layout.itemRows.last {

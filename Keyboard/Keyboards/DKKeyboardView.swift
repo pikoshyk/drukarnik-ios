@@ -36,9 +36,14 @@ struct DKKeyboardView: View {
             services: self.keyboardController.services,
             buttonContent:  { $0.view },
             buttonView:  { $0.view },
-            emojiKeyboard:  {
-                $0.view
-//                DKKeyboardEmojiView()
+            emojiKeyboard:  { emojiKeyboardParams in
+                DKKeyboardEmojiView(onAlphabeticalKeyboard: {
+                    self.keyboardController.state.keyboardContext.keyboardType = .alphabetic(.auto)
+                }, onDelete: {
+                    self.keyboardController.state.keyboardContext.textDocumentProxy.deleteBackward(times: 1)
+                }, onEmoji: { emoji in
+                    self.keyboardController.state.keyboardContext.textDocumentProxy.insertText(emoji)
+                })
             },
             toolbar: { (autocompleteAction: (Autocomplete.Suggestion) -> Void,
                         style: KeyboardStyle.AutocompleteToolbar,

@@ -5,14 +5,17 @@
 //  Created by Logout on 25.11.23.
 //
 
+import Foundation
 import SwiftUI
 
 class DKKeyboardEmojiCollectionView: UICollectionView {
     
-    static var cellSize: CGFloat = 25.0
-    private static var cellSpace: CGFloat = 0.0
-    private static let sectionSpace: CGFloat = 16.0
-    
+    public static var cellSize: CGFloat = 25.0
+    public static var cellSpace: CGFloat = 0.0
+    public static let sectionSpace: CGFloat = 16.0
+    public static let countOfEmojiInColumn: Int = 5
+    public static var countEmojisOnScreen: Int = 100
+
     private let viewModel: DKKeyboardEmojiViewModel
 
     init(_ viewModel: DKKeyboardEmojiViewModel) {
@@ -47,7 +50,12 @@ class DKKeyboardEmojiCollectionView: UICollectionView {
         let height = self.frame.height
         return height
     }
-    
+
+    var emojiPanelViewWidth: CGFloat {
+        let width = self.frame.width
+        return width
+    }
+
     override func layoutSubviews() {
         super.layoutSubviews()
         let emojiPanelViewHeight = self.emojiPanelViewHeight
@@ -55,15 +63,16 @@ class DKKeyboardEmojiCollectionView: UICollectionView {
             return
         }
 
-        let countOfEmojiInColumn = 5.0
-        let spaceForOneEmoji = self.emojiPanelViewHeight / countOfEmojiInColumn
-        let newCellSize = spaceForOneEmoji - Self.cellSpace*(countOfEmojiInColumn+1)
+        let spaceForOneEmoji = self.emojiPanelViewHeight / CGFloat(Self.countOfEmojiInColumn)
+        let newCellSize = spaceForOneEmoji - Self.cellSpace*CGFloat(Self.countOfEmojiInColumn+1)
 
         if Self.cellSize == newCellSize {
             return
         }
 
         Self.cellSize = newCellSize
+        Self.countEmojisOnScreen = Self.countOfEmojiInColumn * Int(ceil(self.emojiPanelViewWidth / Self.cellSize))
+        
         super.layoutSubviews()
         self.updateLayout()
         self.collectionViewLayout.invalidateLayout()
@@ -91,12 +100,16 @@ extension DKKeyboardEmojiCollectionView: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DKKeyboardEmojiCollectionViewCell.reuseIdentifier, for: indexPath)
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         if let cellX = cell as? DKKeyboardEmojiCollectionViewCell {
             let emoji = self.viewModel.sections[indexPath.section].emoji(indexPath.row)
             cellX.emojiLabel = emoji
         }
-        return cell
     }
 }
 
@@ -116,7 +129,7 @@ extension DKKeyboardEmojiCollectionView: UICollectionViewDelegate {
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let emoji = self.viewModel.sections[indexPath.section].emoji(indexPath.row)
-        self.viewModel.onPress(emoji)
+        self.viewModel.onEmojiBlock?(emoji)
     }
 }
 
