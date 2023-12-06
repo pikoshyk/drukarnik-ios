@@ -10,6 +10,7 @@
 		B2073D0B2945F599008B43E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2073D042945F599008B43E4 /* AppDelegate.swift */; };
 		B2073D0D2945F599008B43E4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2073D062945F599008B43E4 /* SceneDelegate.swift */; };
 		B2073D0F2945F62C008B43E4 /* DKCyrillicLayoutProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2073D0E2945F62C008B43E4 /* DKCyrillicLayoutProvider.swift */; };
+		B214A2952B210FA500388679 /* emoji.json in Resources */ = {isa = PBXBuildFile; fileRef = B214A2942B210FA500388679 /* emoji.json */; };
 		B21A248A29360C7700C056E5 /* DKKeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21A248929360C7700C056E5 /* DKKeyboardViewController.swift */; };
 		B21A248E29360C7700C056E5 /* Keyboard.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = B21A248729360C7600C056E5 /* Keyboard.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		B21A2499293610EA00C056E5 /* DKKeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21A2498293610EA00C056E5 /* DKKeyboardView.swift */; };
@@ -125,6 +126,7 @@
 		B2073D042945F599008B43E4 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B2073D062945F599008B43E4 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		B2073D0E2945F62C008B43E4 /* DKCyrillicLayoutProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKCyrillicLayoutProvider.swift; sourceTree = "<group>"; };
+		B214A2942B210FA500388679 /* emoji.json */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.json; path = emoji.json; sourceTree = "<group>"; };
 		B21A246929360B3600C056E5 /* Drukarnik.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Drukarnik.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B21A248729360C7600C056E5 /* Keyboard.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Keyboard.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		B21A248929360C7700C056E5 /* DKKeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKKeyboardViewController.swift; sourceTree = "<group>"; };
@@ -405,6 +407,7 @@
 				B2B2093129796D7F00D4D5DC /* Main.storyboard */,
 				B22DC4D22979FB7000D9AC39 /* Installation.storyboard */,
 				B2B97569297B52A800ED68D2 /* additional_languages.json */,
+				B214A2942B210FA500388679 /* emoji.json */,
 				B2B2093229796D7F00D4D5DC /* Info.plist */,
 			);
 			path = Resources;
@@ -615,6 +618,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2B2093729796D8600D4D5DC /* Assets.xcassets in Resources */,
+				B214A2952B210FA500388679 /* emoji.json in Resources */,
 				B2B9756B297B52A800ED68D2 /* additional_languages.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
