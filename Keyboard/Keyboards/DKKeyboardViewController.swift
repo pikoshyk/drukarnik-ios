@@ -74,8 +74,8 @@ class DKKeyboardViewController: KeyboardInputViewController {
     }
     
     private func configureKeyboard() {
-        self.state.feedbackConfiguration.audioConfiguration = self.settings.keyboardFeedback.audioConfiguation
-        self.state.feedbackConfiguration.hapticConfiguration = self.settings.keyboardFeedback.hapticConfiguation
+        self.state.feedbackConfiguration.audio = self.settings.keyboardFeedback.audioConfiguation
+        self.state.feedbackConfiguration.haptic = self.settings.keyboardFeedback.hapticConfiguation
         self.state.keyboardContext.autocapitalizationTypeOverride = self.settings.keyboardAutocapitalization.systemValue
     }
     

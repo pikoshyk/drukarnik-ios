@@ -57,3 +57,5 @@ class DKKeyboardLayoutProvider: InputSetBasedKeyboardLayoutProvider {
 //    }
 }
 
+
+#warning("TODO: After each update KeyboardKit comment 'layout.itemRows.remove(.keyboardType(.emojis))' in SystemKeyboard::init")

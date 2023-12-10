@@ -32,7 +32,7 @@ class DKActionHandler: StandardKeyboardActionHandler {
         super.handle(gesture, on: action)
     }
     
-    open override func tryApplyAutocompleteSuggestion(before gesture: Gestures.KeyboardGesture, on action: KeyboardAction) {
+    open override func tryApplyAutocorrectSuggestion(before gesture: Gestures.KeyboardGesture, on action: KeyboardAction) {
         let textDocumentProxy = self.keyboardContext.textDocumentProxy
 
         if self.isSpaceCursorDrag(action) { return }
