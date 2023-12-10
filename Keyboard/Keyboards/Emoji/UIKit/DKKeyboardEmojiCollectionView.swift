@@ -8,19 +8,33 @@
 import Foundation
 import SwiftUI
 
+class DKKeyboardEmojiCollectionViewFlowLayout: UICollectionViewFlowLayout {
+    override init() {
+        super.init()
+        self.scrollDirection = .horizontal
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        self.scrollDirection = .horizontal
+    }
+}
+
 class DKKeyboardEmojiCollectionView: UICollectionView {
     
     public static var cellSize: CGFloat = 25.0
     public static var cellSpace: CGFloat = 0.0
-    public static let sectionSpace: CGFloat = 16.0
+    public static let sectionSpace: CGFloat = 0.0
     public static let countOfEmojiInColumn: Int = 5
+    public static let minialEmojiCellSize: CGFloat = 30
     public static var countEmojisOnScreen: Int = 100
 
     private let viewModel: DKKeyboardEmojiViewModel
 
     init(_ viewModel: DKKeyboardEmojiViewModel) {
         self.viewModel = viewModel
-        super.init(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+        let collectionViewFlowLayout = DKKeyboardEmojiCollectionViewFlowLayout()
+        super.init(frame: .zero, collectionViewLayout: collectionViewFlowLayout)
         self.viewModel.collectionDelegate = self
         self.configureCollectionView()
     }
@@ -37,13 +51,14 @@ class DKKeyboardEmojiCollectionView: UICollectionView {
         self.register(DKKeyboardEmojiCollectionViewCell.self, forCellWithReuseIdentifier: DKKeyboardEmojiCollectionViewCell.reuseIdentifier)
     }
     
-    private func updateLayout() {
+    private func updateLayout(_ layoutSubviewRequired: Bool = true) {
         if let layout = self.collectionViewLayout as? UICollectionViewFlowLayout {
-            layout.scrollDirection = .horizontal
             layout.minimumLineSpacing = Self.cellSpace
             layout.minimumInteritemSpacing = Self.cellSpace
         }
-        self.layoutSubviews()
+        if layoutSubviewRequired {
+            self.layoutSubviews()
+        }
     }
     
     var emojiPanelViewHeight: CGFloat {
@@ -57,24 +72,35 @@ class DKKeyboardEmojiCollectionView: UICollectionView {
     }
 
     override func layoutSubviews() {
-        super.layoutSubviews()
+        var countOfEmojiInColumn = Self.countOfEmojiInColumn // optimal 5, but can be less
         let emojiPanelViewHeight = self.emojiPanelViewHeight
+        let emojiPanelViewWidth = self.emojiPanelViewWidth
+        let cellSpace = Self.cellSpace
+        let cellSize = Self.cellSize
+
         if emojiPanelViewHeight == 0 {
+            super.layoutSubviews()
             return
         }
+        
 
-        let spaceForOneEmoji = self.emojiPanelViewHeight / CGFloat(Self.countOfEmojiInColumn)
-        let newCellSize = spaceForOneEmoji - Self.cellSpace*CGFloat(Self.countOfEmojiInColumn+1)
+        var emojiSide = emojiPanelViewHeight / CGFloat(countOfEmojiInColumn)
+        if emojiSide < Self.minialEmojiCellSize {
+            countOfEmojiInColumn -= 1
+            emojiSide = emojiPanelViewHeight / CGFloat(countOfEmojiInColumn)
+        }
+        let newCellSize = emojiSide - cellSpace*CGFloat(countOfEmojiInColumn+1)
 
-        if Self.cellSize == newCellSize {
+        if cellSize == newCellSize {
+            super.layoutSubviews()
             return
         }
 
         Self.cellSize = newCellSize
-        Self.countEmojisOnScreen = Self.countOfEmojiInColumn * Int(ceil(self.emojiPanelViewWidth / Self.cellSize))
+        Self.countEmojisOnScreen = countOfEmojiInColumn * Int(ceil(emojiPanelViewWidth / cellSize))
         
         super.layoutSubviews()
-        self.updateLayout()
+        self.updateLayout(false)
         self.collectionViewLayout.invalidateLayout()
     }
     

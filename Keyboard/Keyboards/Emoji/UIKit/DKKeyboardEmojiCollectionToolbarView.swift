@@ -91,12 +91,12 @@ class DKKeyboardEmojiCollectionToolbarView: UIStackView {
         self.spacing = 0
 
         NSLayoutConstraint.activate([
-            self.heightAnchor.constraint(equalToConstant: 40)
+            self.heightAnchor.constraint(equalToConstant: 44)
         ])
 
         self.addArrangedSubview(UIView.fixedSizeView(width: 9, height: 1))
         self.addArrangedSubview(self.buttonsStackView)
-        self.addArrangedSubview(UIView.fixedSizeView(width: 20, height: 1))
+        self.addArrangedSubview(UIView.fixedSizeView(width: 0, height: 1))
 
         self.layoutSubviews()
     }
@@ -137,7 +137,9 @@ class DKKeyboardEmojiCollectionToolbarView: UIStackView {
                     button.tintColor = .secondaryLabel
         button.setImage(image, for: .normal)
         button.tag = DKEmojiSectionType.resents.rawValue
-        button.addTarget(self.viewModel, action: #selector(self.viewModel.onSectionPress(_:)), for: .touchUpInside)
+        button.addAction(UIAction(handler: { action in
+            self.viewModel.onSectionPress(DKEmojiSectionType.resents)
+        }), for: .touchUpInside)
         self.buttons[.resents] = button
         return button
     }
@@ -159,20 +161,22 @@ class DKKeyboardEmojiCollectionToolbarView: UIStackView {
         let button = UIButton()
         button.tintColor = .secondaryLabel
         button.tag = section.id.rawValue
-        button.addTarget(self.viewModel, action: #selector(self.viewModel.onSectionPress(_:)), for: .touchUpInside)
+        button.addAction(UIAction(handler: { action in
+            self.viewModel.onSectionPress(section.id)
+        }), for: .touchUpInside)
         button.setImage(image, for: .normal)
         self.buttons[section.id] = button
         return button
     }
     
     override func layoutSubviews() {
-        super.layoutSubviews()
         for sectionId in self.buttons.keys {
             if let buttonCenter = self.buttons[sectionId]?.center, let backgroundView = self.backgroundButtonViews[sectionId] {
                 let center = CGPoint(x: buttonCenter.x + backgroundView.bounds.size.width/3.5, y: buttonCenter.y)
                 self.backgroundButtonViews[sectionId]?.center = center
             }
         }
+        super.layoutSubviews()
     }
 }
 

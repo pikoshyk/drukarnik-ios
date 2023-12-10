@@ -46,15 +46,16 @@ class DKKeyboardEmojiCollectionViewCell: UICollectionViewCell {
                 
             let fontSize = DKKeyboardEmojiCollectionView.cellSize / 1.2
 
-            self.layer.rasterizationScale = UIScreen.main.scale
             let textLayer = CATextLayer()
             textLayer.frame = CGRect.zero;
             textLayer.font = CFBridgingRetain( UIFont.systemFont(ofSize: fontSize).fontName);
             textLayer.fontSize = fontSize;
             textLayer.alignmentMode = .center;
+            textLayer.contentsScale = UIScreen.main.scale > 2 ? 2 : UIScreen.main.scale
+            textLayer.rasterizationScale = UIScreen.main.scale > 2 ? 2 : UIScreen.main.scale
+            textLayer.shouldRasterize = true
             self.layer.addSublayer(textLayer)
             self.textLayer = textLayer
-            self.layer.shouldRasterize = true
             CATransaction.begin()
             CATransaction.setDisableActions(true)
             textLayer.string = newValue
