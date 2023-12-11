@@ -48,8 +48,12 @@ struct DKKeyboardView: View {
             toolbar: { (autocompleteAction: (Autocomplete.Suggestion) -> Void,
                         style: KeyboardStyle.AutocompleteToolbar,
                         view: AutocompleteToolbar<Autocomplete.ToolbarItem, Autocomplete.ToolbarSeparator>) in
-                self.toolbarConverter
-        })
+                    HStack(spacing: 0) {
+                        self.toolbarConverter
+                        view
+                    }
+            }
+        )
     }
     
     var toolbarConverter: some View {

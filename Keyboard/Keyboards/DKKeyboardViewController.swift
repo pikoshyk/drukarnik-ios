@@ -95,13 +95,13 @@ class DKKeyboardViewController: KeyboardInputViewController {
                     self.services.calloutActionProvider = calloutActionProvide
                 }
                 self.services.layoutProvider = DKLatinLayoutProvider()
-                self.services.autocompleteProvider = DKLatinAutocompleteProvider(settings: self.settings, textDocumentProxy: self.textDocumentProxy)
+                self.services.autocompleteProvider = DKEmojiAutocompleteProvider(settings: self.settings, textDocumentProxy: self.textDocumentProxy)
             case .cyrillic:
                 if let calloutActionProvide = try? DKCyrillicCalloutActionProvider(settings: self.settings) {
                     self.services.calloutActionProvider = calloutActionProvide
                 }
                 self.services.layoutProvider = DKCyrillicLayoutProvider(keyboardContext: self.state.keyboardContext)
-                self.services.autocompleteProvider = DKCyrillycAutocompleteProvider(settings: self.settings, textDocumentProxy: self.textDocumentProxy)
+                self.services.autocompleteProvider = DKEmojiAutocompleteProvider(settings: self.settings, textDocumentProxy: self.textDocumentProxy)
             }
 
             Task {
