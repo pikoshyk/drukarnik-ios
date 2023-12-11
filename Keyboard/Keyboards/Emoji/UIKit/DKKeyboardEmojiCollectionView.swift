@@ -22,10 +22,8 @@ class DKKeyboardEmojiCollectionViewFlowLayout: UICollectionViewFlowLayout {
 
 class DKKeyboardEmojiCollectionView: UICollectionView {
     
-    public static var cellSize: CGFloat = 25.0
-    public static var cellSpace: CGFloat = 0.0
-    public static let sectionSpace: CGFloat = 0.0
-    public static let countOfEmojiInColumn: Int = 5
+    public static var cellSize: CGFloat = 30
+    public static var countOfEmojiInColumn: Int = 5
     public static let minialEmojiCellSize: CGFloat = 30
     public static var countEmojisOnScreen: Int = 100
 
@@ -44,64 +42,46 @@ class DKKeyboardEmojiCollectionView: UICollectionView {
     }
 
     private func configureCollectionView() {
-        self.dataSource = self
-        self.delegate = self
+        self.register(DKKeyboardEmojiCollectionViewCell.self, forCellWithReuseIdentifier: DKKeyboardEmojiCollectionViewCell.reuseIdentifier)
         self.showsHorizontalScrollIndicator = false
         self.backgroundColor = UIColor.clear
-        self.register(DKKeyboardEmojiCollectionViewCell.self, forCellWithReuseIdentifier: DKKeyboardEmojiCollectionViewCell.reuseIdentifier)
+        self.delegate = self
+        self.dataSource = self
     }
     
-    private func updateLayout(_ layoutSubviewRequired: Bool = true) {
-        if let layout = self.collectionViewLayout as? UICollectionViewFlowLayout {
-            layout.minimumLineSpacing = Self.cellSpace
-            layout.minimumInteritemSpacing = Self.cellSpace
-        }
-        if layoutSubviewRequired {
-            self.layoutSubviews()
-        }
-    }
-    
-    var emojiPanelViewHeight: CGFloat {
-        let height = self.frame.height
-        return height
-    }
+    func recalculateCellSize(collectionView: UICollectionView) -> Bool {
+        let emojiPanelViewHeight = collectionView.bounds.height
+        let emojiPanelViewWidth = collectionView.bounds.width
 
-    var emojiPanelViewWidth: CGFloat {
-        let width = self.frame.width
-        return width
+        if emojiPanelViewHeight == 0 {
+            return false
+        }
+
+        var countOfEmojiInColumn = 5
+        var emojiSide = emojiPanelViewHeight / CGFloat(countOfEmojiInColumn)
+        if emojiSide < Self.minialEmojiCellSize {
+            countOfEmojiInColumn = 4
+            emojiSide = emojiPanelViewHeight / CGFloat(countOfEmojiInColumn)
+        }
+        let newCellSize = emojiSide
+
+        if Self.cellSize == newCellSize && Self.countOfEmojiInColumn == countOfEmojiInColumn {
+            return false
+        }
+        Self.cellSize = newCellSize
+        Self.countOfEmojiInColumn = countOfEmojiInColumn
+        Self.countEmojisOnScreen = countOfEmojiInColumn * Int(ceil(emojiPanelViewWidth / Self.cellSize))
+        
+        return true
     }
 
     override func layoutSubviews() {
-        var countOfEmojiInColumn = Self.countOfEmojiInColumn // optimal 5, but can be less
-        let emojiPanelViewHeight = self.emojiPanelViewHeight
-        let emojiPanelViewWidth = self.emojiPanelViewWidth
-        let cellSpace = Self.cellSpace
-        let cellSize = Self.cellSize
-
-        if emojiPanelViewHeight == 0 {
-            super.layoutSubviews()
-            return
+        if self.recalculateCellSize(collectionView: self) {
+            DispatchQueue.main.async {
+                self.collectionViewLayout.invalidateLayout()
+            }
         }
-        
-
-        var emojiSide = emojiPanelViewHeight / CGFloat(countOfEmojiInColumn)
-        if emojiSide < Self.minialEmojiCellSize {
-            countOfEmojiInColumn -= 1
-            emojiSide = emojiPanelViewHeight / CGFloat(countOfEmojiInColumn)
-        }
-        let newCellSize = emojiSide - cellSpace*CGFloat(countOfEmojiInColumn+1)
-
-        if cellSize == newCellSize {
-            super.layoutSubviews()
-            return
-        }
-
-        Self.cellSize = newCellSize
-        Self.countEmojisOnScreen = countOfEmojiInColumn * Int(ceil(emojiPanelViewWidth / cellSize))
-        
         super.layoutSubviews()
-        self.updateLayout(false)
-        self.collectionViewLayout.invalidateLayout()
     }
     
     func refreshCurrentSectionId() {
@@ -161,22 +141,35 @@ extension DKKeyboardEmojiCollectionView: UICollectionViewDelegate {
 
 extension DKKeyboardEmojiCollectionView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        _ = self.recalculateCellSize(collectionView: collectionView)
         return CGSize(width: Self.cellSize*1.25, height: Self.cellSize)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        
-        let left = (section == 0) ? Self.sectionSpace : Self.cellSpace
-        var right = Self.sectionSpace
-        if self.viewModel.sections.count == section + 1{
-            right = Self.cellSpace
-        }
-        
-        return UIEdgeInsets(top: Self.cellSpace,
-                            left: left,
-                            bottom: Self.cellSpace,
-                            right: right)
+        UIEdgeInsets.zero
     }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+//        
+//        let left = (section == 0) ? Self.sectionSpace : Self.cellSpace
+//        var right = Self.sectionSpace
+//        if self.viewModel.sections.count == section + 1{
+//            right = Self.cellSpace
+//        }
+//        
+//        return UIEdgeInsets(top: Self.cellSpace,
+//                            left: left,
+//                            bottom: Self.cellSpace,
+//                            right: right)
+//    }
 }
 
 extension DKKeyboardEmojiCollectionView: DKEmojiSectionDelegate {
@@ -188,7 +181,7 @@ extension DKKeyboardEmojiCollectionView: DKEmojiSectionDelegate {
         }
 
         self.scrollToItem(at: IndexPath(row: 0, section: section), at: .left, animated: false)
-        let x = self.contentOffset.x - Self.sectionSpace;
+        let x = self.contentOffset.x;
         self.setContentOffset(CGPoint(x: x, y: 0), animated: false)
     }
 
