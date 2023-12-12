@@ -22,10 +22,12 @@ import SwiftUI
  */
 struct DKKeyboardView: View {
     
+    @StateObject var viewModel: DKKeyboardViewModel
     unowned var keyboardSettings: DKKeyboardSettings
     unowned var keyboardController: DKKeyboardViewController
 
     init(keyboardController: DKKeyboardViewController, keyboardSettings: DKKeyboardSettings) {
+        self._viewModel = .init(wrappedValue: DKKeyboardViewModel(state: keyboardController.state))
         self.keyboardController = keyboardController
         self.keyboardSettings = keyboardSettings
     }
@@ -45,34 +47,45 @@ struct DKKeyboardView: View {
                     self.keyboardController.state.keyboardContext.textDocumentProxy.insertText(emoji)
                 })
             },
-            toolbar: { (autocompleteAction: (Autocomplete.Suggestion) -> Void,
+            toolbar: { (autocompleteAction: @escaping (Autocomplete.Suggestion) -> Void,
                         style: KeyboardStyle.AutocompleteToolbar,
                         view: AutocompleteToolbar<Autocomplete.ToolbarItem, Autocomplete.ToolbarSeparator>) in
-                    HStack(spacing: 0) {
-                        self.toolbarConverter
-                        view
-                    }
+                self.toolbarConverter(autocompleteAction)
             }
         )
     }
     
-    var toolbarConverter: some View {
-        Group {
-            if self.keyboardController.state.keyboardContext.keyboardType != .emojis {
-                HStack(spacing: 8) {
-                    convertButtonStyled
-                    Text(self.keyboardSettings.keyboardLayout == .cyrillic ? DKLocalizationKeyboard.keyboardButtonConvertToLatinText : DKLocalizationKeyboard.keyboardButtonConvertToCyrillicText)
-                        .foregroundColor(Color(.quaternaryLabel))
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                }.frame(height: 50).padding(EdgeInsets(top: 4, leading: 3, bottom: 0, trailing: 0))
+    @ViewBuilder
+    func toolbarConverter(_ autocompleteAction: @escaping (Autocomplete.Suggestion) -> Void) -> some View {
+        HStack(spacing: 8) {
+            convertButtonStyled
+            if self.viewModel.hasAutosuggestions {
+                Spacer(minLength: 0)
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(alignment: .center, spacing: 2) {
+                        ForEach(self.viewModel.autosuggestions, id: \.text) { suggestion in
+                            Group {
+                                Button {
+                                    autocompleteAction(suggestion)
+                                } label: {
+                                    Text(suggestion.text)
+                                        .font(Font.system(size: 24))
+                                }
+
+                                
+                            }
+                            .frame(width: 44)
+                        }
+                    }
+                }
             } else {
-                HStack(spacing: 8) {
-                    Text("Тут некалі будзе пошук emoji")
-                        .foregroundColor(Color(.quaternaryLabel))
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                }.frame(height: 50).padding(EdgeInsets(top: 4, leading: 3, bottom: 0, trailing: 0))
+                Text(self.keyboardSettings.keyboardLayout == .cyrillic ? DKLocalizationKeyboard.keyboardButtonConvertToLatinText : DKLocalizationKeyboard.keyboardButtonConvertToCyrillicText)
+                    .foregroundColor(Color(.quaternaryLabel))
+                    .frame(maxWidth: .infinity, alignment: .leading)
             }
         }
+        .frame(height: 50)
+        .padding(EdgeInsets(top: 4, leading: 3, bottom: 0, trailing: 0))
     }
 }
 
@@ -81,11 +94,15 @@ struct DKKeyboardView: View {
 private extension DKKeyboardView {
 
     var convertButtonStyled: some View {
-        if #available(iOS 15.0, *) {
-            return self.convertButton.buttonStyle(.bordered)
+        Group {
+            if #available(iOS 15.0, *) {
+                self.convertButton
+                    .buttonStyle(.bordered)
+            } else {
+                self.convertButton
+                    .buttonStyle(.automatic)
+            }
         }
-
-        return self.convertButton.buttonStyle(.automatic)
     }
     
     var convertButton: some View {

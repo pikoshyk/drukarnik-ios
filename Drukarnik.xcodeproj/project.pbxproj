@@ -27,6 +27,7 @@
 		B22FC9F229510FB900B31E4A /* BelarusianLacinka in Frameworks */ = {isa = PBXBuildFile; productRef = B22FC9F129510FB900B31E4A /* BelarusianLacinka */; };
 		B22FC9F42951A9F100B31E4A /* DKCalloutActionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22FC9F32951A9F100B31E4A /* DKCalloutActionProvider.swift */; };
 		B23571102B26A48D00784B63 /* DKEmojiAutocompleteProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B235710F2B26A48D00784B63 /* DKEmojiAutocompleteProvider.swift */; };
+		B23571122B26AB7400784B63 /* DKKeyboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23571112B26AB7400784B63 /* DKKeyboardViewModel.swift */; };
 		B249D1A729905B0200668130 /* DKAutocompleteProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B249D1A629905B0200668130 /* DKAutocompleteProvider.swift */; };
 		B249D1A92990696400668130 /* DKKeyboardLayoutProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B249D1A82990696400668130 /* DKKeyboardLayoutProvider.swift */; };
 		B25887842B104DCD00AE499B /* DKKeyboardEmojiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25887802B1046B900AE499B /* DKKeyboardEmojiView.swift */; };
@@ -144,6 +145,7 @@
 		B22FC9EF29510CAD00B31E4A /* DKLocalizationKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKLocalizationKeyboard.swift; sourceTree = "<group>"; };
 		B22FC9F32951A9F100B31E4A /* DKCalloutActionProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKCalloutActionProvider.swift; sourceTree = "<group>"; };
 		B235710F2B26A48D00784B63 /* DKEmojiAutocompleteProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKEmojiAutocompleteProvider.swift; sourceTree = "<group>"; };
+		B23571112B26AB7400784B63 /* DKKeyboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKKeyboardViewModel.swift; sourceTree = "<group>"; };
 		B249D1A629905B0200668130 /* DKAutocompleteProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKAutocompleteProvider.swift; sourceTree = "<group>"; };
 		B249D1A82990696400668130 /* DKKeyboardLayoutProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKKeyboardLayoutProvider.swift; sourceTree = "<group>"; };
 		B25887802B1046B900AE499B /* DKKeyboardEmojiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKKeyboardEmojiView.swift; sourceTree = "<group>"; };
@@ -317,6 +319,7 @@
 				B249D1A629905B0200668130 /* DKAutocompleteProvider.swift */,
 				B249D1A82990696400668130 /* DKKeyboardLayoutProvider.swift */,
 				B21A248929360C7700C056E5 /* DKKeyboardViewController.swift */,
+				B23571112B26AB7400784B63 /* DKKeyboardViewModel.swift */,
 				B21A2498293610EA00C056E5 /* DKKeyboardView.swift */,
 				B282B8F129812D4B001244DE /* UITextDocumentProxy+FullText.swift */,
 				B282B8F7298141AF001244DE /* DKAutocompleteProvider+Transliteration.swift */,
@@ -711,6 +714,7 @@
 				B282B8F429812FB5001244DE /* AutocompleteSuggestion+FullText.swift in Sources */,
 				B21A2499293610EA00C056E5 /* DKKeyboardView.swift in Sources */,
 				B2E68765297F37D1005C31B9 /* DKAdditionalLanguage.swift in Sources */,
+				B23571122B26AB7400784B63 /* DKKeyboardViewModel.swift in Sources */,
 				B2AF577F294FEE4200E7CF2F /* DKLatinLayoutProvider.swift in Sources */,
 				B22FC9F42951A9F100B31E4A /* DKCalloutActionProvider.swift in Sources */,
 				B28C524F295455DE0025D49A /* DKLatinAutocompleteProvider.swift in Sources */,
@@ -864,7 +868,7 @@
 				CODE_SIGN_ENTITLEMENTS = Drukarnik/DrukarnikDebug.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 6EWLUZCTBU;
 				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
@@ -882,7 +886,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.1;
 				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.belanghelp.drukarnik;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -907,7 +911,7 @@
 				CODE_SIGN_ENTITLEMENTS = Drukarnik/DrukarnikRelease.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 6EWLUZCTBU;
 				GCC_PREPROCESSOR_DEFINITIONS = "";
@@ -925,7 +929,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.1;
 				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.belanghelp.drukarnik;
 				PRODUCT_NAME = "$(TARGET_NAME)";

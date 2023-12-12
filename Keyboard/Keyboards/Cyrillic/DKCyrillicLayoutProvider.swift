@@ -51,8 +51,52 @@ class DKCyrillicLayoutProvider: DKKeyboardLayoutProvider {
             }
         }
         
+        if context.deviceType == .pad {
+            
+            if context.keyboardType.isAlphabetic {
+                var returnItem: KeyboardLayout.Item?
+                for row in layout.itemRows {
+                    let itemsToDelete: [KeyboardAction] = [
+                        .primary(.continue),
+                        .primary(.done),
+                        .primary(.emergencyCall),
+                        .primary(.go),
+                        .primary(.join),
+                        .primary(.newLine),
+                        .primary(.next),
+                        .primary(.ok),
+                        .primary(.return),
+                        .primary(.route),
+                        .primary(.search),
+                        .primary(.send),
+                    ]
+                    if let item = row.filter({ itemsToDelete.contains($0.action) }).first {
+                        returnItem = item
+                        layout.itemRows.remove(item)
+                    }
+                }
+                if var returnItem = returnItem {
+                    returnItem.size.width = .input
+                    layout.itemRows[1].insert(returnItem, at: layout.itemRows[1].count)
+
+                    layout.itemRows.remove(.backspace)
+                    if var backspaceItem = layout.keyboardLayoutSystemItem(action: .backspace) {
+                        backspaceItem.size = .init(width: .available, height: returnItem.size.height)
+                        layout.itemRows[0].insert(backspaceItem, at: layout.itemRows[0].count)
+                    }
+                }
+            }
+        }
+        
         return layout
     }
+    
+//    override func itemSizeWidth(for action: KeyboardAction, row: Int, index: Int, context: KeyboardContext) -> KeyboardLayout.ItemWidth {
+//        if context.deviceType == .pad && action.isInputAction {
+//            return . inputPercentage(0.9)
+//        }
+//        return super.itemSizeWidth(for: action, row: row, index: index, context: context)
+//    }
 }
 
 #warning("TODO: in every KeyboardKit version change .percentage in iPhoneKeyboardLayoutProvider::lowerSystemButtonWidth to 0.11 for belarusian cyrillic keyboard")

@@ -12,7 +12,7 @@ import UIKit
 
 class DKEmojiAutocompleteProvider: DKAutocompleteProvider {
     
-    private var dict: [String: String] = [:]
+    private var dict: [String: [String]] = [:]
     
     override init(settings: DKKeyboardSettings, textDocumentProxy: UITextDocumentProxy) {
         super.init(settings: settings, textDocumentProxy: textDocumentProxy)
@@ -21,6 +21,26 @@ class DKEmojiAutocompleteProvider: DKAutocompleteProvider {
         }
     }
     
+    override func autocompleteSuggestions(for text: String) async throws -> [Autocomplete.Suggestion] {
+        guard let word = text.components(separatedBy: CharacterSet(charactersIn: String.wordDelimiters.joined())).last?.lowercased() else {
+            return []
+        }
+        if text.isEmpty { return [] }
+        
+        var emoji = self.dict[word]
+        if emoji == nil {
+            let trWord = DKLocalizationKeyboard.convert(text: word, to: .toCyrillic)
+            emoji = self.dict[trWord]
+        }
+        guard let emoji = emoji else {
+            return []
+        }
+        let suggestions = emoji.compactMap { Autocomplete.Suggestion(text: $0) }
+        return suggestions
+    }
+}
+
+extension DKEmojiAutocompleteProvider {
     func loadDict() {
         guard let fileUrl = Bundle.main.url(forResource: "emoji", withExtension: "json") else {
             return
@@ -38,22 +58,10 @@ class DKEmojiAutocompleteProvider: DKAutocompleteProvider {
             guard let emojiStr = json[key] else {
                 continue
             }
-            guard let emoji = emojiStr.components(separatedBy: " ").first else {
-                continue
-            }
+            let emoji = emojiStr.components(separatedBy: " ")
             self.dict[key] = emoji
         }
     }
     
-    override func autocompleteSuggestions(for text: String) async throws -> [Autocomplete.Suggestion] {
-        let word = text.components(separatedBy: CharacterSet(charactersIn: String.wordDelimiters.joined())).last ?? ""
-        if text == "ooo" {
-            return [Autocomplete.Suggestion(text: "oh", isAutocorrect: false)]
-        }
-        if text.isEmpty { return [] }
-        guard let emoji = self.dict[word.lowercased()] else {
-            return []
-        }
-        return [Autocomplete.Suggestion(text: emoji, isAutocorrect: false)]
-    }
+
 }
