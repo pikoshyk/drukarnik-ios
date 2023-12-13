@@ -20,11 +20,18 @@ enum DKEmojiSectionType: Int {
     case union
 }
 
-struct DKEmojiSection: Identifiable {
+class DKEmojiSection: Identifiable {
     let id: DKEmojiSectionType
     let title: String
     let imageName: String
-    let items: String
+    var items: String
+    
+    init(id: DKEmojiSectionType, title: String, imageName: String, items: String) {
+        self.id = id
+        self.title = title
+        self.imageName = imageName
+        self.items = items
+    }
 }
 
 extension DKEmojiSection {
@@ -53,6 +60,7 @@ extension DKEmojiSectionDelegate {
 }
 
 class DKKeyboardEmojiViewModel: Any {
+    var recentSection: DKEmojiSection
     var sections: [DKEmojiSection]
     var headerDelegate: DKEmojiSectionDelegate?
     var collectionDelegate: DKEmojiSectionDelegate?
@@ -61,6 +69,14 @@ class DKKeyboardEmojiViewModel: Any {
     var onAlphabeticalKeyboardBlock: (() -> Void)?
     var onDeleteBlock: (() -> Void)?
     var onEmojiBlock: ((String) -> Void)?
+    var onRecentsBlock: (() -> String)?
+    
+    var onReloadCollectionViewData: (() -> Void)?
+    
+    func reloadData() {
+        self.recentSection.items = self.onRecentsBlock?() ?? ""
+        self.onReloadCollectionViewData?()
+    }
 
     func onSectionPress(_ sectionId: DKEmojiSectionType) {
         UISelectionFeedbackGenerator().selectionChanged()
@@ -79,7 +95,12 @@ class DKKeyboardEmojiViewModel: Any {
     }
 
     init() {
+        self.recentSection = DKEmojiSection(id: .resents,
+                                            title: "Нядаўнія",
+                                            imageName: "keyboard-emoji-category-recents",
+                                            items:"")
         self.sections = [
+            self.recentSection,
             DKEmojiSection(id: .smileys,
                            title: "Усмешкі і людзі",
                            imageName: "keyboard-emoji-category-smileys",

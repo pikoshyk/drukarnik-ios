@@ -27,7 +27,7 @@ struct DKKeyboardView: View {
     unowned var keyboardController: DKKeyboardViewController
 
     init(keyboardController: DKKeyboardViewController, keyboardSettings: DKKeyboardSettings) {
-        self._viewModel = .init(wrappedValue: DKKeyboardViewModel(state: keyboardController.state))
+        self._viewModel = .init(wrappedValue: DKKeyboardViewModel(keyboardSettings: keyboardSettings, state: keyboardController.state))
         self.keyboardController = keyboardController
         self.keyboardSettings = keyboardSettings
     }
@@ -39,13 +39,21 @@ struct DKKeyboardView: View {
             buttonContent:  { $0.view },
             buttonView:  { $0.view },
             emojiKeyboard:  { emojiKeyboardParams in
-                DKKeyboardEmojiView(onAlphabeticalKeyboard: {
-                    self.keyboardController.state.keyboardContext.keyboardType = .alphabetic(.auto)
+                DKKeyboardEmojiView(self.viewModel.emojiViewModel, onAlphabeticalKeyboard: {
+                    self.viewModel.onAlphabeticalKeyboard()
                 }, onDelete: {
-                    self.keyboardController.state.keyboardContext.textDocumentProxy.deleteBackward(times: 1)
+                    self.viewModel.onEmojiDelete()
                 }, onEmoji: { emoji in
-                    self.keyboardController.state.keyboardContext.textDocumentProxy.insertText(emoji)
+                    self.viewModel.onEmoji(emoji)
+                }, onRecents: {
+                    return self.viewModel.onEmojiRecents()
                 })
+                .onAppear {
+                    self.viewModel.onEmojiAppear()
+                }
+                .onDisappear {
+                    self.viewModel.onEmojiDisappear()
+                }
             },
             toolbar: { (autocompleteAction: @escaping (Autocomplete.Suggestion) -> Void,
                         style: KeyboardStyle.AutocompleteToolbar,

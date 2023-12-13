@@ -9,12 +9,14 @@ import UIKit
 import SwiftUI
 
 struct DKKeyboardEmojiView: UIViewRepresentable {
-    let viewModel = DKKeyboardEmojiViewModel()
+    let viewModel: DKKeyboardEmojiViewModel
     
-    init(onAlphabeticalKeyboard: @escaping () -> Void, onDelete: @escaping () -> Void, onEmoji: @escaping (String) -> Void) {
+    init(_ viewModel: DKKeyboardEmojiViewModel, onAlphabeticalKeyboard: @escaping () -> Void, onDelete: @escaping () -> Void, onEmoji: @escaping (String) -> Void, onRecents: @escaping () -> String) {
+        self.viewModel = viewModel
         self.viewModel.onAlphabeticalKeyboardBlock = onAlphabeticalKeyboard
         self.viewModel.onDeleteBlock = onDelete
         self.viewModel.onEmojiBlock = onEmoji
+        self.viewModel.onRecentsBlock = onRecents
     }
 
     typealias UIViewType = DKKeyboardEmojiStackView

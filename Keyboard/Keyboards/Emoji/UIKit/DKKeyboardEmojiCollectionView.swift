@@ -35,6 +35,10 @@ class DKKeyboardEmojiCollectionView: UICollectionView {
         super.init(frame: .zero, collectionViewLayout: collectionViewFlowLayout)
         self.viewModel.collectionDelegate = self
         self.configureCollectionView()
+
+        self.viewModel.onReloadCollectionViewData = { [weak self] in
+            self?.reloadData()
+        }
     }
     
     required init?(coder: NSCoder) {
@@ -176,10 +180,12 @@ extension DKKeyboardEmojiCollectionView: DKEmojiSectionDelegate {
     
     func scrollToSection(sectionId: DKEmojiSectionType) {
         let sectionIds = self.viewModel.sections.compactMap { $0.id }
-        guard let section = sectionIds.firstIndex(of: sectionId) else {
+        guard var section = sectionIds.firstIndex(of: sectionId) else {
             return
         }
-
+        if self.collectionView(self, numberOfItemsInSection: section) == 0 {
+            section += 1 // because "Recents" section is empty
+        }
         self.scrollToItem(at: IndexPath(row: 0, section: section), at: .left, animated: false)
         let x = self.contentOffset.x;
         self.setContentOffset(CGPoint(x: x, y: 0), animated: false)

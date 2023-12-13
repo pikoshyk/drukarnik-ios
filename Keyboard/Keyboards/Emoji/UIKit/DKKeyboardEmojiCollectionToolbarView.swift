@@ -108,7 +108,6 @@ class DKKeyboardEmojiCollectionToolbarView: UIStackView {
         internalStackView.distribution = .fillEqually
 
         internalStackView.addArrangedSubview(self.buttonAlphabeticalKeyboard)
-//        internalStackView.addArrangedSubview(self.buttonCategoryRecent)
         
         for section in self.viewModel.sections {
             let button = self.button(section: section)
@@ -128,19 +127,6 @@ class DKKeyboardEmojiCollectionToolbarView: UIStackView {
         button.addAction(UIAction(handler: { action in
             self.viewModel.onAlphabeticalKeyboardBlock?()
         }), for: .touchUpInside)
-        return button
-    }
-    
-    var buttonCategoryRecent: UIButton {
-        let image = UIImage(named: "keyboard-emoji-category-recents")!.resizePhone()!
-        let button = UIButton()
-                    button.tintColor = .secondaryLabel
-        button.setImage(image, for: .normal)
-        button.tag = DKEmojiSectionType.resents.rawValue
-        button.addAction(UIAction(handler: { action in
-            self.viewModel.onSectionPress(DKEmojiSectionType.resents)
-        }), for: .touchUpInside)
-        self.buttons[.resents] = button
         return button
     }
     
