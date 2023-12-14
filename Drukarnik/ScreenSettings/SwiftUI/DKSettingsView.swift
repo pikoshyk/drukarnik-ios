@@ -25,43 +25,47 @@ struct DKSettingsView: View {
             }
         }
         .listStyle(.plain)
-        .navigationTitle(self.viewModel.navigationTitle)
+        .navigationTitle(self.viewModel.presentNavigationTitle)
     }
     
     var cellLettersCyrillic: some View {
-        DKSettingsCellView(title: self.viewModel.cyrillicTypeCellTitle, availableOptions: self.viewModel.cyrillicTypeAvailableOptions, selectedOption: self.viewModel.cyrillicTypeCurrent) { cyrillicType in
-            self.viewModel.cyrillicTypeCurrent = cyrillicType
+        DKSettingsCellView(title: self.viewModel.presentCyrillicTypeCellTitle, availableOptions: self.viewModel.presentCyrillicTypeAvailableOptions, selectedOption: self.viewModel.presentCyrillicTypeCurrent) { cyrillicType in
+            self.viewModel.presentCyrillicTypeCurrent = cyrillicType
         }
     }
     
     var cellLettersLatin: some View {
-        DKSettingsCellView(title: self.viewModel.latinTypeCellTitle, availableOptions: self.viewModel.latinTypeAvailableOptions, selectedOption: self.viewModel.latinTypeCurrent) { latinType in
-            self.viewModel.latinTypeCurrent = latinType
+        DKSettingsCellView(title: self.viewModel.presentLatinTypeCellTitle, availableOptions: self.viewModel.presentLatinTypeAvailableOptions, selectedOption: self.viewModel.presentLatinTypeCurrent) { latinType in
+            self.viewModel.presentLatinTypeCurrent = latinType
         }
     }
     
     var cellAutocapitalization: some View {
-        DKSettingsCellView(title: self.viewModel.autocapitalizationCellTitle, availableOptions: self.viewModel.autocapitalizationAvailableOptions, selectedOption: self.viewModel.autocapitalizationCurrent) { latinType in
-            self.viewModel.autocapitalizationCurrent = latinType
+        DKSettingsCellView(title: self.viewModel.presentAutocapitalizationCellTitle, availableOptions: self.viewModel.presentAutocapitalizationAvailableOptions, selectedOption: self.viewModel.presentAutocapitalizationCurrent) { latinType in
+            self.viewModel.presentAutocapitalizationCurrent = latinType
         }
     }
     
     var cellKeyboardFeedback: some View {
-        DKSettingsCellView(title: self.viewModel.keyboardFeedbackCellTitle, availableOptions: self.viewModel.keyboardFeedbackAvailableOptions, selectedOption: self.viewModel.keyboardFeedbackCurrent) { latinType in
-            self.viewModel.keyboardFeedbackCurrent = latinType
+        DKSettingsCellView(title: self.viewModel.presentKeyboardFeedbackCellTitle, availableOptions: self.viewModel.presentKeyboardFeedbackAvailableOptions, selectedOption: self.viewModel.presentKeyboardFeedbackCurrent) { latinType in
+            self.viewModel.presentKeyboardFeedbackCurrent = latinType
         }
     }
     
     var cellInterfaceTransliteration: some View {
         VStack(alignment: .leading) {
-            Text(self.viewModel.interfaceTransliterationCellTitle)
+            Text(self.viewModel.presentInterfaceTransliterationCellTitle)
                 .font(.headline)
-            Picker("", selection: self.$viewModel.interfaceTransliteration) {
-                ForEach(self.viewModel.interfaceTransliterationOptions, id: \.value) { option in
-                    Text(option.title).tag(option.value)
+            HStack {
+                Picker("", selection: self.$viewModel.presentInterfaceTransliteration) {
+                    ForEach(self.viewModel.presentInterfaceTransliterationOptions, id: \.value) { option in
+                        Text(option.title).tag(option.value)
+                    }
                 }
+                .pickerStyle(.segmented)
+                .frame(minWidth: 0, maxWidth: 400)
+                Spacer(minLength: 0)
             }
-            .pickerStyle(.segmented)
         }
     }
     
@@ -79,9 +83,9 @@ struct DKSettingsView: View {
     var cellOtherLanguages: some View {
         HStack {
             VStack(alignment: .leading, spacing: 4) {
-                Text(self.viewModel.otherLanguagesCellTitle)
+                Text(self.viewModel.presentOtherLanguagesCellTitle)
                     .font(.headline)
-                Text(self.viewModel.otherLanguagesCellDescription)
+                Text(self.viewModel.presentOtherLanguagesCellDescription)
                     .font(.subheadline)
             }
             Spacer()

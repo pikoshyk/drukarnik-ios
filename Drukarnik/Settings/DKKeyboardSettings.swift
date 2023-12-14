@@ -337,12 +337,19 @@ extension DKKeyboardSettings { // Keyboard Settings
     
     var keyboardEmojiRecents: [DKKeyboardEmojiRecentsItem] {
         get {
-            let defaultValue: [DKKeyboardEmojiRecentsItem] = []
-            let value = self.getter(key: DKKeyboardSettingsKeys.keyboardEmojiRecents, defaultValue: defaultValue)
+            let defaultValue: Data = "[]".data(using: .utf8)!
+            
+            let data = self.getter(key: DKKeyboardSettingsKeys.keyboardEmojiRecents, defaultValue: defaultValue)
+            guard let value = try? JSONDecoder().decode([DKKeyboardEmojiRecentsItem].self, from: data) else {
+                return []
+            }
             return value
         }
         set {
-            self.setter(key: DKKeyboardSettingsKeys.keyboardEmojiRecents, value: newValue)
+            guard let data = try? JSONEncoder().encode(newValue) else {
+                return
+            }
+            self.setter(key: DKKeyboardSettingsKeys.keyboardEmojiRecents, value: data)
         }
     }
 }

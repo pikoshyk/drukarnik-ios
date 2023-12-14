@@ -25,8 +25,14 @@ class DKKeyboardViewModel: ObservableObject {
     var hasAutosuggestions: Bool {
         self.state.autocompleteContext.suggestions.count > 0
     }
+
     var autosuggestions: [Autocomplete.Suggestion] {
         self.state.autocompleteContext.suggestions
+    }
+    
+    private func reloadEmoji() {
+        self.emojiRecents = self.keyboardSettings.keyboardEmojiRecents
+        self.emojiViewModel.reloadData()
     }
 }
 
@@ -34,18 +40,15 @@ extension DKKeyboardViewModel {
     
     func onAlphabeticalKeyboard() {
         self.state.keyboardContext.keyboardType = .alphabetic(.auto)
+        self.reloadEmoji()
     }
     
     func onEmojiAppear() {
         self.emojiRecents = self.keyboardSettings.keyboardEmojiRecents
-        self.emojiViewModel.reloadData()
+        self.reloadEmoji()
     }
     
     func onEmojiDisappear() {
-        autoreleasepool {
-            self.keyboardSettings.keyboardEmojiRecents = self.emojiRecents
-            self.emojiRecents = []
-        }
     }
     
     func onEmoji(_ emoji: String) {
@@ -70,10 +73,10 @@ extension DKKeyboardViewModel {
             }
             
             
-//            self.keyboardSettings.keyboardEmojiRecents = self.emojiRecents
+            self.keyboardSettings.keyboardEmojiRecents = self.emojiRecents
 //            let items = self.emojiRecents.compactMap { $0.emoji }.joined()
 //            self.emojiViewModel.recentSection.items = items
-            self.emojiViewModel.reloadData()
+//            self.emojiViewModel.reloadData()
         }
     }
     

@@ -30,7 +30,7 @@ extension DKLocalizationApp { // Settings
     
     class var settingsTitle: String { Self.processedWord("Налады") }
     class var settingsTitleFull: String { Self.processedWord("Налады клавіятуры") }
-
+    
     class var settingsBelarusianLatinTypeTraditional: String { Self.processedWord("Традыцыйнай") }
     class var settingsBelarusianLatinTypeGeographic: String { Self.processedWord("Геаграфічнай") }
     class var settingsBelarusianLatinTypeTitle: String { Self.processedWord("Літары беларускай лацінкі") }
@@ -47,6 +47,18 @@ extension DKLocalizationApp { // Settings
     class var settingsLanguagesControllerTitle: String { Self.processedWord("Мовы") }
     class var settingsLanguagesControllerSectionCyrillic: String { Self.processedWord("Кірылічная раскладка") }
     class var settingsLanguagesControllerSectionLatin: String { Self.processedWord("Лацінская раскладка") }
+    
+    class var settingsAutocapitalizationTypeTitle: String { Self.processedWord("Аўтаматычна вялікая літара") }
+
+    class var settingsAutocapitalizationTypeNever: String { Self.processedWord("Ніколі") }
+    class var settingsAutocapitalizationTypeWord: String { Self.processedWord("На пачатку слова") }
+    class var settingsAutocapitalizationTypeSentense: String { Self.processedWord("На пачатку сказа") }
+    
+    class var settingsKeyboardFeedbackTypeTitle: String { Self.processedWord("Водгук на націсканне кнопак") }
+    class var settingsKeyboardFeedbackTypeNone: String { Self.processedWord("Няма") }
+    class var settingsKeyboardFeedbackTypeAudio: String { Self.processedWord("Аўдыя") }
+    class var settingsKeyboardFeedbackTypeVibro: String { Self.processedWord("Вібрацыя") }
+    class var settingsKeyboardFeedbackTypeAudioAndVibro: String { Self.processedWord("Аўдыя і вібрацыя") }
 }
 
 extension DKLocalizationApp { // Converter

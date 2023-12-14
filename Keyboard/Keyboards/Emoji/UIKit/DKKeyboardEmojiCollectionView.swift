@@ -121,6 +121,12 @@ extension DKKeyboardEmojiCollectionView: UICollectionViewDataSource {
             cellX.emojiLabel = emoji
         }
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if let cellX = cell as? DKKeyboardEmojiCollectionViewCell {
+            cellX.clearCell()
+        }
+    }
 }
 
 extension DKKeyboardEmojiCollectionView: UICollectionViewDelegate {

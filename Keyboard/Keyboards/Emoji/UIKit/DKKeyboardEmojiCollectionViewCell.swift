@@ -33,7 +33,7 @@ class DKKeyboardEmojiCollectionViewCell: UICollectionViewCell {
         self.clearCell()
     }
     
-    private func clearCell() {
+    func clearCell() {
         self.textLayer?.removeFromSuperlayer()
     }
     

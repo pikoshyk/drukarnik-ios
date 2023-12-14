@@ -18,14 +18,13 @@ class DKSettingsViewModel: ObservableObject {
     
     var cancellableSinks: Set<AnyCancellable> = []
     
-    let navigationTitle = "Налады клавіятуры"
-    
-    let cyrillicTypeCellTitle = "Літары беларускай кірыліцы"
-    lazy var cyrillicTypeAvailableOptions: [DKSettingViewOption<BelarusianLacinka.BLOrthography>] = [
-        DKSettingViewOption(title: "Наркамаўка", value: .academic),
-        DKSettingViewOption(title: "Тарашкевіца", value: .classic)
-    ]
-    var cyrillicTypeCurrent: BelarusianLacinka.BLOrthography {
+    var presentNavigationTitle: String { DKLocalizationApp.settingsTitleFull }
+    var presentCyrillicTypeCellTitle: String { DKLocalizationApp.settingsBelarusianCyrillicTypeTitle }
+    var presentCyrillicTypeAvailableOptions: [DKSettingViewOption<BelarusianLacinka.BLOrthography>] {
+        [DKSettingViewOption(title: DKLocalizationApp.converterBelarusianCyrillicTypeNarkamauka, value: .academic),
+         DKSettingViewOption(title: DKLocalizationApp.converterBelarusianCyrillicTypeTarashkevica, value: .classic)]
+    }
+    var presentCyrillicTypeCurrent: BelarusianLacinka.BLOrthography {
         get { DKKeyboardSettings.shared.belarusianCyrillicType }
         set {
             DKKeyboardSettings.shared.belarusianCyrillicType = newValue
@@ -34,12 +33,12 @@ class DKSettingsViewModel: ObservableObject {
     }
 
     
-    let latinTypeCellTitle = "Літары беларускай лацінкі"
-    lazy var latinTypeAvailableOptions: [DKSettingViewOption<BelarusianLacinka.BLVersion>] = [
-        DKSettingViewOption(title: "Традыцыйная", value: .traditional),
-        DKSettingViewOption(title: "Геаграфічная", value: .geographic)
-    ]
-    var latinTypeCurrent: BelarusianLacinka.BLVersion {
+    var presentLatinTypeCellTitle: String { DKLocalizationApp.settingsBelarusianLatinTypeTitle }
+    var presentLatinTypeAvailableOptions: [DKSettingViewOption<BelarusianLacinka.BLVersion>] {
+        [DKSettingViewOption(title: DKLocalizationApp.converterBelarusianLatinTypeTraditional, value: .traditional),
+         DKSettingViewOption(title: DKLocalizationApp.converterBelarusianLatinTypeGeographic, value: .geographic)]
+    }
+    var presentLatinTypeCurrent: BelarusianLacinka.BLVersion {
         get { DKKeyboardSettings.shared.belarusianLatinType }
         set {
             DKKeyboardSettings.shared.belarusianLatinType = newValue
@@ -47,13 +46,13 @@ class DKSettingsViewModel: ObservableObject {
         }
     }
 
-    let autocapitalizationCellTitle = "Аўтаматычна вялікая літара"
-    lazy var autocapitalizationAvailableOptions: [DKSettingViewOption<DKKeyboardAutocapitalization>] = [
-        DKSettingViewOption(title: "Ніколі", value: .none),
-        DKSettingViewOption(title: "Слова", value: .words),
-        DKSettingViewOption(title: "Сказ", value: .sentences)
-    ]
-    var autocapitalizationCurrent: DKKeyboardAutocapitalization {
+    var presentAutocapitalizationCellTitle: String { DKLocalizationApp.settingsAutocapitalizationTypeTitle }
+    var presentAutocapitalizationAvailableOptions: [DKSettingViewOption<DKKeyboardAutocapitalization>] {
+        [DKSettingViewOption(title: DKLocalizationApp.settingsAutocapitalizationTypeNever, value: .none),
+         DKSettingViewOption(title: DKLocalizationApp.settingsAutocapitalizationTypeWord, value: .words),
+         DKSettingViewOption(title: DKLocalizationApp.settingsAutocapitalizationTypeSentense, value: .sentences)]
+    }
+    var presentAutocapitalizationCurrent: DKKeyboardAutocapitalization {
         get { DKKeyboardSettings.shared.keyboardAutocapitalization }
         set {
             DKKeyboardSettings.shared.keyboardAutocapitalization = newValue
@@ -61,14 +60,14 @@ class DKSettingsViewModel: ObservableObject {
         }
     }
     
-    let keyboardFeedbackCellTitle = "Водгук націскання кнопак"
-    lazy var keyboardFeedbackAvailableOptions: [DKSettingViewOption<DKKeyboardFeedback>] = [
-        DKSettingViewOption(title: "Няма", value: .none),
-        DKSettingViewOption(title: "Аудыя", value: .sound),
-        DKSettingViewOption(title: "Вібрацыя", value: .vibro),
-        DKSettingViewOption(title: "Аудыя і вібрацыя", value: .soundAndVibro)
-    ]
-    var keyboardFeedbackCurrent: DKKeyboardFeedback {
+    var presentKeyboardFeedbackCellTitle: String { DKLocalizationApp.settingsKeyboardFeedbackTypeTitle }
+    var presentKeyboardFeedbackAvailableOptions: [DKSettingViewOption<DKKeyboardFeedback>] {
+        [DKSettingViewOption(title: DKLocalizationApp.settingsKeyboardFeedbackTypeNone, value: .none),
+         DKSettingViewOption(title: DKLocalizationApp.settingsKeyboardFeedbackTypeAudio, value: .sound),
+         DKSettingViewOption(title: DKLocalizationApp.settingsKeyboardFeedbackTypeVibro, value: .vibro),
+         DKSettingViewOption(title: DKLocalizationApp.settingsKeyboardFeedbackTypeAudioAndVibro, value: .soundAndVibro)]
+    }
+    var presentKeyboardFeedbackCurrent: DKKeyboardFeedback {
         get { DKKeyboardSettings.shared.keyboardFeedback }
         set {
             DKKeyboardSettings.shared.keyboardFeedback = newValue
@@ -76,24 +75,35 @@ class DKSettingsViewModel: ObservableObject {
         }
     }
     
-    let interfaceTransliterationCellTitle = "Транслітэрацыя інтэрфейсу"
-    @Published var interfaceTransliteration: DKKeyboardLayout = DKKeyboardSettings.shared.interfaceTransliteration ?? DKKeyboardSettings.shared.defaultInterfaceTransliteration {
-        didSet {
-            DKKeyboardSettings.shared.interfaceTransliteration = interfaceTransliteration
+    var presentInterfaceTransliterationCellTitle: String { DKLocalizationApp.settingsTransliterationTitle }
+    var presentInterfaceTransliteration: DKKeyboardLayout {
+        get {
+            DKKeyboardSettings.shared.interfaceTransliteration ?? DKKeyboardSettings.shared.defaultInterfaceTransliteration
+        }
+        set {
+            DKKeyboardSettings.shared.interfaceTransliteration = newValue
+            self.objectWillChange.send()
         }
     }
-    lazy var interfaceTransliterationOptions: [DKSettingViewOption<DKKeyboardLayout>] = [
-        DKSettingViewOption(title: "Łacinka", value: .latin),
-        DKSettingViewOption(title: "Кірыліца", value: .cyrillic),
-    ]
     
-    let otherLanguagesCellTitle = "Падтрымка літар іншых моў"
-    @Published var otherLanguagesCellDescription: String = ""
-    let otherLanguagesViewModel = DKSettingsLanguagesViewModel()
+    var presentInterfaceTransliterationOptions: [DKSettingViewOption<DKKeyboardLayout>] {
+        [DKSettingViewOption(title: DKLocalizationApp.settingsTransliterationSegmentedLatin, value: .latin),
+         DKSettingViewOption(title: DKLocalizationApp.settingsTransliterationSegmentedCyrillic, value: .cyrillic)]
+    }
+    
+    var presentOtherLanguagesCellTitle: String { DKLocalizationApp.settingsLanguagesTitle }
+    var presentOtherLanguagesCellDescription: String {
+        DKLocalizationApp.processedWord(self.otherLanguagesCellDescription)
+    }
+    private var otherLanguagesCellDescription: String = "" {
+        didSet { self.objectWillChange.send() }
+    }
+    let otherLanguagesViewModel: DKSettingsLanguagesViewModel
 
     init() {
-        self.otherLanguagesViewModel.$supportedLanguages.sink { otherLanguages in
-            self.otherLanguagesCellDescription = otherLanguages
+        self.otherLanguagesViewModel = DKSettingsLanguagesViewModel()
+        self.otherLanguagesViewModel.$supportedLanguages.sink { [weak self] otherLanguages in
+            self?.otherLanguagesCellDescription = otherLanguages
         }.store(in: &self.cancellableSinks)
     }
 }

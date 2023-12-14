@@ -49,7 +49,7 @@ class DKKeyboardEmojiCollectionToolbarView: UIStackView {
     var buttons: [DKEmojiSectionType: UIButton] = [:]
     var backgroundButtonViews: [DKEmojiSectionType: UIView] = [:]
 
-    var activeSectionId: DKEmojiSectionType = .smileys {
+    var activeSectionId: DKEmojiSectionType = .resents {
         didSet {
             for sectionId in self.backgroundButtonViews.keys {
                 let currentSection = sectionId == self.activeSectionId
