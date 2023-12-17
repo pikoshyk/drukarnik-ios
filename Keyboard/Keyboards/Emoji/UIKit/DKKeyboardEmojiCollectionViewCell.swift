@@ -9,7 +9,7 @@ import UIKit
 
 class DKKeyboardEmojiCollectionViewCell: UICollectionViewCell {
     
-    private var textLayer: CATextLayer?
+    private var textLayer: CATextLayer? = nil
 
     static let reuseIdentifier = "cellEmoji"
     override var reuseIdentifier: String? { Self.reuseIdentifier }
@@ -34,7 +34,9 @@ class DKKeyboardEmojiCollectionViewCell: UICollectionViewCell {
     }
     
     func clearCell() {
+        self.textLayer?.string = nil
         self.textLayer?.removeFromSuperlayer()
+        self.textLayer = nil
     }
     
     var emojiLabel: String? {

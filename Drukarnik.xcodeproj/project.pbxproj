@@ -51,6 +51,7 @@
 		B2723F4B2B11BCF000FCC53D /* DKKeyboardEmojiCollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2723F492B11BCF000FCC53D /* DKKeyboardEmojiCollectionHeaderView.swift */; };
 		B2723F4D2B11BD2C00FCC53D /* DKKeyboardEmojiCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2723F4C2B11BD2C00FCC53D /* DKKeyboardEmojiCollectionViewCell.swift */; };
 		B2723F4E2B11BD2C00FCC53D /* DKKeyboardEmojiCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2723F4C2B11BD2C00FCC53D /* DKKeyboardEmojiCollectionViewCell.swift */; };
+		B280E0AE2B2F73D20030F29F /* DKAppstoreReviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B280E0AD2B2F73D20030F29F /* DKAppstoreReviewController.swift */; };
 		B282B8F229812D4B001244DE /* UITextDocumentProxy+FullText.swift in Sources */ = {isa = PBXBuildFile; fileRef = B282B8F129812D4B001244DE /* UITextDocumentProxy+FullText.swift */; };
 		B282B8F429812FB5001244DE /* AutocompleteSuggestion+FullText.swift in Sources */ = {isa = PBXBuildFile; fileRef = B282B8F329812FB5001244DE /* AutocompleteSuggestion+FullText.swift */; };
 		B282B8F8298141AF001244DE /* DKAutocompleteProvider+Transliteration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B282B8F7298141AF001244DE /* DKAutocompleteProvider+Transliteration.swift */; };
@@ -161,6 +162,7 @@
 		B2723F462B11BCC200FCC53D /* DKKeyboardEmojiCollectionToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKKeyboardEmojiCollectionToolbarView.swift; sourceTree = "<group>"; };
 		B2723F492B11BCF000FCC53D /* DKKeyboardEmojiCollectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKKeyboardEmojiCollectionHeaderView.swift; sourceTree = "<group>"; };
 		B2723F4C2B11BD2C00FCC53D /* DKKeyboardEmojiCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKKeyboardEmojiCollectionViewCell.swift; sourceTree = "<group>"; };
+		B280E0AD2B2F73D20030F29F /* DKAppstoreReviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKAppstoreReviewController.swift; sourceTree = "<group>"; };
 		B282B8F129812D4B001244DE /* UITextDocumentProxy+FullText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextDocumentProxy+FullText.swift"; sourceTree = "<group>"; };
 		B282B8F329812FB5001244DE /* AutocompleteSuggestion+FullText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AutocompleteSuggestion+FullText.swift"; sourceTree = "<group>"; };
 		B282B8F7298141AF001244DE /* DKAutocompleteProvider+Transliteration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DKAutocompleteProvider+Transliteration.swift"; sourceTree = "<group>"; };
@@ -233,6 +235,7 @@
 			children = (
 				B2B2094329796F8300D4D5DC /* Localization */,
 				B2E68758297F36F3005C31B9 /* Settings */,
+				B280E0AA2B2F73720030F29F /* Controllers */,
 				B2B2093829796F0F00D4D5DC /* ScreenAbout */,
 				B2B2093B29796F2300D4D5DC /* ScreenSettings */,
 				B2B2092B29796D0400D4D5DC /* ScreenInstallation */,
@@ -371,6 +374,14 @@
 				B25887802B1046B900AE499B /* DKKeyboardEmojiView.swift */,
 			);
 			path = SwiftUI;
+			sourceTree = "<group>";
+		};
+		B280E0AA2B2F73720030F29F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B280E0AD2B2F73D20030F29F /* DKAppstoreReviewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		B28C525B295625C90025D49A /* Categories */ = {
@@ -646,6 +657,7 @@
 				B2073D0B2945F599008B43E4 /* AppDelegate.swift in Sources */,
 				B2E68767297F4174005C31B9 /* DKAdditionalLanguage+Localization.swift in Sources */,
 				B2B2094229796F3000D4D5DC /* BLBelarusianTransliterationChoiceViewController.swift in Sources */,
+				B280E0AE2B2F73D20030F29F /* DKAppstoreReviewController.swift in Sources */,
 				B25CEE6E2B02DBD400BD1B8A /* DKInstallationKeyboardViewController.swift in Sources */,
 				B2DDCF58298D2ADE00902EE6 /* DKSettingsBelarusianCyrillicTypeTableViewController.swift in Sources */,
 				B2DDCF56298D2AC100902EE6 /* DKSettingsBelarusianLatinTypeTableViewController.swift in Sources */,
@@ -868,7 +880,7 @@
 				CODE_SIGN_ENTITLEMENTS = Drukarnik/DrukarnikDebug.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 6EWLUZCTBU;
 				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
@@ -911,7 +923,7 @@
 				CODE_SIGN_ENTITLEMENTS = Drukarnik/DrukarnikRelease.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 6EWLUZCTBU;
 				GCC_PREPROCESSOR_DEFINITIONS = "";

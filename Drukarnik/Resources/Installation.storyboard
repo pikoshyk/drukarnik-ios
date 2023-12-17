@@ -226,8 +226,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="WiO-Qt-bLE">
-                                <rect key="frame" x="46.666666666666657" y="200.99999999999997" width="300" height="450.33333333333326"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="WiO-Qt-bLE">
+                                <rect key="frame" x="46.666666666666657" y="182" width="300" height="488"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Крокі, якія трэба зрабіць, каб уключыць клавіятуру «Друкарнік»:" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9sm-2h-Vn6">
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="42.333333333333336"/>
@@ -236,7 +236,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="S7s-Ij-txy">
-                                        <rect key="frame" x="0.0" y="66.333333333333314" width="300" height="44"/>
+                                        <rect key="frame" x="0.0" y="58.333333333333343" width="300" height="44"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xvv-2Z-0gs">
                                                 <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
@@ -261,7 +261,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JYz-E8-5Q5">
-                                                        <rect key="frame" x="18.333333333333336" y="12.333333333333369" width="7.3333333333333321" height="19.333333333333329"/>
+                                                        <rect key="frame" x="18.333333333333336" y="12.333333333333313" width="7.3333333333333321" height="19.333333333333329"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
                                                         <color key="textColor" name="AccentColor"/>
                                                         <nil key="highlightedColor"/>
@@ -299,7 +299,7 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="SkW-g7-nD9">
-                                        <rect key="frame" x="0.0" y="134.33333333333331" width="300" height="44"/>
+                                        <rect key="frame" x="0.0" y="118.33333333333331" width="300" height="44"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L0P-mQ-crT">
                                                 <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
@@ -361,7 +361,7 @@
                                                                 <rect key="frame" x="81.333333333333343" y="0.0" width="96.666666666666657" height="44"/>
                                                                 <subviews>
                                                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4bk-Pz-5SY">
-                                                                        <rect key="frame" x="0.0" y="12.666666666666684" width="96.666666666666671" height="18.333333333333329"/>
+                                                                        <rect key="frame" x="0.0" y="12.999999999999998" width="96.666666666666671" height="18.333333333333329"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="900" verticalHuggingPriority="900" horizontalCompressionResistancePriority="100" verticalCompressionResistancePriority="100" text="Перайсці сюды" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nGe-zW-0MH">
                                                                                 <rect key="frame" x="3" y="2.0000000000000009" width="90.666666666666671" height="14.333333333333336"/>
@@ -404,7 +404,7 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="5D6-Gv-yyG">
-                                        <rect key="frame" x="0.0" y="202.33333333333331" width="300" height="44"/>
+                                        <rect key="frame" x="0.0" y="178.33333333333331" width="300" height="44"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R6U-5a-GoU">
                                                 <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
@@ -467,7 +467,7 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="ihQ-Ng-8Fa">
-                                        <rect key="frame" x="0.0" y="270.33333333333331" width="300" height="44"/>
+                                        <rect key="frame" x="0.0" y="238.33333333333331" width="300" height="44"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rWw-YB-PDn">
                                                 <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
@@ -524,7 +524,7 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="hL0-xD-WZo">
-                                        <rect key="frame" x="0.0" y="338.33333333333337" width="300" height="44"/>
+                                        <rect key="frame" x="0.0" y="298.33333333333331" width="300" height="44"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WCa-ad-1vk">
                                                 <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
@@ -549,7 +549,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fDb-kG-F9f">
-                                                        <rect key="frame" x="17" y="12.333333333333256" width="9.6666666666666643" height="19.333333333333329"/>
+                                                        <rect key="frame" x="17" y="12.333333333333369" width="9.6666666666666643" height="19.333333333333329"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
                                                         <color key="textColor" name="AccentColor"/>
                                                         <nil key="highlightedColor"/>
@@ -583,7 +583,7 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="shr-pR-MTw">
-                                        <rect key="frame" x="0.0" y="406.33333333333337" width="300" height="44"/>
+                                        <rect key="frame" x="0.0" y="358.33333333333337" width="300" height="44"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iH5-uh-wMx">
                                                 <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
@@ -639,15 +639,23 @@
                                             <constraint firstAttribute="height" constant="44" id="XqF-cO-x1A"/>
                                         </constraints>
                                     </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4oY-5I-oRL">
+                                        <rect key="frame" x="0.0" y="418.33333333333337" width="300" height="69.666666666666686"/>
+                                        <string key="text">* калі не атрымоўваецца, то паспрабуйце так:
+iPhone → Налады → Асноўныя → Клавіятура → Клавіятуры → Дадаць новую клавіятуру → Drukarnik</string>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                        <color key="textColor" systemColor="secondaryLabelColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="Pf0-B1-TYF"/>
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J4x-yA-0ba">
-                                <rect key="frame" x="46.666666666666657" y="267.33333333333331" width="300" height="180"/>
+                                <rect key="frame" x="46.666666666666657" y="240.33333333333337" width="300" height="164"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain">
+                                <buttonConfiguration key="configuration" style="plain" title=" ">
                                     <backgroundConfiguration key="background">
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="strokeColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -37,6 +37,11 @@ class DKSettingsTableViewController: UITableViewController {
         super.viewWillAppear(animated)
         self.tableView.reloadData()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        DKAppstoreReviewController.requestReview()
+    }
 
     // MARK: - Table view data source
     
