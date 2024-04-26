@@ -84,7 +84,7 @@ extension DKKeyboardViewModel {
         self.state.keyboardContext.textDocumentProxy.deleteBackward(times: 1)
     }
     
-    func onEmojiRecents() -> String {
-        return self.emojiRecents.compactMap { $0.emoji }.joined()
+    func onEmojiRecents() -> [String] {
+        return self.emojiRecents.compactMap { $0.emoji }
     }
 }

@@ -1,4 +1,5 @@
 {
+  "originHash" : "7c02d5430827e47a0c4549e29b6612c746fc78b574fafcd38366a43ddd36beec",
   "pins" : [
     {
       "identity" : "belarusianlacinka",
@@ -12,12 +13,12 @@
     {
       "identity" : "keyboardkit",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/KeyboardKit/KeyboardKit.git",
+      "location" : "https://github.com/KeyboardKit/KeyboardKit",
       "state" : {
-        "revision" : "2004f99bd46c734f571e3cf238ae34fd4eacecb1",
-        "version" : "8.1.0"
+        "revision" : "d15990b872f8df8663ab87b179360a4d2d1fcab4",
+        "version" : "8.5.2"
       }
     }
   ],
-  "version" : 2
+  "version" : 3
 }

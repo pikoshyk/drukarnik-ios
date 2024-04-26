@@ -99,14 +99,16 @@ class DKCyrillicLayoutProvider: DKKeyboardLayoutProvider {
 //    }
 }
 
-#warning("TODO: in every KeyboardKit version change .percentage in iPhoneKeyboardLayoutProvider::lowerSystemButtonWidth to 0.11 for belarusian cyrillic keyboard")
+#warning("TODO: in every KeyboardKit version change .percentage in iPhoneProvider::lowerSystemButtonWidth to 0.11 for belarusian cyrillic keyboard")
 
 /*
- class iPhoneKeyboardLayoutProvider {
-    open func lowerSystemButtonWidth(for context: KeyboardContext) -> KeyboardLayout.ItemWidth {
+ open class iPhoneProvider: KeyboardLayout.BaseProvider {
+    open func lowerSystemButtonWidth(
+        for context: KeyboardContext
+    ) -> KeyboardLayout.ItemWidth {
         if context.isAlphabetic(.ukrainian) { return .input }
         return .percentage(0.11)
     }
- }
+}
  
  */

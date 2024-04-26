@@ -82,38 +82,6 @@
             endingLineNumber = "76"
             landmarkName = "numberOfSections(in:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "F8BB0636-BD97-4BF1-9585-CE31AAECB0AC - 5fd19f44622db1f"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Drukarnik.DKKeyboardEmojiCollectionView.numberOfSections(in: __C.UICollectionView) -&gt; Swift.Int"
-                  moduleName = "Drukarnik"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/logout/Projects/KeyboardBy/Drukarnik/Keyboard/Keyboards/Emoji/DKKeyboardEmojiCollectionView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "134"
-                  endingLineNumber = "134"
-                  offsetFromSymbolStart = "124">
-               </Location>
-               <Location
-                  uuid = "F8BB0636-BD97-4BF1-9585-CE31AAECB0AC - 5fd19f44622dafc"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Drukarnik.DKKeyboardEmojiCollectionView.numberOfSections(in: __C.UICollectionView) -&gt; Swift.Int"
-                  moduleName = "Drukarnik"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/logout/Projects/KeyboardBy/Drukarnik/Keyboard/Keyboards/Emoji/DKKeyboardEmojiCollectionView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "135"
-                  endingLineNumber = "135"
-                  offsetFromSymbolStart = "124">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -146,38 +114,6 @@
             endingLineNumber = "22"
             landmarkName = "init(_:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "25293DC2-1BF3-47C6-8506-65FCA45602A5 - bc3799994638f38e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Drukarnik.DKKeyboardEmojiCollectionView.init(frame: __C.CGRect, collectionViewLayout: __C.UICollectionViewLayout) -&gt; Drukarnik.DKKeyboardEmojiCollectionView"
-                  moduleName = "Drukarnik"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/logout/Projects/KeyboardBy/Drukarnik/Keyboard/Keyboards/Emoji/DKKeyboardEmojiCollectionView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "77"
-                  endingLineNumber = "77"
-                  offsetFromSymbolStart = "276">
-               </Location>
-               <Location
-                  uuid = "25293DC2-1BF3-47C6-8506-65FCA45602A5 - 811072e17cf2b5a7"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Drukarnik.DKKeyboardEmojiCollectionView.init() -&gt; Drukarnik.DKKeyboardEmojiCollectionView"
-                  moduleName = "Drukarnik"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/logout/Projects/KeyboardBy/Drukarnik/Keyboard/Keyboards/Emoji/DKKeyboardEmojiCollectionView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "77"
-                  endingLineNumber = "77"
-                  offsetFromSymbolStart = "252">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -242,38 +178,6 @@
             endingLineNumber = "39"
             landmarkName = "updateLayout()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "CB85B1F1-8A3E-4067-9509-DBAFF395A091 - 6afb78e329c37932"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Drukarnik.DKKeyboardEmojiCollectionView.updateLayout() -&gt; ()"
-                  moduleName = "Drukarnik"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/logout/Projects/KeyboardBy/Drukarnik/Keyboard/Keyboards/Emoji/DKKeyboardEmojiCollectionView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "107"
-                  endingLineNumber = "107"
-                  offsetFromSymbolStart = "40">
-               </Location>
-               <Location
-                  uuid = "CB85B1F1-8A3E-4067-9509-DBAFF395A091 - 6afb78e329c37970"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Drukarnik.DKKeyboardEmojiCollectionView.updateLayout() -&gt; ()"
-                  moduleName = "Drukarnik"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/logout/Projects/KeyboardBy/Drukarnik/Keyboard/Keyboards/Emoji/DKKeyboardEmojiCollectionView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "105"
-                  endingLineNumber = "105"
-                  offsetFromSymbolStart = "40">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -290,38 +194,6 @@
             endingLineNumber = "59"
             landmarkName = "layoutSubviews()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "0D1BA067-C8CE-4FC2-8C5D-1B5F49021FDB - ed3692a94794aa16"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Drukarnik.DKKeyboardEmojiCollectionView.layoutIfNeeded() -&gt; ()"
-                  moduleName = "Drukarnik"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/logout/Projects/KeyboardBy/Drukarnik/Keyboard/Keyboards/Emoji/DKKeyboardEmojiCollectionView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "126"
-                  endingLineNumber = "126"
-                  offsetFromSymbolStart = "156">
-               </Location>
-               <Location
-                  uuid = "0D1BA067-C8CE-4FC2-8C5D-1B5F49021FDB - c279ca5622b2328a"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Drukarnik.DKKeyboardEmojiCollectionView.layoutSubviews() -&gt; ()"
-                  moduleName = "Drukarnik"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/logout/Projects/KeyboardBy/Drukarnik/Keyboard/Keyboards/Emoji/DKKeyboardEmojiCollectionView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "126"
-                  endingLineNumber = "126"
-                  offsetFromSymbolStart = "156">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
