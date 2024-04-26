@@ -10,14 +10,14 @@ import Foundation
 import Combine
 
 class DKKeyboardViewModel: ObservableObject {
-    private unowned var state: Keyboard.KeyboardState
+    private unowned var state: Keyboard.State
     private unowned var keyboardSettings: DKKeyboardSettings
     
     lazy var emojiViewModel = DKKeyboardEmojiViewModel()
     
     private var emojiRecents: [DKKeyboardEmojiRecentsItem] = []
     
-    init(keyboardSettings: DKKeyboardSettings, state: Keyboard.KeyboardState) {
+    init(keyboardSettings: DKKeyboardSettings, state: Keyboard.State) {
         self.state = state
         self.keyboardSettings = keyboardSettings
     }

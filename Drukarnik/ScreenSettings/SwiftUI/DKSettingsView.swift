@@ -47,8 +47,8 @@ struct DKSettingsView: View {
     }
     
     var cellKeyboardFeedback: some View {
-        DKSettingsCellView(title: self.viewModel.presentKeyboardFeedbackCellTitle, availableOptions: self.viewModel.presentKeyboardFeedbackAvailableOptions, selectedOption: self.viewModel.presentKeyboardFeedbackCurrent) { latinType in
-            self.viewModel.presentKeyboardFeedbackCurrent = latinType
+        DKSettingsCellView(title: self.viewModel.presentKeyboardFeedbackCellTitle, availableOptions: self.viewModel.presentKeyboardFeedbackAvailableOptions, selectedOption: self.viewModel.presentKeyboardFeedbackCurrent) { feedbackType in
+            self.viewModel.presentKeyboardFeedbackCurrent = feedbackType
         }
     }
     
@@ -70,7 +70,7 @@ struct DKSettingsView: View {
     }
     
     var cellNavigationOtherLanguages: some View {
-        ZStack {
+        ZStack { 
             self.cellOtherLanguages
             NavigationLink {
                 DKSettingsLanguagesView(viewModel: self.viewModel.otherLanguagesViewModel)

@@ -56,8 +56,8 @@ struct DKKeyboardView: View {
                 }
             },
             toolbar: { (autocompleteAction: @escaping (Autocomplete.Suggestion) -> Void,
-                        style: KeyboardStyle.AutocompleteToolbar,
-                        view: AutocompleteToolbar<Autocomplete.ToolbarItem, Autocomplete.ToolbarSeparator>) in
+                        style: Autocomplete.ToolbarStyle,
+                        view: Autocomplete.Toolbar<Autocomplete.ToolbarItem, Autocomplete.ToolbarSeparator>) in
                 self.toolbarConverter(autocompleteAction)
             }
         )

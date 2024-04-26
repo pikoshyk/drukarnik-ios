@@ -8,7 +8,7 @@
 import KeyboardKit
 import SwiftUI
 
-class DKKeyboardAppearance: StandardKeyboardStyleProvider {
+class DKKeyboardAppearance: KeyboardStyle.StandardProvider {
     
     override func buttonImage(for action: KeyboardAction) -> Image? {
         switch action {

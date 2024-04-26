@@ -8,7 +8,7 @@
 import Foundation
 import KeyboardKit
 
-class DKKeyboardLayoutProvider: InputSetBasedKeyboardLayoutProvider {
+class DKKeyboardLayoutProvider: KeyboardLayout.DeviceBasedProvider {
     
     override func keyboardLayout(for context: KeyboardContext) -> KeyboardLayout {
         let layout = super.keyboardLayout(for: context)

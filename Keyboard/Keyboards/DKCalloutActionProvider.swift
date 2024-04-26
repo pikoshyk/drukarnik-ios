@@ -7,7 +7,7 @@
 
 import KeyboardKit
 
-class DKCalloutActionProvider: KeyboardKit.BaseCalloutActionProvider {
+class DKCalloutActionProvider: KeyboardKit.Callouts.BaseActionProvider {
     
     weak var settings: DKKeyboardSettings?
     
