@@ -16,3 +16,9 @@ extension Color {
         self = Color(hue: h, saturation: s, brightness: b, opacity: a)
     }
 }
+
+extension Color {
+    static var secondarySystemBackground: Color {
+        Color(uiColor: UIColor.secondarySystemBackground)
+    }
+}

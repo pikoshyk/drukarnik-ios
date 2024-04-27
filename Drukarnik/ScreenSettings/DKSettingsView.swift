@@ -32,7 +32,7 @@ struct DKSettingsView: View {
             }
         }
         .listStyle(.insetGrouped)
-        .background(ColorPalette.secondarySystemBackground)
+        .background(Color.secondarySystemBackground)
         .navigationTitle(self.viewModel.presentNavigationTitle)
     }
 #warning("TODO: Fix 'back' button for 'Keyboard Settings' navigation title")
@@ -108,11 +108,6 @@ struct DKSettingsView: View {
 
 import UIKit
 extension DKSettingsView {
-    struct ColorPalette {
-        static var secondarySystemBackground: Color {
-            Color(uiColor: UIColor.secondarySystemBackground)
-        }
-    }
     
     struct SystemImage {
         static let accessoryDisclosureIcon = "chevron.right"

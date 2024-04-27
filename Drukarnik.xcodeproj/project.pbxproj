@@ -85,6 +85,8 @@
 		B2C4D80329D25374006FFCAA /* DKAutocompleteToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C4D80229D25374006FFCAA /* DKAutocompleteToolbar.swift */; };
 		B2DDCF50298C769500902EE6 /* DKTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DDCF4F298C769500902EE6 /* DKTabBarController.swift */; };
 		B2DDCF52298C779500902EE6 /* DKConverterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DDCF51298C779400902EE6 /* DKConverterTableViewController.swift */; };
+		B2E41D072BDC8F77009429BF /* DKAboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E41D062BDC8F77009429BF /* DKAboutView.swift */; };
+		B2E41D092BDC8F81009429BF /* DKAboutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E41D082BDC8F81009429BF /* DKAboutViewModel.swift */; };
 		B2E6875A297F3723005C31B9 /* DKKeyboardSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E68759297F3723005C31B9 /* DKKeyboardSettings.swift */; };
 		B2E6875B297F3723005C31B9 /* DKKeyboardSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E68759297F3723005C31B9 /* DKKeyboardSettings.swift */; };
 		B2E68761297F37B2005C31B9 /* DKAdditionalLanguages.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E68760297F37B2005C31B9 /* DKAdditionalLanguages.swift */; };
@@ -191,6 +193,8 @@
 		B2DDCF4A29899D3600902EE6 /* KeyboardRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KeyboardRelease.entitlements; sourceTree = "<group>"; };
 		B2DDCF4F298C769500902EE6 /* DKTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKTabBarController.swift; sourceTree = "<group>"; };
 		B2DDCF51298C779400902EE6 /* DKConverterTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKConverterTableViewController.swift; sourceTree = "<group>"; };
+		B2E41D062BDC8F77009429BF /* DKAboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKAboutView.swift; sourceTree = "<group>"; };
+		B2E41D082BDC8F81009429BF /* DKAboutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKAboutViewModel.swift; sourceTree = "<group>"; };
 		B2E68759297F3723005C31B9 /* DKKeyboardSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKKeyboardSettings.swift; sourceTree = "<group>"; };
 		B2E68760297F37B2005C31B9 /* DKAdditionalLanguages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKAdditionalLanguages.swift; sourceTree = "<group>"; };
 		B2E68763297F37D1005C31B9 /* DKAdditionalLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKAdditionalLanguage.swift; sourceTree = "<group>"; };
@@ -423,6 +427,8 @@
 			isa = PBXGroup;
 			children = (
 				B2B2093929796F0F00D4D5DC /* DKAboutViewController.swift */,
+				B2E41D082BDC8F81009429BF /* DKAboutViewModel.swift */,
+				B2E41D062BDC8F77009429BF /* DKAboutView.swift */,
 			);
 			path = ScreenAbout;
 			sourceTree = "<group>";
@@ -622,6 +628,7 @@
 				B28C525F295625C90025D49A /* NSAttributedString+Tools.swift in Sources */,
 				B2723F412B11BC5100FCC53D /* DKKeyboardEmojiStackView.swift in Sources */,
 				B286DB9D2BDC3E550006CA45 /* KDEmojiModel.swift in Sources */,
+				B2E41D092BDC8F81009429BF /* DKAboutViewModel.swift in Sources */,
 				B25887852B104DD200AE499B /* DKKeyboardEmojiViewModel.swift in Sources */,
 				B2B2092D29796D0400D4D5DC /* DKInstallationDescriptionViewController.swift in Sources */,
 				B2073D0B2945F599008B43E4 /* AppDelegate.swift in Sources */,
@@ -640,6 +647,7 @@
 				B2B35510295662EC0006B8B1 /* CALayer+Tools.swift in Sources */,
 				B25CEE6C2B02B89F00BD1B8A /* DKInstallationNavigationController.swift in Sources */,
 				B299F70529908CBF00D6650A /* DKConverterOptionsTableViewCell.swift in Sources */,
+				B2E41D072BDC8F77009429BF /* DKAboutView.swift in Sources */,
 				B297601029ED7F5400FB5320 /* DKInstallationSharingDataViewController.swift in Sources */,
 				B29B0C362B0D71C4003CA8A5 /* DKSettingsCellView.swift in Sources */,
 				B2723F472B11BCC200FCC53D /* DKKeyboardEmojiCollectionToolbarView.swift in Sources */,

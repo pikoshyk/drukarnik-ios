@@ -6,99 +6,22 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Image references" minToolsVersion="12.0"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Пра аплікацыю-->
-        <scene sceneID="WPI-gj-IZu">
+        <scene sceneID="Ttf-fe-gZQ">
             <objects>
-                <navigationController id="dUw-KR-UFu" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Пра аплікацыю" image="info.circle" catalog="system" id="aJf-zT-nKB">
+                <hostingController id="tL5-x4-0dP" customClass="DKAboutViewController" customModule="Drukarnik" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Пра аплікацыю" id="Bur-Rs-1tT">
+                        <imageReference key="image" image="info.circle" catalog="system" symbolScale="default"/>
                         <imageReference key="selectedImage" image="info.circle.fill" catalog="system" symbolScale="default"/>
                     </tabBarItem>
-                    <navigationItem key="navigationItem" id="V9e-3W-dod"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="aJv-54-gDK">
-                        <rect key="frame" x="0.0" y="59" width="430" height="96"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="KF0-Iy-CSB" kind="relationship" relationship="rootViewController" id="s6D-kr-ubT"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fvW-rP-xS9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                </hostingController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0rl-VN-2xr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-25" y="-759"/>
-        </scene>
-        <!--Пра аплікацыю-->
-        <scene sceneID="q0g-h2-cmy">
-            <objects>
-                <viewController id="KF0-Iy-CSB" customClass="DKAboutViewController" customModule="Drukarnik" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="p5Z-oo-BZS">
-                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="stc-gp-O9Z">
-                                <rect key="frame" x="16" y="163" width="398" height="116.33333333333331"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dOk-uq-Ttb">
-                                        <rect key="frame" x="0.0" y="0.0" width="398" height="20.333333333333332"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                        <color key="textColor" systemColor="secondaryLabelColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KVR-AX-heR">
-                                        <rect key="frame" x="0.0" y="36.333333333333343" width="398" height="80"/>
-                                        <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="HCB-8p-QPm">
-                                                <rect key="frame" x="49" y="0.0" width="300" height="80"/>
-                                                <subviews>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Support" translatesAutoresizingMaskIntoConstraints="NO" id="Pe0-wo-873">
-                                                        <rect key="frame" x="0.0" y="0.0" width="300" height="80"/>
-                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="80" id="o3A-z6-pZp"/>
-                                                        </constraints>
-                                                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                        <fontDescription key="fontDescription" name="PTSans-Regular" family="PT Sans" pointSize="16"/>
-                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                    </textView>
-                                                </subviews>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="300" id="EbA-ZE-YId"/>
-                                                </constraints>
-                                            </stackView>
-                                        </subviews>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstItem="HCB-8p-QPm" firstAttribute="top" secondItem="KVR-AX-heR" secondAttribute="top" id="DZc-4B-nqT"/>
-                                            <constraint firstAttribute="bottom" secondItem="HCB-8p-QPm" secondAttribute="bottom" id="Kj8-P4-K4y"/>
-                                            <constraint firstItem="HCB-8p-QPm" firstAttribute="centerX" secondItem="KVR-AX-heR" secondAttribute="centerX" id="ene-Rv-91F"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
-                            </stackView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="YRs-RG-xHk"/>
-                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="YRs-RG-xHk" firstAttribute="leading" secondItem="stc-gp-O9Z" secondAttribute="leading" constant="-16" id="6JD-61-J1I"/>
-                            <constraint firstItem="YRs-RG-xHk" firstAttribute="trailing" secondItem="stc-gp-O9Z" secondAttribute="trailing" constant="16" id="Vym-hj-iqM"/>
-                            <constraint firstItem="YRs-RG-xHk" firstAttribute="top" secondItem="stc-gp-O9Z" secondAttribute="top" constant="-8" id="YzA-LW-inn"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Пра аплікацыю" id="Sxr-3z-o19">
-                        <barButtonItem key="backBarButtonItem" title=" " id="caE-77-jd6"/>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="labelDescription" destination="dOk-uq-Ttb" id="dyw-WX-QFQ"/>
-                        <outlet property="textViewSupport" destination="Pe0-wo-873" id="pDz-td-be1"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="MsJ-0E-KLs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="745" y="-759"/>
+            <point key="canvasLocation" x="-27" y="-670"/>
         </scene>
         <!--Канвертар-->
         <scene sceneID="oxy-WI-uTg">
@@ -296,7 +219,7 @@
                     <connections>
                         <segue destination="hj8-yh-vSV" kind="relationship" relationship="viewControllers" id="IZi-uT-Max"/>
                         <segue destination="WSZ-LJ-tfF" kind="relationship" relationship="viewControllers" id="4fm-BL-hwX"/>
-                        <segue destination="dUw-KR-UFu" kind="relationship" relationship="viewControllers" id="V7R-Yv-rpA"/>
+                        <segue destination="tL5-x4-0dP" kind="relationship" relationship="viewControllers" id="S0u-Qq-Nph"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qJx-se-2HZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
