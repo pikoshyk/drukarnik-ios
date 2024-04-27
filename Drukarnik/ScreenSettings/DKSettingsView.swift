@@ -12,22 +12,31 @@ struct DKSettingsView: View {
     @StateObject var viewModel: DKSettingsViewModel
     
     var body: some View {
+        NavigationView {
+            self.settingsList
+        }
+    }
+
+    var settingsList: some View {
         List {
-            Section {
-                self.cellInterfaceTransliteration
-            }
             Section {
                 self.cellLettersCyrillic
                 self.cellLettersLatin
                 self.cellNavigationOtherLanguages
-                self.cellAutocapitalization
-                self.cellKeyboardFeedback
+#warning("TODO: Fix Autocapitalization & KeyboardFeedback")
+//                self.cellAutocapitalization
+//                self.cellKeyboardFeedback
+            }
+            Section {
+                self.cellInterfaceTransliteration
             }
         }
-        .listStyle(.plain)
+        .listStyle(.insetGrouped)
+        .background(ColorPalette.secondarySystemBackground)
         .navigationTitle(self.viewModel.presentNavigationTitle)
     }
-    
+#warning("TODO: Fix 'back' button for 'Keyboard Settings' navigation title")
+
     var cellLettersCyrillic: some View {
         DKSettingsCellView(title: self.viewModel.presentCyrillicTypeCellTitle, availableOptions: self.viewModel.presentCyrillicTypeAvailableOptions, selectedOption: self.viewModel.presentCyrillicTypeCurrent) { cyrillicType in
             self.viewModel.presentCyrillicTypeCurrent = cyrillicType
@@ -89,7 +98,7 @@ struct DKSettingsView: View {
                     .font(.subheadline)
             }
             Spacer()
-            Image(systemName: "chevron.right")
+            Image(systemName: SystemImage.accessoryDisclosureIcon)
                 .font(.body)
                 .foregroundColor(.secondary)
 
@@ -97,8 +106,19 @@ struct DKSettingsView: View {
     }
 }
 
-#Preview {
-    NavigationView {
-        DKSettingsView(viewModel: DKSettingsViewModel())
+import UIKit
+extension DKSettingsView {
+    struct ColorPalette {
+        static var secondarySystemBackground: Color {
+            Color(uiColor: UIColor.secondarySystemBackground)
+        }
     }
+    
+    struct SystemImage {
+        static let accessoryDisclosureIcon = "chevron.right"
+    }
+}
+
+#Preview {
+    DKSettingsView(viewModel: DKSettingsViewModel())
 }

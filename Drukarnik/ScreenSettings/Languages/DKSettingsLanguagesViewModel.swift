@@ -33,6 +33,8 @@ class DKSettingsLanguagesViewModel: ObservableObject {
     }
     
     let navigationTitle = "Мовы"
+#warning("TODO: Fix auto-transliteration for navigation title")
+    
     @Published var supportedLanguages: String
     var cellSections: [LanguageSection] = []
 
@@ -80,8 +82,9 @@ class DKSettingsLanguagesViewModel: ObservableObject {
 extension DKSettingsLanguagesViewModel {
     
     func initLocalization() {
-        self.interfaceChangedObserver = NotificationCenter.default.addObserver(forName: .interfaceChanged, object: nil, queue: .main) { notification in
-            self.objectWillChange.send()
+        self.interfaceChangedObserver = NotificationCenter.default.addObserver(forName: .interfaceChanged, object: nil, queue: .main) { [weak self] notification in
+            self?.loadData()
+            self?.objectWillChange.send()
         }
     }
     
