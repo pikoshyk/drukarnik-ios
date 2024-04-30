@@ -19,7 +19,7 @@ struct DKSettingsLanguagesView: View {
         }
         .listStyle(.plain)
         .navigationBarTitleDisplayMode(.inline)
-        .navigationTitle(self.viewModel.navigationTitle)
+        .navigationTitle(self.viewModel.navigationTitle, backButton: "")
     }
     
     @ViewBuilder

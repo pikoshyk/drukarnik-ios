@@ -50,54 +50,6 @@ enum DKKeyboardFeedback: String, Codable {
     case soundAndVibro
 }
 
-enum DKKeyboardLayout: String, Codable {
-case latin
-case cyrillic
-    
-    var label: String {
-        self == .latin ? "Ŭŭ" : "Ўў"
-    }
-
-    var localeLanguage: String {
-        self == .latin ? "be-Latn" : "be-Cyrl"
-    }
-
-    var localeIdentifier: String {
-        self.localeLanguage + "_BY"
-    }
-    
-    var locale: Locale {
-        Locale(identifier: self.localeIdentifier)
-    }
-}
-
-extension Notification.Name {
-    static let interfaceChanged = Notification.Name("interfaceChanged")
-    static let interfaceTransliterationChanged = Notification.Name("interfaceTransliterationChanged")
-    static let belarusianLatinTypeChanged = Notification.Name("belarusianLatinTypeChanged")
-    static let belarusianCyrillicTypeChanged = Notification.Name("belarusianCyrillicTypeChanged")
-    static let converterVersionChanged = Notification.Name("converterVersionChanged")
-    static let converterOrthographyChanged = Notification.Name("converterOrthographyChanged")
-    static let shareTypingDataChanged = Notification.Name("shareTypingDataChanged")
-    static let keyboardInstallationCompletedChanged = Notification.Name("keyboardInstallationCompletedChanged")
-}
-
-class DKKeyboardSettingsKeys {
-    class var keyboardLayout: String { "DKKeyboardSettings.keyboard_layout" }
-    class var interfaceTransliteration: String { "DKKeyboardSettings.interface_transliteration" }
-    class var additionalLanguageIds: String { "DKKeyboardSettings.additional_language_ids" }
-    class var belarusianLatinType: String { "DKKeyboardSettings.belarusian_latin_type" }
-    class var belarusianCyrillicType: String { "DKKeyboardSettings.belarusian_cyrillic_type" }
-    class var converterVersion: String { "DKKeyboardSettings.converter_version" }
-    class var converterOrthography: String { "DKKeyboardSettings.converter_orthography" }
-    class var autocompleteTransliteration: String { "DKKeyboardSettings.autocomplete_transliteration" }
-    class var shareTypingData: String { "DKKeyboardSettings.share_typing_data" }
-    class var keyboardInstallationCompleted: String { "DKKeyboardSettings.keyboard_installation_completed" }
-    class var keyboardFeedback: String { "DKKeyboardSettings.keyboard_feedback" }
-    class var keyboardAutocapitalization: String { "DKKeyboardSettings.autocapitalization" }
-    class var keyboardEmojiRecents: String { "DKKeyboardSettings.keyboardEmojiRecents" }
-}
-
 class DKKeyboardSettings: Any {
 #if MAIN_APP
     static let shared = DKKeyboardSettings()

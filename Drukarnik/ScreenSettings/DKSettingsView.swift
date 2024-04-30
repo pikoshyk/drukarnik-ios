@@ -23,8 +23,9 @@ struct DKSettingsView: View {
                 self.cellLettersCyrillic
                 self.cellLettersLatin
                 self.cellNavigationOtherLanguages
-#warning("TODO: Fix Autocapitalization & KeyboardFeedback")
+#warning("TODO: Fix Autocapitalization")
 //                self.cellAutocapitalization
+#warning("TODO: Fix KeyboardFeedback")
 //                self.cellKeyboardFeedback
             }
             Section {

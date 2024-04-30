@@ -9,13 +9,34 @@ import Foundation
 import Combine
 
 class DKAboutViewModel: ObservableObject {
-#warning("TODO: Fix auto-transliteration for navigation title")
     var presentNavigationTitle: String {
         DKLocalizationApp.aboutTitle
     }
     
-#warning("TODO: Fix auto-transliteration for about description")
     var presentAppDescription: String {
         DKLocalizationApp.aboutDescription
+    }
+    
+    private var listeners: [NSObjectProtocol] = []
+
+    init() {
+        self.subscribeListeners()
+    }
+    
+    deinit {
+        self.unsubscribeListeners()
+    }
+    
+    func subscribeListeners() {
+        self.unsubscribeListeners()
+        self.listeners.append(NotificationCenter.default.addObserver(forName: .interfaceChanged, object: nil, queue: .main) { notification in
+            self.objectWillChange.send()
+        })
+    }
+    
+    func unsubscribeListeners() {
+        for listener in self.listeners {
+            NotificationCenter.default.removeObserver(listener)
+        }
     }
 }

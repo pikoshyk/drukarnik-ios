@@ -32,8 +32,9 @@ class DKSettingsLanguagesViewModel: ObservableObject {
         }
     }
     
-    let navigationTitle = "Мовы"
-#warning("TODO: Fix auto-transliteration for navigation title")
+    var navigationTitle: String {
+        DKLocalizationApp.settingsLanguagesControllerTitle
+    }
     
     @Published var supportedLanguages: String
     var cellSections: [LanguageSection] = []
