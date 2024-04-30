@@ -62,6 +62,8 @@
 		B28C525E295625C90025D49A /* UIColor+Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28C525C295625C90025D49A /* UIColor+Tools.swift */; };
 		B28C525F295625C90025D49A /* NSAttributedString+Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28C525D295625C90025D49A /* NSAttributedString+Tools.swift */; };
 		B297601029ED7F5400FB5320 /* DKInstallationSharingDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B297600F29ED7F5400FB5320 /* DKInstallationSharingDataViewController.swift */; };
+		B298DDEC2BE1246F00B95FF0 /* DKConverterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B298DDEB2BE1246F00B95FF0 /* DKConverterView.swift */; };
+		B298DDEE2BE1248900B95FF0 /* DKConverterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B298DDED2BE1248900B95FF0 /* DKConverterViewModel.swift */; };
 		B299F70529908CBF00D6650A /* DKConverterOptionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B299F70429908CBF00D6650A /* DKConverterOptionsTableViewCell.swift */; };
 		B299F7072990901300D6650A /* DKConverterGrowingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B299F7062990901300D6650A /* DKConverterGrowingTableViewCell.swift */; };
 		B29B0C322B0D4827003CA8A5 /* DKSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29B0C312B0D4827003CA8A5 /* DKSettingsView.swift */; };
@@ -176,6 +178,8 @@
 		B28C525C295625C90025D49A /* UIColor+Tools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Tools.swift"; sourceTree = "<group>"; };
 		B28C525D295625C90025D49A /* NSAttributedString+Tools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Tools.swift"; sourceTree = "<group>"; };
 		B297600F29ED7F5400FB5320 /* DKInstallationSharingDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKInstallationSharingDataViewController.swift; sourceTree = "<group>"; };
+		B298DDEB2BE1246F00B95FF0 /* DKConverterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKConverterView.swift; sourceTree = "<group>"; };
+		B298DDED2BE1248900B95FF0 /* DKConverterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKConverterViewModel.swift; sourceTree = "<group>"; };
 		B299F70429908CBF00D6650A /* DKConverterOptionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKConverterOptionsTableViewCell.swift; sourceTree = "<group>"; };
 		B299F7062990901300D6650A /* DKConverterGrowingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKConverterGrowingTableViewCell.swift; sourceTree = "<group>"; };
 		B29B0C312B0D4827003CA8A5 /* DKSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKSettingsView.swift; sourceTree = "<group>"; };
@@ -481,6 +485,8 @@
 				B299F70429908CBF00D6650A /* DKConverterOptionsTableViewCell.swift */,
 				B299F7062990901300D6650A /* DKConverterGrowingTableViewCell.swift */,
 				B2DDCF51298C779400902EE6 /* DKConverterTableViewController.swift */,
+				B298DDED2BE1248900B95FF0 /* DKConverterViewModel.swift */,
+				B298DDEB2BE1246F00B95FF0 /* DKConverterView.swift */,
 			);
 			path = ScreenConvertor;
 			sourceTree = "<group>";
@@ -640,6 +646,7 @@
 			files = (
 				B25D3B8C2B0EEDEA0000924B /* DKSettingsLanguagesViewModel.swift in Sources */,
 				B29B0C342B0D6E16003CA8A5 /* DKSettingsViewModel.swift in Sources */,
+				B298DDEC2BE1246F00B95FF0 /* DKConverterView.swift in Sources */,
 				B28C525F295625C90025D49A /* NSAttributedString+Tools.swift in Sources */,
 				B2723F412B11BC5100FCC53D /* DKKeyboardEmojiStackView.swift in Sources */,
 				B286DB9D2BDC3E550006CA45 /* KDEmojiModel.swift in Sources */,
@@ -648,6 +655,7 @@
 				B2B2092D29796D0400D4D5DC /* DKInstallationDescriptionViewController.swift in Sources */,
 				B2073D0B2945F599008B43E4 /* AppDelegate.swift in Sources */,
 				B2E68767297F4174005C31B9 /* DKAdditionalLanguage+Localization.swift in Sources */,
+				B298DDEE2BE1248900B95FF0 /* DKConverterViewModel.swift in Sources */,
 				B2B2094229796F3000D4D5DC /* BLBelarusianTransliterationChoiceViewController.swift in Sources */,
 				B280E0AE2B2F73D20030F29F /* DKAppstoreReviewController.swift in Sources */,
 				B25CEE6E2B02DBD400BD1B8A /* DKInstallationKeyboardViewController.swift in Sources */,
