@@ -21,4 +21,7 @@ extension Color {
     static var secondarySystemBackground: Color {
         Color(uiColor: UIColor.secondarySystemBackground)
     }
+    static var systemBackground: Color {
+        Color(uiColor: UIColor.systemBackground)
+    }
 }
