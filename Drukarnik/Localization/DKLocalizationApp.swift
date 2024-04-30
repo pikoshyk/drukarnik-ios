@@ -83,6 +83,7 @@ extension DKLocalizationApp { // About
     class var aboutTitle: String { Self.processedWord("Пра аплікацыю") }
     class var aboutDescription: String { Self.processedWord("Друкарнік — беларуская клавіятура, якая сумяшчае кірыліцу з беларускай лацінкай, мае дадатковыя літары для расейскай, украінскай, польскай ды іншых моў і нават эмаджы, то-бок адзіная клавіятура амаль на ўсе выпадкі жыцця беларуса.") }
     class var aboutSupportHtml: String { Self.processedWord("Праекту патрэбна дапамога: Android, UX/UI. Прапановы пісаць <a href=\"mailto:belanghelp@gmail.com\">сюды</a>.")}
+    class var aboutSectionContactsTitle: String { Self.processedWord("Зваротная сувязь") }
     
 }
 

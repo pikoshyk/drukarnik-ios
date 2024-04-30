@@ -32,9 +32,17 @@ struct DKAboutView: View {
 
             Section {
                 self.twitterView
+                    .contentShape(Rectangle())
+                    .onTapGesture {
+                        self.viewModel.onTwitter()
+                    }
                 self.emailView
+                    .contentShape(Rectangle())
+                    .onTapGesture {
+                        self.viewModel.onEmail()
+                    }
             } header: {
-                Text("Зваротная сувязь")
+                Text(DKLocalizationApp.aboutSectionContactsTitle)
             } footer: {
                 EmptyView()
             }
@@ -52,6 +60,8 @@ struct DKAboutView: View {
                     .font(.headline)
             }
             Spacer(minLength: 0)
+            Image(systemName: SystemImage.accessoryDisclosureIcon)
+                .foregroundColor(.secondary)
         }
     }
     
@@ -78,6 +88,8 @@ struct DKAboutView: View {
                     .font(.body)
             }
             Spacer(minLength: 0)
+            Image(systemName: SystemImage.accessoryDisclosureIcon)
+                .foregroundColor(.secondary)
         }
     }
     
@@ -100,6 +112,12 @@ struct DKAboutView: View {
         Text(self.viewModel.presentAppDescription)
             .foregroundColor(.secondary)
             .font(.body)
+    }
+}
+
+extension DKAboutView {
+    struct SystemImage {
+        static let accessoryDisclosureIcon = "chevron.right"
     }
 }
 
