@@ -224,22 +224,22 @@ extension DKKeyboardSettings { // Keyboard Settings
     var keyboardAutocapitalization: DKKeyboardAutocapitalization {
         get {
             let defaultValue = DKKeyboardAutocapitalization.sentences
-            let value = self.getter(key: DKKeyboardSettingsKeys.keyboardAutocapitalization, defaultValue: defaultValue)
-            return value
+            let value = self.getter(key: DKKeyboardSettingsKeys.keyboardAutocapitalization, defaultValue: defaultValue.rawValue)
+            return DKKeyboardAutocapitalization(rawValue: value) ?? defaultValue
         }
         set {
-            self.setter(key: DKKeyboardSettingsKeys.keyboardAutocapitalization, value: newValue, notificationName: nil)
+            self.setter(key: DKKeyboardSettingsKeys.keyboardAutocapitalization, value: newValue.rawValue, notificationName: nil)
         }
     }
 
     var keyboardFeedback: DKKeyboardFeedback {
         get {
             let defaultValue: DKKeyboardFeedback = .none
-            let value = self.getter(key: DKKeyboardSettingsKeys.keyboardFeedback, defaultValue: defaultValue)
-            return value
+            let value = self.getter(key: DKKeyboardSettingsKeys.keyboardFeedback, defaultValue: defaultValue.rawValue)
+            return DKKeyboardFeedback(rawValue: value) ?? defaultValue
         }
         set {
-            self.setter(key: DKKeyboardSettingsKeys.keyboardFeedback, value: newValue, notificationName: nil)
+            self.setter(key: DKKeyboardSettingsKeys.keyboardFeedback, value: newValue.rawValue, notificationName: nil)
         }
     }
 

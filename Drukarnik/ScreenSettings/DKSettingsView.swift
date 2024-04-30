@@ -23,10 +23,8 @@ struct DKSettingsView: View {
                 self.cellLettersCyrillic
                 self.cellLettersLatin
                 self.cellNavigationOtherLanguages
-#warning("TODO: Fix Autocapitalization")
-//                self.cellAutocapitalization
-#warning("TODO: Fix KeyboardFeedback")
-//                self.cellKeyboardFeedback
+                self.cellAutocapitalization
+                self.cellKeyboardFeedback
             }
             Section {
                 self.cellInterfaceTransliteration
@@ -36,7 +34,6 @@ struct DKSettingsView: View {
         .background(Color.secondarySystemBackground)
         .navigationTitle(self.viewModel.presentNavigationTitle)
     }
-#warning("TODO: Fix 'back' button for 'Keyboard Settings' navigation title")
 
     var cellLettersCyrillic: some View {
         DKSettingsCellView(title: self.viewModel.presentCyrillicTypeCellTitle, availableOptions: self.viewModel.presentCyrillicTypeAvailableOptions, selectedOption: self.viewModel.presentCyrillicTypeCurrent) { cyrillicType in
