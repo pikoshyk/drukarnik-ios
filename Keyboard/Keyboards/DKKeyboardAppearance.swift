@@ -27,7 +27,7 @@ class DKKeyboardAppearance: KeyboardStyle.StandardProvider {
         }
     }
     
-    override func buttonStyle(for action: KeyboardAction, isPressed: Bool) -> KeyboardStyle.Button {
+    override func buttonStyle(for action: KeyboardAction, isPressed: Bool) -> Keyboard.ButtonStyle {
         switch(action) {
         case .custom(named: DKKeyboardLayout.latin.rawValue):
             fallthrough

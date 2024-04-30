@@ -30,7 +30,7 @@ extension DKKeyboardAutocapitalization {
 }
 
 extension DKKeyboardFeedback {
-    var audioConfiguation: AudioFeedback.Configuration {
+    var audioConfiguation: Feedback.AudioConfiguration {
         switch self {
         case .sound: fallthrough
         case .soundAndVibro:
@@ -39,7 +39,7 @@ extension DKKeyboardFeedback {
             return .disabled
         }
     }
-    var hapticConfiguation: HapticFeedback.Configuration {
+    var hapticConfiguation: Feedback.HapticConfiguration {
         switch self {
         case .vibro: fallthrough
         case .soundAndVibro:
@@ -74,8 +74,8 @@ class DKKeyboardViewController: KeyboardInputViewController {
     }
     
     private func configureKeyboard() {
-        self.state.feedbackConfiguration.audio = self.settings.keyboardFeedback.audioConfiguation
-        self.state.feedbackConfiguration.haptic = self.settings.keyboardFeedback.hapticConfiguation
+        self.state.feedbackContext.audioConfiguration = self.settings.keyboardFeedback.audioConfiguation
+        self.state.feedbackContext.hapticConfiguration = self.settings.keyboardFeedback.hapticConfiguation
         self.state.keyboardContext.autocapitalizationTypeOverride = self.settings.keyboardAutocapitalization.systemValue
     }
     

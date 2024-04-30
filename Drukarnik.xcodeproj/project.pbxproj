@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 60;
+	objectVersion = 63;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -583,7 +583,7 @@
 				};
 			};
 			buildConfigurationList = B21A246429360B3600C056E5 /* Build configuration list for PBXProject "Drukarnik" */;
-			compatibilityVersion = "Xcode 15.0";
+			compatibilityVersion = "Xcode 15.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (

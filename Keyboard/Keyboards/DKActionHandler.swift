@@ -8,7 +8,7 @@
 import UIKit
 import KeyboardKit
 
-class DKActionHandler: StandardKeyboardActionHandler {
+class DKActionHandler: KeyboardAction.StandardHandler {
     var swicthKeyboardBlock: ((DKKeyboardLayout) -> Void)?
 
     convenience init(inputViewController controller: KeyboardInputViewController, swicthKeyboardBlock: @escaping(DKKeyboardLayout) -> Void) {
