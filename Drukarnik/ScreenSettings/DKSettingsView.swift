@@ -12,9 +12,8 @@ struct DKSettingsView: View {
     @StateObject var viewModel: DKSettingsViewModel
     
     var body: some View {
-        NavigationView {
-            self.settingsList
-        }
+        self.settingsList
+            .background(Color.secondarySystemBackground)
     }
 
     var settingsList: some View {
@@ -25,14 +24,15 @@ struct DKSettingsView: View {
                 self.cellNavigationOtherLanguages
                 self.cellAutocapitalization
                 self.cellKeyboardFeedback
-            }
-            Section {
+            } header: {
                 self.cellInterfaceTransliteration
+                    .padding(.bottom, 20)
+                    .textCase(.none)
+            } footer: {
+                EmptyView()
             }
         }
         .listStyle(.insetGrouped)
-        .background(Color.secondarySystemBackground)
-        .navigationTitle(self.viewModel.presentNavigationTitle)
     }
 
     var cellLettersCyrillic: some View {

@@ -12,11 +12,8 @@ struct DKAboutView: View {
     @StateObject var viewModel: DKAboutViewModel
     
     var body: some View {
-        NavigationView {
-            self.content
-                .background(Color.secondarySystemBackground)
-                .navigationTitle(self.viewModel.presentNavigationTitle)
-        }
+        self.content
+            .background(Color.secondarySystemBackground)
     }
     
     var content: some View {

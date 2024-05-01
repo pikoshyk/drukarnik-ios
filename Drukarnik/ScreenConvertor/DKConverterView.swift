@@ -11,12 +11,8 @@ import SwiftUI
 struct DKConverterView: View {
     @StateObject var viewModel: DKConverterViewModel
     var body: some View {
-        NavigationView {
-            self.contentView
-                .background(Color.secondarySystemBackground)
-                .navigationTitle(DKLocalizationApp.converterTitleFull)
-
-        }
+        self.contentView
+            .background(Color.secondarySystemBackground)
     }
     
     var contentView: some View {
@@ -34,25 +30,52 @@ struct DKConverterView: View {
             }
         }
         .listStyle(.insetGrouped)
+        .gesture(DragGesture().onChanged { _ in
+            self.viewModel.onDrag()
+        })
 
     }
     
     var textCyrillicView: some View {
-        VStack {
-            TextField("Увядзіце тэкст кірыліцай", text: self.$viewModel.textCyrillic)
+        ZStack {
+            if self.viewModel.textCyrillic.isEmpty {
+                VStack(alignment: .leading, spacing: 0) {
+                    HStack(spacing: 0) {
+                        Text(DKLocalizationApp.converterTextCyrillic)
+                            .foregroundColor(.secondary)
+                            .padding(.leading, 4)
+                        Spacer(minLength: 0)
+                    }
+                    Spacer(minLength: 0)
+                }
+                .padding(.top, 8)
+            }
+            TextEditor(text: self.$viewModel.textCyrillic)
                 .multilineTextAlignment(.leading)
-                .font(.body)
                 .foregroundColor(.primary)
         }
+        .font(.body)
     }
     
     var textLatinView: some View {
-        VStack {
-            TextField("Abo ŭviadzicie tekst lacinkaj", text: self.$viewModel.textLatin)
+        ZStack {
+            if self.viewModel.textLatin.isEmpty {
+                VStack(alignment: .leading, spacing: 0) {
+                    HStack(spacing: 0) {
+                        Text(DKLocalizationApp.converterTextLatin)
+                            .foregroundColor(.secondary)
+                            .padding(.leading, 4)
+                        Spacer(minLength: 0)
+                    }
+                    Spacer(minLength: 0)
+                }
+                .padding(.top, 8)
+            }
+            TextEditor(text: self.$viewModel.textLatin)
                 .multilineTextAlignment(.leading)
-                .font(.body)
                 .foregroundColor(.primary)
         }
+        .font(.body)
     }
     
     var conversionSettings: some View {
@@ -60,12 +83,12 @@ struct DKConverterView: View {
             VStack(alignment: .leading) {
                 VStack(alignment: .center) {
                     Spacer(minLength: 0)
-                    Text("Лацінка")
+                    Text(DKLocalizationApp.converterBelarusianLatinTypeTitle)
                     Spacer(minLength: 0)
                 }
                 VStack(alignment: .center) {
                     Spacer(minLength: 0)
-                    Text("Арфаграфія")
+                    Text(DKLocalizationApp.converterBelarusianCyrillicTypeTitle)
                     Spacer(minLength: 0)
                 }
             }
@@ -79,8 +102,8 @@ struct DKConverterView: View {
     
     var latinTypeView: some View {
         Picker("", selection: self.$viewModel.converterVersion) {
-            Text("Традыцыйная").tag(BLVersion.traditional)
-            Text("Геаграфічная").tag(BLVersion.geographic)
+            Text(DKLocalizationApp.converterBelarusianLatinTypeTraditional).tag(BLVersion.traditional)
+            Text(DKLocalizationApp.converterBelarusianLatinTypeGeographic).tag(BLVersion.geographic)
         }
         .pickerStyle(.segmented)
         
@@ -88,8 +111,8 @@ struct DKConverterView: View {
 
     var ophographyTypeView: some View {
         Picker("", selection: self.$viewModel.converterOrthography) {
-            Text("Тарашкевіца").tag(BLOrthography.classic)
-            Text("Наркамаўка").tag(BLOrthography.academic)
+            Text(DKLocalizationApp.converterBelarusianCyrillicTypeTarashkevica).tag(BLOrthography.classic)
+            Text(DKLocalizationApp.converterBelarusianCyrillicTypeNarkamauka).tag(BLOrthography.academic)
         }
         .pickerStyle(.segmented)
     }

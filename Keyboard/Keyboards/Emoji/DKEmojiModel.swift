@@ -1,4 +1,4 @@
-struct KDEmojiModel {
+struct DKEmojiModel {
     private(set) var smileys: [String] = []
     private(set) var nature: [String] = []
     private(set) var fooddrink: [String] = []

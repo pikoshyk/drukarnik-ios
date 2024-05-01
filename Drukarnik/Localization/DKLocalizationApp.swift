@@ -74,6 +74,9 @@ extension DKLocalizationApp { // Converter
     class var converterBelarusianCyrillicTypeNarkamauka: String { Self.processedWord("Наркамаўка") }
     class var converterBelarusianCyrillicTypeTarashkevica: String { Self.processedWord("Тарашкевіца") }
     
+    class var converterTextCyrillic: String { "Увядзіце тэкст кірыліцай" }
+    class var converterTextLatin: String { "Uviadzicie tekst lacinkaj" }
+    
     class var converterTextViewKeyboardDone: String { Self.processedWord("Добра") }
 
 }

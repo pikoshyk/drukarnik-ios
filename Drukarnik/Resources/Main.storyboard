@@ -1,243 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JXz-zp-S51">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ca3-so-925">
     <device id="retina6_72" orientation="portrait" appearance="light"/>
     <accessibilityOverrides dynamicTypePreference="3"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
-        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Пра аплікацыю-->
-        <scene sceneID="Ttf-fe-gZQ">
+        <!--Tabs View Controller-->
+        <scene sceneID="lc4-po-327">
             <objects>
-                <hostingController id="tL5-x4-0dP" customClass="DKAboutViewController" customModule="Drukarnik" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Пра аплікацыю" id="Bur-Rs-1tT">
-                        <imageReference key="image" image="info.circle" catalog="system" symbolScale="default"/>
-                        <imageReference key="selectedImage" image="info.circle.fill" catalog="system" symbolScale="default"/>
-                    </tabBarItem>
-                </hostingController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0rl-VN-2xr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <hostingController id="Ca3-so-925" customClass="DKTabsViewController" customModule="Drukarnik" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vUv-b6-fvD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-27" y="-670"/>
-        </scene>
-        <!--Канвертар-->
-        <scene sceneID="oxy-WI-uTg">
-            <objects>
-                <tableViewController id="xBK-W8-rTd" customClass="DKConverterTableViewController" customModule="Drukarnik" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="static" style="insetGrouped" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="rT2-Xm-uaL">
-                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
-                        <color key="separatorColor" systemColor="secondaryLabelColor"/>
-                        <color key="sectionIndexBackgroundColor" systemColor="secondarySystemGroupedBackgroundColor"/>
-                        <sections>
-                            <tableViewSection id="hfb-S4-6NP">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="jU9-es-dWc" customClass="DKConverterOptionsTableViewCell" customModule="Drukarnik" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="18" width="390" height="92.333335876464844"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jU9-es-dWc" id="khM-cH-wCI">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="92.333335876464844"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ZXF-kX-022">
-                                                    <rect key="frame" x="20" y="11" width="350" height="70.333333333333329"/>
-                                                    <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="gom-7W-6zJ">
-                                                            <rect key="frame" x="0.0" y="0.0" width="350" height="31.333333333333332"/>
-                                                            <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Лацінка:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WFr-Mu-nqf">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="31.333333333333332"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="width" constant="100" id="jAs-vR-7P4"/>
-                                                                    </constraints>
-                                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                                                    <color key="textColor" systemColor="secondaryLabelColor"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="YPB-OQ-WbF">
-                                                                    <rect key="frame" x="108" y="0.0" width="242" height="32.333333333333329"/>
-                                                                    <segments>
-                                                                        <segment title="Традыцыйная"/>
-                                                                        <segment title="Геаграфичная"/>
-                                                                    </segments>
-                                                                    <connections>
-                                                                        <action selector="onUpdate" destination="jU9-es-dWc" eventType="valueChanged" id="wCH-rz-lYx"/>
-                                                                    </connections>
-                                                                </segmentedControl>
-                                                            </subviews>
-                                                        </stackView>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="qG9-lW-6C8">
-                                                            <rect key="frame" x="0.0" y="39.333333333333336" width="350" height="31.000000000000007"/>
-                                                            <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Арфаграфія:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gcx-Qc-Qt2">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="31"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="width" constant="100" id="uZY-8q-PDX"/>
-                                                                    </constraints>
-                                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                                                    <color key="textColor" systemColor="secondaryLabelColor"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="1Bc-l4-9gk">
-                                                                    <rect key="frame" x="108" y="0.0" width="242" height="32"/>
-                                                                    <segments>
-                                                                        <segment title="Тарашкевіца"/>
-                                                                        <segment title="Наркамаўка"/>
-                                                                    </segments>
-                                                                    <connections>
-                                                                        <action selector="onUpdate" destination="jU9-es-dWc" eventType="valueChanged" id="Prj-H5-hDN"/>
-                                                                    </connections>
-                                                                </segmentedControl>
-                                                            </subviews>
-                                                        </stackView>
-                                                    </subviews>
-                                                </stackView>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="ZXF-kX-022" firstAttribute="top" secondItem="khM-cH-wCI" secondAttribute="topMargin" id="2d1-k0-ORX"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="ZXF-kX-022" secondAttribute="trailing" id="A83-sT-TEk"/>
-                                                <constraint firstItem="ZXF-kX-022" firstAttribute="leading" secondItem="khM-cH-wCI" secondAttribute="leadingMargin" id="cNZ-OT-13u"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="ZXF-kX-022" secondAttribute="bottom" id="fxS-9T-iAH"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <connections>
-                                            <outlet property="labelCyrillic" destination="gcx-Qc-Qt2" id="3N0-mc-a9c"/>
-                                            <outlet property="labelLatin" destination="WFr-Mu-nqf" id="1Bt-MZ-isA"/>
-                                            <outlet property="segmentedCyrillic" destination="1Bc-l4-9gk" id="2Y8-0B-MeX"/>
-                                            <outlet property="segmentedLatin" destination="YPB-OQ-WbF" id="rid-zB-iAf"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                            <tableViewSection id="5nu-TQ-lrK">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="okW-lf-jO3" customClass="DKConverterGrowingTableViewCell" customModule="Drukarnik" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="146.33333587646484" width="390" height="60.333332061767578"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="okW-lf-jO3" id="UXq-mu-Pvi">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="60.333332061767578"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" text="Тэкст для канвертацыі ў лацінку." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="NeW-0Y-5k7">
-                                                    <rect key="frame" x="20" y="11" width="350" height="38.333333333333336"/>
-                                                    <color key="textColor" systemColor="labelColor"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no"/>
-                                                </textView>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="NeW-0Y-5k7" firstAttribute="top" secondItem="UXq-mu-Pvi" secondAttribute="topMargin" id="7Nt-NX-vmS"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="NeW-0Y-5k7" secondAttribute="bottom" id="7cf-qA-HcU"/>
-                                                <constraint firstItem="NeW-0Y-5k7" firstAttribute="leading" secondItem="UXq-mu-Pvi" secondAttribute="leadingMargin" id="dae-OL-OGG"/>
-                                                <constraint firstItem="NeW-0Y-5k7" firstAttribute="trailing" secondItem="UXq-mu-Pvi" secondAttribute="trailingMargin" id="tqO-ha-b0o"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" systemColor="secondarySystemFillColor"/>
-                                        <connections>
-                                            <outlet property="textView" destination="NeW-0Y-5k7" id="LBZ-TV-bCJ"/>
-                                        </connections>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="Ea2-vL-Ltv" customClass="DKConverterGrowingTableViewCell" customModule="Drukarnik" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="206.66666793823242" width="390" height="60.333332061767578"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ea2-vL-Ltv" id="4ib-i5-HXN">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="60.333332061767578"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" text="Lacinka" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="n9e-AX-zEL">
-                                                    <rect key="frame" x="20" y="11" width="350" height="38.333333333333336"/>
-                                                    <color key="textColor" systemColor="labelColor"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no"/>
-                                                </textView>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="bottomMargin" secondItem="n9e-AX-zEL" secondAttribute="bottom" id="PEZ-d2-fRM"/>
-                                                <constraint firstItem="n9e-AX-zEL" firstAttribute="top" secondItem="4ib-i5-HXN" secondAttribute="topMargin" id="ZGg-1G-JrQ"/>
-                                                <constraint firstItem="n9e-AX-zEL" firstAttribute="leading" secondItem="4ib-i5-HXN" secondAttribute="leadingMargin" id="abl-9e-aci"/>
-                                                <constraint firstItem="n9e-AX-zEL" firstAttribute="trailing" secondItem="4ib-i5-HXN" secondAttribute="trailingMargin" id="afR-jI-Oah"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" systemColor="secondarySystemFillColor"/>
-                                        <connections>
-                                            <outlet property="textView" destination="n9e-AX-zEL" id="Pnh-1r-9Q2"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                        </sections>
-                        <connections>
-                            <outlet property="dataSource" destination="xBK-W8-rTd" id="2ft-g3-Msv"/>
-                            <outlet property="delegate" destination="xBK-W8-rTd" id="BjW-mx-BsG"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Канвертар" id="a3A-gO-4m4"/>
-                    <connections>
-                        <outlet property="cellCyrillicText" destination="okW-lf-jO3" id="XE4-eA-HtS"/>
-                        <outlet property="cellLatinText" destination="Ea2-vL-Ltv" id="dA5-YW-fgo"/>
-                        <outlet property="cellOptions" destination="jU9-es-dWc" id="QsJ-8g-Wxp"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KDU-mL-HPB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="744.92753623188412" y="756.69642857142856"/>
-        </scene>
-        <!--Канвертар-->
-        <scene sceneID="yKZ-hW-Fbd">
-            <objects>
-                <navigationController id="WSZ-LJ-tfF" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Канвертар" id="OLD-9V-MVs">
-                        <imageReference key="image" image="graduationcap" catalog="system" symbolScale="default"/>
-                        <imageReference key="selectedImage" image="graduationcap.fill" catalog="system" symbolScale="default"/>
-                    </tabBarItem>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="kBA-Tj-Dfh">
-                        <rect key="frame" x="0.0" y="59" width="430" height="96"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="xBK-W8-rTd" kind="relationship" relationship="rootViewController" id="USd-4f-OfR"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jhP-0I-Bmu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-26" y="757"/>
-        </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="mEK-TP-pqa">
-            <objects>
-                <tabBarController id="JXz-zp-S51" customClass="DKTabBarController" customModule="Drukarnik" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Bai-Eh-0ox">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="hj8-yh-vSV" kind="relationship" relationship="viewControllers" id="IZi-uT-Max"/>
-                        <segue destination="WSZ-LJ-tfF" kind="relationship" relationship="viewControllers" id="4fm-BL-hwX"/>
-                        <segue destination="tL5-x4-0dP" kind="relationship" relationship="viewControllers" id="S0u-Qq-Nph"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qJx-se-2HZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-794" y="29"/>
-        </scene>
-        <!--Налады-->
-        <scene sceneID="B2n-ut-770">
-            <objects>
-                <hostingController storyboardIdentifier="DKSettingsViewController" id="hj8-yh-vSV" customClass="DKSettingsViewController" customModule="Drukarnik" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Налады" id="k03-qg-eRj">
-                        <imageReference key="image" image="keyboard" catalog="system" symbolScale="default"/>
-                        <imageReference key="selectedImage" image="keyboard.fill" catalog="system" symbolScale="default"/>
-                    </tabBarItem>
-                </hostingController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hqu-k0-R3i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-26" y="29"/>
+            <point key="canvasLocation" x="-27" y="29"/>
         </scene>
         <!--Latin Type-->
         <scene sceneID="Hcc-HR-Wzr">
@@ -365,28 +143,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="graduationcap" catalog="system" width="128" height="107"/>
-        <image name="graduationcap.fill" catalog="system" width="128" height="108"/>
-        <image name="info.circle" catalog="system" width="128" height="123"/>
-        <image name="info.circle.fill" catalog="system" width="128" height="123"/>
-        <image name="keyboard" catalog="system" width="128" height="78"/>
         <image name="keyboard-cyrillic-iphone" width="375" height="212"/>
         <image name="keyboard-latin-iphone" width="375" height="212"/>
-        <image name="keyboard.fill" catalog="system" width="128" height="78"/>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="secondaryLabelColor">
-            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="secondarySystemBackgroundColor">
             <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="secondarySystemFillColor">
-            <color red="0.47058823529999999" green="0.47058823529999999" blue="0.50196078430000002" alpha="0.16" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="secondarySystemGroupedBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

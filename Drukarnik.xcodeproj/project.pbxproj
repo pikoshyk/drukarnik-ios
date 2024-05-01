@@ -24,7 +24,6 @@
 		B22FC9F42951A9F100B31E4A /* DKCalloutActionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22FC9F32951A9F100B31E4A /* DKCalloutActionProvider.swift */; };
 		B23571102B26A48D00784B63 /* DKEmojiAutocompleteProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B235710F2B26A48D00784B63 /* DKEmojiAutocompleteProvider.swift */; };
 		B23571122B26AB7400784B63 /* DKKeyboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23571112B26AB7400784B63 /* DKKeyboardViewModel.swift */; };
-		B247D3A62BDC81A70005C51D /* DKSettingsViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = B247D3A52BDC81A70005C51D /* DKSettingsViewContoller.swift */; };
 		B247D3AA2BDC86A60005C51D /* Color+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B247D3A92BDC86A60005C51D /* Color+UIColor.swift */; };
 		B247D3AC2BDC8C4E0005C51D /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = B247D3AB2BDC8C4E0005C51D /* PrivacyInfo.xcprivacy */; };
 		B247D3AD2BDC8C4E0005C51D /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = B247D3AB2BDC8C4E0005C51D /* PrivacyInfo.xcprivacy */; };
@@ -55,8 +54,8 @@
 		B282B8F229812D4B001244DE /* UITextDocumentProxy+FullText.swift in Sources */ = {isa = PBXBuildFile; fileRef = B282B8F129812D4B001244DE /* UITextDocumentProxy+FullText.swift */; };
 		B282B8F429812FB5001244DE /* AutocompleteSuggestion+FullText.swift in Sources */ = {isa = PBXBuildFile; fileRef = B282B8F329812FB5001244DE /* AutocompleteSuggestion+FullText.swift */; };
 		B282B8F8298141AF001244DE /* DKAutocompleteProvider+Transliteration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B282B8F7298141AF001244DE /* DKAutocompleteProvider+Transliteration.swift */; };
-		B286DB9C2BDC39470006CA45 /* KDEmojiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B286DB9B2BDC39470006CA45 /* KDEmojiModel.swift */; };
-		B286DB9D2BDC3E550006CA45 /* KDEmojiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B286DB9B2BDC39470006CA45 /* KDEmojiModel.swift */; };
+		B286DB9C2BDC39470006CA45 /* DKEmojiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B286DB9B2BDC39470006CA45 /* DKEmojiModel.swift */; };
+		B286DB9D2BDC3E550006CA45 /* DKEmojiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B286DB9B2BDC39470006CA45 /* DKEmojiModel.swift */; };
 		B28C524D2954519C0025D49A /* DKCyrillicAutocompleteProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28C524C2954519C0025D49A /* DKCyrillicAutocompleteProvider.swift */; };
 		B28C524F295455DE0025D49A /* DKLatinAutocompleteProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28C524E295455DE0025D49A /* DKLatinAutocompleteProvider.swift */; };
 		B28C525E295625C90025D49A /* UIColor+Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28C525C295625C90025D49A /* UIColor+Tools.swift */; };
@@ -64,8 +63,9 @@
 		B297601029ED7F5400FB5320 /* DKInstallationSharingDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B297600F29ED7F5400FB5320 /* DKInstallationSharingDataViewController.swift */; };
 		B298DDEC2BE1246F00B95FF0 /* DKConverterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B298DDEB2BE1246F00B95FF0 /* DKConverterView.swift */; };
 		B298DDEE2BE1248900B95FF0 /* DKConverterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B298DDED2BE1248900B95FF0 /* DKConverterViewModel.swift */; };
-		B299F70529908CBF00D6650A /* DKConverterOptionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B299F70429908CBF00D6650A /* DKConverterOptionsTableViewCell.swift */; };
-		B299F7072990901300D6650A /* DKConverterGrowingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B299F7062990901300D6650A /* DKConverterGrowingTableViewCell.swift */; };
+		B298DDF22BE25B8200B95FF0 /* DKTabsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B298DDF12BE25B8200B95FF0 /* DKTabsView.swift */; };
+		B298DDF42BE25C6400B95FF0 /* DKTabsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B298DDF32BE25C6400B95FF0 /* DKTabsViewModel.swift */; };
+		B298DDF62BE25FAB00B95FF0 /* DKTabsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B298DDF52BE25FAB00B95FF0 /* DKTabsViewController.swift */; };
 		B29B0C322B0D4827003CA8A5 /* DKSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29B0C312B0D4827003CA8A5 /* DKSettingsView.swift */; };
 		B29B0C342B0D6E16003CA8A5 /* DKSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29B0C332B0D6E16003CA8A5 /* DKSettingsViewModel.swift */; };
 		B29B0C362B0D71C4003CA8A5 /* DKSettingsCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29B0C352B0D71C4003CA8A5 /* DKSettingsCellView.swift */; };
@@ -76,7 +76,6 @@
 		B2B2093429796D7F00D4D5DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2B2093029796D7F00D4D5DC /* Assets.xcassets */; };
 		B2B2093529796D7F00D4D5DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2B2093129796D7F00D4D5DC /* Main.storyboard */; };
 		B2B2093729796D8600D4D5DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2B2093029796D7F00D4D5DC /* Assets.xcassets */; };
-		B2B2093A29796F0F00D4D5DC /* DKAboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B2093929796F0F00D4D5DC /* DKAboutViewController.swift */; };
 		B2B2094129796F3000D4D5DC /* BLBelarusianTransliterationChoiceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2B2093F29796F3000D4D5DC /* BLBelarusianTransliterationChoiceViewController.xib */; };
 		B2B2094229796F3000D4D5DC /* BLBelarusianTransliterationChoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B2094029796F3000D4D5DC /* BLBelarusianTransliterationChoiceViewController.swift */; };
 		B2B2094529796F8300D4D5DC /* DKLocalizationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B2094429796F8300D4D5DC /* DKLocalizationApp.swift */; };
@@ -85,8 +84,6 @@
 		B2B9756B297B52A800ED68D2 /* additional_languages.json in Resources */ = {isa = PBXBuildFile; fileRef = B2B97569297B52A800ED68D2 /* additional_languages.json */; };
 		B2C25E8329D499E7002B3229 /* KeyboardLayout+Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C25E8229D499E7002B3229 /* KeyboardLayout+Buttons.swift */; };
 		B2C4D80329D25374006FFCAA /* DKAutocompleteToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C4D80229D25374006FFCAA /* DKAutocompleteToolbar.swift */; };
-		B2DDCF50298C769500902EE6 /* DKTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DDCF4F298C769500902EE6 /* DKTabBarController.swift */; };
-		B2DDCF52298C779500902EE6 /* DKConverterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DDCF51298C779400902EE6 /* DKConverterTableViewController.swift */; };
 		B2E41D072BDC8F77009429BF /* DKAboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E41D062BDC8F77009429BF /* DKAboutView.swift */; };
 		B2E41D092BDC8F81009429BF /* DKAboutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E41D082BDC8F81009429BF /* DKAboutViewModel.swift */; };
 		B2E41D0D2BE0BC95009429BF /* View+NavigationBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E41D0C2BE0BC95009429BF /* View+NavigationBackButton.swift */; };
@@ -150,7 +147,6 @@
 		B22FC9F32951A9F100B31E4A /* DKCalloutActionProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKCalloutActionProvider.swift; sourceTree = "<group>"; };
 		B235710F2B26A48D00784B63 /* DKEmojiAutocompleteProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKEmojiAutocompleteProvider.swift; sourceTree = "<group>"; };
 		B23571112B26AB7400784B63 /* DKKeyboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKKeyboardViewModel.swift; sourceTree = "<group>"; };
-		B247D3A52BDC81A70005C51D /* DKSettingsViewContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKSettingsViewContoller.swift; sourceTree = "<group>"; };
 		B247D3A92BDC86A60005C51D /* Color+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+UIColor.swift"; sourceTree = "<group>"; };
 		B247D3AB2BDC8C4E0005C51D /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		B249D1A629905B0200668130 /* DKAutocompleteProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKAutocompleteProvider.swift; sourceTree = "<group>"; };
@@ -172,7 +168,7 @@
 		B282B8F129812D4B001244DE /* UITextDocumentProxy+FullText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextDocumentProxy+FullText.swift"; sourceTree = "<group>"; };
 		B282B8F329812FB5001244DE /* AutocompleteSuggestion+FullText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AutocompleteSuggestion+FullText.swift"; sourceTree = "<group>"; };
 		B282B8F7298141AF001244DE /* DKAutocompleteProvider+Transliteration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DKAutocompleteProvider+Transliteration.swift"; sourceTree = "<group>"; };
-		B286DB9B2BDC39470006CA45 /* KDEmojiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KDEmojiModel.swift; sourceTree = "<group>"; };
+		B286DB9B2BDC39470006CA45 /* DKEmojiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKEmojiModel.swift; sourceTree = "<group>"; };
 		B28C524C2954519C0025D49A /* DKCyrillicAutocompleteProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKCyrillicAutocompleteProvider.swift; sourceTree = "<group>"; };
 		B28C524E295455DE0025D49A /* DKLatinAutocompleteProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKLatinAutocompleteProvider.swift; sourceTree = "<group>"; };
 		B28C525C295625C90025D49A /* UIColor+Tools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Tools.swift"; sourceTree = "<group>"; };
@@ -180,8 +176,9 @@
 		B297600F29ED7F5400FB5320 /* DKInstallationSharingDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKInstallationSharingDataViewController.swift; sourceTree = "<group>"; };
 		B298DDEB2BE1246F00B95FF0 /* DKConverterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKConverterView.swift; sourceTree = "<group>"; };
 		B298DDED2BE1248900B95FF0 /* DKConverterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKConverterViewModel.swift; sourceTree = "<group>"; };
-		B299F70429908CBF00D6650A /* DKConverterOptionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKConverterOptionsTableViewCell.swift; sourceTree = "<group>"; };
-		B299F7062990901300D6650A /* DKConverterGrowingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKConverterGrowingTableViewCell.swift; sourceTree = "<group>"; };
+		B298DDF12BE25B8200B95FF0 /* DKTabsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKTabsView.swift; sourceTree = "<group>"; };
+		B298DDF32BE25C6400B95FF0 /* DKTabsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKTabsViewModel.swift; sourceTree = "<group>"; };
+		B298DDF52BE25FAB00B95FF0 /* DKTabsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKTabsViewController.swift; sourceTree = "<group>"; };
 		B29B0C312B0D4827003CA8A5 /* DKSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKSettingsView.swift; sourceTree = "<group>"; };
 		B29B0C332B0D6E16003CA8A5 /* DKSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKSettingsViewModel.swift; sourceTree = "<group>"; };
 		B29B0C352B0D71C4003CA8A5 /* DKSettingsCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKSettingsCellView.swift; sourceTree = "<group>"; };
@@ -191,7 +188,6 @@
 		B2B2093029796D7F00D4D5DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B2B2093129796D7F00D4D5DC /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B2B2093229796D7F00D4D5DC /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B2B2093929796F0F00D4D5DC /* DKAboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKAboutViewController.swift; sourceTree = "<group>"; };
 		B2B2093F29796F3000D4D5DC /* BLBelarusianTransliterationChoiceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BLBelarusianTransliterationChoiceViewController.xib; sourceTree = "<group>"; };
 		B2B2094029796F3000D4D5DC /* BLBelarusianTransliterationChoiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BLBelarusianTransliterationChoiceViewController.swift; sourceTree = "<group>"; };
 		B2B2094429796F8300D4D5DC /* DKLocalizationApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKLocalizationApp.swift; sourceTree = "<group>"; };
@@ -202,8 +198,6 @@
 		B2DDCF4829899BF700902EE6 /* DrukarnikRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DrukarnikRelease.entitlements; sourceTree = "<group>"; };
 		B2DDCF4929899D1700902EE6 /* KeyboardDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KeyboardDebug.entitlements; sourceTree = "<group>"; };
 		B2DDCF4A29899D3600902EE6 /* KeyboardRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KeyboardRelease.entitlements; sourceTree = "<group>"; };
-		B2DDCF4F298C769500902EE6 /* DKTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKTabBarController.swift; sourceTree = "<group>"; };
-		B2DDCF51298C779400902EE6 /* DKConverterTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKConverterTableViewController.swift; sourceTree = "<group>"; };
 		B2E41D062BDC8F77009429BF /* DKAboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKAboutView.swift; sourceTree = "<group>"; };
 		B2E41D082BDC8F81009429BF /* DKAboutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKAboutViewModel.swift; sourceTree = "<group>"; };
 		B2E41D0C2BE0BC95009429BF /* View+NavigationBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+NavigationBackButton.swift"; sourceTree = "<group>"; };
@@ -246,12 +240,12 @@
 				B2B2094329796F8300D4D5DC /* Localization */,
 				B2E68758297F36F3005C31B9 /* Settings */,
 				B280E0AA2B2F73720030F29F /* Controllers */,
-				B2B2093829796F0F00D4D5DC /* ScreenAbout */,
 				B2B2093B29796F2300D4D5DC /* ScreenSettings */,
+				B2DDCF4D298C6FC500902EE6 /* ScreenConvertor */,
+				B2B2093829796F0F00D4D5DC /* ScreenAbout */,
+				B2DDCF4E298C762800902EE6 /* ScreeenTabs */,
 				B2B2092B29796D0400D4D5DC /* ScreenInstallation */,
 				B2B2093E29796F3000D4D5DC /* ScreenTransliteration */,
-				B2DDCF4D298C6FC500902EE6 /* ScreenConvertor */,
-				B2DDCF4E298C762800902EE6 /* ScreeenTabs */,
 				B28C525B295625C90025D49A /* Categories */,
 				B2B2092E29796D7F00D4D5DC /* Resources */,
 				B2073D042945F599008B43E4 /* AppDelegate.swift */,
@@ -325,7 +319,7 @@
 				B2723F4F2B11BD9D00FCC53D /* SwiftUI */,
 				B2723F3F2B11BC3400FCC53D /* UIKit */,
 				B25887822B1047D700AE499B /* DKKeyboardEmojiViewModel.swift */,
-				B286DB9B2BDC39470006CA45 /* KDEmojiModel.swift */,
+				B286DB9B2BDC39470006CA45 /* DKEmojiModel.swift */,
 				B235710F2B26A48D00784B63 /* DKEmojiAutocompleteProvider.swift */,
 			);
 			path = Emoji;
@@ -443,7 +437,6 @@
 		B2B2093829796F0F00D4D5DC /* ScreenAbout */ = {
 			isa = PBXGroup;
 			children = (
-				B2B2093929796F0F00D4D5DC /* DKAboutViewController.swift */,
 				B2E41D082BDC8F81009429BF /* DKAboutViewModel.swift */,
 				B2E41D062BDC8F77009429BF /* DKAboutView.swift */,
 			);
@@ -457,7 +450,6 @@
 				B29B0C352B0D71C4003CA8A5 /* DKSettingsCellView.swift */,
 				B29B0C332B0D6E16003CA8A5 /* DKSettingsViewModel.swift */,
 				B29B0C312B0D4827003CA8A5 /* DKSettingsView.swift */,
-				B247D3A52BDC81A70005C51D /* DKSettingsViewContoller.swift */,
 			);
 			path = ScreenSettings;
 			sourceTree = "<group>";
@@ -482,9 +474,6 @@
 		B2DDCF4D298C6FC500902EE6 /* ScreenConvertor */ = {
 			isa = PBXGroup;
 			children = (
-				B299F70429908CBF00D6650A /* DKConverterOptionsTableViewCell.swift */,
-				B299F7062990901300D6650A /* DKConverterGrowingTableViewCell.swift */,
-				B2DDCF51298C779400902EE6 /* DKConverterTableViewController.swift */,
 				B298DDED2BE1248900B95FF0 /* DKConverterViewModel.swift */,
 				B298DDEB2BE1246F00B95FF0 /* DKConverterView.swift */,
 			);
@@ -494,7 +483,9 @@
 		B2DDCF4E298C762800902EE6 /* ScreeenTabs */ = {
 			isa = PBXGroup;
 			children = (
-				B2DDCF4F298C769500902EE6 /* DKTabBarController.swift */,
+				B298DDF32BE25C6400B95FF0 /* DKTabsViewModel.swift */,
+				B298DDF12BE25B8200B95FF0 /* DKTabsView.swift */,
+				B298DDF52BE25FAB00B95FF0 /* DKTabsViewController.swift */,
 			);
 			path = ScreeenTabs;
 			sourceTree = "<group>";
@@ -649,7 +640,7 @@
 				B298DDEC2BE1246F00B95FF0 /* DKConverterView.swift in Sources */,
 				B28C525F295625C90025D49A /* NSAttributedString+Tools.swift in Sources */,
 				B2723F412B11BC5100FCC53D /* DKKeyboardEmojiStackView.swift in Sources */,
-				B286DB9D2BDC3E550006CA45 /* KDEmojiModel.swift in Sources */,
+				B286DB9D2BDC3E550006CA45 /* DKEmojiModel.swift in Sources */,
 				B2E41D092BDC8F81009429BF /* DKAboutViewModel.swift in Sources */,
 				B25887852B104DD200AE499B /* DKKeyboardEmojiViewModel.swift in Sources */,
 				B2B2092D29796D0400D4D5DC /* DKInstallationDescriptionViewController.swift in Sources */,
@@ -662,33 +653,30 @@
 				B25887842B104DCD00AE499B /* DKKeyboardEmojiView.swift in Sources */,
 				B2723F442B11BC8B00FCC53D /* UIView+FixedSizeView.swift in Sources */,
 				B2E68761297F37B2005C31B9 /* DKAdditionalLanguages.swift in Sources */,
-				B2DDCF52298C779500902EE6 /* DKConverterTableViewController.swift in Sources */,
 				B2E6875A297F3723005C31B9 /* DKKeyboardSettings.swift in Sources */,
-				B2DDCF50298C769500902EE6 /* DKTabBarController.swift in Sources */,
 				B25887892B114A2000AE499B /* DKKeyboardEmojiCollectionView.swift in Sources */,
 				B25D3B8A2B0EEDAF0000924B /* DKSettingsLanguagesView.swift in Sources */,
 				B2B35510295662EC0006B8B1 /* CALayer+Tools.swift in Sources */,
 				B2E41D132BE0BDF1009429BF /* DKKeyboardLayout.swift in Sources */,
 				B25CEE6C2B02B89F00BD1B8A /* DKInstallationNavigationController.swift in Sources */,
-				B299F70529908CBF00D6650A /* DKConverterOptionsTableViewCell.swift in Sources */,
 				B2E41D072BDC8F77009429BF /* DKAboutView.swift in Sources */,
 				B297601029ED7F5400FB5320 /* DKInstallationSharingDataViewController.swift in Sources */,
 				B29B0C362B0D71C4003CA8A5 /* DKSettingsCellView.swift in Sources */,
 				B2723F472B11BCC200FCC53D /* DKKeyboardEmojiCollectionToolbarView.swift in Sources */,
 				B247D3AA2BDC86A60005C51D /* Color+UIColor.swift in Sources */,
 				B2E41D0D2BE0BC95009429BF /* View+NavigationBackButton.swift in Sources */,
-				B247D3A62BDC81A70005C51D /* DKSettingsViewContoller.swift in Sources */,
 				B28C525E295625C90025D49A /* UIColor+Tools.swift in Sources */,
 				B2723F4D2B11BD2C00FCC53D /* DKKeyboardEmojiCollectionViewCell.swift in Sources */,
 				B29B0C322B0D4827003CA8A5 /* DKSettingsView.swift in Sources */,
-				B299F7072990901300D6650A /* DKConverterGrowingTableViewCell.swift in Sources */,
 				B2723F4A2B11BCF000FCC53D /* DKKeyboardEmojiCollectionHeaderView.swift in Sources */,
 				B2E68764297F37D1005C31B9 /* DKAdditionalLanguage.swift in Sources */,
 				B2E41D112BE0BDC6009429BF /* Notification+Settings.swift in Sources */,
+				B298DDF22BE25B8200B95FF0 /* DKTabsView.swift in Sources */,
 				B2B2094529796F8300D4D5DC /* DKLocalizationApp.swift in Sources */,
+				B298DDF62BE25FAB00B95FF0 /* DKTabsViewController.swift in Sources */,
 				B2073D0D2945F599008B43E4 /* SceneDelegate.swift in Sources */,
 				B2E41D0F2BE0BDAD009429BF /* DKKeyboardSettingsKeys.swift in Sources */,
-				B2B2093A29796F0F00D4D5DC /* DKAboutViewController.swift in Sources */,
+				B298DDF42BE25C6400B95FF0 /* DKTabsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -712,7 +700,7 @@
 				B2E41D162BE0BF1A009429BF /* Notification+Settings.swift in Sources */,
 				B227DE1F29993558001E29A7 /* KeyboardContext+FullText.swift in Sources */,
 				B25887862B10592000AE499B /* DKKeyboardEmojiView.swift in Sources */,
-				B286DB9C2BDC39470006CA45 /* KDEmojiModel.swift in Sources */,
+				B286DB9C2BDC39470006CA45 /* DKEmojiModel.swift in Sources */,
 				B25887872B10592300AE499B /* DKKeyboardEmojiViewModel.swift in Sources */,
 				B2723F452B11BC8B00FCC53D /* UIView+FixedSizeView.swift in Sources */,
 				B2C25E8329D499E7002B3229 /* KeyboardLayout+Buttons.swift in Sources */,

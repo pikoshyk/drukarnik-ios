@@ -99,7 +99,7 @@ class DKKeyboardEmojiViewModel: Any {
                                             title: "Нядаўнія",
                                             imageName: "keyboard-emoji-category-recents",
                                             items:[])
-        let emojiModel = KDEmojiModel()
+        let emojiModel = DKEmojiModel()
         self.sections = [
             self.recentSection,
             DKEmojiSection(id: .smileys,
