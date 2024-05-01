@@ -26,7 +26,14 @@ class DKLocalizationApp: Any {
     }
 }
 
-extension DKLocalizationApp { // Settings
+// MARK: Dictionary
+extension DKLocalizationApp {
+    class var dictionaryTitle: String { Self.processedWord("Слоўнік") }
+    class var dictionaryTitleFull: String { Self.processedWord("Руска-Беларускі слоўнік") }
+}
+
+// MARK: Settings
+extension DKLocalizationApp {
     
     class var settingsTitle: String { Self.processedWord("Налады") }
     class var settingsTitleFull: String { Self.processedWord("Налады клавіятуры") }
@@ -61,7 +68,8 @@ extension DKLocalizationApp { // Settings
     class var settingsKeyboardFeedbackTypeAudioAndVibro: String { Self.processedWord("Аўдыя і вібрацыя") }
 }
 
-extension DKLocalizationApp { // Converter
+// MARK: Converter
+extension DKLocalizationApp {
     
     class var converterTitle: String { Self.processedWord("Канвертар") }
     class var converterTitleFull: String { Self.processedWord("Канвертар лацінкі") }
@@ -81,7 +89,8 @@ extension DKLocalizationApp { // Converter
 
 }
 
-extension DKLocalizationApp { // About
+// MARK: About
+extension DKLocalizationApp {
     
     class var aboutTitle: String { Self.processedWord("Пра аплікацыю") }
     class var aboutDescription: String { Self.processedWord("Друкарнік — беларуская клавіятура, якая сумяшчае кірыліцу з беларускай лацінкай, мае дадатковыя літары для расейскай, украінскай, польскай ды іншых моў і нават эмаджы, то-бок адзіная клавіятура амаль на ўсе выпадкі жыцця беларуса.") }
@@ -90,7 +99,8 @@ extension DKLocalizationApp { // About
     
 }
 
-extension DKLocalizationApp { // Transliteration
+// MARK: Transliteration
+extension DKLocalizationApp {
     
     class func transliterationTitle(direction: BLDirection) -> String { Self.processedWord("Беларуская мова", convert: direction == .toLacin, defaultInterfaceTransliteration: .latin) }
     class var transliterationSegmentedLatin: String { "Łacinka" }
@@ -105,7 +115,8 @@ extension DKLocalizationApp { // Transliteration
     
 }
 
-extension DKLocalizationApp { // Installation
+// MARK: Installation
+extension DKLocalizationApp {
     // Description Screen
     class var installationDescriptionTitle: String { Self.processedWord("Друкарнік") }
     class var installationDescriptionDescription: String { Self.processedWord("Беларуская клавіятура, якая сумяшчае кірыліцу з беларускай лацінкай, мае дадатковыя літары для расейскай, украінскай, польскай ды іншых моў і нават эмаджы, то-бок адзіная клавіятура амаль на ўсе выпадкі жыцця беларуса.") }

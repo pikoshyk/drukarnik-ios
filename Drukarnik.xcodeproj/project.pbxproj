@@ -56,6 +56,7 @@
 		B282B8F8298141AF001244DE /* DKAutocompleteProvider+Transliteration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B282B8F7298141AF001244DE /* DKAutocompleteProvider+Transliteration.swift */; };
 		B286DB9C2BDC39470006CA45 /* DKEmojiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B286DB9B2BDC39470006CA45 /* DKEmojiModel.swift */; };
 		B286DB9D2BDC3E550006CA45 /* DKEmojiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B286DB9B2BDC39470006CA45 /* DKEmojiModel.swift */; };
+		B28BC3B12BE2C8DE0088760E /* GRDB in Frameworks */ = {isa = PBXBuildFile; productRef = B28BC3B02BE2C8DE0088760E /* GRDB */; };
 		B28C524D2954519C0025D49A /* DKCyrillicAutocompleteProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28C524C2954519C0025D49A /* DKCyrillicAutocompleteProvider.swift */; };
 		B28C524F295455DE0025D49A /* DKLatinAutocompleteProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28C524E295455DE0025D49A /* DKLatinAutocompleteProvider.swift */; };
 		B28C525E295625C90025D49A /* UIColor+Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28C525C295625C90025D49A /* UIColor+Tools.swift */; };
@@ -66,6 +67,12 @@
 		B298DDF22BE25B8200B95FF0 /* DKTabsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B298DDF12BE25B8200B95FF0 /* DKTabsView.swift */; };
 		B298DDF42BE25C6400B95FF0 /* DKTabsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B298DDF32BE25C6400B95FF0 /* DKTabsViewModel.swift */; };
 		B298DDF62BE25FAB00B95FF0 /* DKTabsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B298DDF52BE25FAB00B95FF0 /* DKTabsViewController.swift */; };
+		B298DDFC2BE2A0EF00B95FF0 /* DKDictionaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B298DDFB2BE2A0EF00B95FF0 /* DKDictionaryView.swift */; };
+		B298DDFE2BE2A11100B95FF0 /* DKDictionaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B298DDFD2BE2A11100B95FF0 /* DKDictionaryViewModel.swift */; };
+		B298DE002BE2A3BD00B95FF0 /* DKTabType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B298DDFF2BE2A3BD00B95FF0 /* DKTabType.swift */; };
+		B298DE022BE2A78E00B95FF0 /* rusbel.db in Resources */ = {isa = PBXBuildFile; fileRef = B298DE012BE2A78E00B95FF0 /* rusbel.db */; };
+		B298DE032BE2A78E00B95FF0 /* rusbel.db in Resources */ = {isa = PBXBuildFile; fileRef = B298DE012BE2A78E00B95FF0 /* rusbel.db */; };
+		B298DE052BE2A7EA00B95FF0 /* DKDictionaryDatabaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B298DE042BE2A7EA00B95FF0 /* DKDictionaryDatabaseModel.swift */; };
 		B29B0C322B0D4827003CA8A5 /* DKSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29B0C312B0D4827003CA8A5 /* DKSettingsView.swift */; };
 		B29B0C342B0D6E16003CA8A5 /* DKSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29B0C332B0D6E16003CA8A5 /* DKSettingsViewModel.swift */; };
 		B29B0C362B0D71C4003CA8A5 /* DKSettingsCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29B0C352B0D71C4003CA8A5 /* DKSettingsCellView.swift */; };
@@ -179,6 +186,11 @@
 		B298DDF12BE25B8200B95FF0 /* DKTabsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKTabsView.swift; sourceTree = "<group>"; };
 		B298DDF32BE25C6400B95FF0 /* DKTabsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKTabsViewModel.swift; sourceTree = "<group>"; };
 		B298DDF52BE25FAB00B95FF0 /* DKTabsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKTabsViewController.swift; sourceTree = "<group>"; };
+		B298DDFB2BE2A0EF00B95FF0 /* DKDictionaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKDictionaryView.swift; sourceTree = "<group>"; };
+		B298DDFD2BE2A11100B95FF0 /* DKDictionaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKDictionaryViewModel.swift; sourceTree = "<group>"; };
+		B298DDFF2BE2A3BD00B95FF0 /* DKTabType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKTabType.swift; sourceTree = "<group>"; };
+		B298DE012BE2A78E00B95FF0 /* rusbel.db */ = {isa = PBXFileReference; lastKnownFileType = file; name = rusbel.db; path = "../../../offline-skarnik/database/rusbel.db"; sourceTree = "<group>"; };
+		B298DE042BE2A7EA00B95FF0 /* DKDictionaryDatabaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKDictionaryDatabaseModel.swift; sourceTree = "<group>"; };
 		B29B0C312B0D4827003CA8A5 /* DKSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKSettingsView.swift; sourceTree = "<group>"; };
 		B29B0C332B0D6E16003CA8A5 /* DKSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKSettingsViewModel.swift; sourceTree = "<group>"; };
 		B29B0C352B0D71C4003CA8A5 /* DKSettingsCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKSettingsCellView.swift; sourceTree = "<group>"; };
@@ -216,6 +228,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B28BC3B12BE2C8DE0088760E /* GRDB in Frameworks */,
 				B2F8569F2952942800CADE71 /* KeyboardKit in Frameworks */,
 				B22FC9EE29510C6900B31E4A /* BelarusianLacinka in Frameworks */,
 			);
@@ -240,6 +253,7 @@
 				B2B2094329796F8300D4D5DC /* Localization */,
 				B2E68758297F36F3005C31B9 /* Settings */,
 				B280E0AA2B2F73720030F29F /* Controllers */,
+				B298DDFA2BE2A0D700B95FF0 /* ScreenDictionary */,
 				B2B2093B29796F2300D4D5DC /* ScreenSettings */,
 				B2DDCF4D298C6FC500902EE6 /* ScreenConvertor */,
 				B2B2093829796F0F00D4D5DC /* ScreenAbout */,
@@ -410,6 +424,17 @@
 			path = Categories;
 			sourceTree = "<group>";
 		};
+		B298DDFA2BE2A0D700B95FF0 /* ScreenDictionary */ = {
+			isa = PBXGroup;
+			children = (
+				B298DE012BE2A78E00B95FF0 /* rusbel.db */,
+				B298DE042BE2A7EA00B95FF0 /* DKDictionaryDatabaseModel.swift */,
+				B298DDFD2BE2A11100B95FF0 /* DKDictionaryViewModel.swift */,
+				B298DDFB2BE2A0EF00B95FF0 /* DKDictionaryView.swift */,
+			);
+			path = ScreenDictionary;
+			sourceTree = "<group>";
+		};
 		B2B2092B29796D0400D4D5DC /* ScreenInstallation */ = {
 			isa = PBXGroup;
 			children = (
@@ -484,6 +509,7 @@
 			isa = PBXGroup;
 			children = (
 				B298DDF32BE25C6400B95FF0 /* DKTabsViewModel.swift */,
+				B298DDFF2BE2A3BD00B95FF0 /* DKTabType.swift */,
 				B298DDF12BE25B8200B95FF0 /* DKTabsView.swift */,
 				B298DDF52BE25FAB00B95FF0 /* DKTabsViewController.swift */,
 			);
@@ -533,6 +559,7 @@
 			packageProductDependencies = (
 				B22FC9ED29510C6900B31E4A /* BelarusianLacinka */,
 				B2F8569E2952942800CADE71 /* KeyboardKit */,
+				B28BC3B02BE2C8DE0088760E /* GRDB */,
 			);
 			productName = Drukarnik;
 			productReference = B21A246929360B3600C056E5 /* Drukarnik.app */;
@@ -591,6 +618,7 @@
 			packageReferences = (
 				B22FC9EC29510C6900B31E4A /* XCRemoteSwiftPackageReference "belarusianlacinka" */,
 				B2F8569D2952942800CADE71 /* XCRemoteSwiftPackageReference "KeyboardKit" */,
+				B28BC3AF2BE2C8DE0088760E /* XCRemoteSwiftPackageReference "GRDB.swift" */,
 			);
 			productRefGroup = B21A246A29360B3600C056E5 /* Products */;
 			projectDirPath = "";
@@ -609,6 +637,7 @@
 			files = (
 				B22DC4D32979FB7000D9AC39 /* Installation.storyboard in Resources */,
 				B247D3AC2BDC8C4E0005C51D /* PrivacyInfo.xcprivacy in Resources */,
+				B298DE022BE2A78E00B95FF0 /* rusbel.db in Resources */,
 				B2F1F03E2B115F0D0043AAA7 /* DKKeyboardEmoji.storyboard in Resources */,
 				B2B2093529796D7F00D4D5DC /* Main.storyboard in Resources */,
 				B2B2094129796F3000D4D5DC /* BLBelarusianTransliterationChoiceViewController.xib in Resources */,
@@ -622,6 +651,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2B2093729796D8600D4D5DC /* Assets.xcassets in Resources */,
+				B298DE032BE2A78E00B95FF0 /* rusbel.db in Resources */,
 				B214A2952B210FA500388679 /* emoji.json in Resources */,
 				B247D3AD2BDC8C4E0005C51D /* PrivacyInfo.xcprivacy in Resources */,
 				B2B9756B297B52A800ED68D2 /* additional_languages.json in Resources */,
@@ -636,6 +666,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B25D3B8C2B0EEDEA0000924B /* DKSettingsLanguagesViewModel.swift in Sources */,
+				B298DE002BE2A3BD00B95FF0 /* DKTabType.swift in Sources */,
 				B29B0C342B0D6E16003CA8A5 /* DKSettingsViewModel.swift in Sources */,
 				B298DDEC2BE1246F00B95FF0 /* DKConverterView.swift in Sources */,
 				B28C525F295625C90025D49A /* NSAttributedString+Tools.swift in Sources */,
@@ -646,6 +677,8 @@
 				B2B2092D29796D0400D4D5DC /* DKInstallationDescriptionViewController.swift in Sources */,
 				B2073D0B2945F599008B43E4 /* AppDelegate.swift in Sources */,
 				B2E68767297F4174005C31B9 /* DKAdditionalLanguage+Localization.swift in Sources */,
+				B298DDFE2BE2A11100B95FF0 /* DKDictionaryViewModel.swift in Sources */,
+				B298DE052BE2A7EA00B95FF0 /* DKDictionaryDatabaseModel.swift in Sources */,
 				B298DDEE2BE1248900B95FF0 /* DKConverterViewModel.swift in Sources */,
 				B2B2094229796F3000D4D5DC /* BLBelarusianTransliterationChoiceViewController.swift in Sources */,
 				B280E0AE2B2F73D20030F29F /* DKAppstoreReviewController.swift in Sources */,
@@ -654,6 +687,7 @@
 				B2723F442B11BC8B00FCC53D /* UIView+FixedSizeView.swift in Sources */,
 				B2E68761297F37B2005C31B9 /* DKAdditionalLanguages.swift in Sources */,
 				B2E6875A297F3723005C31B9 /* DKKeyboardSettings.swift in Sources */,
+				B298DDFC2BE2A0EF00B95FF0 /* DKDictionaryView.swift in Sources */,
 				B25887892B114A2000AE499B /* DKKeyboardEmojiCollectionView.swift in Sources */,
 				B25D3B8A2B0EEDAF0000924B /* DKSettingsLanguagesView.swift in Sources */,
 				B2B35510295662EC0006B8B1 /* CALayer+Tools.swift in Sources */,
@@ -1056,6 +1090,14 @@
 				minimumVersion = 1.1.0;
 			};
 		};
+		B28BC3AF2BE2C8DE0088760E /* XCRemoteSwiftPackageReference "GRDB.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/groue/GRDB.swift.git";
+			requirement = {
+				kind = revision;
+				revision = 639fa9168d36931b36a79e60dc06b7d23852f1f4;
+			};
+		};
 		B2AC43B32945F4BE00ACC32E /* XCRemoteSwiftPackageReference "KeyboardKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pikoshyk/KeyboardKit.git";
@@ -1089,6 +1131,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B22FC9EC29510C6900B31E4A /* XCRemoteSwiftPackageReference "belarusianlacinka" */;
 			productName = BelarusianLacinka;
+		};
+		B28BC3B02BE2C8DE0088760E /* GRDB */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B28BC3AF2BE2C8DE0088760E /* XCRemoteSwiftPackageReference "GRDB.swift" */;
+			productName = GRDB;
 		};
 		B2AC43AC2945F21400ACC32E /* KeyboardKit */ = {
 			isa = XCSwiftPackageProductDependency;

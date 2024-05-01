@@ -11,6 +11,7 @@ import Combine
 class DKTabsViewModel: ObservableObject {
     private var listeners: [NSObjectProtocol] = []
 
+    lazy private(set) var viewModelDictionary = DKDictionaryViewModel()
     lazy private(set) var viewModelSettings = DKSettingsViewModel()
     lazy private(set) var viewModelConverter = DKConverterViewModel()
     lazy private(set) var viewModelAbout = DKAboutViewModel()
