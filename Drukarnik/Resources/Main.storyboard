@@ -20,7 +20,7 @@
         <!--Latin Type-->
         <scene sceneID="Hcc-HR-Wzr">
             <objects>
-                <tableViewController id="Mh9-E7-qdm" customClass="DKSettingsBelarusianLatinTypeTableViewController" customModule="Drukarnik" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="DKSettingsBelarusianLatinTypeTableViewController" id="Mh9-E7-qdm" customClass="DKSettingsBelarusianLatinTypeTableViewController" customModule="Drukarnik" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="zY1-ts-7F4">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -82,7 +82,7 @@
         <!--Cyrillic Type-->
         <scene sceneID="66b-ZM-3U5">
             <objects>
-                <tableViewController id="8dF-Xh-Yrl" customClass="DKSettingsBelarusianCyrillicTypeTableViewController" customModule="Drukarnik" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="DKSettingsBelarusianCyrillicTypeTableViewController" id="8dF-Xh-Yrl" customClass="DKSettingsBelarusianCyrillicTypeTableViewController" customModule="Drukarnik" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="y3x-0B-2h5">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
