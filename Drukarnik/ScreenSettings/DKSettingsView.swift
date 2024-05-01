@@ -26,7 +26,8 @@ struct DKSettingsView: View {
                 self.cellKeyboardFeedback
             } header: {
                 self.cellInterfaceTransliteration
-                    .padding(.bottom, 20)
+                    .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+                    .padding(.vertical, 20)
                     .textCase(.none)
             } footer: {
                 EmptyView()

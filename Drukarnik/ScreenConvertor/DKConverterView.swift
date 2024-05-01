@@ -23,8 +23,8 @@ struct DKConverterView: View {
             } header: {
                 self.conversionSettings
                 .textCase(.none)
-                .padding(.bottom)
                 .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+                .padding(.vertical, 20)
             } footer: {
                 EmptyView()
             }
@@ -80,22 +80,24 @@ struct DKConverterView: View {
     
     var conversionSettings: some View {
         HStack(spacing: 20) {
-            VStack(alignment: .leading) {
+            VStack(alignment: .leading, spacing: 0) {
                 VStack(alignment: .center) {
-                    Spacer(minLength: 0)
+                    Spacer()
                     Text(DKLocalizationApp.converterBelarusianLatinTypeTitle)
-                    Spacer(minLength: 0)
+                    Spacer()
                 }
                 VStack(alignment: .center) {
-                    Spacer(minLength: 0)
+                    Spacer()
                     Text(DKLocalizationApp.converterBelarusianCyrillicTypeTitle)
-                    Spacer(minLength: 0)
+                    Spacer()
                 }
             }
-            .font(.caption)
-            VStack {
+            .font(.subheadline)
+            VStack(spacing: 0) {
                 self.latinTypeView
+                    .padding(.vertical, 4)
                 self.ophographyTypeView
+                    .padding(.vertical, 4)
             }
         }
     }
