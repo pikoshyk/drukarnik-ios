@@ -29,7 +29,7 @@ class DKLocalizationApp: Any {
 // MARK: Dictionary
 extension DKLocalizationApp {
     class var dictionaryTitle: String { Self.processedWord("Слоўнік") }
-    class var dictionaryTitleFull: String { Self.processedWord("Руска-Беларускі слоўнік") }
+    class var dictionaryTitleFull: String { Self.processedWord("Слоўнік (рус-бел)") }
 }
 
 // MARK: Settings

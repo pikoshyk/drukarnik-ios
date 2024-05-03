@@ -89,6 +89,9 @@
 		B2B35510295662EC0006B8B1 /* CALayer+Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B3550F295662EC0006B8B1 /* CALayer+Tools.swift */; };
 		B2B9756A297B52A800ED68D2 /* additional_languages.json in Resources */ = {isa = PBXBuildFile; fileRef = B2B97569297B52A800ED68D2 /* additional_languages.json */; };
 		B2B9756B297B52A800ED68D2 /* additional_languages.json in Resources */ = {isa = PBXBuildFile; fileRef = B2B97569297B52A800ED68D2 /* additional_languages.json */; };
+		B2C1BA332BE4DA5800D5F929 /* DKDictionaryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C1BA322BE4DA5800D5F929 /* DKDictionaryListView.swift */; };
+		B2C1BA352BE4DA7600D5F929 /* DKDictionaryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C1BA342BE4DA7600D5F929 /* DKDictionaryListViewModel.swift */; };
+		B2C1BA372BE4E0C400D5F929 /* DKDictionaryWordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C1BA362BE4E0C400D5F929 /* DKDictionaryWordView.swift */; };
 		B2C25E8329D499E7002B3229 /* KeyboardLayout+Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C25E8229D499E7002B3229 /* KeyboardLayout+Buttons.swift */; };
 		B2C4D80329D25374006FFCAA /* DKAutocompleteToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C4D80229D25374006FFCAA /* DKAutocompleteToolbar.swift */; };
 		B2E41D072BDC8F77009429BF /* DKAboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E41D062BDC8F77009429BF /* DKAboutView.swift */; };
@@ -205,6 +208,9 @@
 		B2B2094429796F8300D4D5DC /* DKLocalizationApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKLocalizationApp.swift; sourceTree = "<group>"; };
 		B2B3550F295662EC0006B8B1 /* CALayer+Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Tools.swift"; sourceTree = "<group>"; };
 		B2B97569297B52A800ED68D2 /* additional_languages.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = additional_languages.json; sourceTree = "<group>"; };
+		B2C1BA322BE4DA5800D5F929 /* DKDictionaryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKDictionaryListView.swift; sourceTree = "<group>"; };
+		B2C1BA342BE4DA7600D5F929 /* DKDictionaryListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKDictionaryListViewModel.swift; sourceTree = "<group>"; };
+		B2C1BA362BE4E0C400D5F929 /* DKDictionaryWordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKDictionaryWordView.swift; sourceTree = "<group>"; };
 		B2C25E8229D499E7002B3229 /* KeyboardLayout+Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyboardLayout+Buttons.swift"; sourceTree = "<group>"; };
 		B2C4D80229D25374006FFCAA /* DKAutocompleteToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKAutocompleteToolbar.swift; sourceTree = "<group>"; };
 		B2DDCF4829899BF700902EE6 /* DrukarnikRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DrukarnikRelease.entitlements; sourceTree = "<group>"; };
@@ -429,8 +435,11 @@
 			children = (
 				B298DE012BE2A78E00B95FF0 /* rusbel.db */,
 				B298DE042BE2A7EA00B95FF0 /* DKDictionaryDatabaseModel.swift */,
+				B2C1BA362BE4E0C400D5F929 /* DKDictionaryWordView.swift */,
 				B298DDFD2BE2A11100B95FF0 /* DKDictionaryViewModel.swift */,
 				B298DDFB2BE2A0EF00B95FF0 /* DKDictionaryView.swift */,
+				B2C1BA342BE4DA7600D5F929 /* DKDictionaryListViewModel.swift */,
+				B2C1BA322BE4DA5800D5F929 /* DKDictionaryListView.swift */,
 			);
 			path = ScreenDictionary;
 			sourceTree = "<group>";
@@ -666,11 +675,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B25D3B8C2B0EEDEA0000924B /* DKSettingsLanguagesViewModel.swift in Sources */,
+				B2C1BA332BE4DA5800D5F929 /* DKDictionaryListView.swift in Sources */,
 				B298DE002BE2A3BD00B95FF0 /* DKTabType.swift in Sources */,
 				B29B0C342B0D6E16003CA8A5 /* DKSettingsViewModel.swift in Sources */,
 				B298DDEC2BE1246F00B95FF0 /* DKConverterView.swift in Sources */,
 				B28C525F295625C90025D49A /* NSAttributedString+Tools.swift in Sources */,
 				B2723F412B11BC5100FCC53D /* DKKeyboardEmojiStackView.swift in Sources */,
+				B2C1BA352BE4DA7600D5F929 /* DKDictionaryListViewModel.swift in Sources */,
 				B286DB9D2BDC3E550006CA45 /* DKEmojiModel.swift in Sources */,
 				B2E41D092BDC8F81009429BF /* DKAboutViewModel.swift in Sources */,
 				B25887852B104DD200AE499B /* DKKeyboardEmojiViewModel.swift in Sources */,
@@ -696,6 +707,7 @@
 				B2E41D072BDC8F77009429BF /* DKAboutView.swift in Sources */,
 				B297601029ED7F5400FB5320 /* DKInstallationSharingDataViewController.swift in Sources */,
 				B29B0C362B0D71C4003CA8A5 /* DKSettingsCellView.swift in Sources */,
+				B2C1BA372BE4E0C400D5F929 /* DKDictionaryWordView.swift in Sources */,
 				B2723F472B11BCC200FCC53D /* DKKeyboardEmojiCollectionToolbarView.swift in Sources */,
 				B247D3AA2BDC86A60005C51D /* Color+UIColor.swift in Sources */,
 				B2E41D0D2BE0BC95009429BF /* View+NavigationBackButton.swift in Sources */,

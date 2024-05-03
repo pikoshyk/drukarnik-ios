@@ -16,20 +16,43 @@ struct DKDictionaryView: View {
     
     var contentView: some View {
         VStack(spacing: 0) {
-            self.searchView
-            List {
-               EmptyView()
-            }
+            self.listView
+            Spacer(minLength: 0)
             Divider()
+            self.searchView
         }
     }
     
     var searchView: some View {
-        TextField("Увядзіце слова для пошуку", text: self.$viewModel.presentSearchText)
-            .textFieldStyle(.roundedBorder)
-            .padding(.horizontal, 16)
-            .padding(.vertical, 8)
-
+        Group {
+            GeometryReader(content: { geometry in
+                ZStack {
+                    TextField("Увядзіце слова для пошуку", text: self.$viewModel.presentSearchText)
+                        .textFieldStyle(.plain)
+                        .padding()
+                        .zIndex(2)
+                    RoundedRectangle(cornerRadius: geometry.size.height/2.0)
+                        .strokeBorder(style: StrokeStyle(lineWidth: 1))
+                        .foregroundColor(.secondary)
+                        .zIndex(1)
+                }
+            })
+        }
+        .frame(height: 50.0)
+        .padding()
+        .background(Color.systemBackground)
+    }
+    
+    var listView: some View {
+        List {
+            ForEach(self.viewModel.words, id: \.id) { wordModel in
+                DKDictionaryWordView(viewModel: wordModel)
+            }
+        }
+        .listStyle(.plain)
+        .gesture(DragGesture().onChanged { _ in
+            self.viewModel.onDrag()
+        })
     }
 }
 
