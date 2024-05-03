@@ -11,7 +11,7 @@ struct DKDictionaryView: View {
     @StateObject var viewModel: DKDictionaryViewModel
     var body: some View {
         self.contentView
-            .background(Color.secondarySystemBackground)
+//            .background(Color.secondarySystemBackground)
     }
     
     var contentView: some View {

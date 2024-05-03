@@ -28,8 +28,8 @@ class DKLocalizationApp: Any {
 
 // MARK: Dictionary
 extension DKLocalizationApp {
-    class var dictionaryTitle: String { Self.processedWord("Слоўнік") }
-    class var dictionaryTitleFull: String { Self.processedWord("Слоўнік (рус-бел)") }
+    class var dictionaryTitle: String { Self.processedWord("Рус-Бел") }
+    class var dictionaryTitleFull: String { Self.processedWord("Слоўнік") }
 }
 
 // MARK: Settings
