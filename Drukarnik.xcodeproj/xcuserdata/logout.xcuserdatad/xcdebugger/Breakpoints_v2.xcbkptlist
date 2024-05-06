@@ -254,8 +254,8 @@
             filePath = "Drukarnik/ScreenDictionary/DKDictionaryDatabaseModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
             landmarkName = "find(text:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -270,8 +270,8 @@
             filePath = "Drukarnik/ScreenDictionary/DKDictionaryDatabaseModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
             landmarkName = "find(text:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -286,8 +286,40 @@
             filePath = "Drukarnik/ScreenDictionary/DKDictionaryDatabaseModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
+            landmarkName = "find(text:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "03B71FD1-D898-4F36-8514-5D1445A7D835"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Drukarnik/ScreenDictionary/DKDictionaryDatabaseModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "find(text:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "58DA6DF4-767E-47E6-9BFA-AD1A3640EB80"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Drukarnik/ScreenDictionary/DKDictionaryDatabaseModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
             landmarkName = "find(text:)"
             landmarkType = "7">
          </BreakpointContent>

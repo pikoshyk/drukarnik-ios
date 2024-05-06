@@ -12,7 +12,23 @@ struct DKDictionaryWordView: View {
     let viewModel: any DKWordModel
     
     var body: some View {
-        Text(viewModel.word)
-            .font(.body)
+        HStack {
+            Text(viewModel.word)
+                .font(.body)
+            Spacer(minLength: 0)
+            self.dictionaryNameView
+        }
+    }
+    
+    var dictionaryNameView: some View {
+        Group {
+            if let dictionaryName = self.viewModel.dictionaryName {
+                Text(dictionaryName)
+                    .font(.caption)
+                    .foregroundColor(.secondary)
+            } else {
+                EmptyView()
+            }
+        }
     }
 }

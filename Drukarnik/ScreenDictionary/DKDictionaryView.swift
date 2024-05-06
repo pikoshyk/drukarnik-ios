@@ -33,7 +33,7 @@ struct DKDictionaryView: View {
                         .zIndex(2)
                     RoundedRectangle(cornerRadius: geometry.size.height/2.0)
                         .strokeBorder(style: StrokeStyle(lineWidth: 1))
-                        .foregroundColor(.secondary)
+                        .foregroundColor(.secondary.opacity(0.3))
                         .zIndex(1)
                 }
             })
