@@ -23,113 +23,202 @@ import SwiftUI
 struct DKKeyboardView: View {
     
     @StateObject var viewModel: DKKeyboardViewModel
-    unowned var keyboardSettings: DKKeyboardSettings
     unowned var keyboardController: DKKeyboardViewController
+    
+    static let TOOLBAR_FRAME_HEIGHT: CGFloat = 54
 
     init(keyboardController: DKKeyboardViewController, keyboardSettings: DKKeyboardSettings) {
         self._viewModel = .init(wrappedValue: DKKeyboardViewModel(keyboardSettings: keyboardSettings, state: keyboardController.state))
         self.keyboardController = keyboardController
-        self.keyboardSettings = keyboardSettings
     }
     
     var body: some View {
-        SystemKeyboard(
-            state: self.keyboardController.state,
-            services: self.keyboardController.services,
-            buttonContent:  { $0.view },
-            buttonView:  { $0.view },
-            emojiKeyboard:  { emojiKeyboardParams in
-                DKKeyboardEmojiView(self.viewModel.emojiViewModel, onAlphabeticalKeyboard: {
-                    self.viewModel.onAlphabeticalKeyboard()
-                }, onDelete: {
-                    self.viewModel.onEmojiDelete()
-                }, onEmoji: { emoji in
-                    self.viewModel.onEmoji(emoji)
-                }, onRecents: {
-                    return self.viewModel.onEmojiRecents()
-                })
-                .onAppear {
-                    self.viewModel.onEmojiAppear()
+        ZStack {
+            SystemKeyboard(
+                state: self.viewModel.state,
+                services: self.keyboardController.services,
+                buttonContent:  { $0.view },
+                buttonView:  { $0.view },
+                emojiKeyboard:  { _ in self.emojiKeyboardView },
+                toolbar: { autocompleteAction, _, _ in self.toolbarView(autocompleteAction) }
+            )
+            .zIndex(1.0)
+            if self.showSetingsView {
+                VStack(spacing: 0) {
+                    Rectangle()
+                        .foregroundColor(.clear)
+                        .frame(height: Self.TOOLBAR_FRAME_HEIGHT)
+                    self.overlayKeyboardView
                 }
-                .onDisappear {
-                    self.viewModel.onEmojiDisappear()
-                }
-            },
-            toolbar: { (autocompleteAction: @escaping (Autocomplete.Suggestion) -> Void,
-                        style: Autocomplete.ToolbarStyle,
-                        view: Autocomplete.Toolbar<Autocomplete.ToolbarItem, Autocomplete.ToolbarSeparator>) in
-                self.toolbarConverter(autocompleteAction)
+                .zIndex(2.0)
             }
-        )
+        }
+    }
+    
+    var emojiKeyboardView: some View {
+        DKKeyboardEmojiView(self.viewModel.emojiViewModel, onAlphabeticalKeyboard: {
+            self.viewModel.onAlphabeticalKeyboard()
+        }, onDelete: {
+            self.viewModel.onEmojiDelete()
+        }, onEmoji: { emoji in
+            self.viewModel.onEmoji(emoji)
+        }, onRecents: {
+            return self.viewModel.onEmojiRecents()
+        })
+        .onAppear {
+            self.viewModel.onEmojiAppear()
+        }
+        .onDisappear {
+            self.viewModel.onEmojiDisappear()
+        }
     }
     
     @ViewBuilder
-    func toolbarConverter(_ autocompleteAction: @escaping (Autocomplete.Suggestion) -> Void) -> some View {
-        HStack(spacing: 8) {
-            convertButtonStyled
+    func toolbarView(_ autocompleteAction: @escaping (Autocomplete.Suggestion) -> Void) -> some View {
+        Group {
             if self.viewModel.hasAutosuggestions {
-                Spacer(minLength: 0)
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(alignment: .center, spacing: 2) {
-                        ForEach(self.viewModel.autosuggestions, id: \.text) { suggestion in
-                            Group {
-                                Button {
-                                    autocompleteAction(suggestion)
-                                } label: {
-                                    Text(suggestion.text)
-                                        .font(Font.system(size: 24))
-                                }
-
-                                
-                            }
-                            .frame(width: 44)
-                        }
-                    }
-                }
+                self.autosuggestionsView(autocompleteAction: autocompleteAction)
             } else {
-                Text(self.keyboardSettings.keyboardLayout == .cyrillic ? DKLocalizationKeyboard.keyboardButtonConvertToLatinText : DKLocalizationKeyboard.keyboardButtonConvertToCyrillicText)
-                    .foregroundColor(Color(.quaternaryLabel))
-                    .frame(maxWidth: .infinity, alignment: .leading)
+                self.baseToolbarView
             }
         }
-        .frame(height: 50)
         .padding(EdgeInsets(top: 4, leading: 3, bottom: 0, trailing: 0))
+        .frame(height: DKKeyboardView.TOOLBAR_FRAME_HEIGHT)
+    }
+    
+    var baseToolbarView: some View {
+        HStack(spacing: 0) {
+            self.settingsButtonView
+            Text("← Дадатковыя опцыі клавіятуры")
+                .foregroundColor(Color(.quaternaryLabel))
+                .frame(maxWidth: .infinity, alignment: .leading)
+        }
+    }
+    
+    @State var showSetingsView: Bool = false
+    
+    var overlayKeyboardView: some View {
+        ZStack {
+            Rectangle()
+                .foregroundColor(.keyboardBackground)
+                .zIndex(1.0)
+            ScrollView {
+                VStack {
+                    let fullText = self.viewModel.state.keyboardContext.originalTextDocumentProxy.documentContext ?? ""
+                    if String(fullText.unicodeScalars.filter { CharacterSet.letters.contains($0) }).count > 0 {
+                        HStack(spacing: 0) {
+                            self.conversionLatCyrButtonStyledView(direction: .toCyrillic, customLabel: Text("у Кірыліцу"))
+                                .font(.body)
+                            Spacer(minLength: 2)
+                            Text("канвертаваць тэкст")
+                                .foregroundColor(Color(.quaternaryLabel))
+                                .font(.callout)
+                            Spacer(minLength: 2)
+                            self.conversionLatCyrButtonStyledView(direction: .toLacin, customLabel: Text("у Лацінку"))
+                                .font(.body)
+                        }
+                    } else {
+                        Text("Опцыі канвертацыі тэксту ў Лацінку і Кірыліцу адлюструюцца тут, калі будзе ўведзены тэкст.")
+                            .foregroundColor(Color(.quaternaryLabel))
+                            .font(.callout)
+                    }
+                }
+            }
+            .padding(.vertical)
+            .padding(.horizontal, 8)
+            .frame(width: .infinity, height: .infinity)
+            .zIndex(2.0)
+        }
+    }
+    
+    var conversionToolbarView: some View {
+        HStack(spacing: 8) {
+            self.conversionLatCyrButtonStyledView()
+            Text(self.viewModel.keyboardSettings.keyboardLayout == .cyrillic ? DKLocalizationKeyboard.keyboardButtonConvertToLatinText : DKLocalizationKeyboard.keyboardButtonConvertToCyrillicText)
+                .foregroundColor(Color(.quaternaryLabel))
+                .frame(maxWidth: .infinity, alignment: .leading)
+        }
     }
 }
 
 
-// MARK: - Private Views
+// MARK: Keyboard Settings
+private extension DKKeyboardView {
+    var settingsButtonView: some View {
+        Button(action: {
+            self.showSetingsView.toggle()
+        }, label: {
+            Image(systemName: self.showSetingsView ? "gearshape.fill" : "gearshape")
+                .resizable()
+                .frame(width: 24, height: 24)
+                .padding(12)
+                .frame(width: 60.0)
+        })
+        .background(Color.keyboardBackground.opacity(0.01))
+        .foregroundColor(.primary)
+    }
+}
+
+// MARK: Autosuggestion
+private extension DKKeyboardView {
+    @ViewBuilder
+    func autosuggestionsView(autocompleteAction: @escaping (Autocomplete.Suggestion) -> Void) -> some View {
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack(alignment: .center, spacing: 2) {
+                Spacer()
+                    .frame(width: 8)
+                ForEach(self.viewModel.autosuggestions, id: \.text) { suggestion in
+                    Group {
+                        Button {
+                            autocompleteAction(suggestion)
+                        } label: {
+                            Text(suggestion.text)
+                                .font(Font.system(size: 24))
+                        }
+
+                        
+                    }
+                    .frame(width: 44)
+                }
+            }
+        }
+    }
+}
+
+// MARK: Lacinca-Ciryllic Conversion
 private extension DKKeyboardView {
 
-    var convertButtonStyled: some View {
+    func conversionLatCyrButtonStyledView(direction: BelarusianLacinka.BLDirection? = nil, customLabel: Text? = nil) -> some View {
         Group {
             if #available(iOS 15.0, *) {
-                self.convertButton
+                self.conversionLatCyrButtonView(direction: direction, customLabel: customLabel)
                     .buttonStyle(.bordered)
             } else {
-                self.convertButton
+                self.conversionLatCyrButtonView(direction: direction, customLabel: customLabel)
                     .buttonStyle(.automatic)
             }
         }
     }
     
-    var convertButton: some View {
+    @ViewBuilder
+    func conversionLatCyrButtonView(direction initialDirection: BelarusianLacinka.BLDirection? = nil, customLabel: Text?) -> some View {
         Button {
-            let settings = self.keyboardSettings
-            let direction: BelarusianLacinka.BLDirection = settings.keyboardLayout == .latin ? .toCyrillic : .toLacin
-            let version = settings.belarusianLatinType
-            let orthograpy = settings.belarusianCyrillicType
-            
-            self.keyboardController.state.keyboardContext.convertAndReplaceFullText(converter: settings.lacinkaConverter, direction: direction, version: version, orthography: orthograpy)
+            self.viewModel.convertText(direction: initialDirection)
         } label: {
-            let lettersSet = CharacterSet.letters
-            let fullText = self.keyboardController.state.keyboardContext.originalTextDocumentProxy.documentContext ?? ""
-            if String(fullText.unicodeScalars.filter { lettersSet.contains($0) }).count > 0 {
-                Image("autotransliteration-active")
+            if let customLabel = customLabel {
+                customLabel
             } else {
-                Image("autotransliteration-inactive")
+                Group {
+                    let fullText = self.viewModel.state.keyboardContext.originalTextDocumentProxy.documentContext ?? ""
+                    if String(fullText.unicodeScalars.filter { CharacterSet.letters.contains($0) }).count > 0 {
+                        Image("autotransliteration-active")
+                    } else {
+                        Image("autotransliteration-inactive")
+                    }
+                }
+                .frame(width: 60.0)
             }
         }
-        .frame(width: 60.0)
+        .foregroundColor(.accent)
     }
 }

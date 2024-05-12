@@ -5,13 +5,14 @@
 //  Created by Logout on 11.12.23.
 //
 
+import BelarusianLacinka
 import KeyboardKit
 import Foundation
 import Combine
 
 class DKKeyboardViewModel: ObservableObject {
-    private unowned var state: Keyboard.State
-    private unowned var keyboardSettings: DKKeyboardSettings
+    private(set) var state: Keyboard.State
+    private(set) var keyboardSettings: DKKeyboardSettings
     
     lazy var emojiViewModel = DKKeyboardEmojiViewModel()
     
@@ -30,12 +31,23 @@ class DKKeyboardViewModel: ObservableObject {
         self.state.autocompleteContext.suggestions
     }
     
+    func convertText(direction initialDirection: BelarusianLacinka.BLDirection? = nil) {
+        let settings = self.keyboardSettings
+        let direction = initialDirection ?? (settings.keyboardLayout == .latin ? .toCyrillic : .toLacin)
+        let version = settings.belarusianLatinType
+        let orthograpy = settings.belarusianCyrillicType
+        
+        self.state.keyboardContext.convertAndReplaceFullText(converter: settings.lacinkaConverter, direction: direction, version: version, orthography: orthograpy)
+    }
+    
     private func reloadEmoji() {
         self.emojiRecents = self.keyboardSettings.keyboardEmojiRecents
         self.emojiViewModel.reloadData()
     }
 }
 
+
+// MARK: Emoji keyboard
 extension DKKeyboardViewModel {
     
     func onAlphabeticalKeyboard() {
@@ -71,12 +83,8 @@ extension DKKeyboardViewModel {
             if self.emojiRecents.count > 30 {
                 self.emojiRecents.removeLast()
             }
-            
-            
+
             self.keyboardSettings.keyboardEmojiRecents = self.emojiRecents
-//            let items = self.emojiRecents.compactMap { $0.emoji }.joined()
-//            self.emojiViewModel.recentSection.items = items
-//            self.emojiViewModel.reloadData()
         }
     }
     
