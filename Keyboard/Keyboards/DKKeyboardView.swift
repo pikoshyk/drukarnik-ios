@@ -89,7 +89,7 @@ struct DKKeyboardView: View {
     var baseToolbarView: some View {
         HStack(spacing: 0) {
             self.settingsButtonView
-            Text("← Дадатковыя опцыі клавіятуры")
+            Text(Localization.optionsButtonTitle)
                 .foregroundColor(Color(.quaternaryLabel))
                 .frame(maxWidth: .infinity, alignment: .leading)
         }
@@ -107,18 +107,18 @@ struct DKKeyboardView: View {
                     let fullText = self.viewModel.state.keyboardContext.originalTextDocumentProxy.documentContext ?? ""
                     if String(fullText.unicodeScalars.filter { CharacterSet.letters.contains($0) }).count > 0 {
                         HStack(spacing: 0) {
-                            self.conversionLatCyrButtonStyledView(direction: .toCyrillic, customLabel: Text("у Кірыліцу"))
+                            self.conversionLatCyrButtonStyledView(direction: .toCyrillic, customLabel: Text(Localization.optionsConvertButtonToCyrillicTitle))
                                 .font(.body)
                             Spacer(minLength: 2)
-                            Text("канвертаваць тэкст")
+                            Text(Localization.optionsConvertLabelTitle)
                                 .foregroundColor(Color(.quaternaryLabel))
                                 .font(.callout)
                             Spacer(minLength: 2)
-                            self.conversionLatCyrButtonStyledView(direction: .toLacin, customLabel: Text("у Лацінку"))
+                            self.conversionLatCyrButtonStyledView(direction: .toLacin, customLabel: Text(Localization.optionsConvertButtonToLatinTitle))
                                 .font(.body)
                         }
                     } else {
-                        Text("Опцыі канвертацыі тэксту ў Лацінку і Кірыліцу адлюструюцца тут, калі будзе ўведзены тэкст.")
+                        Text(Localization.optionsConvertUnaccessableTitle)
                             .foregroundColor(Color(.quaternaryLabel))
                             .font(.callout)
                     }
@@ -148,7 +148,7 @@ private extension DKKeyboardView {
         Button(action: {
             self.showSetingsView.toggle()
         }, label: {
-            Image(systemName: self.showSetingsView ? "gearshape.fill" : "gearshape")
+            Image(systemName: self.showSetingsView ? SystemImage.optionsButtonIconActive : SystemImage.optionsButtonIconInactive)
                 .resizable()
                 .frame(width: 24, height: 24)
                 .padding(12)
@@ -220,5 +220,24 @@ private extension DKKeyboardView {
             }
         }
         .foregroundColor(.accent)
+    }
+}
+
+private extension DKKeyboardView {
+    struct Localization {
+        static var optionsConvertButtonToLatinTitle: String { DKLocalizationKeyboard.convert(text: "Лацінка") }
+        static var optionsConvertButtonToCyrillicTitle: String { DKLocalizationKeyboard.convert(text: "Кірыліца")
+        }
+        static var optionsConvertLabelTitle: String { DKLocalizationKeyboard.convert(text: "канвертаваць тэкст у")
+        }
+        static var optionsConvertUnaccessableTitle: String { DKLocalizationKeyboard.convert(text: "Опцыі канвертацыі тэксту ў Лацінку і Кірыліцу адлюструюцца тут, калі будзе ўведзены тэкст.")
+        }
+        static var optionsButtonTitle: String { DKLocalizationKeyboard.convert(text: "← Дадатковыя опцыі клавіятуры")
+        }
+    }
+    
+    struct SystemImage {
+        static let optionsButtonIconActive = "gearshape.fill"
+        static let optionsButtonIconInactive = "gearshape"
     }
 }

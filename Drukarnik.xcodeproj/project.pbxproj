@@ -870,7 +870,7 @@
 				CODE_SIGN_ENTITLEMENTS = Drukarnik/DrukarnikDebug.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 6EWLUZCTBU;
 				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
@@ -888,7 +888,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.3;
 				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.belanghelp.drukarnik;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -913,7 +913,7 @@
 				CODE_SIGN_ENTITLEMENTS = Drukarnik/DrukarnikRelease.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 6EWLUZCTBU;
 				GCC_PREPROCESSOR_DEFINITIONS = "";
@@ -931,7 +931,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.3;
 				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.belanghelp.drukarnik;
 				PRODUCT_NAME = "$(TARGET_NAME)";
