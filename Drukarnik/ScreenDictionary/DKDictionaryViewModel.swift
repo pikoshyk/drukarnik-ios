@@ -5,6 +5,7 @@
 //  Created by Logout on 1.05.24.
 //
 
+import GRDB
 import UIKit
 import Foundation
 import Combine
@@ -52,5 +53,10 @@ class DKDictionaryViewModel: ObservableObject {
     func onDrag() {
         UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
     }
+}
 
+extension DKDictionaryViewModel {
+    func wordViewModel(_ wordModel: any DKWordModel) -> DKDictionaryWordViewModel {
+        DKDictionaryWordViewModel(word: wordModel, db: self.databaseModel.db)
+    }
 }

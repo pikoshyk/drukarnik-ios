@@ -46,7 +46,11 @@ struct DKDictionaryView: View {
     var listView: some View {
         List {
             ForEach(self.viewModel.words, id: \.id) { wordModel in
-                DKDictionaryWordView(viewModel: wordModel)
+                NavigationLink {
+                    DKDictionaryWordView(viewModel: self.viewModel.wordViewModel(wordModel))
+                } label: {
+                    DKDictionaryWordRowView(viewModel: wordModel)
+                }
             }
         }
         .listStyle(.plain)
