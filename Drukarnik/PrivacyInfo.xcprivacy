@@ -11,7 +11,7 @@
 				<string>1C8F.1</string>
 			</array>
 			<key>NSPrivacyAccessedAPIType</key>
-			<string>User Defaults</string>
+			<string>NSPrivacyAccessedAPICategoryUserDefaults</string>
 		</dict>
 	</array>
 </dict>

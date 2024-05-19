@@ -35,6 +35,6 @@ class DKLocalizationKeyboard: Any {
     class var keyboardButtonNext: String { Self.convert(text: "Далей") }
     class var keyboardButtonContinue: String { Self.convert(text: "Далей") }
     
-    class var keyboardButtonConvertToLatinText: String { Self.convert(text: "← Канвертаваць у лацінку") }
-    class var keyboardButtonConvertToCyrillicText: String { Self.convert(text: "← Канвертаваць у кірыліцу") }
+    class var keyboardButtonConvertToLatinText: String { Self.convert(text: "Канвертаваць у лацінку") }
+    class var keyboardButtonConvertToCyrillicText: String { Self.convert(text: "Канвертаваць у кірыліцу") }
 }
