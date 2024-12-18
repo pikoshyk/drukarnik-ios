@@ -12,14 +12,14 @@
 ![Keyboard](https://github.com/pikoshyk/drukarnik-ios/blob/main/Assets/keyboard1.jpg) ![Keyboard](https://github.com/pikoshyk/drukarnik-ios/blob/main/Assets/keyboard2.jpg)
 
 ## Беларускія emoji
-Слоўнік падказак для Emoji клавіятуры даступны [па спасылке](https://docs.google.com/spreadsheets/d/15IfIqpYDAYJ3Ul5Sujcl-OHiHyHPtwQHRp6ZzudJrlM/edit?usp=sharing). Каментары наконт дадання новых падказак у emoji можна рабіць як у Issus на github, так і пакідаць у каментах ў Google табліцы.
+Слоўнік падказак для Emoji клавіятуры даступны [па спасылцы](https://docs.google.com/spreadsheets/d/15IfIqpYDAYJ3Ul5Sujcl-OHiHyHPtwQHRp6ZzudJrlM/edit?usp=sharing). Каментары наконт дадання новых падказак у emoji можна рабіць як у Issues на GitHub, так і пакідаць у каментах у Google табліцы.
 
 
 ![Keyboard](https://github.com/pikoshyk/drukarnik-ios/blob/main/Assets/keyboard3.jpg)
 
 ## Налады клавіятуры і канвертар лацінкі
 
-Мабільная аплікацыя ўключае у сябе дадатковыя налады клавіятуры, а таксама канверта ў беларускую лацінку з мажлівасцю абіраць класічную, ці геаграфічную лацінку.
+Мабільная аплікацыя ўключае ў сябе дадатковыя налады клавіятуры, а таксама канвертар у беларускую лацінку з мажлівасцю абіраць класічную ці геаграфічную лацінку.
 
 
 ![Keyboard](https://github.com/pikoshyk/drukarnik-ios/blob/main/Assets/app1.png) ![Keyboard](https://github.com/pikoshyk/drukarnik-ios/blob/main/Assets/app2.png)
