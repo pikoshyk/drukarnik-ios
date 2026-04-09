@@ -22,9 +22,9 @@ class DKKeyboardEmojiCollectionViewFlowLayout: UICollectionViewFlowLayout {
 
 class DKKeyboardEmojiCollectionView: UICollectionView {
     
-    public static var cellSize: CGFloat = 30
+    public static var cellSize: CGFloat = 40
     public static var countOfEmojiInColumn: Int = 5
-    public static let minialEmojiCellSize: CGFloat = 30
+    public static let minialEmojiCellSize: CGFloat = 40
     public static var countEmojisOnScreen: Int = 100
 
     private let viewModel: DKKeyboardEmojiViewModel

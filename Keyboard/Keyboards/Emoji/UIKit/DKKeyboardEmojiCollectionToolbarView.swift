@@ -47,37 +47,29 @@ class DKKeyboardEmojiCollectionToolbarView: UIStackView {
     private let viewModel: DKKeyboardEmojiViewModel
 
     var buttons: [DKEmojiSectionType: UIButton] = [:]
-    var backgroundButtonViews: [DKEmojiSectionType: UIView] = [:]
 
     var activeSectionId: DKEmojiSectionType = .resents {
         didSet {
-            for sectionId in self.backgroundButtonViews.keys {
+            for sectionId in self.viewModel.sections.map(\.id) {
                 let currentSection = sectionId == self.activeSectionId
-                self.backgroundButtonViews[sectionId]?.isHidden = currentSection ? false : true
-                self.buttons[sectionId]?.tintColor = currentSection ? .label : .secondaryLabel
+                let button = self.buttons[sectionId]
+                button?.tintColor = currentSection ? .label : .secondaryLabel
+                button?.viewWithTag(1000)?.isHidden = !currentSection
+                
+                if currentSection, let size = button?.frame.size {
+                    let buttonCenterX = size.width / 2.0
+                    let buttonCenterY = size.height / 2.0
+                    button?.viewWithTag(1000)?.center = CGPoint(x: buttonCenterX, y: buttonCenterY)
+                }
             }
         }
     }
 
     init(_ viewModel: DKKeyboardEmojiViewModel) {
         self.viewModel = viewModel
-        for sectionId in self.viewModel.sections.map({ $0.id }) {
-            let view = UIView(frame: CGRect(x: 0, y: 0, width: 30.0, height: 30.0))
-            view.layer.cornerRadius = 15.0
-            view.clipsToBounds = true
-            view.backgroundColor = .quaternaryLabel
-            view.isHidden = true
-            self.backgroundButtonViews[sectionId] = view
-        }
         super.init(frame: .zero)
-        for view in self.backgroundButtonViews.values {
-            self.addSubview(view)
-        }
         self.viewModel.toolbarDelegate = self
         self.configureStackView()
-        
-        // update default section
-        self.backgroundButtonViews[self.activeSectionId]?.isHidden = false
         self.buttons[self.activeSectionId]?.tintColor = .label
     }
     
@@ -111,12 +103,28 @@ class DKKeyboardEmojiCollectionToolbarView: UIStackView {
         
         for section in self.viewModel.sections {
             let button = self.button(section: section)
+            self.addBackgroundViewForButton(button: button)
             internalStackView.addArrangedSubview(button)
         }
 
         internalStackView.addArrangedSubview(self.buttonDelete)
 
         return internalStackView
+    }
+    
+    private func addBackgroundViewForButton(button: UIButton) {
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: 30.0, height: 30.0))
+        view.layer.cornerRadius = 15.0
+        view.clipsToBounds = true
+        view.backgroundColor = .quaternaryLabel
+        view.isHidden = true
+        view.tag = 1000
+        button.addSubview(view)
+        let buttonCenterX = button.frame.origin.x + button.frame.width / 2
+        let buttonCenterY = button.frame.origin.y + button.frame.height
+        let buttonCenter = CGPoint(x: buttonCenterX, y: buttonCenterY)
+        view.center = buttonCenter
+        button.sendSubviewToBack(view)
     }
     
     var buttonAlphabeticalKeyboard: UIButton {
@@ -136,7 +144,7 @@ class DKKeyboardEmojiCollectionToolbarView: UIStackView {
         button.tintColor = .label
         button.addAction(UIAction(handler: { action in
             self.viewModel.onDeleteBlock?()
-        }), for: .touchUpInside)
+        }), for: .touchDown)
         button.setImage(image, for: .normal)
         
         return button
@@ -156,13 +164,14 @@ class DKKeyboardEmojiCollectionToolbarView: UIStackView {
     }
     
     override func layoutSubviews() {
-        for sectionId in self.buttons.keys {
-            if let buttonCenter = self.buttons[sectionId]?.center, let backgroundView = self.backgroundButtonViews[sectionId] {
-                let center = CGPoint(x: buttonCenter.x + backgroundView.bounds.size.width/3.5, y: buttonCenter.y)
-                self.backgroundButtonViews[sectionId]?.center = center
-            }
-        }
         super.layoutSubviews()
+        
+//        for sectionId in self.viewModel.sections.map(\.id) {
+//            let button = self.buttons[sectionId]
+//            if let buttoncenter = button?.center {
+//                button?.viewWithTag(1000)?.center = buttoncenter
+//            }
+//        }
     }
 }
 
