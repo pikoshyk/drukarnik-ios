@@ -40,10 +40,7 @@ struct DKTabsView: View {
     @State var selectedTab: DKTabs = .settings
     
     var body: some View {
-        NavigationView {
-            self.tabsView
-                .navigationTitle(self.selectedTab.fullTitle)
-        }
+        self.tabsView
     }
     
     var tabsView: some View {

@@ -11,8 +11,11 @@ import SwiftUI
 struct DKConverterView: View {
     @StateObject var viewModel: DKConverterViewModel
     var body: some View {
-        self.contentView
-            .background(Color.secondarySystemBackground)
+        NavigationView {
+            self.contentView
+                .navigationTitle(DKTabs.converter.fullTitle)
+        }
+        .background(Color.secondarySystemBackground)
     }
     
     var contentView: some View {
@@ -33,7 +36,6 @@ struct DKConverterView: View {
         .gesture(DragGesture().onChanged { _ in
             self.viewModel.onDrag()
         })
-
     }
     
     var textCyrillicView: some View {
