@@ -893,7 +893,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.belanghelp.drukarnik;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "K Development Drukarnik";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "iOS App Development";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -936,7 +936,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.belanghelp.drukarnik;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "K App Store Drukarnik";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = Distribution1;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -970,7 +970,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.belanghelp.drukarnik.keyboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "K Development Drukarnik keyboard";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "iOS App Development2";
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -1004,7 +1004,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.belanghelp.drukarnik.keyboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "K App Store Drukarnik keyboard";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = Distribution2;
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
