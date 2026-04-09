@@ -8,7 +8,7 @@
 import KeyboardKit
 import SwiftUI
 
-class DKKeyboardAppearance: KeyboardStyle.StandardService {
+class DKKeyboardAppearance: KeyboardStyle.StandardProvider {
     
     override func buttonImage(for action: KeyboardAction) -> Image? {
         switch action {
@@ -49,13 +49,13 @@ class DKKeyboardAppearance: KeyboardStyle.StandardService {
     
     override func buttonFont(
         for action: KeyboardAction
-    ) -> Font {
+    ) -> KeyboardFont {
         switch(action) {
         case .space:
             let size = buttonFontSize(for: action)
             let buttonFontSize = size * 3 / 4
-            let font = Font.system(size: buttonFontSize)
-            let weight = Font.Weight.medium
+            let font = KeyboardFont.system(size: buttonFontSize)
+            let weight = KeyboardFont.FontWeight.medium
             return font.weight(weight)
         default:
             return super.buttonFont (for: action)

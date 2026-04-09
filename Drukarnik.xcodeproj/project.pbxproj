@@ -129,7 +129,6 @@
 
 /* Begin PBXFileReference section */
 		B202A5202989975600E5F57A /* DrukarnikDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DrukarnikDebug.entitlements; sourceTree = "<group>"; };
-		B204B3EC2F87E8DC0004FA89 /* KeyboardKit_8.9.6 */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = KeyboardKit_8.9.6; path = ../KeyboardKit/KeyboardKit_8.9.6; sourceTree = SOURCE_ROOT; };
 		B2073D042945F599008B43E4 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B2073D062945F599008B43E4 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		B2073D0E2945F62C008B43E4 /* DKCyrillicLayoutProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKCyrillicLayoutProvider.swift; sourceTree = "<group>"; };
@@ -209,6 +208,7 @@
 		B2E68763297F37D1005C31B9 /* DKAdditionalLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKAdditionalLanguage.swift; sourceTree = "<group>"; };
 		B2E68766297F4174005C31B9 /* DKAdditionalLanguage+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DKAdditionalLanguage+Localization.swift"; sourceTree = "<group>"; };
 		B2F1F03C2B115E5A0043AAA7 /* DKKeyboardEmoji.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DKKeyboardEmoji.storyboard; sourceTree = "<group>"; };
+		B2F7037D2F87EC4E0095130C /* KeyboardKit_8.5.2 */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = KeyboardKit_8.5.2; path = ../KeyboardKit/KeyboardKit_8.5.2; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -259,7 +259,7 @@
 		B21A246029360B3600C056E5 = {
 			isa = PBXGroup;
 			children = (
-				B204B3EC2F87E8DC0004FA89 /* KeyboardKit_8.9.6 */,
+				B2F7037D2F87EC4E0095130C /* KeyboardKit_8.5.2 */,
 				B2073CFD2945F599008B43E4 /* Drukarnik */,
 				B21A248829360C7700C056E5 /* Keyboard */,
 				B21A246A29360B3600C056E5 /* Products */,
