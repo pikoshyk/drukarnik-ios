@@ -1,5 +1,4 @@
 {
-  "originHash" : "7c02d5430827e47a0c4549e29b6612c746fc78b574fafcd38366a43ddd36beec",
   "pins" : [
     {
       "identity" : "belarusianlacinka",
@@ -11,14 +10,14 @@
       }
     },
     {
-      "identity" : "keyboardkit",
+      "identity" : "mockingkit",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/KeyboardKit/KeyboardKit",
+      "location" : "https://github.com/danielsaidi/MockingKit.git",
       "state" : {
-        "revision" : "d15990b872f8df8663ab87b179360a4d2d1fcab4",
-        "version" : "8.5.2"
+        "revision" : "a1096bb9b149b70147e6fb8294f720989edf72ae",
+        "version" : "1.5.0"
       }
     }
   ],
-  "version" : 3
+  "version" : 2
 }

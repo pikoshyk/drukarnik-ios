@@ -52,14 +52,14 @@ extension DKKeyboardFeedback {
 
 class DKKeyboardViewController: KeyboardInputViewController {
 
-    let settings = DKKeyboardSettings()
+    let localSettings = DKKeyboardSettings()
     
     override func viewDidLoad() {
         
         KeyboardKit.Gestures.Defaults.longPressDelay = 0.3
-        DKLocalizationKeyboard.settings = self.settings
+        DKLocalizationKeyboard.settings = self.localSettings
 
-        let keyboardLayout = self.settings.keyboardLayout
+        let keyboardLayout = self.localSettings.keyboardLayout
         self.state.keyboardContext.locale = keyboardLayout.locale
         self.keyboardLayout = keyboardLayout
         self.services.actionHandler = DKActionHandler(inputViewController: self, swicthKeyboardBlock: self.onSwitchKeyboardLayout)
@@ -74,9 +74,9 @@ class DKKeyboardViewController: KeyboardInputViewController {
     }
     
     private func configureKeyboard() {
-        self.state.feedbackContext.audioConfiguration = self.settings.keyboardFeedback.audioConfiguation
-        self.state.feedbackContext.hapticConfiguration = self.settings.keyboardFeedback.hapticConfiguation
-        self.state.keyboardContext.autocapitalizationTypeOverride = self.settings.keyboardAutocapitalization.systemValue
+        self.state.feedbackContext.audioConfiguration = self.localSettings.keyboardFeedback.audioConfiguation
+        self.state.feedbackContext.hapticConfiguration = self.localSettings.keyboardFeedback.hapticConfiguation
+        self.state.keyboardContext.autocapitalizationTypeOverride = self.localSettings.keyboardAutocapitalization.systemValue
     }
     
     var keyboardLayout: DKKeyboardLayout? {
@@ -86,22 +86,22 @@ class DKKeyboardViewController: KeyboardInputViewController {
                 return
             }
 
-            self.settings.keyboardLayout = keyboardLayout
+            self.localSettings.keyboardLayout = keyboardLayout
             self.state.keyboardContext.locale = keyboardLayout.locale
 
             switch keyboardLayout {
             case .latin:
-                if let calloutActionProvide = try? DKLatinCalloutActionProvider(settings: self.settings) {
+                if let calloutActionProvide = try? DKLatinCalloutActionProvider(settings: self.localSettings) {
                     self.services.calloutActionProvider = calloutActionProvide
                 }
                 self.services.layoutProvider = DKLatinLayoutProvider()
-                self.services.autocompleteProvider = DKEmojiAutocompleteProvider(settings: self.settings, textDocumentProxy: self.textDocumentProxy)
+                self.services.autocompleteProvider = DKEmojiAutocompleteProvider(settings: self.localSettings, textDocumentProxy: self.textDocumentProxy)
             case .cyrillic:
-                if let calloutActionProvide = try? DKCyrillicCalloutActionProvider(settings: self.settings) {
+                if let calloutActionProvide = try? DKCyrillicCalloutActionProvider(settings: self.localSettings) {
                     self.services.calloutActionProvider = calloutActionProvide
                 }
                 self.services.layoutProvider = DKCyrillicLayoutProvider(keyboardContext: self.state.keyboardContext)
-                self.services.autocompleteProvider = DKEmojiAutocompleteProvider(settings: self.settings, textDocumentProxy: self.textDocumentProxy)
+                self.services.autocompleteProvider = DKEmojiAutocompleteProvider(settings: self.localSettings, textDocumentProxy: self.textDocumentProxy)
             }
 
             Task {
@@ -113,7 +113,7 @@ class DKKeyboardViewController: KeyboardInputViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         let keyboardLayout = self.keyboardLayout
-        self.settings.reloadSettings()
+        self.localSettings.reloadSettings()
         self.keyboardLayout = keyboardLayout
         super.viewWillAppear(animated)
     }
@@ -127,7 +127,7 @@ class DKKeyboardViewController: KeyboardInputViewController {
      */
     override func viewWillSetupKeyboard() {
         super.viewWillSetupKeyboard()
-        setup(with: DKKeyboardView(keyboardController: self, keyboardSettings: self.settings))
+        setup(with: DKKeyboardView(keyboardController: self, keyboardSettings: self.localSettings))
     }
     
     override func updateViewConstraints() {

@@ -9,7 +9,11 @@ import KeyboardKit
 import Foundation
 import UIKit
 
-class DKAutocompleteProvider: AutocompleteProvider {
+class DKAutocompleteProvider: AutocompleteService {
+    func nextCharacterPredictions(forText text: String, suggestions: [KeyboardKit.Autocomplete.Suggestion]) async throws -> [Character : Double] {
+        return [:]
+    }
+    
     var locale: Locale
     weak var settings: DKKeyboardSettings?
     weak var textDocumentProxy: UITextDocumentProxy?
