@@ -1,4 +1,5 @@
 {
+  "originHash" : "b3a75eb9c2abad5ce3b8b49b34105c9bf056585a188c2cd3e94a3cd1e456ee49",
   "pins" : [
     {
       "identity" : "belarusianlacinka",
@@ -10,14 +11,14 @@
       }
     },
     {
-      "identity" : "mockingkit",
+      "identity" : "keyboardkit",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/danielsaidi/MockingKit.git",
+      "location" : "https://github.com/pikoshyk/KeyboardKit",
       "state" : {
-        "revision" : "a1096bb9b149b70147e6fb8294f720989edf72ae",
-        "version" : "1.5.0"
+        "branch" : "drukarnik_1.4",
+        "revision" : "5c8f22c8b1b9e0c00a4be8be765d3a66ab80b22f"
       }
     }
   ],
-  "version" : 2
+  "version" : 3
 }
