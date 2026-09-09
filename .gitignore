@@ -89,3 +89,6 @@ fastlane/test_output
 
 iOSInjectionProject/
 .DS_Store
+
+# XcodeBuildMCP (machine-local DerivedData path)
+.xcodebuildmcp/derived-data.local
