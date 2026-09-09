@@ -9,12 +9,19 @@ class DKKeyboardViewModel: ObservableObject {
 
     private var _emojiViewModel: DKKeyboardEmojiViewModel?
     private var emojiRecents: [DKKeyboardEmojiRecentsItem] = []
+    private var cancellables = Set<AnyCancellable>()
 
     @Published private(set) var overlayHasLetters = false
 
     init(keyboardSettings: DKKeyboardSettings, state: Keyboard.State) {
         self.state = state
         self.keyboardSettings = keyboardSettings
+        state.autocompleteContext.$suggestions
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] _ in
+                self?.objectWillChange.send()
+            }
+            .store(in: &cancellables)
     }
 
     var emojiViewModel: DKKeyboardEmojiViewModel {

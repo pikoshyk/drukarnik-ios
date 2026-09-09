@@ -212,7 +212,7 @@ extension DKKeyboardSettings { // Keyboard Settings
     
     var autocompleteTransliteration: Bool {
         get {
-            let defaultValue = false
+            let defaultValue = true
             let value = self.getter(key: DKKeyboardSettingsKeys.autocompleteTransliteration, defaultValue: defaultValue)
             return value
         }
