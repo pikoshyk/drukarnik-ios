@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B204B3EB2F87E7870004FA89 /* KeyboardKit in Frameworks */ = {isa = PBXBuildFile; productRef = B204B3EA2F87E7870004FA89 /* KeyboardKit */; };
 		B2073D0B2945F599008B43E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2073D042945F599008B43E4 /* AppDelegate.swift */; };
 		B2073D0D2945F599008B43E4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2073D062945F599008B43E4 /* SceneDelegate.swift */; };
 		B2073D0F2945F62C008B43E4 /* DKCyrillicLayoutProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2073D0E2945F62C008B43E4 /* DKCyrillicLayoutProvider.swift */; };
@@ -73,6 +72,7 @@
 		B2AF577D294FECD500E7CF2F /* DKLatinCalloutActionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AF577C294FECD500E7CF2F /* DKLatinCalloutActionProvider.swift */; };
 		B2AF577F294FEE4200E7CF2F /* DKLatinLayoutProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AF577E294FEE4200E7CF2F /* DKLatinLayoutProvider.swift */; };
 		B2AFCF902F8911540096D2DB /* KeyboardKit in Frameworks */ = {isa = PBXBuildFile; productRef = B2AFCF8F2F8911540096D2DB /* KeyboardKit */; };
+		B2AFCF912F8911540096D2DB /* KeyboardKit in Frameworks */ = {isa = PBXBuildFile; productRef = B2AFCF8F2F8911540096D2DB /* KeyboardKit */; };
 		B2B2092D29796D0400D4D5DC /* DKInstallationDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B2092C29796D0400D4D5DC /* DKInstallationDescriptionViewController.swift */; };
 		B2B2093429796D7F00D4D5DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2B2093029796D7F00D4D5DC /* Assets.xcassets */; };
 		B2B2093529796D7F00D4D5DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2B2093129796D7F00D4D5DC /* Main.storyboard */; };
@@ -102,6 +102,22 @@
 		B2E68765297F37D1005C31B9 /* DKAdditionalLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E68763297F37D1005C31B9 /* DKAdditionalLanguage.swift */; };
 		B2E68767297F4174005C31B9 /* DKAdditionalLanguage+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E68766297F4174005C31B9 /* DKAdditionalLanguage+Localization.swift */; };
 		B2F1F03E2B115F0D0043AAA7 /* DKKeyboardEmoji.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2F1F03C2B115E5A0043AAA7 /* DKKeyboardEmoji.storyboard */; };
+		B2KT1102BDC39470006CA45 /* DKEmojiAutocompleteLexicon.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2KT0102BDC39470006CA45 /* DKEmojiAutocompleteLexicon.swift */; };
+		B2KT1122BDC39470006CA45 /* DKKeyboardLayoutApplicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2KT0122BDC39470006CA45 /* DKKeyboardLayoutApplicator.swift */; };
+		B2KT1202BDC39470006CA45 /* DKEmojiAutocompleteLexiconTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2KT0212BDC39470006CA45 /* DKEmojiAutocompleteLexiconTests.swift */; };
+		B2KT1212BDC39470006CA45 /* DKKeyboardLayoutApplicatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2KT0222BDC39470006CA45 /* DKKeyboardLayoutApplicatorTests.swift */; };
+		B2KT1222BDC39470006CA45 /* DKKeyboardEmojiLayoutMetricsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2KT0232BDC39470006CA45 /* DKKeyboardEmojiLayoutMetricsTests.swift */; };
+		B2KT1232BDC39470006CA45 /* DKEmojiModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2KT0242BDC39470006CA45 /* DKEmojiModelTests.swift */; };
+		B2KT1242BDC39470006CA45 /* DKKeyboardEmojiCollectionViewCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2KT0252BDC39470006CA45 /* DKKeyboardEmojiCollectionViewCellTests.swift */; };
+		B2KT1252BDC39470006CA45 /* KeyboardMemoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2KT0262BDC39470006CA45 /* KeyboardMemoryTests.swift */; };
+		B2KT1262BDC39470006CA45 /* emoji.json in Resources */ = {isa = PBXBuildFile; fileRef = B2KT0272BDC39470006CA45 /* emoji.json */; };
+		B2KT1272BDC39470006CA45 /* DKEmojiAutocompleteLexicon.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2KT0102BDC39470006CA45 /* DKEmojiAutocompleteLexicon.swift */; };
+		B2KT1292BDC39470006CA45 /* DKKeyboardLayoutApplicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2KT0122BDC39470006CA45 /* DKKeyboardLayoutApplicator.swift */; };
+		B2KT12A2BDC39470006CA45 /* DKEmojiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B286DB9B2BDC39470006CA45 /* DKEmojiModel.swift */; };
+		B2KT12B2BDC39470006CA45 /* DKKeyboardLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E41D122BE0BDF1009429BF /* DKKeyboardLayout.swift */; };
+		B2KT12C2BDC39470006CA45 /* DKKeyboardEmojiCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2723F4C2B11BD2C00FCC53D /* DKKeyboardEmojiCollectionViewCell.swift */; };
+		B2KT12D2BDC39470006CA45 /* DKKeyboardEmojiViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25887822B1047D700AE499B /* DKKeyboardEmojiViewModel.swift */; };
+		B2KT12E2BDC39470006CA45 /* DKKeyboardEmojiCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25887882B114A2000AE499B /* DKKeyboardEmojiCollectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +127,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = B21A248629360C7600C056E5;
 			remoteInfo = Keyboard;
+		};
+		B2KT0432BDC39470006CA45 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B21A246129360B3600C056E5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B21A246829360B3600C056E5;
+			remoteInfo = Drukarnik;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -209,6 +232,16 @@
 		B2E68763297F37D1005C31B9 /* DKAdditionalLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKAdditionalLanguage.swift; sourceTree = "<group>"; };
 		B2E68766297F4174005C31B9 /* DKAdditionalLanguage+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DKAdditionalLanguage+Localization.swift"; sourceTree = "<group>"; };
 		B2F1F03C2B115E5A0043AAA7 /* DKKeyboardEmoji.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DKKeyboardEmoji.storyboard; sourceTree = "<group>"; };
+		B2KT0102BDC39470006CA45 /* DKEmojiAutocompleteLexicon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKEmojiAutocompleteLexicon.swift; sourceTree = "<group>"; };
+		B2KT0122BDC39470006CA45 /* DKKeyboardLayoutApplicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKKeyboardLayoutApplicator.swift; sourceTree = "<group>"; };
+		B2KT0202BDC39470006CA45 /* KeyboardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KeyboardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2KT0212BDC39470006CA45 /* DKEmojiAutocompleteLexiconTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKEmojiAutocompleteLexiconTests.swift; sourceTree = "<group>"; };
+		B2KT0222BDC39470006CA45 /* DKKeyboardLayoutApplicatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKKeyboardLayoutApplicatorTests.swift; sourceTree = "<group>"; };
+		B2KT0232BDC39470006CA45 /* DKKeyboardEmojiLayoutMetricsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKKeyboardEmojiLayoutMetricsTests.swift; sourceTree = "<group>"; };
+		B2KT0242BDC39470006CA45 /* DKEmojiModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKEmojiModelTests.swift; sourceTree = "<group>"; };
+		B2KT0252BDC39470006CA45 /* DKKeyboardEmojiCollectionViewCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKKeyboardEmojiCollectionViewCellTests.swift; sourceTree = "<group>"; };
+		B2KT0262BDC39470006CA45 /* KeyboardMemoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardMemoryTests.swift; sourceTree = "<group>"; };
+		B2KT0272BDC39470006CA45 /* emoji.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = emoji.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,6 +250,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B22FC9EE29510C6900B31E4A /* BelarusianLacinka in Frameworks */,
+				B2AFCF912F8911540096D2DB /* KeyboardKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,9 +258,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B204B3EB2F87E7870004FA89 /* KeyboardKit in Frameworks */,
 				B2AFCF902F8911540096D2DB /* KeyboardKit in Frameworks */,
 				B22FC9F229510FB900B31E4A /* BelarusianLacinka in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B2KT0402BDC39470006CA45 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,6 +302,7 @@
 			children = (
 				B2073CFD2945F599008B43E4 /* Drukarnik */,
 				B21A248829360C7700C056E5 /* Keyboard */,
+				B2KT0302BDC39470006CA45 /* KeyboardTests */,
 				B21A246A29360B3600C056E5 /* Products */,
 				B21A249329360CB000C056E5 /* Frameworks */,
 			);
@@ -272,6 +313,7 @@
 			children = (
 				B21A246929360B3600C056E5 /* Drukarnik.app */,
 				B21A248729360C7600C056E5 /* Keyboard.appex */,
+				B2KT0202BDC39470006CA45 /* KeyboardTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -320,6 +362,7 @@
 				B2723F3F2B11BC3400FCC53D /* UIKit */,
 				B25887822B1047D700AE499B /* DKKeyboardEmojiViewModel.swift */,
 				B286DB9B2BDC39470006CA45 /* DKEmojiModel.swift */,
+				B2KT0102BDC39470006CA45 /* DKEmojiAutocompleteLexicon.swift */,
 				B235710F2B26A48D00784B63 /* DKEmojiAutocompleteProvider.swift */,
 			);
 			path = Emoji;
@@ -337,6 +380,7 @@
 				B22FC9F32951A9F100B31E4A /* DKCalloutActionProvider.swift */,
 				B249D1A629905B0200668130 /* DKAutocompleteProvider.swift */,
 				B249D1A82990696400668130 /* DKKeyboardLayoutProvider.swift */,
+				B2KT0122BDC39470006CA45 /* DKKeyboardLayoutApplicator.swift */,
 				B21A248929360C7700C056E5 /* DKKeyboardViewController.swift */,
 				B23571112B26AB7400784B63 /* DKKeyboardViewModel.swift */,
 				B21A2498293610EA00C056E5 /* DKKeyboardView.swift */,
@@ -511,6 +555,20 @@
 			path = Languages;
 			sourceTree = "<group>";
 		};
+		B2KT0302BDC39470006CA45 /* KeyboardTests */ = {
+			isa = PBXGroup;
+			children = (
+				B2KT0212BDC39470006CA45 /* DKEmojiAutocompleteLexiconTests.swift */,
+				B2KT0222BDC39470006CA45 /* DKKeyboardLayoutApplicatorTests.swift */,
+				B2KT0232BDC39470006CA45 /* DKKeyboardEmojiLayoutMetricsTests.swift */,
+				B2KT0242BDC39470006CA45 /* DKEmojiModelTests.swift */,
+				B2KT0252BDC39470006CA45 /* DKKeyboardEmojiCollectionViewCellTests.swift */,
+				B2KT0262BDC39470006CA45 /* KeyboardMemoryTests.swift */,
+				B2KT0272BDC39470006CA45 /* emoji.json */,
+			);
+			path = KeyboardTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -526,12 +584,12 @@
 			buildRules = (
 			);
 			dependencies = (
-				B2073D132945FC4B008B43E4 /* PBXTargetDependency */,
 				B21A248D29360C7700C056E5 /* PBXTargetDependency */,
 			);
 			name = Drukarnik;
 			packageProductDependencies = (
 				B22FC9ED29510C6900B31E4A /* BelarusianLacinka */,
+				B2AFCF8F2F8911540096D2DB /* KeyboardKit */,
 			);
 			productName = Drukarnik;
 			productReference = B21A246929360B3600C056E5 /* Drukarnik.app */;
@@ -548,17 +606,33 @@
 			buildRules = (
 			);
 			dependencies = (
-				B2AC43B72945F4F100ACC32E /* PBXTargetDependency */,
 			);
 			name = Keyboard;
 			packageProductDependencies = (
 				B22FC9F129510FB900B31E4A /* BelarusianLacinka */,
-				B204B3EA2F87E7870004FA89 /* KeyboardKit */,
 				B2AFCF8F2F8911540096D2DB /* KeyboardKit */,
 			);
 			productName = Keyboard;
 			productReference = B21A248729360C7600C056E5 /* Keyboard.appex */;
 			productType = "com.apple.product-type.app-extension";
+		};
+		B2KT0452BDC39470006CA45 /* KeyboardTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B2KT0462BDC39470006CA45 /* Build configuration list for PBXNativeTarget "KeyboardTests" */;
+			buildPhases = (
+				B2KT0412BDC39470006CA45 /* Sources */,
+				B2KT0402BDC39470006CA45 /* Frameworks */,
+				B2KT0422BDC39470006CA45 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B2KT0442BDC39470006CA45 /* PBXTargetDependency */,
+			);
+			name = KeyboardTests;
+			productName = KeyboardTests;
+			productReference = B2KT0202BDC39470006CA45 /* KeyboardTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -576,6 +650,10 @@
 					};
 					B21A248629360C7600C056E5 = {
 						CreatedOnToolsVersion = 14.1;
+					};
+					B2KT0452BDC39470006CA45 = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = B21A246829360B3600C056E5;
 					};
 				};
 			};
@@ -598,6 +676,7 @@
 			targets = (
 				B21A246829360B3600C056E5 /* Drukarnik */,
 				B21A248629360C7600C056E5 /* Keyboard */,
+				B2KT0452BDC39470006CA45 /* KeyboardTests */,
 			);
 		};
 /* End PBXProject section */
@@ -625,6 +704,14 @@
 				B214A2952B210FA500388679 /* emoji.json in Resources */,
 				B247D3AD2BDC8C4E0005C51D /* PrivacyInfo.xcprivacy in Resources */,
 				B2B9756B297B52A800ED68D2 /* additional_languages.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B2KT0422BDC39470006CA45 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2KT1262BDC39470006CA45 /* emoji.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -706,6 +793,8 @@
 				B2C25E8329D499E7002B3229 /* KeyboardLayout+Buttons.swift in Sources */,
 				B21A248A29360C7700C056E5 /* DKKeyboardViewController.swift in Sources */,
 				B282B8F229812D4B001244DE /* UITextDocumentProxy+FullText.swift in Sources */,
+				B2KT1102BDC39470006CA45 /* DKEmojiAutocompleteLexicon.swift in Sources */,
+				B2KT1122BDC39470006CA45 /* DKKeyboardLayoutApplicator.swift in Sources */,
 				B23571102B26A48D00784B63 /* DKEmojiAutocompleteProvider.swift in Sources */,
 				B2723F422B11BC5100FCC53D /* DKKeyboardEmojiStackView.swift in Sources */,
 				B2E6875B297F3723005C31B9 /* DKKeyboardSettings.swift in Sources */,
@@ -724,21 +813,38 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B2KT0412BDC39470006CA45 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2KT1202BDC39470006CA45 /* DKEmojiAutocompleteLexiconTests.swift in Sources */,
+				B2KT1212BDC39470006CA45 /* DKKeyboardLayoutApplicatorTests.swift in Sources */,
+				B2KT1222BDC39470006CA45 /* DKKeyboardEmojiLayoutMetricsTests.swift in Sources */,
+				B2KT1232BDC39470006CA45 /* DKEmojiModelTests.swift in Sources */,
+				B2KT1242BDC39470006CA45 /* DKKeyboardEmojiCollectionViewCellTests.swift in Sources */,
+				B2KT1252BDC39470006CA45 /* KeyboardMemoryTests.swift in Sources */,
+				B2KT1272BDC39470006CA45 /* DKEmojiAutocompleteLexicon.swift in Sources */,
+				B2KT1292BDC39470006CA45 /* DKKeyboardLayoutApplicator.swift in Sources */,
+				B2KT12A2BDC39470006CA45 /* DKEmojiModel.swift in Sources */,
+				B2KT12B2BDC39470006CA45 /* DKKeyboardLayout.swift in Sources */,
+				B2KT12C2BDC39470006CA45 /* DKKeyboardEmojiCollectionViewCell.swift in Sources */,
+				B2KT12D2BDC39470006CA45 /* DKKeyboardEmojiViewModel.swift in Sources */,
+				B2KT12E2BDC39470006CA45 /* DKKeyboardEmojiCollectionView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		B2073D132945FC4B008B43E4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			productRef = B2073D122945FC4B008B43E4 /* KeyboardKit */;
-		};
 		B21A248D29360C7700C056E5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = B21A248629360C7600C056E5 /* Keyboard */;
 			targetProxy = B21A248C29360C7700C056E5 /* PBXContainerItemProxy */;
 		};
-		B2AC43B72945F4F100ACC32E /* PBXTargetDependency */ = {
+		B2KT0442BDC39470006CA45 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			productRef = B2AC43B62945F4F100ACC32E /* KeyboardKit */;
+			target = B21A246829360B3600C056E5 /* Drukarnik */;
+			targetProxy = B2KT0432BDC39470006CA45 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -870,7 +976,7 @@
 				CODE_SIGN_ENTITLEMENTS = Drukarnik/DrukarnikDebug.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 6EWLUZCTBU;
 				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
@@ -888,7 +994,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4;
+				MARKETING_VERSION = 1.5;
 				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.belanghelp.drukarnik;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -913,7 +1019,7 @@
 				CODE_SIGN_ENTITLEMENTS = Drukarnik/DrukarnikRelease.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 6EWLUZCTBU;
 				GCC_PREPROCESSOR_DEFINITIONS = "";
@@ -931,7 +1037,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4;
+				MARKETING_VERSION = 1.5;
 				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.belanghelp.drukarnik;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -953,7 +1059,7 @@
 				CODE_SIGN_ENTITLEMENTS = Keyboard/KeyboardDebug.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 6EWLUZCTBU;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -966,7 +1072,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.4;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.belanghelp.drukarnik.keyboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -987,7 +1093,7 @@
 				CODE_SIGN_ENTITLEMENTS = Keyboard/KeyboardRelease.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 6EWLUZCTBU;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1000,7 +1106,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.4;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.belanghelp.drukarnik.keyboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1012,6 +1118,40 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		B2KT0472BDC39470006CA45 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 10;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
+				MARKETING_VERSION = 1.4;
+				PRODUCT_BUNDLE_IDENTIFIER = com.belanghelp.drukarnik.keyboard.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Drukarnik.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Drukarnik";
+			};
+			name = Debug;
+		};
+		B2KT0482BDC39470006CA45 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 10;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
+				MARKETING_VERSION = 1.4;
+				PRODUCT_BUNDLE_IDENTIFIER = com.belanghelp.drukarnik.keyboard.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Drukarnik.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Drukarnik";
 			};
 			name = Release;
 		};
@@ -1045,6 +1185,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		B2KT0462BDC39470006CA45 /* Build configuration list for PBXNativeTarget "KeyboardTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B2KT0472BDC39470006CA45 /* Debug */,
+				B2KT0482BDC39470006CA45 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
@@ -1054,14 +1203,6 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 1.1.0;
-			};
-		};
-		B2AC43B32945F4BE00ACC32E /* XCRemoteSwiftPackageReference "KeyboardKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/pikoshyk/KeyboardKit.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 6.0.0;
 			};
 		};
 		B2AFCF8E2F8911540096D2DB /* XCRemoteSwiftPackageReference "KeyboardKit" */ = {
@@ -1075,15 +1216,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		B204B3EA2F87E7870004FA89 /* KeyboardKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = KeyboardKit;
-		};
-		B2073D122945FC4B008B43E4 /* KeyboardKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B2AC43B32945F4BE00ACC32E /* XCRemoteSwiftPackageReference "KeyboardKit" */;
-			productName = KeyboardKit;
-		};
 		B22FC9ED29510C6900B31E4A /* BelarusianLacinka */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = B22FC9EC29510C6900B31E4A /* XCRemoteSwiftPackageReference "belarusianlacinka" */;
@@ -1093,11 +1225,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B22FC9EC29510C6900B31E4A /* XCRemoteSwiftPackageReference "belarusianlacinka" */;
 			productName = BelarusianLacinka;
-		};
-		B2AC43B62945F4F100ACC32E /* KeyboardKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B2AC43B32945F4BE00ACC32E /* XCRemoteSwiftPackageReference "KeyboardKit" */;
-			productName = KeyboardKit;
 		};
 		B2AFCF8F2F8911540096D2DB /* KeyboardKit */ = {
 			isa = XCSwiftPackageProductDependency;

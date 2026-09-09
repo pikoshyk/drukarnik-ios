@@ -132,9 +132,9 @@ class DKKeyboardEmojiCollectionToolbarView: UIStackView {
         button.setTitle("ABC", for: .normal)
         button.setTitleColor(.secondaryLabel, for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .medium)
-        button.addAction(UIAction(handler: { action in
-            self.viewModel.onAlphabeticalKeyboardBlock?()
-        }), for: .touchUpInside)
+        button.addAction(UIAction { [weak self] _ in
+            self?.viewModel.onAlphabeticalKeyboardBlock?()
+        }, for: .touchUpInside)
         return button
     }
     
@@ -142,9 +142,9 @@ class DKKeyboardEmojiCollectionToolbarView: UIStackView {
         let image = UIImage(named: "keyboard-emoji-button-delete")!.resizePhone()!
         let button = UIButton()
         button.tintColor = .label
-        button.addAction(UIAction(handler: { action in
-            self.viewModel.onDeleteBlock?()
-        }), for: .touchDown)
+        button.addAction(UIAction { [weak self] _ in
+            self?.viewModel.onDeleteBlock?()
+        }, for: .touchDown)
         button.setImage(image, for: .normal)
         
         return button
@@ -155,9 +155,9 @@ class DKKeyboardEmojiCollectionToolbarView: UIStackView {
         let button = UIButton()
         button.tintColor = .secondaryLabel
         button.tag = section.id.rawValue
-        button.addAction(UIAction(handler: { action in
-            self.viewModel.onSectionPress(section.id)
-        }), for: .touchUpInside)
+        button.addAction(UIAction { [weak self] _ in
+            self?.viewModel.onSectionPress(section.id)
+        }, for: .touchUpInside)
         button.setImage(image, for: .normal)
         self.buttons[section.id] = button
         return button

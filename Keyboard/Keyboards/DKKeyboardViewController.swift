@@ -1,10 +1,3 @@
-//
-//  KeyboardViewController.swift
-//  Keyboard
-//
-//  Created by Logout on 29.11.22.
-//
-
 import KeyboardKit
 import SwiftUI
 
@@ -53,87 +46,77 @@ extension DKKeyboardFeedback {
 class DKKeyboardViewController: KeyboardInputViewController {
 
     let localSettings = DKKeyboardSettings()
-    
+    private var layoutApplicator = DKKeyboardLayoutApplicator()
+    private lazy var keyboardViewModel = DKKeyboardViewModel(keyboardSettings: self.localSettings, state: self.state)
+
     override func viewDidLoad() {
-        
+
         KeyboardKit.Gestures.Defaults.longPressDelay = 0.3
         DKLocalizationKeyboard.settings = self.localSettings
 
         let keyboardLayout = self.localSettings.keyboardLayout
         self.state.keyboardContext.locale = keyboardLayout.locale
-        self.keyboardLayout = keyboardLayout
+        self.applyKeyboardLayout(keyboardLayout)
         self.services.actionHandler = DKActionHandler(inputViewController: self, swicthKeyboardBlock: self.onSwitchKeyboardLayout)
         self.services.styleProvider = DKKeyboardAppearance(keyboardContext: self.state.keyboardContext)
         self.configureKeyboard()
         super.viewDidLoad()
     }
-    
+
     private func onSwitchKeyboardLayout(_ keyboardLayout: DKKeyboardLayout) {
-        self.keyboardLayout = keyboardLayout
+        self.applyKeyboardLayout(keyboardLayout)
         self.configureKeyboard()
     }
-    
+
     private func configureKeyboard() {
         self.state.feedbackContext.audioConfiguration = self.localSettings.keyboardFeedback.audioConfiguation
         self.state.feedbackContext.hapticConfiguration = self.localSettings.keyboardFeedback.hapticConfiguation
         self.state.keyboardContext.autocapitalizationTypeOverride = self.localSettings.keyboardAutocapitalization.systemValue
     }
-    
-    var keyboardLayout: DKKeyboardLayout? {
-        didSet {
 
-            guard let keyboardLayout = keyboardLayout else {
-                return
+    func applyKeyboardLayout(_ layout: DKKeyboardLayout, force: Bool = false) {
+        guard self.layoutApplicator.applyLayout(layout, force: force) else {
+            return
+        }
+
+        self.localSettings.keyboardLayout = layout
+        self.state.keyboardContext.locale = layout.locale
+
+        switch layout {
+        case .latin:
+            if let calloutActionProvide = try? DKLatinCalloutActionProvider(settings: self.localSettings) {
+                self.services.calloutActionProvider = calloutActionProvide
             }
-
-            self.localSettings.keyboardLayout = keyboardLayout
-            self.state.keyboardContext.locale = keyboardLayout.locale
-
-            switch keyboardLayout {
-            case .latin:
-                if let calloutActionProvide = try? DKLatinCalloutActionProvider(settings: self.localSettings) {
-                    self.services.calloutActionProvider = calloutActionProvide
-                }
-                self.services.layoutProvider = DKLatinLayoutProvider()
-                self.services.autocompleteProvider = DKEmojiAutocompleteProvider(settings: self.localSettings, textDocumentProxy: self.textDocumentProxy)
-            case .cyrillic:
-                if let calloutActionProvide = try? DKCyrillicCalloutActionProvider(settings: self.localSettings) {
-                    self.services.calloutActionProvider = calloutActionProvide
-                }
-                self.services.layoutProvider = DKCyrillicLayoutProvider(keyboardContext: self.state.keyboardContext)
-                self.services.autocompleteProvider = DKEmojiAutocompleteProvider(settings: self.localSettings, textDocumentProxy: self.textDocumentProxy)
+            self.services.layoutProvider = DKLatinLayoutProvider()
+            self.services.autocompleteProvider = DKEmojiAutocompleteProvider(settings: self.localSettings, textDocumentProxy: self.textDocumentProxy)
+        case .cyrillic:
+            if let calloutActionProvide = try? DKCyrillicCalloutActionProvider(settings: self.localSettings) {
+                self.services.calloutActionProvider = calloutActionProvide
             }
+            self.services.layoutProvider = DKCyrillicLayoutProvider(keyboardContext: self.state.keyboardContext)
+            self.services.autocompleteProvider = DKEmojiAutocompleteProvider(settings: self.localSettings, textDocumentProxy: self.textDocumentProxy)
+        }
 
-            Task {
-                let result = try? await self.services.autocompleteProvider.autocompleteSuggestions(for: self.autocompleteText ?? "")
-                self.state.autocompleteContext.suggestions = result ?? []
-            }
+        Task {
+            let result = try? await self.services.autocompleteProvider.autocompleteSuggestions(for: self.autocompleteText ?? "")
+            self.state.autocompleteContext.suggestions = result ?? []
         }
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
-        let keyboardLayout = self.keyboardLayout
         self.localSettings.reloadSettings()
-        self.keyboardLayout = keyboardLayout
+        self.applyKeyboardLayout(self.localSettings.keyboardLayout)
+        self.configureKeyboard()
         super.viewWillAppear(animated)
     }
-    
-    /**
-     This function is called whenever the keyboard should be
-     created or updated.
-     Here, we use the ``KeyboardView`` to setup the keyboard.
-     This will create a `SystemKeyboard`-based keyboard that
-     looks like a native keyboard.
-     */
+
     override func viewWillSetupKeyboard() {
         super.viewWillSetupKeyboard()
-        setup(with: DKKeyboardView(keyboardController: self, keyboardSettings: self.localSettings))
+        setup(with: DKKeyboardView(keyboardController: self, viewModel: self.keyboardViewModel))
     }
-    
+
     override func updateViewConstraints() {
         super.updateViewConstraints()
-
-        // Add custom view sizing constraints here
     }
 
     override func viewWillLayoutSubviews() {

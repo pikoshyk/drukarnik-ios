@@ -245,3 +245,11 @@ struct DKEmojiModel {
         }
     }
 }
+
+extension DKEmojiModel {
+    static let shared = DKEmojiModel()
+
+    var totalEmojiCount: Int {
+        smileys.count + nature.count + fooddrink.count + activity.count + travelplaces.count + objects.count + symbols.count + flags.count
+    }
+}

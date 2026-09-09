@@ -1,0 +1,9 @@
+profiles:
+  app:
+    projectPath: Drukarnik.xcodeproj
+    scheme: Drukarnik
+  tests:
+    projectPath: Drukarnik.xcodeproj
+    scheme: Drukarnik
+    testTarget: KeyboardTests
+    simulatorId: 5DA134F0-EFBB-400B-850E-8429E2228EB8

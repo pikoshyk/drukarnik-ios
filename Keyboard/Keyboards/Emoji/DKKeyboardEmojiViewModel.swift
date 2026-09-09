@@ -60,6 +60,8 @@ extension DKEmojiSectionDelegate {
 }
 
 class DKKeyboardEmojiViewModel: Any {
+    private let selectionFeedback = UISelectionFeedbackGenerator()
+
     var recentSection: DKEmojiSection
     var sections: [DKEmojiSection]
     var headerDelegate: DKEmojiSectionDelegate?
@@ -79,7 +81,7 @@ class DKKeyboardEmojiViewModel: Any {
     }
 
     func onSectionPress(_ sectionId: DKEmojiSectionType) {
-        UISelectionFeedbackGenerator().selectionChanged()
+        self.selectionFeedback.selectionChanged()
         self.headerDelegate?.scrollToSection(sectionId: sectionId)
         self.toolbarDelegate?.scrollToSection(sectionId: sectionId)
         self.collectionDelegate?.scrollToSection(sectionId: sectionId)
@@ -99,7 +101,7 @@ class DKKeyboardEmojiViewModel: Any {
                                             title: "Нядаўнія",
                                             imageName: "keyboard-emoji-category-recents",
                                             items:[])
-        let emojiModel = DKEmojiModel()
+        let emojiModel = DKEmojiModel.shared
         self.sections = [
             self.recentSection,
             DKEmojiSection(id: .smileys,

@@ -1,37 +1,19 @@
-//
-//  DKKeyboardView.swift
-//  Keyboard
-//
-//  Created by Logout on 29.11.22.
-//
-
 import BelarusianLacinka
 import KeyboardKit
 import SwiftUI
 
-/**
- This is the main view that is registered when the extension
- runs `setup(with:)` in ``KeyboardViewController``. The view
- is used by all `SystemKeyboard`-based keyboards.
- 
- The view must observe a `KeyboardContext` as an environment
- object, or take a context instance as an init parameter and
- set it to an observed object. Otherwise, it will not change
- when the context changes. This is not how it should be, but
- I have not yet figured out why this is needed.
- */
 struct DKKeyboardView: View {
-    
-    @StateObject var viewModel: DKKeyboardViewModel
+
+    @ObservedObject var viewModel: DKKeyboardViewModel
     unowned var keyboardController: DKKeyboardViewController
-    
+
     static let TOOLBAR_FRAME_HEIGHT: CGFloat = 54
 
-    init(keyboardController: DKKeyboardViewController, keyboardSettings: DKKeyboardSettings) {
-        self._viewModel = .init(wrappedValue: DKKeyboardViewModel(keyboardSettings: keyboardSettings, state: keyboardController.state))
+    init(keyboardController: DKKeyboardViewController, viewModel: DKKeyboardViewModel) {
         self.keyboardController = keyboardController
+        self.viewModel = viewModel
     }
-    
+
     var body: some View {
         ZStack {
             SystemKeyboard(
@@ -54,7 +36,7 @@ struct DKKeyboardView: View {
             }
         }
     }
-    
+
     var emojiKeyboardView: some View {
         DKKeyboardEmojiView(self.viewModel.emojiViewModel, onAlphabeticalKeyboard: {
             self.viewModel.onAlphabeticalKeyboard()
@@ -72,7 +54,7 @@ struct DKKeyboardView: View {
             self.viewModel.onEmojiDisappear()
         }
     }
-    
+
     @ViewBuilder
     func toolbarView(_ autocompleteAction: @escaping (Autocomplete.Suggestion) -> Void) -> some View {
         Group {
@@ -85,7 +67,7 @@ struct DKKeyboardView: View {
         .padding(EdgeInsets(top: 4, leading: 3, bottom: 0, trailing: 0))
         .frame(height: DKKeyboardView.TOOLBAR_FRAME_HEIGHT)
     }
-    
+
     var baseToolbarView: some View {
         HStack(spacing: 0) {
             self.settingsButtonView
@@ -94,9 +76,9 @@ struct DKKeyboardView: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
         }
     }
-    
+
     @State var showSetingsView: Bool = false
-    
+
     var overlayKeyboardView: some View {
         ZStack {
             Rectangle()
@@ -104,8 +86,7 @@ struct DKKeyboardView: View {
                 .zIndex(1.0)
             ScrollView {
                 VStack {
-                    let fullText = self.viewModel.state.keyboardContext.originalTextDocumentProxy.documentContext ?? ""
-                    if String(fullText.unicodeScalars.filter { CharacterSet.letters.contains($0) }).count > 0 {
+                    if self.viewModel.overlayHasLetters {
                         HStack(spacing: 0) {
                             self.conversionLatCyrButtonStyledView(direction: .toCyrillic, customLabel: Text(Localization.optionsConvertButtonToCyrillicTitle))
                                 .font(.body)
@@ -130,7 +111,7 @@ struct DKKeyboardView: View {
             .zIndex(2.0)
         }
     }
-    
+
     var conversionToolbarView: some View {
         HStack(spacing: 8) {
             self.conversionLatCyrButtonStyledView()
@@ -142,11 +123,13 @@ struct DKKeyboardView: View {
 }
 
 
-// MARK: Keyboard Settings
 private extension DKKeyboardView {
     var settingsButtonView: some View {
         Button(action: {
             self.showSetingsView.toggle()
+            if self.showSetingsView {
+                self.viewModel.refreshOverlayTextAvailability()
+            }
         }, label: {
             Image(systemName: self.showSetingsView ? SystemImage.optionsButtonIconActive : SystemImage.optionsButtonIconInactive)
                 .resizable()
@@ -159,7 +142,6 @@ private extension DKKeyboardView {
     }
 }
 
-// MARK: Autosuggestion
 private extension DKKeyboardView {
     @ViewBuilder
     func autosuggestionsView(autocompleteAction: @escaping (Autocomplete.Suggestion) -> Void) -> some View {
@@ -176,7 +158,7 @@ private extension DKKeyboardView {
                                 .font(Font.system(size: 24))
                         }
 
-                        
+
                     }
                     .frame(width: 44)
                 }
@@ -185,7 +167,6 @@ private extension DKKeyboardView {
     }
 }
 
-// MARK: Lacinca-Ciryllic Conversion
 private extension DKKeyboardView {
 
     func conversionLatCyrButtonStyledView(direction: BelarusianLacinka.BLDirection? = nil, customLabel: Text? = nil) -> some View {
@@ -199,7 +180,7 @@ private extension DKKeyboardView {
             }
         }
     }
-    
+
     @ViewBuilder
     func conversionLatCyrButtonView(direction initialDirection: BelarusianLacinka.BLDirection? = nil, customLabel: Text?) -> some View {
         Button {
@@ -209,8 +190,7 @@ private extension DKKeyboardView {
                 customLabel
             } else {
                 Group {
-                    let fullText = self.viewModel.state.keyboardContext.originalTextDocumentProxy.documentContext ?? ""
-                    if String(fullText.unicodeScalars.filter { CharacterSet.letters.contains($0) }).count > 0 {
+                    if self.viewModel.overlayHasLetters {
                         Image("autotransliteration-active")
                     } else {
                         Image("autotransliteration-inactive")
@@ -235,7 +215,7 @@ private extension DKKeyboardView {
         static var optionsButtonTitle: String { DKLocalizationKeyboard.convert(text: "← Дадатковыя опцыі клавіятуры")
         }
     }
-    
+
     struct SystemImage {
         static let optionsButtonIconActive = "gearshape.fill"
         static let optionsButtonIconInactive = "gearshape"
