@@ -33,9 +33,11 @@ struct DKConverterView: View {
             }
         }
         .listStyle(.insetGrouped)
-        .gesture(DragGesture().onChanged { _ in
-            self.viewModel.onDrag()
-        })
+        .simultaneousGesture(
+            DragGesture(minimumDistance: 10).onChanged { _ in
+                self.viewModel.onDrag()
+            }
+        )
     }
     
     var textCyrillicView: some View {
