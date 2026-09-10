@@ -1,5 +1,11 @@
 # Testing
 
+| Field | Value |
+| --- | --- |
+| Parent | [AGENTS.md](../AGENTS.md) |
+
+Project-wide test procedure. Feature-level acceptance criteria and which suites prove them live in the relevant functional spec, not here.
+
 ## KeyboardTests
 
 Unit tests for keyboard memory and shared logic live in the `KeyboardTests` target. They compile shared keyboard logic a second time (no `@testable` on the appex).
@@ -18,15 +24,15 @@ If `derivedDataPath` is missing, run `plugins/ios-dev/skills/build-ios-apps/scri
 
 | State | Goal |
 | --- | --- |
-| Idle alphabetic | Minimal RSS; no `DKEmojiModel` / emoji collection until emoji opens |
+| Idle alphabetic | Minimal RSS; no emoji collection until emoji opens |
 | Peak emoji scroll | Short spike only; visible cells ≈ `ceil(width / itemWidth + 2) × rows` |
 | Headroom | Reserve RSS for future on-device suggestion/translation models |
 
 Delta rules (not absolute MB):
 
-- 200× lexicon load: RSS must not grow linearly (shared `DKEmojiAutocompleteLexicon`)
+- 200× lexicon load: RSS must not grow linearly (shared lexicon cache)
 - 1000× single cell configure: growth ≪ 1–2 MB
-- 200× same-layout `applyKeyboardLayout`: RSS delta ≈ simulator noise
+- 200× same-layout layout apply: RSS delta ≈ simulator noise
 - N× keyboard appear with same layout: no new lexicon/provider instances
 
 Record first-run idle/peak deltas here after `KeyboardMemoryTests` on your simulator.
@@ -34,3 +40,29 @@ Record first-run idle/peak deltas here after `KeyboardMemoryTests` on your simul
 ### Scope-specific overrides
 
 If a memory suite hits timeout, add a row to `docs/testing-specific-rules-by-classes.md` before marking verification done.
+
+## Manual UI checks (Simulator)
+
+For toolbar, autosuggest, or keyboard chrome (not covered by `KeyboardTests`):
+
+### Simulator hygiene
+
+Before UI work on a slow Mac: one booted simulator only. Run `plugins/ios-dev/skills/ios-simulator-browser/scripts/simulator-hygiene.sh shutdown-all` (or `cleanup`) if stale simulators or background `xcodebuild` remain from earlier runs.
+
+### Install the latest extension
+
+1. XcodeBuildMCP profile `app` → `build_run_sim` (scheme `Drukarnik`) so the Keyboard appex matches the tree under test.
+2. Host app for checks is often Safari (search field), not the Drukarnik app.
+
+### Enable Drukarnik in the keyboard list
+
+The extension does **not** become the system default by itself. In the host app text field:
+
+1. Focus the field (keyboard visible).
+2. Switch input via 🌐 / «Next keyboard» until **Drukarnik** is active (Accessibility label often `Next keyboard`, value `Drukarnik`).
+
+Without this step, UI checks exercise the stock keyboard, not Drukarnik.
+
+### Example: autosuggest bar
+
+Safari → focus search → select Drukarnik → type a word with emoji suggestions (e.g. Cyrillic `сэрца`) → scroll the suggestion row if emoji overflow → confirm clip/mask at the top corners (screenshot or live mirror).

@@ -35,21 +35,8 @@ enum DKAutocompleteWordSuggestions {
     static func isEmojiSuggestion(_ suggestion: Autocomplete.Suggestion) -> Bool {
         let text = suggestion.text
         guard !text.isEmpty else { return false }
-        if text.unicodeScalars.contains(where: CharacterSet.letters.contains) {
-            return false
-        }
-        return text.unicodeScalars.contains {
-            $0.properties.isEmoji || $0.properties.isEmojiPresentation || isEmojiModifier($0)
-        }
-    }
-
-    private static func isEmojiModifier(_ scalar: UnicodeScalar) -> Bool {
-        switch scalar.value {
-        case 0x200D, 0xFE0F, 0xFE0E:
-            return true
-        default:
-            return false
-        }
+        guard !text.contains(where: \.isLetter) else { return false }
+        return text.contains(where: \.isEmoji)
     }
 
     static func partition(
@@ -58,6 +45,16 @@ enum DKAutocompleteWordSuggestions {
         let words = suggestions.filter { !isEmojiSuggestion($0) }
         let emojis = suggestions.filter(isEmojiSuggestion)
         return (words, emojis)
+    }
+
+    static func toolbarWordColumns(
+        from words: [Autocomplete.Suggestion]
+    ) -> (raw: Autocomplete.Suggestion?, converted: Autocomplete.Suggestion?) {
+        guard !words.isEmpty else { return (nil, nil) }
+        if words.count >= 2 {
+            return (words[0], words[1])
+        }
+        return (nil, words[0])
     }
 
     enum BarLayout: Equatable {
@@ -89,9 +86,15 @@ enum DKAutocompleteWordSuggestions {
     }
 
     static let emojiItemWidth: CGFloat = 44
+    static let emojiFontSize: CGFloat = 28
+
+    static var emojiRowHorizontalInset: CGFloat {
+        (emojiItemWidth - emojiFontSize) / 2
+    }
 
     static func emojiRowWidth(emojiCount: Int) -> CGFloat {
-        CGFloat(max(emojiCount, 0)) * emojiItemWidth
+        guard emojiCount > 0 else { return 0 }
+        return CGFloat(emojiCount) * emojiItemWidth + 2 * emojiRowHorizontalInset
     }
 
     static func emojiRowFits(emojiCount: Int, in availableWidth: CGFloat) -> Bool {
@@ -117,6 +120,14 @@ enum DKAutocompleteWordSuggestions {
 
         var suggestions: [Autocomplete.Suggestion] = []
         if display != word {
+            suggestions.append(
+                Autocomplete.Suggestion(
+                    text: word,
+                    title: word,
+                    isAutocorrect: false,
+                    subtitle: nil
+                )
+            )
             suggestions.append(
                 Autocomplete.Suggestion(
                     text: display,

@@ -32,6 +32,26 @@ final class DKAutocompleteToolbarLogicTests: XCTestCase {
         )
     }
 
+    func testToolbarWordColumns_rawAndConverted() {
+        let columns = DKAutocompleteWordSuggestions.toolbarWordColumns(
+            from: [word("dobra"), word("добра")]
+        )
+        XCTAssertEqual(columns.raw?.text, "dobra")
+        XCTAssertEqual(columns.converted?.text, "добра")
+    }
+
+    func testToolbarWordColumns_singleWordGoesToCenter() {
+        let columns = DKAutocompleteWordSuggestions.toolbarWordColumns(from: [word("добра")])
+        XCTAssertNil(columns.raw)
+        XCTAssertEqual(columns.converted?.text, "добра")
+    }
+
+    func testToolbarWordColumns_empty() {
+        let columns = DKAutocompleteWordSuggestions.toolbarWordColumns(from: [])
+        XCTAssertNil(columns.raw)
+        XCTAssertNil(columns.converted)
+    }
+
     func testPartition_splitsWordsAndEmoji() {
         let suggestions = [word("добра"), emoji("😇"), emoji("🥰")]
         let partition = DKAutocompleteWordSuggestions.partition(suggestions)
@@ -88,18 +108,35 @@ final class DKAutocompleteToolbarLogicTests: XCTestCase {
     }
 
     func testEmojiRowFits_whenThereIsEnoughSpace() {
-        XCTAssertTrue(DKAutocompleteWordSuggestions.emojiRowFits(emojiCount: 2, in: 88))
-        XCTAssertFalse(DKAutocompleteWordSuggestions.emojiRowFits(emojiCount: 3, in: 88))
+        let inset = DKAutocompleteWordSuggestions.emojiRowHorizontalInset
+        XCTAssertTrue(DKAutocompleteWordSuggestions.emojiRowFits(emojiCount: 2, in: 88 + 2 * inset))
+        XCTAssertFalse(DKAutocompleteWordSuggestions.emojiRowFits(emojiCount: 3, in: 88 + 2 * inset))
     }
 
     func testShouldScrollThreeColumnBar_whenRightColumnOverflows() {
-        XCTAssertFalse(DKAutocompleteWordSuggestions.shouldScrollThreeColumnBar(emojiCount: 0, in: 300))
-        XCTAssertFalse(DKAutocompleteWordSuggestions.shouldScrollThreeColumnBar(emojiCount: 2, in: 300))
-        XCTAssertTrue(DKAutocompleteWordSuggestions.shouldScrollThreeColumnBar(emojiCount: 3, in: 300))
+        let totalWidth: CGFloat = 300
+        let columnWidth = totalWidth / 3
+
+        XCTAssertFalse(DKAutocompleteWordSuggestions.shouldScrollThreeColumnBar(emojiCount: 0, in: totalWidth))
+
+        for count in 1...4 {
+            let fits = DKAutocompleteWordSuggestions.emojiRowFits(emojiCount: count, in: columnWidth)
+            let scrolls = DKAutocompleteWordSuggestions.shouldScrollThreeColumnBar(emojiCount: count, in: totalWidth)
+            XCTAssertEqual(scrolls, !fits, "emojiCount \(count)")
+        }
     }
 
     func testEmojiRowWidth_usesFixedItemWidth() {
-        XCTAssertEqual(DKAutocompleteWordSuggestions.emojiRowWidth(emojiCount: 5), 220)
+        let inset = DKAutocompleteWordSuggestions.emojiRowHorizontalInset
+        XCTAssertEqual(DKAutocompleteWordSuggestions.emojiRowWidth(emojiCount: 5), 220 + 2 * inset)
+    }
+
+    func testEmojiRowHorizontalInset_matchesVisualGapBetweenEmoji() {
+        XCTAssertEqual(DKAutocompleteWordSuggestions.emojiRowHorizontalInset, 8)
+        XCTAssertEqual(
+            2 * DKAutocompleteWordSuggestions.emojiRowHorizontalInset,
+            DKAutocompleteWordSuggestions.emojiItemWidth - DKAutocompleteWordSuggestions.emojiFontSize
+        )
     }
 
     func testPartition_sercaKeepsWordSeparateFromEmoji() {

@@ -11,6 +11,7 @@ struct DKAutocompleteSuggestionDelimiter: View {
 
 struct DKAutocompleteSuggestionButton: View {
     let suggestion: Autocomplete.Suggestion
+    var quoteTitle: Bool = false
     let autocompleteAction: (Autocomplete.Suggestion) -> Void
 
     var body: some View {
@@ -20,9 +21,9 @@ struct DKAutocompleteSuggestionButton: View {
         } label: {
             if isEmoji {
                 Text(suggestion.title)
-                    .font(.system(size: 28))
+                    .font(.system(size: DKAutocompleteWordSuggestions.emojiFontSize))
             } else {
-                DKAutocompleteSuggestionWordLabel(suggestion: suggestion)
+                DKAutocompleteSuggestionWordLabel(suggestion: suggestion, quoteTitle: quoteTitle)
             }
         }
         .buttonStyle(.plain)
@@ -32,9 +33,10 @@ struct DKAutocompleteSuggestionButton: View {
 
 struct DKAutocompleteSuggestionWordLabel: View {
     let suggestion: Autocomplete.Suggestion
+    var quoteTitle: Bool = false
 
     var body: some View {
-        let title = suggestion.isUnknown ? "\"\(suggestion.title)\"" : suggestion.title
+        let title = quoteTitle ? "\"\(suggestion.title)\"" : suggestion.title
         Text(title)
             .font(.system(size: 17))
             .foregroundColor(Color(.label))

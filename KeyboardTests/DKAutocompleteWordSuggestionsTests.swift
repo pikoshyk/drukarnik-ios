@@ -43,9 +43,11 @@ final class DKAutocompleteWordSuggestionsTests: XCTestCase {
             convert: convert,
             lexicon: lexicon
         )
-        XCTAssertGreaterThan(suggestions.count, 1)
-        XCTAssertEqual(suggestions[0].text, convert("dobra", direction: .toCyrillic))
+        XCTAssertGreaterThan(suggestions.count, 2)
+        XCTAssertEqual(suggestions[0].text, "dobra")
+        XCTAssertEqual(suggestions[1].text, convert("dobra", direction: .toCyrillic))
         XCTAssertFalse(DKAutocompleteWordSuggestions.isEmojiSuggestion(suggestions[0]))
+        XCTAssertFalse(DKAutocompleteWordSuggestions.isEmojiSuggestion(suggestions[1]))
     }
 
     func testCyrillicToLatin_transliteration() {
@@ -55,9 +57,10 @@ final class DKAutocompleteWordSuggestionsTests: XCTestCase {
             convert: convert,
             lexicon: lexicon
         )
-        XCTAssertGreaterThan(suggestions.count, 1)
-        XCTAssertTrue(suggestions[0].text.lowercased().contains("dobra"))
-        XCTAssertFalse(DKAutocompleteWordSuggestions.isEmojiSuggestion(suggestions[0]))
+        XCTAssertGreaterThan(suggestions.count, 2)
+        XCTAssertEqual(suggestions[0].text, "добра")
+        XCTAssertTrue(suggestions[1].text.lowercased().contains("dobra"))
+        XCTAssertFalse(DKAutocompleteWordSuggestions.isEmojiSuggestion(suggestions[1]))
     }
 
     func testEmoji_lookupAlwaysViaCyrillicKey() {
@@ -69,8 +72,8 @@ final class DKAutocompleteWordSuggestionsTests: XCTestCase {
         )
         XCTAssertNil(lexicon["dobra"])
         XCTAssertNotNil(lexicon["добра"])
-        XCTAssertTrue(suggestions.dropFirst().allSatisfy(DKAutocompleteWordSuggestions.isEmojiSuggestion))
-        XCTAssertTrue(suggestions.dropFirst().contains { $0.text == "😇" })
+        XCTAssertTrue(suggestions.dropFirst(2).allSatisfy(DKAutocompleteWordSuggestions.isEmojiSuggestion))
+        XCTAssertTrue(suggestions.dropFirst(2).contains { $0.text == "😇" })
     }
 
     func testEmoji_cyrillicInput_usesSameKey() {
@@ -80,8 +83,9 @@ final class DKAutocompleteWordSuggestionsTests: XCTestCase {
             convert: convert,
             lexicon: lexicon
         )
-        XCTAssertTrue(suggestions[0].text.lowercased().contains("dobra"))
-        XCTAssertTrue(suggestions.dropFirst().contains { $0.text == "😇" })
+        XCTAssertEqual(suggestions[0].text, "добра")
+        XCTAssertTrue(suggestions[1].text.lowercased().contains("dobra"))
+        XCTAssertTrue(suggestions.dropFirst(2).contains { $0.text == "😇" })
     }
 
     func testEmoji_partialWord_noMatch() {
@@ -91,9 +95,10 @@ final class DKAutocompleteWordSuggestionsTests: XCTestCase {
             convert: convert,
             lexicon: lexicon
         )
-        XCTAssertEqual(suggestions.count, 1)
-        XCTAssertTrue(suggestions[0].text.contains("добр"))
-        XCTAssertFalse(DKAutocompleteWordSuggestions.isEmojiSuggestion(suggestions[0]))
+        XCTAssertEqual(suggestions.count, 2)
+        XCTAssertEqual(suggestions[0].text, "dobr")
+        XCTAssertTrue(suggestions[1].text.contains("добр"))
+        XCTAssertFalse(DKAutocompleteWordSuggestions.isEmojiSuggestion(suggestions[1]))
     }
 
     func testEmoji_noDirectLatinLookup() {
@@ -152,8 +157,19 @@ final class DKAutocompleteWordSuggestionsTests: XCTestCase {
             convert: convert,
             lexicon: [:]
         )
-        XCTAssertEqual(suggestions.count, 1)
-        XCTAssertEqual(suggestions[0].text, convert("dobr", direction: .toCyrillic))
+        XCTAssertEqual(suggestions.count, 2)
+        XCTAssertEqual(suggestions[0].text, "dobr")
+        XCTAssertEqual(suggestions[1].text, convert("dobr", direction: .toCyrillic))
+    }
+
+    func testBuild_includesRawWordBeforeConverted() {
+        let suggestions = DKAutocompleteWordSuggestions.build(
+            word: "dobra",
+            direction: .toCyrillic,
+            convert: convert,
+            lexicon: [:]
+        )
+        XCTAssertEqual(suggestions.map(\.text), [ "dobra", convert("dobra", direction: .toCyrillic) ])
     }
 
     func testApplyInputCase_capitalizesFirstLetter() {
@@ -174,6 +190,10 @@ final class DKAutocompleteWordSuggestionsTests: XCTestCase {
             lexicon: lexicon
         )
         XCTAssertEqual(suggestions.first?.text.first?.isUppercase, true)
+        let columns = DKAutocompleteWordSuggestions.toolbarWordColumns(
+            from: suggestions.filter { !DKAutocompleteWordSuggestions.isEmojiSuggestion($0) }
+        )
+        XCTAssertEqual(columns.converted?.text.first?.isUppercase, true)
     }
 
     func testLastWord_preservesCase() {
