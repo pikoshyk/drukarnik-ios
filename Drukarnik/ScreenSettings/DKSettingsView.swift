@@ -8,15 +8,19 @@
 import SwiftUI
 
 struct DKSettingsView: View {
-    
-    @StateObject var viewModel: DKSettingsViewModel
-    
+
+    private static let contentMaxWidth: CGFloat = 500
+
+    @ObservedObject var viewModel: DKSettingsViewModel
+
     var body: some View {
-        NavigationView {
+        HStack(alignment: .top, spacing: 0) {
             self.settingsList
-                .navigationTitle(DKTabs.about.fullTitle)
+                .frame(maxWidth: Self.contentMaxWidth)
+            Spacer(minLength: 0)
         }
         .background(Color.secondarySystemBackground)
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
     }
 
     var settingsList: some View {
@@ -64,19 +68,17 @@ struct DKSettingsView: View {
     }
     
     var cellInterfaceTransliteration: some View {
-        VStack(alignment: .leading) {
+        VStack(alignment: .leading, spacing: 12) {
             Text(self.viewModel.presentInterfaceTransliterationCellTitle)
                 .font(.headline)
-            HStack {
-                Picker("", selection: self.$viewModel.presentInterfaceTransliteration) {
-                    ForEach(self.viewModel.presentInterfaceTransliterationOptions, id: \.value) { option in
-                        Text(option.title).tag(option.value)
-                    }
+                .multilineTextAlignment(.leading)
+                .frame(maxWidth: .infinity, alignment: .leading)
+            Picker("", selection: self.$viewModel.presentInterfaceTransliteration) {
+                ForEach(self.viewModel.presentInterfaceTransliterationOptions, id: \.value) { option in
+                    Text(option.title).tag(option.value)
                 }
-                .pickerStyle(.segmented)
-                .frame(minWidth: 0, maxWidth: 400)
-                Spacer(minLength: 0)
             }
+            .pickerStyle(.segmented)
         }
     }
     

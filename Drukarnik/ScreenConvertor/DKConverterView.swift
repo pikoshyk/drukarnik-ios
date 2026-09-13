@@ -9,13 +9,10 @@ import BelarusianLacinka
 import SwiftUI
 
 struct DKConverterView: View {
-    @StateObject var viewModel: DKConverterViewModel
+    @ObservedObject var viewModel: DKConverterViewModel
+
     var body: some View {
-        NavigationView {
-            self.contentView
-                .navigationTitle(DKTabs.converter.fullTitle)
-        }
-        .background(Color.secondarySystemBackground)
+        self.contentView
     }
     
     var contentView: some View {
@@ -83,14 +80,14 @@ struct DKConverterView: View {
     }
     
     var conversionSettings: some View {
-        HStack(spacing: 20) {
+        HStack {
             VStack(alignment: .leading, spacing: 0) {
-                VStack(alignment: .center) {
+                VStack {
                     Spacer()
                     Text(DKLocalizationApp.converterBelarusianLatinTypeTitle)
                     Spacer()
                 }
-                VStack(alignment: .center) {
+                VStack {
                     Spacer()
                     Text(DKLocalizationApp.converterBelarusianCyrillicTypeTitle)
                     Spacer()
@@ -103,6 +100,8 @@ struct DKConverterView: View {
                 self.ophographyTypeView
                     .padding(.vertical, 4)
             }
+            .frame(maxWidth: 300)
+            Spacer(minLength: 0)
         }
     }
     

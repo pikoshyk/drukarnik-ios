@@ -15,7 +15,8 @@ struct DKSettingViewOption<T: Hashable> {
 }
 
 class DKSettingsViewModel: ObservableObject {
-    
+
+    private var listeners: [NSObjectProtocol] = []
     var cancellableSinks: Set<AnyCancellable> = []
     
     var presentNavigationTitle: String { DKLocalizationApp.settingsTitleFull }
@@ -105,5 +106,26 @@ class DKSettingsViewModel: ObservableObject {
         self.otherLanguagesViewModel.$supportedLanguages.sink { [weak self] otherLanguages in
             self?.otherLanguagesCellDescription = otherLanguages
         }.store(in: &self.cancellableSinks)
+        self.subscribeListeners()
+    }
+
+    deinit {
+        self.unsubscribeListeners()
+    }
+}
+
+extension DKSettingsViewModel {
+    func subscribeListeners() {
+        self.unsubscribeListeners()
+        self.listeners.append(NotificationCenter.default.addObserver(forName: .interfaceChanged, object: nil, queue: .main) { [weak self] _ in
+            self?.objectWillChange.send()
+        })
+    }
+
+    func unsubscribeListeners() {
+        for listener in self.listeners {
+            NotificationCenter.default.removeObserver(listener)
+        }
+        self.listeners = []
     }
 }

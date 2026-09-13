@@ -3,11 +3,11 @@
 | Field | Value |
 | --- | --- |
 | Document ID | `APP-FS-ROOT` |
-| Version | `1.0.2` |
+| Version | `1.0.3` |
 | Status | Draft |
 | Product | Drukarnik host application |
 | Component | App (`Drukarnik` target) |
-| Last changed | 2026-09-10 |
+| Last changed | 2026-09-11 |
 | Parent | [AGENTS.md](../AGENTS.md) |
 
 ## Summary
@@ -42,7 +42,7 @@ Companion app for the Drukarnik keyboard: installation flow, settings, standalon
 | Settings | — | — | TBD |
 | Text converter | `APP-FS-CONVERT` | [convert.md](app/convert.md) | Active |
 | Installation / onboarding | — | — | TBD |
-| Interface transliteration choice | — | — | TBD |
+| Interface transliteration choice | `APP-FS-TRANSLITERATION-CHOICE` | [transliteration-choice.md](app/transliteration-choice.md) | Active |
 | About | — | — | TBD |
 
 ## References
@@ -58,6 +58,7 @@ Companion app for the Drukarnik keyboard: installation flow, settings, standalon
 | ID | Document |
 | --- | --- |
 | `APP-FS-CONVERT` | [app/convert.md](app/convert.md) |
+| `APP-FS-TRANSLITERATION-CHOICE` | [app/transliteration-choice.md](app/transliteration-choice.md) |
 
 ### External dependencies
 

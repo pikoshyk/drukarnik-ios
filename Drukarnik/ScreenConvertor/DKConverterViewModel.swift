@@ -14,6 +14,10 @@ import UIKit
 class DKConverterViewModel: ObservableObject {
     private var disableAutoChanges: Bool = false
     private var listeners: [NSObjectProtocol] = []
+
+    var presentNavigationTitle: String {
+        DKLocalizationApp.converterTitleFull
+    }
     
     @Published var textCyrillic: String = "" {
         didSet {

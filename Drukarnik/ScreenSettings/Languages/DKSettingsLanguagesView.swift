@@ -59,7 +59,7 @@ struct DKSettingsLanguagesView: View {
 }
 
 #Preview {
-    NavigationView(content: {
+    NavigationStack {
         DKSettingsLanguagesView(viewModel: DKSettingsLanguagesViewModel())
-    })
+    }
 }

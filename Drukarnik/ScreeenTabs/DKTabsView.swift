@@ -36,34 +36,55 @@ enum DKTabs {
 }
 
 struct DKTabsView: View {
-    @StateObject var viewModel: DKTabsViewModel
+    @ObservedObject var viewModel: DKTabsViewModel
     @State var selectedTab: DKTabs = .settings
     
     var body: some View {
         self.tabsView
+            .sheet(isPresented: self.$viewModel.isTransliterationChoicePresented, onDismiss: {
+                self.viewModel.handleTransliterationChoiceSheetDismissed()
+            }) {
+                if let choiceViewModel = self.viewModel.transliterationChoiceViewModel {
+                    DKTransliterationChoiceView(viewModel: choiceViewModel)
+                }
+            }
     }
     
     var tabsView: some View {
         TabView(selection: self.$selectedTab) {
-            DKSettingsView(viewModel: self.viewModel.viewModelSettings)
-                .tabItem {
-                    Image(systemName: SystemImage.keyboardIcon)
-                    Text(DKLocalizationApp.settingsTitle)
-                }
-                .tag(DKTabs.settings)
-            DKConverterView(viewModel: self.viewModel.viewModelConverter)
-                .tabItem {
-                    Image(systemName: SystemImage.educationIcon)
-                    Text(DKLocalizationApp.converterTitle)
-                }
-                .tag(DKTabs.converter)
-            DKAboutView(viewModel: self.viewModel.viewModelAbout)
-                .tabItem {
-                    Image(systemName: SystemImage.informationIcon)
-                    Text(DKLocalizationApp.aboutTitle)
-                }
-                .tag(DKTabs.about)
+            self.tab(DKTabs.settings) {
+                DKSettingsView(viewModel: self.viewModel.viewModelSettings)
+            } tabItem: {
+                Image(systemName: SystemImage.keyboardIcon)
+                Text(DKLocalizationApp.settingsTitle)
+            }
+            self.tab(DKTabs.converter) {
+                DKConverterView(viewModel: self.viewModel.viewModelConverter)
+            } tabItem: {
+                Image(systemName: SystemImage.educationIcon)
+                Text(DKLocalizationApp.converterTitle)
+            }
+            self.tab(DKTabs.about) {
+                DKAboutView(viewModel: self.viewModel.viewModelAbout)
+            } tabItem: {
+                Image(systemName: SystemImage.informationIcon)
+                Text(DKLocalizationApp.aboutTitle)
+            }
         }
+        .background(Color.secondarySystemBackground)
+    }
+
+    func tab<Content: View>(
+        _ tab: DKTabs,
+        @ViewBuilder content: () -> Content,
+        @ViewBuilder tabItem: () -> some View
+    ) -> some View {
+        NavigationStack {
+            content()
+                .navigationTitle(tab.fullTitle)
+        }
+        .tabItem(tabItem)
+        .tag(tab)
     }
 }
 

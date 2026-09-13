@@ -65,7 +65,7 @@
 		B298DDEE2BE1248900B95FF0 /* DKConverterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B298DDED2BE1248900B95FF0 /* DKConverterViewModel.swift */; };
 		B298DDF22BE25B8200B95FF0 /* DKTabsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B298DDF12BE25B8200B95FF0 /* DKTabsView.swift */; };
 		B298DDF42BE25C6400B95FF0 /* DKTabsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B298DDF32BE25C6400B95FF0 /* DKTabsViewModel.swift */; };
-		B298DDF62BE25FAB00B95FF0 /* DKTabsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B298DDF52BE25FAB00B95FF0 /* DKTabsViewController.swift */; };
+		B2DR0182BE9000100B95FF0 /* DrukarnikHostTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DR0172BE9000100B95FF0 /* DrukarnikHostTests.swift */; };
 		B29B0C322B0D4827003CA8A5 /* DKSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29B0C312B0D4827003CA8A5 /* DKSettingsView.swift */; };
 		B29B0C342B0D6E16003CA8A5 /* DKSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29B0C332B0D6E16003CA8A5 /* DKSettingsViewModel.swift */; };
 		B29B0C362B0D71C4003CA8A5 /* DKSettingsCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29B0C352B0D71C4003CA8A5 /* DKSettingsCellView.swift */; };
@@ -75,10 +75,9 @@
 		B2AFCF912F8911540096D2DB /* KeyboardKit in Frameworks */ = {isa = PBXBuildFile; productRef = B2AFCF8F2F8911540096D2DB /* KeyboardKit */; };
 		B2B2092D29796D0400D4D5DC /* DKInstallationDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B2092C29796D0400D4D5DC /* DKInstallationDescriptionViewController.swift */; };
 		B2B2093429796D7F00D4D5DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2B2093029796D7F00D4D5DC /* Assets.xcassets */; };
-		B2B2093529796D7F00D4D5DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2B2093129796D7F00D4D5DC /* Main.storyboard */; };
 		B2B2093729796D8600D4D5DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2B2093029796D7F00D4D5DC /* Assets.xcassets */; };
-		B2B2094129796F3000D4D5DC /* BLBelarusianTransliterationChoiceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2B2093F29796F3000D4D5DC /* BLBelarusianTransliterationChoiceViewController.xib */; };
-		B2B2094229796F3000D4D5DC /* BLBelarusianTransliterationChoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B2094029796F3000D4D5DC /* BLBelarusianTransliterationChoiceViewController.swift */; };
+		B2F5A10129796F3000D4D5DC /* DKTransliterationChoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F5A10229796F3000D4D5DC /* DKTransliterationChoiceView.swift */; };
+		B2F5A10329796F3000D4D5DC /* DKTransliterationChoiceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F5A10429796F3000D4D5DC /* DKTransliterationChoiceViewModel.swift */; };
 		B2B2094529796F8300D4D5DC /* DKLocalizationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B2094429796F8300D4D5DC /* DKLocalizationApp.swift */; };
 		B2B35510295662EC0006B8B1 /* CALayer+Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B3550F295662EC0006B8B1 /* CALayer+Tools.swift */; };
 		B2B9756A297B52A800ED68D2 /* additional_languages.json in Resources */ = {isa = PBXBuildFile; fileRef = B2B97569297B52A800ED68D2 /* additional_languages.json */; };
@@ -137,6 +136,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = B21A248629360C7600C056E5;
 			remoteInfo = Keyboard;
+		};
+		B2DR0162BE9000100B95FF0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B21A246129360B3600C056E5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B21A246829360B3600C056E5;
+			remoteInfo = Drukarnik;
 		};
 		B2KT0432BDC39470006CA45 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -211,7 +217,8 @@
 		B298DDED2BE1248900B95FF0 /* DKConverterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKConverterViewModel.swift; sourceTree = "<group>"; };
 		B298DDF12BE25B8200B95FF0 /* DKTabsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKTabsView.swift; sourceTree = "<group>"; };
 		B298DDF32BE25C6400B95FF0 /* DKTabsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKTabsViewModel.swift; sourceTree = "<group>"; };
-		B298DDF52BE25FAB00B95FF0 /* DKTabsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKTabsViewController.swift; sourceTree = "<group>"; };
+		B2DR01012BE9000100B95FF0 /* DrukarnikTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DrukarnikTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2DR0172BE9000100B95FF0 /* DrukarnikHostTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrukarnikHostTests.swift; sourceTree = "<group>"; };
 		B29B0C312B0D4827003CA8A5 /* DKSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKSettingsView.swift; sourceTree = "<group>"; };
 		B29B0C332B0D6E16003CA8A5 /* DKSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKSettingsViewModel.swift; sourceTree = "<group>"; };
 		B29B0C352B0D71C4003CA8A5 /* DKSettingsCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKSettingsCellView.swift; sourceTree = "<group>"; };
@@ -219,10 +226,9 @@
 		B2AF577E294FEE4200E7CF2F /* DKLatinLayoutProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKLatinLayoutProvider.swift; sourceTree = "<group>"; };
 		B2B2092C29796D0400D4D5DC /* DKInstallationDescriptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKInstallationDescriptionViewController.swift; sourceTree = "<group>"; };
 		B2B2093029796D7F00D4D5DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		B2B2093129796D7F00D4D5DC /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B2B2093229796D7F00D4D5DC /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B2B2093F29796F3000D4D5DC /* BLBelarusianTransliterationChoiceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BLBelarusianTransliterationChoiceViewController.xib; sourceTree = "<group>"; };
-		B2B2094029796F3000D4D5DC /* BLBelarusianTransliterationChoiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BLBelarusianTransliterationChoiceViewController.swift; sourceTree = "<group>"; };
+		B2F5A10229796F3000D4D5DC /* DKTransliterationChoiceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKTransliterationChoiceView.swift; sourceTree = "<group>"; };
+		B2F5A10429796F3000D4D5DC /* DKTransliterationChoiceViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKTransliterationChoiceViewModel.swift; sourceTree = "<group>"; };
 		B2B2094429796F8300D4D5DC /* DKLocalizationApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKLocalizationApp.swift; sourceTree = "<group>"; };
 		B2B3550F295662EC0006B8B1 /* CALayer+Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Tools.swift"; sourceTree = "<group>"; };
 		B2B97569297B52A800ED68D2 /* additional_languages.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = additional_languages.json; sourceTree = "<group>"; };
@@ -281,6 +287,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B2DR0132BE9000100B95FF0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B2KT0402BDC39470006CA45 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -321,6 +334,7 @@
 				B2073CFD2945F599008B43E4 /* Drukarnik */,
 				B21A248829360C7700C056E5 /* Keyboard */,
 				B2KT0302BDC39470006CA45 /* KeyboardTests */,
+				B2DR01C02BE9000100B95FF0 /* DrukarnikTests */,
 				B21A246A29360B3600C056E5 /* Products */,
 				B21A249329360CB000C056E5 /* Frameworks */,
 			);
@@ -332,6 +346,7 @@
 				B21A246929360B3600C056E5 /* Drukarnik.app */,
 				B21A248729360C7600C056E5 /* Keyboard.appex */,
 				B2KT0202BDC39470006CA45 /* KeyboardTests.xctest */,
+				B2DR01012BE9000100B95FF0 /* DrukarnikTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -493,7 +508,6 @@
 			isa = PBXGroup;
 			children = (
 				B2B2093029796D7F00D4D5DC /* Assets.xcassets */,
-				B2B2093129796D7F00D4D5DC /* Main.storyboard */,
 				B22DC4D22979FB7000D9AC39 /* Installation.storyboard */,
 				B2B97569297B52A800ED68D2 /* additional_languages.json */,
 				B214A2942B210FA500388679 /* emoji.json */,
@@ -525,8 +539,8 @@
 		B2B2093E29796F3000D4D5DC /* ScreenTransliteration */ = {
 			isa = PBXGroup;
 			children = (
-				B2B2093F29796F3000D4D5DC /* BLBelarusianTransliterationChoiceViewController.xib */,
-				B2B2094029796F3000D4D5DC /* BLBelarusianTransliterationChoiceViewController.swift */,
+				B2F5A10229796F3000D4D5DC /* DKTransliterationChoiceView.swift */,
+				B2F5A10429796F3000D4D5DC /* DKTransliterationChoiceViewModel.swift */,
 			);
 			path = ScreenTransliteration;
 			sourceTree = "<group>";
@@ -553,9 +567,16 @@
 			children = (
 				B298DDF32BE25C6400B95FF0 /* DKTabsViewModel.swift */,
 				B298DDF12BE25B8200B95FF0 /* DKTabsView.swift */,
-				B298DDF52BE25FAB00B95FF0 /* DKTabsViewController.swift */,
 			);
 			path = ScreeenTabs;
+			sourceTree = "<group>";
+		};
+		B2DR01C02BE9000100B95FF0 /* DrukarnikTests */ = {
+			isa = PBXGroup;
+			children = (
+				B2DR0172BE9000100B95FF0 /* DrukarnikHostTests.swift */,
+			);
+			path = DrukarnikTests;
 			sourceTree = "<group>";
 		};
 		B2E68758297F36F3005C31B9 /* Settings */ = {
@@ -660,6 +681,24 @@
 			productReference = B2KT0202BDC39470006CA45 /* KeyboardTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		B2DR0112BE9000100B95FF0 /* DrukarnikTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B2DR0192BE9000100B95FF0 /* Build configuration list for PBXNativeTarget "DrukarnikTests" */;
+			buildPhases = (
+				B2DR0122BE9000100B95FF0 /* Sources */,
+				B2DR0132BE9000100B95FF0 /* Frameworks */,
+				B2DR0142BE9000100B95FF0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B2DR0152BE9000100B95FF0 /* PBXTargetDependency */,
+			);
+			name = DrukarnikTests;
+			productName = DrukarnikTests;
+			productReference = B2DR01012BE9000100B95FF0 /* DrukarnikTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -678,6 +717,10 @@
 						CreatedOnToolsVersion = 14.1;
 					};
 					B2KT0452BDC39470006CA45 = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = B21A246829360B3600C056E5;
+					};
+					B2DR0112BE9000100B95FF0 = {
 						CreatedOnToolsVersion = 15.0;
 						TestTargetID = B21A246829360B3600C056E5;
 					};
@@ -703,6 +746,7 @@
 				B21A246829360B3600C056E5 /* Drukarnik */,
 				B21A248629360C7600C056E5 /* Keyboard */,
 				B2KT0452BDC39470006CA45 /* KeyboardTests */,
+				B2DR0112BE9000100B95FF0 /* DrukarnikTests */,
 			);
 		};
 /* End PBXProject section */
@@ -715,8 +759,6 @@
 				B22DC4D32979FB7000D9AC39 /* Installation.storyboard in Resources */,
 				B247D3AC2BDC8C4E0005C51D /* PrivacyInfo.xcprivacy in Resources */,
 				B2F1F03E2B115F0D0043AAA7 /* DKKeyboardEmoji.storyboard in Resources */,
-				B2B2093529796D7F00D4D5DC /* Main.storyboard in Resources */,
-				B2B2094129796F3000D4D5DC /* BLBelarusianTransliterationChoiceViewController.xib in Resources */,
 				B2B2093429796D7F00D4D5DC /* Assets.xcassets in Resources */,
 				B2B9756A297B52A800ED68D2 /* additional_languages.json in Resources */,
 			);
@@ -730,6 +772,13 @@
 				B214A2952B210FA500388679 /* emoji.json in Resources */,
 				B247D3AD2BDC8C4E0005C51D /* PrivacyInfo.xcprivacy in Resources */,
 				B2B9756B297B52A800ED68D2 /* additional_languages.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B2DR0142BE9000100B95FF0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -760,7 +809,8 @@
 				B2073D0B2945F599008B43E4 /* AppDelegate.swift in Sources */,
 				B2E68767297F4174005C31B9 /* DKAdditionalLanguage+Localization.swift in Sources */,
 				B298DDEE2BE1248900B95FF0 /* DKConverterViewModel.swift in Sources */,
-				B2B2094229796F3000D4D5DC /* BLBelarusianTransliterationChoiceViewController.swift in Sources */,
+				B2F5A10129796F3000D4D5DC /* DKTransliterationChoiceView.swift in Sources */,
+				B2F5A10329796F3000D4D5DC /* DKTransliterationChoiceViewModel.swift in Sources */,
 				B280E0AE2B2F73D20030F29F /* DKAppstoreReviewController.swift in Sources */,
 				B25CEE6E2B02DBD400BD1B8A /* DKInstallationKeyboardViewController.swift in Sources */,
 				B25887842B104DCD00AE499B /* DKKeyboardEmojiView.swift in Sources */,
@@ -786,7 +836,6 @@
 				B2E41D112BE0BDC6009429BF /* Notification+Settings.swift in Sources */,
 				B298DDF22BE25B8200B95FF0 /* DKTabsView.swift in Sources */,
 				B2B2094529796F8300D4D5DC /* DKLocalizationApp.swift in Sources */,
-				B298DDF62BE25FAB00B95FF0 /* DKTabsViewController.swift in Sources */,
 				B2073D0D2945F599008B43E4 /* SceneDelegate.swift in Sources */,
 				B2E41D0F2BE0BDAD009429BF /* DKKeyboardSettingsKeys.swift in Sources */,
 				B298DDF42BE25C6400B95FF0 /* DKTabsViewModel.swift in Sources */,
@@ -845,6 +894,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B2DR0122BE9000100B95FF0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2DR0182BE9000100B95FF0 /* DrukarnikHostTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B2KT0412BDC39470006CA45 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -876,6 +933,11 @@
 			isa = PBXTargetDependency;
 			target = B21A248629360C7600C056E5 /* Keyboard */;
 			targetProxy = B21A248C29360C7700C056E5 /* PBXContainerItemProxy */;
+		};
+		B2DR0152BE9000100B95FF0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B21A246829360B3600C056E5 /* Drukarnik */;
+			targetProxy = B2DR0162BE9000100B95FF0 /* PBXContainerItemProxy */;
 		};
 		B2KT0442BDC39470006CA45 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1022,10 +1084,9 @@
 				INFOPLIST_KEY_CFBundleDisplayName = Drukarnik;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1065,10 +1126,9 @@
 				INFOPLIST_KEY_CFBundleDisplayName = Drukarnik;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1191,6 +1251,40 @@
 			};
 			name = Release;
 		};
+		B2DR01A2BE9000100B95FF0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 10;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
+				MARKETING_VERSION = 1.4;
+				PRODUCT_BUNDLE_IDENTIFIER = com.belanghelp.drukarnik.host.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Drukarnik.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Drukarnik";
+			};
+			name = Debug;
+		};
+		B2DR01B2BE9000100B95FF0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 10;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
+				MARKETING_VERSION = 1.4;
+				PRODUCT_BUNDLE_IDENTIFIER = com.belanghelp.drukarnik.host.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Drukarnik.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Drukarnik";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1226,6 +1320,15 @@
 			buildConfigurations = (
 				B2KT0472BDC39470006CA45 /* Debug */,
 				B2KT0482BDC39470006CA45 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B2DR0192BE9000100B95FF0 /* Build configuration list for PBXNativeTarget "DrukarnikTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B2DR01A2BE9000100B95FF0 /* Debug */,
+				B2DR01B2BE9000100B95FF0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

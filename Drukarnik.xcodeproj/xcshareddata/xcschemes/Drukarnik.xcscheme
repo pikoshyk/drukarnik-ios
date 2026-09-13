@@ -20,6 +20,34 @@
                ReferencedContainer = "container:Drukarnik.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "B2KT0452BDC39470006CA45"
+               BuildableName = "KeyboardTests.xctest"
+               BlueprintName = "KeyboardTests"
+               ReferencedContainer = "container:Drukarnik.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "B2DR0112BE9000100B95FF0"
+               BuildableName = "DrukarnikTests.xctest"
+               BlueprintName = "DrukarnikTests"
+               ReferencedContainer = "container:Drukarnik.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -36,6 +64,17 @@
                BlueprintIdentifier = "B2KT0452BDC39470006CA45"
                BuildableName = "KeyboardTests.xctest"
                BlueprintName = "KeyboardTests"
+               ReferencedContainer = "container:Drukarnik.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "B2DR0112BE9000100B95FF0"
+               BuildableName = "DrukarnikTests.xctest"
+               BlueprintName = "DrukarnikTests"
                ReferencedContainer = "container:Drukarnik.xcodeproj">
             </BuildableReference>
          </TestableReference>

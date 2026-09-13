@@ -9,46 +9,42 @@ import SwiftUI
 
 struct DKAboutView: View {
     
-    @StateObject var viewModel: DKAboutViewModel
-    
+    @ObservedObject var viewModel: DKAboutViewModel
+
     var body: some View {
-        NavigationView {
-            self.content
-                .navigationTitle(DKTabs.about.fullTitle)
-        }
-        .background(Color.secondarySystemBackground)
+        self.content
     }
     
     var content: some View {
-        List {
-            Section {
-                EmptyView()
-            } header: {
-                self.descriptionView
-                    .textCase(.none)
-            } footer: {
-                EmptyView()
-            }
-
-            Section {
-                self.twitterView
-                    .contentShape(Rectangle())
-                    .onTapGesture {
-                        self.viewModel.onTwitter()
+        VStack(alignment: .leading, spacing: 20) {
+            self.descriptionView
+                .textCase(.none)
+                .padding(.horizontal, 20)
+            HStack(spacing: 0) {
+                List {
+                    Section {
+                        self.twitterView
+                            .contentShape(Rectangle())
+                            .onTapGesture {
+                                self.viewModel.onTwitter()
+                            }
+                        self.emailView
+                            .contentShape(Rectangle())
+                            .onTapGesture {
+                                self.viewModel.onEmail()
+                            }
+                    } header: {
+                        Text(DKLocalizationApp.aboutSectionContactsTitle)
+                    } footer: {
+                        EmptyView()
                     }
-                self.emailView
-                    .contentShape(Rectangle())
-                    .onTapGesture {
-                        self.viewModel.onEmail()
-                    }
-            } header: {
-                Text(DKLocalizationApp.aboutSectionContactsTitle)
-            } footer: {
-                EmptyView()
+                }
+                .listStyle(.insetGrouped)
+                .frame(maxWidth: 500)
+                Spacer(minLength: 0)
             }
         }
-        .listStyle(.insetGrouped)
-        
+        .background(Color.secondarySystemBackground)
     }
     
     var twitterView: some View {
