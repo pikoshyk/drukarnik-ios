@@ -20,6 +20,16 @@ Use XcodeBuildMCP with one in-flight test run at a time:
 
 If `derivedDataPath` is missing, run `plugins/ios-dev/skills/build-ios-apps/scripts/resolve-derived-data-path.sh --write-local` and set it via `session_set_defaults` for profiles `app` and `tests`.
 
+### Simulator destination
+
+| Rule | Expectation |
+| --- | --- |
+| Default device | **iPhone 17 Pro**, iOS **26.5** — `simulatorId` / `simulatorName` in `.xcodebuildmcp/config.yaml` profiles `app` and `tests`. |
+| No clones | Agents **must not** create or clone simulators (`Clone N of …`, second UDID, parallel test destinations, or `simctl` device creation). Use only the configured simulator. |
+| No device tests | Agent verification runs on the **Simulator** from config, not on a plugged-in iPhone, unless the user asks. |
+| Clone / stuck errors | `simulator-hygiene.sh shutdown-all`, retry the same configured UDID; do not pick another simulator from `list_sims` as a workaround. |
+| Parallel runs | At most one in-flight `test_sim` / `build_sim` per agent; narrow with `-only-testing:…` instead of extra simulators. |
+
 ### Memory budget (Simulator baseline — update after first XCTMemoryMetric run)
 
 | State | Goal |

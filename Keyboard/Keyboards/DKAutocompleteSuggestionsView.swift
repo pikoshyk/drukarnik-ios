@@ -67,6 +67,7 @@ struct DKAutocompleteSuggestionsView: View {
                     self.staticRow(rawWord: rawWord, convertedWord: convertedWord, emojis: emojis)
                 }
             }
+            .frame(width: geometry.size.width, height: geometry.size.height)
             .overlay(
                 DKAutocompleteToolbarClipBridge()
                     .allowsHitTesting(false)
@@ -83,9 +84,9 @@ struct DKAutocompleteSuggestionsView: View {
         emojis: [Autocomplete.Suggestion]
     ) -> some View {
         HStack(spacing: 0) {
-            self.sideColumn(word: rawWord, quoteTitle: true)
+            self.wordColumn(word: rawWord, quoteTitle: true)
             DKAutocompleteSuggestionDelimiter()
-            self.centerColumn(word: convertedWord)
+            self.wordColumn(word: convertedWord, quoteTitle: false)
             DKAutocompleteSuggestionDelimiter()
             Group {
                 if emojis.isEmpty {
@@ -100,6 +101,7 @@ struct DKAutocompleteSuggestionsView: View {
             }
             .frame(maxWidth: .infinity)
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 
     private func scrollableRow(
@@ -109,10 +111,10 @@ struct DKAutocompleteSuggestionsView: View {
         columnWidth: CGFloat
     ) -> some View {
         HStack(spacing: 0) {
-            self.sideColumn(word: rawWord, quoteTitle: true)
+            self.wordColumn(word: rawWord, quoteTitle: true)
                 .frame(width: columnWidth)
             DKAutocompleteSuggestionDelimiter()
-            self.centerColumn(word: convertedWord)
+            self.wordColumn(word: convertedWord, quoteTitle: false)
                 .frame(width: columnWidth)
             DKAutocompleteSuggestionDelimiter()
             if emojis.isEmpty {
@@ -122,26 +124,22 @@ struct DKAutocompleteSuggestionsView: View {
                 self.emojiRow(emojis)
             }
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 
-    private func sideColumn(word: Autocomplete.Suggestion?, quoteTitle: Bool) -> some View {
-        HStack {
-            Spacer(minLength: 0)
+    private func wordColumn(word: Autocomplete.Suggestion?, quoteTitle: Bool) -> some View {
+        Group {
             if let word {
                 DKAutocompleteSuggestionButton(
                     suggestion: word,
                     quoteTitle: quoteTitle,
                     autocompleteAction: autocompleteAction
                 )
-                .fixedSize(horizontal: true, vertical: false)
+            } else {
+                Color.clear
             }
-            Spacer(minLength: 0)
         }
-        .frame(maxWidth: .infinity)
-    }
-
-    private func centerColumn(word: Autocomplete.Suggestion?) -> some View {
-        self.sideColumn(word: word, quoteTitle: false)
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 
     private func emojiRow(_ suggestions: [Autocomplete.Suggestion]) -> some View {

@@ -137,7 +137,8 @@ Every **new scroll key** from step 2 must appear exactly once in the new branch 
 - [ ] Every new **scroll key** verified on target iOS (or Emojipedia iOS keyboard layout) is present in the correct category array on the new branch — default form for people emoji; no long-press-only tone expansions.
 - [ ] No duplicate entries within the same array on the new branch.
 - [ ] Older `#available` branches are unchanged unless the task explicitly includes backfill.
-- [ ] `KeyboardTests` / `DKEmojiModelTests` still pass; extend tests if a new minimum iOS gate is added (mirror existing `#available` pattern in tests).
+- [ ] `KeyboardTests` still pass, including `DKEmojiModelCatalogInvariantTests` (each newer `#available` branch must contain every emoji from the next older branch, per category).
+- [ ] Extend runtime `#available` tests in `DKEmojiModelTests` when a new minimum iOS gate is added.
 - [ ] Manual check on Simulator (or device) at target iOS: new emoji render in the picker and match system keyboard presence for grid keys.
 
 ## Agent workflow (checklist)

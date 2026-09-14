@@ -107,6 +107,7 @@
 		B2KT1212BDC39470006CA45 /* DKKeyboardLayoutApplicatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2KT0222BDC39470006CA45 /* DKKeyboardLayoutApplicatorTests.swift */; };
 		B2KT1222BDC39470006CA45 /* DKKeyboardEmojiLayoutMetricsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2KT0232BDC39470006CA45 /* DKKeyboardEmojiLayoutMetricsTests.swift */; };
 		B2KT1232BDC39470006CA45 /* DKEmojiModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2KT0242BDC39470006CA45 /* DKEmojiModelTests.swift */; };
+		B2KT1522BDC39470006CA45 /* DKEmojiModelCatalogInvariantTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2KT1532BDC39470006CA45 /* DKEmojiModelCatalogInvariantTests.swift */; };
 		B2KT1242BDC39470006CA45 /* DKKeyboardEmojiCollectionViewCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2KT0252BDC39470006CA45 /* DKKeyboardEmojiCollectionViewCellTests.swift */; };
 		B2KT1252BDC39470006CA45 /* KeyboardMemoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2KT0262BDC39470006CA45 /* KeyboardMemoryTests.swift */; };
 		B2KT1262BDC39470006CA45 /* emoji.json in Resources */ = {isa = PBXBuildFile; fileRef = B2KT0272BDC39470006CA45 /* emoji.json */; };
@@ -255,6 +256,7 @@
 		B2KT0222BDC39470006CA45 /* DKKeyboardLayoutApplicatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKKeyboardLayoutApplicatorTests.swift; sourceTree = "<group>"; };
 		B2KT0232BDC39470006CA45 /* DKKeyboardEmojiLayoutMetricsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKKeyboardEmojiLayoutMetricsTests.swift; sourceTree = "<group>"; };
 		B2KT0242BDC39470006CA45 /* DKEmojiModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKEmojiModelTests.swift; sourceTree = "<group>"; };
+		B2KT1532BDC39470006CA45 /* DKEmojiModelCatalogInvariantTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKEmojiModelCatalogInvariantTests.swift; sourceTree = "<group>"; };
 		B2KT0252BDC39470006CA45 /* DKKeyboardEmojiCollectionViewCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKKeyboardEmojiCollectionViewCellTests.swift; sourceTree = "<group>"; };
 		B2KT0262BDC39470006CA45 /* KeyboardMemoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardMemoryTests.swift; sourceTree = "<group>"; };
 		B2KT0272BDC39470006CA45 /* emoji.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = emoji.json; sourceTree = "<group>"; };
@@ -609,6 +611,7 @@
 				B2KT0222BDC39470006CA45 /* DKKeyboardLayoutApplicatorTests.swift */,
 				B2KT0232BDC39470006CA45 /* DKKeyboardEmojiLayoutMetricsTests.swift */,
 				B2KT0242BDC39470006CA45 /* DKEmojiModelTests.swift */,
+				B2KT1532BDC39470006CA45 /* DKEmojiModelCatalogInvariantTests.swift */,
 				B2KT0252BDC39470006CA45 /* DKKeyboardEmojiCollectionViewCellTests.swift */,
 				B2KT0262BDC39470006CA45 /* KeyboardMemoryTests.swift */,
 				B2KT0272BDC39470006CA45 /* emoji.json */,
@@ -910,6 +913,7 @@
 				B2KT1212BDC39470006CA45 /* DKKeyboardLayoutApplicatorTests.swift in Sources */,
 				B2KT1222BDC39470006CA45 /* DKKeyboardEmojiLayoutMetricsTests.swift in Sources */,
 				B2KT1232BDC39470006CA45 /* DKEmojiModelTests.swift in Sources */,
+				B2KT1522BDC39470006CA45 /* DKEmojiModelCatalogInvariantTests.swift in Sources */,
 				B2KT1242BDC39470006CA45 /* DKKeyboardEmojiCollectionViewCellTests.swift in Sources */,
 				B2KT1252BDC39470006CA45 /* KeyboardMemoryTests.swift in Sources */,
 				B2KT1272BDC39470006CA45 /* DKEmojiAutocompleteLexicon.swift in Sources */,
@@ -1258,7 +1262,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 10;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.belanghelp.drukarnik.host.tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1275,7 +1279,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 10;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.belanghelp.drukarnik.host.tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -44,7 +44,6 @@ struct DKAboutView: View {
                 Spacer(minLength: 0)
             }
         }
-        .background(Color.secondarySystemBackground)
     }
     
     var twitterView: some View {

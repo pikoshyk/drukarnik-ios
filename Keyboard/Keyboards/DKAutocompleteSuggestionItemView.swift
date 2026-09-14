@@ -16,18 +16,30 @@ struct DKAutocompleteSuggestionButton: View {
 
     var body: some View {
         let isEmoji = DKAutocompleteWordSuggestions.isEmojiSuggestion(suggestion)
-        Button {
-            autocompleteAction(suggestion)
-        } label: {
-            if isEmoji {
+        if isEmoji {
+            Button {
+                autocompleteAction(suggestion)
+            } label: {
                 Text(suggestion.title)
                     .font(.system(size: DKAutocompleteWordSuggestions.emojiFontSize))
-            } else {
-                DKAutocompleteSuggestionWordLabel(suggestion: suggestion, quoteTitle: quoteTitle)
             }
+            .buttonStyle(.plain)
+            .frame(width: DKAutocompleteWordSuggestions.emojiItemWidth, height: DKAutocompleteWordSuggestions.emojiItemWidth)
+            .contentShape(Rectangle())
+        } else {
+            Button {
+                autocompleteAction(suggestion)
+            } label: {
+                ZStack {
+                    Color.clearInteractable
+                    DKAutocompleteSuggestionWordLabel(suggestion: suggestion, quoteTitle: quoteTitle)
+                }
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+            }
+            .buttonStyle(.plain)
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .contentShape(Rectangle())
         }
-        .buttonStyle(.plain)
-        .frame(width: isEmoji ? 44 : nil, height: isEmoji ? 44 : nil)
     }
 }
 
