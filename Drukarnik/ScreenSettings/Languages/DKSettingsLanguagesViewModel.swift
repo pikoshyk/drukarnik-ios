@@ -66,7 +66,8 @@ class DKSettingsLanguagesViewModel: ObservableObject {
     
     private static func getSupportedLanguages() -> String {
         var languagesStr = ""
-        let languages = DKKeyboardSettings.shared.supportedAdditionalLanguages.compactMap { $0.localizedName }.sorted()
+        let languages = Self.sortedLanguages(DKKeyboardSettings.shared.supportedAdditionalLanguages)
+            .map { $0.localizedName }
         
         for language in languages {
             if languagesStr.count > 0 {
@@ -76,6 +77,18 @@ class DKSettingsLanguagesViewModel: ObservableObject {
         }
 
         return languagesStr
+    }
+
+    private static let languageListSortLocale = Locale(identifier: "be_BY")
+
+    private static func sortedLanguages(_ languages: [DKAdditionalLanguage]) -> [DKAdditionalLanguage] {
+        languages.sorted {
+            $0.name.compare(
+                $1.name,
+                options: [.caseInsensitive, .diacriticInsensitive],
+                locale: languageListSortLocale
+            ) == .orderedAscending
+        }
     }
 
 }
@@ -103,33 +116,25 @@ extension DKSettingsLanguagesViewModel {
         let latin = languages.filter({ $0.layout == .latin })
         var cellSections: [LanguageSection] = []
 
-        if true {
-            var cells: [LanguageCell] = []
-            for language in cyrillic {
-                let selected = supportedLanguageIds.contains(language.id)
-                let cell = LanguageCell(language: language, selected: selected)
-                cells.append(cell)
-            }
-            cells.sort { cell1, cell2 in
-                cell1.language.localizedName < cell2.language.localizedName
-            }
-            let section = LanguageSection(title: DKLocalizationApp.settingsLanguagesControllerSectionCyrillic.uppercased(), cells: cells)
-            cellSections.append(section)
+        let cyrillicCells = Self.sortedLanguages(cyrillic).map { language in
+            LanguageCell(language: language, selected: supportedLanguageIds.contains(language.id))
         }
+        cellSections.append(
+            LanguageSection(
+                title: DKLocalizationApp.settingsLanguagesControllerSectionCyrillic.uppercased(),
+                cells: cyrillicCells
+            )
+        )
 
-        if true {
-            var cells: [LanguageCell] = []
-            for language in latin {
-                let selected = supportedLanguageIds.contains(language.id)
-                let cell = LanguageCell(language: language, selected: selected)
-                cells.append(cell)
-            }
-            cells.sort { cell1, cell2 in
-                cell1.language.localizedName < cell2.language.localizedName
-            }
-            let section = LanguageSection(title: DKLocalizationApp.settingsLanguagesControllerSectionLatin.uppercased(), cells: cells)
-            cellSections.append(section)
+        let latinCells = Self.sortedLanguages(latin).map { language in
+            LanguageCell(language: language, selected: supportedLanguageIds.contains(language.id))
         }
+        cellSections.append(
+            LanguageSection(
+                title: DKLocalizationApp.settingsLanguagesControllerSectionLatin.uppercased(),
+                cells: latinCells
+            )
+        )
         self.cellSections = cellSections
     }
     

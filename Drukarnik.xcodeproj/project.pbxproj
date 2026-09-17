@@ -22,6 +22,7 @@
 		B22FC9F029510CAD00B31E4A /* DKLocalizationKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22FC9EF29510CAD00B31E4A /* DKLocalizationKeyboard.swift */; };
 		B22FC9F229510FB900B31E4A /* BelarusianLacinka in Frameworks */ = {isa = PBXBuildFile; productRef = B22FC9F129510FB900B31E4A /* BelarusianLacinka */; };
 		B22FC9F42951A9F100B31E4A /* DKCalloutActionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22FC9F32951A9F100B31E4A /* DKCalloutActionProvider.swift */; };
+		B2DE0212BE9000300B95FF0 /* DKCalloutStringCasing.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DE0202BE9000300B95FF0 /* DKCalloutStringCasing.swift */; };
 		B23571102B26A48D00784B63 /* DKEmojiAutocompleteProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B235710F2B26A48D00784B63 /* DKEmojiAutocompleteProvider.swift */; };
 		B23571122B26AB7400784B63 /* DKKeyboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23571112B26AB7400784B63 /* DKKeyboardViewModel.swift */; };
 		B247D3AA2BDC86A60005C51D /* Color+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B247D3A92BDC86A60005C51D /* Color+UIColor.swift */; };
@@ -65,7 +66,6 @@
 		B298DDEE2BE1248900B95FF0 /* DKConverterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B298DDED2BE1248900B95FF0 /* DKConverterViewModel.swift */; };
 		B298DDF22BE25B8200B95FF0 /* DKTabsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B298DDF12BE25B8200B95FF0 /* DKTabsView.swift */; };
 		B298DDF42BE25C6400B95FF0 /* DKTabsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B298DDF32BE25C6400B95FF0 /* DKTabsViewModel.swift */; };
-		B2DR0182BE9000100B95FF0 /* DrukarnikHostTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DR0172BE9000100B95FF0 /* DrukarnikHostTests.swift */; };
 		B29B0C322B0D4827003CA8A5 /* DKSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29B0C312B0D4827003CA8A5 /* DKSettingsView.swift */; };
 		B29B0C342B0D6E16003CA8A5 /* DKSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29B0C332B0D6E16003CA8A5 /* DKSettingsViewModel.swift */; };
 		B29B0C362B0D71C4003CA8A5 /* DKSettingsCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29B0C352B0D71C4003CA8A5 /* DKSettingsCellView.swift */; };
@@ -76,14 +76,14 @@
 		B2B2092D29796D0400D4D5DC /* DKInstallationDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B2092C29796D0400D4D5DC /* DKInstallationDescriptionViewController.swift */; };
 		B2B2093429796D7F00D4D5DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2B2093029796D7F00D4D5DC /* Assets.xcassets */; };
 		B2B2093729796D8600D4D5DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2B2093029796D7F00D4D5DC /* Assets.xcassets */; };
-		B2F5A10129796F3000D4D5DC /* DKTransliterationChoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F5A10229796F3000D4D5DC /* DKTransliterationChoiceView.swift */; };
-		B2F5A10329796F3000D4D5DC /* DKTransliterationChoiceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F5A10429796F3000D4D5DC /* DKTransliterationChoiceViewModel.swift */; };
 		B2B2094529796F8300D4D5DC /* DKLocalizationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B2094429796F8300D4D5DC /* DKLocalizationApp.swift */; };
 		B2B35510295662EC0006B8B1 /* CALayer+Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B3550F295662EC0006B8B1 /* CALayer+Tools.swift */; };
 		B2B9756A297B52A800ED68D2 /* additional_languages.json in Resources */ = {isa = PBXBuildFile; fileRef = B2B97569297B52A800ED68D2 /* additional_languages.json */; };
 		B2B9756B297B52A800ED68D2 /* additional_languages.json in Resources */ = {isa = PBXBuildFile; fileRef = B2B97569297B52A800ED68D2 /* additional_languages.json */; };
 		B2C25E8329D499E7002B3229 /* KeyboardLayout+Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C25E8229D499E7002B3229 /* KeyboardLayout+Buttons.swift */; };
 		B2C4D80329D25374006FFCAA /* DKAutocompleteToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C4D80229D25374006FFCAA /* DKAutocompleteToolbar.swift */; };
+		B2DE0192BE9000200B95FF0 /* DKAdditionalLanguagesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DE0182BE9000200B95FF0 /* DKAdditionalLanguagesTests.swift */; };
+		B2DR0182BE9000100B95FF0 /* DrukarnikHostTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DR0172BE9000100B95FF0 /* DrukarnikHostTests.swift */; };
 		B2E41D072BDC8F77009429BF /* DKAboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E41D062BDC8F77009429BF /* DKAboutView.swift */; };
 		B2E41D092BDC8F81009429BF /* DKAboutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E41D082BDC8F81009429BF /* DKAboutViewModel.swift */; };
 		B2E41D0D2BE0BC95009429BF /* View+NavigationBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E41D0C2BE0BC95009429BF /* View+NavigationBackButton.swift */; };
@@ -101,13 +101,14 @@
 		B2E68765297F37D1005C31B9 /* DKAdditionalLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E68763297F37D1005C31B9 /* DKAdditionalLanguage.swift */; };
 		B2E68767297F4174005C31B9 /* DKAdditionalLanguage+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E68766297F4174005C31B9 /* DKAdditionalLanguage+Localization.swift */; };
 		B2F1F03E2B115F0D0043AAA7 /* DKKeyboardEmoji.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2F1F03C2B115E5A0043AAA7 /* DKKeyboardEmoji.storyboard */; };
+		B2F5A10129796F3000D4D5DC /* DKTransliterationChoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F5A10229796F3000D4D5DC /* DKTransliterationChoiceView.swift */; };
+		B2F5A10329796F3000D4D5DC /* DKTransliterationChoiceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F5A10429796F3000D4D5DC /* DKTransliterationChoiceViewModel.swift */; };
 		B2KT1102BDC39470006CA45 /* DKEmojiAutocompleteLexicon.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2KT0102BDC39470006CA45 /* DKEmojiAutocompleteLexicon.swift */; };
 		B2KT1122BDC39470006CA45 /* DKKeyboardLayoutApplicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2KT0122BDC39470006CA45 /* DKKeyboardLayoutApplicator.swift */; };
 		B2KT1202BDC39470006CA45 /* DKEmojiAutocompleteLexiconTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2KT0212BDC39470006CA45 /* DKEmojiAutocompleteLexiconTests.swift */; };
 		B2KT1212BDC39470006CA45 /* DKKeyboardLayoutApplicatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2KT0222BDC39470006CA45 /* DKKeyboardLayoutApplicatorTests.swift */; };
 		B2KT1222BDC39470006CA45 /* DKKeyboardEmojiLayoutMetricsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2KT0232BDC39470006CA45 /* DKKeyboardEmojiLayoutMetricsTests.swift */; };
 		B2KT1232BDC39470006CA45 /* DKEmojiModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2KT0242BDC39470006CA45 /* DKEmojiModelTests.swift */; };
-		B2KT1522BDC39470006CA45 /* DKEmojiModelCatalogInvariantTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2KT1532BDC39470006CA45 /* DKEmojiModelCatalogInvariantTests.swift */; };
 		B2KT1242BDC39470006CA45 /* DKKeyboardEmojiCollectionViewCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2KT0252BDC39470006CA45 /* DKKeyboardEmojiCollectionViewCellTests.swift */; };
 		B2KT1252BDC39470006CA45 /* KeyboardMemoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2KT0262BDC39470006CA45 /* KeyboardMemoryTests.swift */; };
 		B2KT1262BDC39470006CA45 /* emoji.json in Resources */ = {isa = PBXBuildFile; fileRef = B2KT0272BDC39470006CA45 /* emoji.json */; };
@@ -128,6 +129,7 @@
 		B2KT1482BDC39470006CA45 /* DKKeyboardToolbarContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2KT1492BDC39470006CA45 /* DKKeyboardToolbarContent.swift */; };
 		B2KT14A2BDC39470006CA45 /* DKAutocompleteToolbarLogicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2KT14B2BDC39470006CA45 /* DKAutocompleteToolbarLogicTests.swift */; };
 		B2KT14C2BDC39470006CA45 /* DKKeyboardToolbarContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2KT1492BDC39470006CA45 /* DKKeyboardToolbarContent.swift */; };
+		B2KT1522BDC39470006CA45 /* DKEmojiModelCatalogInvariantTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2KT1532BDC39470006CA45 /* DKEmojiModelCatalogInvariantTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -185,6 +187,7 @@
 		B22FC9E82950A94400B31E4A /* DKActionHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKActionHandler.swift; sourceTree = "<group>"; };
 		B22FC9EF29510CAD00B31E4A /* DKLocalizationKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKLocalizationKeyboard.swift; sourceTree = "<group>"; };
 		B22FC9F32951A9F100B31E4A /* DKCalloutActionProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKCalloutActionProvider.swift; sourceTree = "<group>"; };
+		B2DE0202BE9000300B95FF0 /* DKCalloutStringCasing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKCalloutStringCasing.swift; sourceTree = "<group>"; };
 		B235710F2B26A48D00784B63 /* DKEmojiAutocompleteProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKEmojiAutocompleteProvider.swift; sourceTree = "<group>"; };
 		B23571112B26AB7400784B63 /* DKKeyboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKKeyboardViewModel.swift; sourceTree = "<group>"; };
 		B247D3A92BDC86A60005C51D /* Color+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+UIColor.swift"; sourceTree = "<group>"; };
@@ -218,8 +221,6 @@
 		B298DDED2BE1248900B95FF0 /* DKConverterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKConverterViewModel.swift; sourceTree = "<group>"; };
 		B298DDF12BE25B8200B95FF0 /* DKTabsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKTabsView.swift; sourceTree = "<group>"; };
 		B298DDF32BE25C6400B95FF0 /* DKTabsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKTabsViewModel.swift; sourceTree = "<group>"; };
-		B2DR01012BE9000100B95FF0 /* DrukarnikTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DrukarnikTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B2DR0172BE9000100B95FF0 /* DrukarnikHostTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrukarnikHostTests.swift; sourceTree = "<group>"; };
 		B29B0C312B0D4827003CA8A5 /* DKSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKSettingsView.swift; sourceTree = "<group>"; };
 		B29B0C332B0D6E16003CA8A5 /* DKSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKSettingsViewModel.swift; sourceTree = "<group>"; };
 		B29B0C352B0D71C4003CA8A5 /* DKSettingsCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKSettingsCellView.swift; sourceTree = "<group>"; };
@@ -228,8 +229,6 @@
 		B2B2092C29796D0400D4D5DC /* DKInstallationDescriptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKInstallationDescriptionViewController.swift; sourceTree = "<group>"; };
 		B2B2093029796D7F00D4D5DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B2B2093229796D7F00D4D5DC /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B2F5A10229796F3000D4D5DC /* DKTransliterationChoiceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKTransliterationChoiceView.swift; sourceTree = "<group>"; };
-		B2F5A10429796F3000D4D5DC /* DKTransliterationChoiceViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKTransliterationChoiceViewModel.swift; sourceTree = "<group>"; };
 		B2B2094429796F8300D4D5DC /* DKLocalizationApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKLocalizationApp.swift; sourceTree = "<group>"; };
 		B2B3550F295662EC0006B8B1 /* CALayer+Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Tools.swift"; sourceTree = "<group>"; };
 		B2B97569297B52A800ED68D2 /* additional_languages.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = additional_languages.json; sourceTree = "<group>"; };
@@ -238,6 +237,9 @@
 		B2DDCF4829899BF700902EE6 /* DrukarnikRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DrukarnikRelease.entitlements; sourceTree = "<group>"; };
 		B2DDCF4929899D1700902EE6 /* KeyboardDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KeyboardDebug.entitlements; sourceTree = "<group>"; };
 		B2DDCF4A29899D3600902EE6 /* KeyboardRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KeyboardRelease.entitlements; sourceTree = "<group>"; };
+		B2DE0182BE9000200B95FF0 /* DKAdditionalLanguagesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKAdditionalLanguagesTests.swift; sourceTree = "<group>"; };
+		B2DR01012BE9000100B95FF0 /* DrukarnikTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DrukarnikTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2DR0172BE9000100B95FF0 /* DrukarnikHostTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrukarnikHostTests.swift; sourceTree = "<group>"; };
 		B2E41D062BDC8F77009429BF /* DKAboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKAboutView.swift; sourceTree = "<group>"; };
 		B2E41D082BDC8F81009429BF /* DKAboutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKAboutViewModel.swift; sourceTree = "<group>"; };
 		B2E41D0C2BE0BC95009429BF /* View+NavigationBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+NavigationBackButton.swift"; sourceTree = "<group>"; };
@@ -249,6 +251,8 @@
 		B2E68763297F37D1005C31B9 /* DKAdditionalLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKAdditionalLanguage.swift; sourceTree = "<group>"; };
 		B2E68766297F4174005C31B9 /* DKAdditionalLanguage+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DKAdditionalLanguage+Localization.swift"; sourceTree = "<group>"; };
 		B2F1F03C2B115E5A0043AAA7 /* DKKeyboardEmoji.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DKKeyboardEmoji.storyboard; sourceTree = "<group>"; };
+		B2F5A10229796F3000D4D5DC /* DKTransliterationChoiceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKTransliterationChoiceView.swift; sourceTree = "<group>"; };
+		B2F5A10429796F3000D4D5DC /* DKTransliterationChoiceViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKTransliterationChoiceViewModel.swift; sourceTree = "<group>"; };
 		B2KT0102BDC39470006CA45 /* DKEmojiAutocompleteLexicon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKEmojiAutocompleteLexicon.swift; sourceTree = "<group>"; };
 		B2KT0122BDC39470006CA45 /* DKKeyboardLayoutApplicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKKeyboardLayoutApplicator.swift; sourceTree = "<group>"; };
 		B2KT0202BDC39470006CA45 /* KeyboardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KeyboardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -256,7 +260,6 @@
 		B2KT0222BDC39470006CA45 /* DKKeyboardLayoutApplicatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKKeyboardLayoutApplicatorTests.swift; sourceTree = "<group>"; };
 		B2KT0232BDC39470006CA45 /* DKKeyboardEmojiLayoutMetricsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKKeyboardEmojiLayoutMetricsTests.swift; sourceTree = "<group>"; };
 		B2KT0242BDC39470006CA45 /* DKEmojiModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKEmojiModelTests.swift; sourceTree = "<group>"; };
-		B2KT1532BDC39470006CA45 /* DKEmojiModelCatalogInvariantTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKEmojiModelCatalogInvariantTests.swift; sourceTree = "<group>"; };
 		B2KT0252BDC39470006CA45 /* DKKeyboardEmojiCollectionViewCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKKeyboardEmojiCollectionViewCellTests.swift; sourceTree = "<group>"; };
 		B2KT0262BDC39470006CA45 /* KeyboardMemoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardMemoryTests.swift; sourceTree = "<group>"; };
 		B2KT0272BDC39470006CA45 /* emoji.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = emoji.json; sourceTree = "<group>"; };
@@ -268,6 +271,7 @@
 		B2KT1472BDC39470006CA45 /* DKKeyboardConversionOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKKeyboardConversionOverlayView.swift; sourceTree = "<group>"; };
 		B2KT1492BDC39470006CA45 /* DKKeyboardToolbarContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKKeyboardToolbarContent.swift; sourceTree = "<group>"; };
 		B2KT14B2BDC39470006CA45 /* DKAutocompleteToolbarLogicTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKAutocompleteToolbarLogicTests.swift; sourceTree = "<group>"; };
+		B2KT1532BDC39470006CA45 /* DKEmojiModelCatalogInvariantTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKEmojiModelCatalogInvariantTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -413,6 +417,7 @@
 				B22FC9E62950A90400B31E4A /* DKKeyboardAppearance.swift */,
 				B22FC9E82950A94400B31E4A /* DKActionHandler.swift */,
 				B22FC9F32951A9F100B31E4A /* DKCalloutActionProvider.swift */,
+				B2DE0202BE9000300B95FF0 /* DKCalloutStringCasing.swift */,
 				B249D1A629905B0200668130 /* DKAutocompleteProvider.swift */,
 				B2KT1312BDC39470006CA45 /* DKAutocompleteWordSuggestions.swift */,
 				B2KT1412BDC39470006CA45 /* DKAutocompleteSuggestionItemView.swift */,
@@ -576,6 +581,7 @@
 		B2DR01C02BE9000100B95FF0 /* DrukarnikTests */ = {
 			isa = PBXGroup;
 			children = (
+				B2DE0182BE9000200B95FF0 /* DKAdditionalLanguagesTests.swift */,
 				B2DR0172BE9000100B95FF0 /* DrukarnikHostTests.swift */,
 			);
 			path = DrukarnikTests;
@@ -666,24 +672,6 @@
 			productReference = B21A248729360C7600C056E5 /* Keyboard.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
-		B2KT0452BDC39470006CA45 /* KeyboardTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B2KT0462BDC39470006CA45 /* Build configuration list for PBXNativeTarget "KeyboardTests" */;
-			buildPhases = (
-				B2KT0412BDC39470006CA45 /* Sources */,
-				B2KT0402BDC39470006CA45 /* Frameworks */,
-				B2KT0422BDC39470006CA45 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				B2KT0442BDC39470006CA45 /* PBXTargetDependency */,
-			);
-			name = KeyboardTests;
-			productName = KeyboardTests;
-			productReference = B2KT0202BDC39470006CA45 /* KeyboardTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		B2DR0112BE9000100B95FF0 /* DrukarnikTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B2DR0192BE9000100B95FF0 /* Build configuration list for PBXNativeTarget "DrukarnikTests" */;
@@ -700,6 +688,24 @@
 			name = DrukarnikTests;
 			productName = DrukarnikTests;
 			productReference = B2DR01012BE9000100B95FF0 /* DrukarnikTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B2KT0452BDC39470006CA45 /* KeyboardTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B2KT0462BDC39470006CA45 /* Build configuration list for PBXNativeTarget "KeyboardTests" */;
+			buildPhases = (
+				B2KT0412BDC39470006CA45 /* Sources */,
+				B2KT0402BDC39470006CA45 /* Frameworks */,
+				B2KT0422BDC39470006CA45 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B2KT0442BDC39470006CA45 /* PBXTargetDependency */,
+			);
+			name = KeyboardTests;
+			productName = KeyboardTests;
+			productReference = B2KT0202BDC39470006CA45 /* KeyboardTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -719,11 +725,11 @@
 					B21A248629360C7600C056E5 = {
 						CreatedOnToolsVersion = 14.1;
 					};
-					B2KT0452BDC39470006CA45 = {
+					B2DR0112BE9000100B95FF0 = {
 						CreatedOnToolsVersion = 15.0;
 						TestTargetID = B21A246829360B3600C056E5;
 					};
-					B2DR0112BE9000100B95FF0 = {
+					B2KT0452BDC39470006CA45 = {
 						CreatedOnToolsVersion = 15.0;
 						TestTargetID = B21A246829360B3600C056E5;
 					};
@@ -885,6 +891,7 @@
 				B23571122B26AB7400784B63 /* DKKeyboardViewModel.swift in Sources */,
 				B2AF577F294FEE4200E7CF2F /* DKLatinLayoutProvider.swift in Sources */,
 				B22FC9F42951A9F100B31E4A /* DKCalloutActionProvider.swift in Sources */,
+				B2DE0212BE9000300B95FF0 /* DKCalloutStringCasing.swift in Sources */,
 				B2E41D142BE0BE11009429BF /* DKKeyboardLayout.swift in Sources */,
 				B28C524F295455DE0025D49A /* DKLatinAutocompleteProvider.swift in Sources */,
 				B2723F482B11BCC200FCC53D /* DKKeyboardEmojiCollectionToolbarView.swift in Sources */,
@@ -901,6 +908,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2DE0192BE9000200B95FF0 /* DKAdditionalLanguagesTests.swift in Sources */,
 				B2DR0182BE9000100B95FF0 /* DrukarnikHostTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1078,7 +1086,7 @@
 				CODE_SIGN_ENTITLEMENTS = Drukarnik/DrukarnikDebug.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 6EWLUZCTBU;
 				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
@@ -1095,7 +1103,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.6;
+				MARKETING_VERSION = 1.7;
 				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.belanghelp.drukarnik;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1120,7 +1128,7 @@
 				CODE_SIGN_ENTITLEMENTS = Drukarnik/DrukarnikRelease.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 6EWLUZCTBU;
 				GCC_PREPROCESSOR_DEFINITIONS = "";
@@ -1137,7 +1145,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.6;
+				MARKETING_VERSION = 1.7;
 				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.belanghelp.drukarnik;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1159,7 +1167,7 @@
 				CODE_SIGN_ENTITLEMENTS = Keyboard/KeyboardDebug.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 6EWLUZCTBU;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1172,7 +1180,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.6;
+				MARKETING_VERSION = 1.7;
 				PRODUCT_BUNDLE_IDENTIFIER = com.belanghelp.drukarnik.keyboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1193,7 +1201,7 @@
 				CODE_SIGN_ENTITLEMENTS = Keyboard/KeyboardRelease.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 6EWLUZCTBU;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1206,7 +1214,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.6;
+				MARKETING_VERSION = 1.7;
 				PRODUCT_BUNDLE_IDENTIFIER = com.belanghelp.drukarnik.keyboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1218,40 +1226,6 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		B2KT0472BDC39470006CA45 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 10;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
-				MARKETING_VERSION = 1.4;
-				PRODUCT_BUNDLE_IDENTIFIER = com.belanghelp.drukarnik.keyboard.tests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Drukarnik.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Drukarnik";
-			};
-			name = Debug;
-		};
-		B2KT0482BDC39470006CA45 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 10;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
-				MARKETING_VERSION = 1.4;
-				PRODUCT_BUNDLE_IDENTIFIER = com.belanghelp.drukarnik.keyboard.tests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Drukarnik.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Drukarnik";
 			};
 			name = Release;
 		};
@@ -1289,6 +1263,40 @@
 			};
 			name = Release;
 		};
+		B2KT0472BDC39470006CA45 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 10;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
+				MARKETING_VERSION = 1.4;
+				PRODUCT_BUNDLE_IDENTIFIER = com.belanghelp.drukarnik.keyboard.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Drukarnik.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Drukarnik";
+			};
+			name = Debug;
+		};
+		B2KT0482BDC39470006CA45 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 10;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
+				MARKETING_VERSION = 1.4;
+				PRODUCT_BUNDLE_IDENTIFIER = com.belanghelp.drukarnik.keyboard.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Drukarnik.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Drukarnik";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1319,20 +1327,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B2KT0462BDC39470006CA45 /* Build configuration list for PBXNativeTarget "KeyboardTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B2KT0472BDC39470006CA45 /* Debug */,
-				B2KT0482BDC39470006CA45 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		B2DR0192BE9000100B95FF0 /* Build configuration list for PBXNativeTarget "DrukarnikTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B2DR01A2BE9000100B95FF0 /* Debug */,
 				B2DR01B2BE9000100B95FF0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B2KT0462BDC39470006CA45 /* Build configuration list for PBXNativeTarget "KeyboardTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B2KT0472BDC39470006CA45 /* Debug */,
+				B2KT0482BDC39470006CA45 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

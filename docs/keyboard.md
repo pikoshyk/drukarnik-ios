@@ -3,11 +3,11 @@
 | Field | Value |
 | --- | --- |
 | Document ID | `KEYBOARD-FS-ROOT` |
-| Version | `1.0.3` |
+| Version | `1.0.4` |
 | Status | Active |
 | Product | Drukarnik keyboard extension |
 | Component | Keyboard (`.appex`) |
-| Last changed | 2026-09-10 |
+| Last changed | 2026-09-17 |
 | Parent | [AGENTS.md](../AGENTS.md) |
 
 ## Summary
@@ -43,7 +43,7 @@ Belarusian Latin / Cyrillic keyboard: layouts, transliteration, emoji keyboard, 
 | Callouts / long-press | — | — | TBD |
 | Full-text conversion overlay | — | — | TBD |
 | Feedback (sound / haptic) | — | — | TBD |
-| Additional languages | — | — | TBD |
+| Additional languages (long-press) | `KEYBOARD-FS-ADDITIONAL-LANGUAGES` | [keyboard/additional-languages.md](keyboard/additional-languages.md) | Active |
 
 ## References
 
@@ -59,6 +59,7 @@ Belarusian Latin / Cyrillic keyboard: layouts, transliteration, emoji keyboard, 
 | --- | --- | --- |
 | `KEYBOARD-FS-AUTOSUGGEST` | Autosuggest | [keyboard/autosuggest.md](keyboard/autosuggest.md) |
 | `KEYBOARD-FS-EMOJI` | Emoji picker catalog | [keyboard/emoji.md](keyboard/emoji.md) |
+| `KEYBOARD-FS-ADDITIONAL-LANGUAGES` | Additional languages | [keyboard/additional-languages.md](keyboard/additional-languages.md) |
 
 ### External dependencies
 

@@ -71,6 +71,59 @@
         }
     },
     {
+        "id": "german",
+        "name_cyrillic": "Нямецкая",
+        "code": "de",
+        "layout": "latin",
+        "chars": {
+            "a": ["ä"],
+            "o": ["ö"],
+            "u": ["ü"],
+            "s": ["ß"]
+        }
+    },
+    {
+        "id": "spanish",
+        "name_cyrillic": "Гішпанская",
+        "code": "es",
+        "layout": "latin",
+        "chars": {
+            "a": ["á"],
+            "e": ["é"],
+            "i": ["í"],
+            "o": ["ó"],
+            "u": ["ú", "ü"],
+            "n": ["ñ"]
+        }
+    },
+    {
+        "id": "italian",
+        "name_cyrillic": "Італьянская",
+        "code": "it",
+        "layout": "latin",
+        "chars": {
+            "a": ["à"],
+            "e": ["é", "è"],
+            "i": ["ì"],
+            "o": ["ò"],
+            "u": ["ù"]
+        }
+    },
+    {
+        "id": "portuguese",
+        "name_cyrillic": "Партугальская",
+        "code": "pt",
+        "layout": "latin",
+        "chars": {
+            "a": ["á", "à", "â", "ã"],
+            "c": ["ç"],
+            "e": ["é", "ê"],
+            "i": ["í"],
+            "o": ["ó", "ô", "õ"],
+            "u": ["ú"]
+        }
+    },
+    {
         "id": "ukranian",
         "name_cyrillic": "Украінская",
         "code": "uk",
