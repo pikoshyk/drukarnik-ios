@@ -10,22 +10,25 @@ import UIKit
 class DKInstallationNavigationController: UINavigationController {
 
     var timer: Timer?
-    
+    var onKeyboardActivated: (() -> Void)?
+
+    deinit {
+        self.timer?.invalidate()
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true, block: { timer in
+
+        self.timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true, block: { [weak self] timer in
             if DKKeyboardSettings.isKeyboardActivated() {
                 timer.invalidate()
-                self.dismiss(animated: false)
+                self?.onKeyboardActivated?()
             }
         })
     }
 
-    class func show(on viewController: UIViewController) {
+    class func make() -> DKInstallationNavigationController {
         let storyboard = UIStoryboard(name: "Installation", bundle: nil)
-        let initViewController = storyboard.instantiateViewController(identifier: "DKInstallationNavigationController")
-        initViewController.modalPresentationStyle = .fullScreen
-        viewController.present(initViewController, animated: false)
+        return storyboard.instantiateViewController(identifier: "DKInstallationNavigationController") as! DKInstallationNavigationController
     }
 }

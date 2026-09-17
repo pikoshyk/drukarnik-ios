@@ -11,7 +11,7 @@ enum DKTabs {
     case settings
     case converter
     case about
-    
+
     var shortTitle: String {
         switch self {
         case .settings:
@@ -22,7 +22,7 @@ enum DKTabs {
             DKLocalizationApp.aboutTitle
         }
     }
-    
+
     var fullTitle: String {
         switch self {
         case .settings:
@@ -38,19 +38,8 @@ enum DKTabs {
 struct DKTabsView: View {
     @ObservedObject var viewModel: DKTabsViewModel
     @State var selectedTab: DKTabs = .settings
-    
+
     var body: some View {
-        self.tabsView
-            .sheet(isPresented: self.$viewModel.isTransliterationChoicePresented, onDismiss: {
-                self.viewModel.handleTransliterationChoiceSheetDismissed()
-            }) {
-                if let choiceViewModel = self.viewModel.transliterationChoiceViewModel {
-                    DKTransliterationChoiceView(viewModel: choiceViewModel)
-                }
-            }
-    }
-    
-    var tabsView: some View {
         TabView(selection: self.$selectedTab) {
             self.tab(DKTabs.settings) {
                 DKSettingsView(viewModel: self.viewModel.viewModelSettings)

@@ -3,11 +3,11 @@
 | Field | Value |
 | --- | --- |
 | Document ID | `APP-FS-ROOT` |
-| Version | `1.0.3` |
+| Version | `1.0.4` |
 | Status | Draft |
 | Product | Drukarnik host application |
 | Component | App (`Drukarnik` target) |
-| Last changed | 2026-09-11 |
+| Last changed | 2026-09-17 |
 | Parent | [AGENTS.md](../AGENTS.md) |
 
 ## Summary
@@ -27,7 +27,7 @@ Companion app for the Drukarnik keyboard: installation flow, settings, standalon
 
 | Area | Role |
 | --- | --- |
-| App entry | Window and initial flow |
+| App entry | Window root (`DKAppView`): installation or tabs as content; first-run transliteration sheet on top |
 | Main UI | Tab-based navigation |
 | Settings | Keyboard and app preferences |
 | Converter | Full-text Latin ↔ Cyrillic |
@@ -72,6 +72,7 @@ Companion app for the Drukarnik keyboard: installation flow, settings, standalon
 | --- | --- |
 | `Drukarnik/AppDelegate.swift` | Application lifecycle |
 | `Drukarnik/SceneDelegate.swift` | Scene and initial flow |
+| `Drukarnik/ScreeenTabs/DKAppView.swift` | App root: installation or tabs, transliteration sheet |
 | `Drukarnik/ScreeenTabs/DKTabsView.swift` | Main tab UI |
 | `Drukarnik/Settings/DKKeyboardSettings.swift` | Shared keyboard settings |
 | `Drukarnik/ScreenConvertor/DKConverterView.swift` | Converter UI |

@@ -32,7 +32,7 @@ final class DrukarnikHostTests: XCTestCase {
     }
 
     func testTransliterationChoiceIgnoresDuplicateRequestWhilePresented() {
-        let viewModel = DKTabsViewModel()
+        let viewModel = DKAppViewModel()
         var completionCount = 0
 
         viewModel.requestTransliterationChoice { _ in

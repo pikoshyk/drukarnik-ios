@@ -3,11 +3,11 @@
 | Field | Value |
 | --- | --- |
 | Document ID | `APP-FS-TRANSLITERATION-CHOICE` |
-| Version | `1.0.2` |
+| Version | `1.0.3` |
 | Status | Active |
 | Product | Drukarnik host application |
 | Component | First-run interface language |
-| Last changed | 2026-09-11 |
+| Last changed | 2026-09-17 |
 | Parent | [app.md](../app.md) |
 
 ## Summary
@@ -28,13 +28,13 @@ On first launch, require an explicit interface transliteration before the user c
 
 ### Trigger
 
-When the scene becomes active and `DKKeyboardSettings.shared.interfaceTransliteration` is **nil**, the app **must** present the choice sheet after a short delay (see `SceneDelegate.askInterfaceTransliteration`). A second request **must not** open a duplicate sheet while one is already visible.
+When the scene becomes active and `DKKeyboardSettings.shared.interfaceTransliteration` is **nil**, the app **must** present the choice sheet after a short delay (see `SceneDelegate.askInterfaceTransliteration`). A second request **must not** open a duplicate sheet while one is already visible. The sheet **must** appear on top of whichever root content is visible (keyboard installation or the main tabs).
 
 ### Presentation
 
 | Rule | Detail |
 | --- | --- |
-| Container | SwiftUI `.sheet` from the main tab UI |
+| Container | SwiftUI `.sheet` from the app root (`DKAppView`), not from the tab UI |
 | Dismiss | **Must not** allow interactive swipe dismiss (`interactiveDismissDisabled`) |
 | Cancel | **Must not** show a Cancel button |
 | iOS 16+ | Medium detent (or equivalent height), visible drag indicator (non-functional dismiss) |
@@ -77,6 +77,7 @@ After the sheet appears, the preview segment **must** animate once for onboardin
 ## Acceptance criteria
 
 - [ ] Sheet appears on first run when `interfaceTransliteration` is nil; does not stack duplicates.
+- [ ] When keyboard installation is the root content, the sheet appears on top of it; after commit, installation remains until the keyboard is enabled.
 - [ ] No Cancel; swipe dismiss does not close the sheet.
 - [ ] Preview segment updates title, history, appeal, and note per direction table.
 - [ ] Latin button saves `.latin` and closes; Cyrillic saves `.cyrillic` and closes.
@@ -87,7 +88,7 @@ After the sheet appears, the preview segment **must** animate once for onboardin
 
 ## Edge cases and limitations
 
-- If the tab host is unavailable when the scene requests the sheet, the app **must** fall back to `defaultInterfaceTransliteration` (same as legacy nib load failure).
+- If the app root host is unavailable when the scene requests the sheet, the app **must** fall back to `defaultInterfaceTransliteration` (same as legacy nib load failure).
 - Very large Dynamic Type may increase vertical size; horizontal max width **must** remain capped.
 
 ## References
@@ -102,9 +103,9 @@ After the sheet appears, the preview segment **must** animate once for onboardin
 
 | Path | Role |
 | --- | --- |
-| `Drukarnik/SceneDelegate.swift` | Programmatic window, transliteration trigger, holds `DKTabsViewModel` |
-| `Drukarnik/ScreeenTabs/DKTabsView.swift` | Sheet attachment |
-| `Drukarnik/ScreeenTabs/DKTabsViewModel.swift` | Sheet orchestration |
+| `Drukarnik/SceneDelegate.swift` | Programmatic window, transliteration trigger, holds `DKAppViewModel` |
+| `Drukarnik/ScreeenTabs/DKAppView.swift` | Root content (installation or tabs) and sheet attachment |
+| `Drukarnik/ScreeenTabs/DKAppViewModel.swift` | Installation visibility and sheet orchestration |
 | `Drukarnik/ScreenTransliteration/DKTransliterationChoiceView.swift` | Sheet UI |
 | `Drukarnik/ScreenTransliteration/DKTransliterationChoiceViewModel.swift` | Preview segment, demo, commit |
 | `Drukarnik/Localization/DKLocalizationApp.swift` | Transliteration copy |
