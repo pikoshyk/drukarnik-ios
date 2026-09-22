@@ -22,6 +22,14 @@ class DKKeyboardViewModel: ObservableObject {
                 self?.objectWillChange.send()
             }
             .store(in: &cancellables)
+        state.keyboardContext.$keyboardType
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] keyboardType in
+                guard let self, keyboardType == .emojis else { return }
+                self.emojiRecents = self.keyboardSettings.keyboardEmojiRecents
+                self.refreshEmojiRecentsForDisplay()
+            }
+            .store(in: &cancellables)
     }
 
     var emojiViewModel: DKKeyboardEmojiViewModel {
@@ -60,6 +68,10 @@ class DKKeyboardViewModel: ObservableObject {
         self.emojiRecents = self.keyboardSettings.keyboardEmojiRecents
         self.emojiViewModel.reloadData()
     }
+
+    private func refreshEmojiRecentsForDisplay() {
+        self.emojiViewModel.reloadRecentSection()
+    }
 }
 
 
@@ -81,26 +93,29 @@ extension DKKeyboardViewModel {
     func onEmoji(_ emoji: String) {
         autoreleasepool {
             self.state.keyboardContext.textDocumentProxy.insertText(emoji)
-            if let emojiItem = self.emojiRecents.filter({  $0.emoji == emoji }).first {
-                emojiItem.usage.insert(Date(), at: 0)
-                if emojiItem.usage.count > 10 {
-                    emojiItem.usage.removeLast()
-                }
-            } else {
-                let item = DKKeyboardEmojiRecentsItem(emoji: emoji)
-                self.emojiRecents.insert(item, at: 0)
-            }
-
-            self.emojiRecents.sort { item1, item2 in
-                item1.usage.first! > item2.usage.first!
-            }
-
-            if self.emojiRecents.count > 30 {
-                self.emojiRecents.removeLast()
-            }
-
-            self.keyboardSettings.keyboardEmojiRecents = self.emojiRecents
+            self.persistEmojiRecents(emoji: emoji)
         }
+    }
+
+    func recordRecentEmoji(_ emoji: String) {
+        self.persistEmojiRecents(emoji: emoji)
+    }
+
+    func performAutocompleteSuggestion(
+        _ suggestion: Autocomplete.Suggestion,
+        autocompleteAction: (Autocomplete.Suggestion) -> Void
+    ) {
+        DKAutocompleteSuggestionAction.perform(
+            suggestion: suggestion,
+            autocompleteAction: autocompleteAction,
+            recordRecentEmoji: { self.recordRecentEmoji($0) }
+        )
+    }
+
+    private func persistEmojiRecents(emoji: String) {
+        self.emojiRecents = DKKeyboardEmojiRecents.record(emoji: emoji, in: self.emojiRecents)
+        self.keyboardSettings.keyboardEmojiRecents = self.emojiRecents
+        self.refreshEmojiRecentsForDisplay()
     }
 
     func onEmojiDelete() {

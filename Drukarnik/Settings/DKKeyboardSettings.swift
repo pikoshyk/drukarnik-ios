@@ -8,34 +8,6 @@
 import BelarusianLacinka
 import UIKit
 
-class DKKeyboardEmojiRecentsItem: Codable, Identifiable {
-    var id: String { self.emoji }
-    let emoji: String
-    var usage: [Date]
-    
-    init(emoji: String, usage: [Date] = [Date()]) {
-        self.emoji = emoji
-        self.usage = usage
-    }
-    
-    required init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.emoji = try container.decode(String.self, forKey: .emoji)
-        self.usage = try container.decode([Date].self, forKey: .usage)
-    }
-    
-    enum CodingKeys: CodingKey {
-        case emoji
-        case usage
-    }
-    
-    func encode(to encoder: Encoder) throws {
-        var container = encoder.container(keyedBy: CodingKeys.self)
-        try container.encode(self.emoji, forKey: .emoji)
-        try container.encode(self.usage, forKey: .usage)
-    }
-}
-
 enum DKKeyboardAutocapitalization: String, Codable{
     case allCharacters
     case sentences
@@ -78,6 +50,7 @@ class DKKeyboardSettings: Any {
     let defaultBelarusianLatinType: BelarusianLacinka.BLVersion = .traditional
     let defaultBelarusianCyrillicType: BelarusianLacinka.BLOrthography = .academic
 
+    private let settingsLock = NSLock()
     fileprivate var _settings: [String: Any] = [:]
     fileprivate var _settingsSupportedAdditionalLanguages: [DKAdditionalLanguage]?
 
@@ -92,31 +65,44 @@ class DKKeyboardSettings: Any {
     }
     
     func reloadSettings() {
+        self.settingsLock.lock()
         self._settingsSupportedAdditionalLanguages = nil
         self._settings = [:]
+        self.settingsLock.unlock()
     }
     
     func getter<T: Encodable>(key: String) -> T? {
+        self.settingsLock.lock()
         if let value = self._settings[key] as? T {
+            self.settingsLock.unlock()
             return value
         }
+        self.settingsLock.unlock()
         let value = self.userDefaults.object(forKey: key) as? T
+        self.settingsLock.lock()
         self._settings[key] = value
+        self.settingsLock.unlock()
         return value
     }
 
     func getter<T: Encodable>(key: String, defaultValue: T) -> T {
+        self.settingsLock.lock()
         if let value = self._settings[key] as? T {
+            self.settingsLock.unlock()
             return value
         }
+        self.settingsLock.unlock()
         let value = (self.userDefaults.object(forKey: key) as? T) ?? defaultValue
-
+        self.settingsLock.lock()
         self._settings[key] = value
+        self.settingsLock.unlock()
         return value
     }
 
     func setter<T: Encodable>(key: String, value: T, notificationName: Notification.Name? = nil) {
+        self.settingsLock.lock()
         self._settings[key] = value
+        self.settingsLock.unlock()
         self.userDefaults.set(value, forKey: key)
         self.userDefaults.synchronize()
         if let notificationName = notificationName {
@@ -271,16 +257,23 @@ extension DKKeyboardSettings { // Keyboard Settings
 
     var supportedAdditionalLanguages: [DKAdditionalLanguage] {
         get {
+            self.settingsLock.lock()
             if let value = self._settingsSupportedAdditionalLanguages {
+                self.settingsLock.unlock()
                 return value
             }
+            self.settingsLock.unlock()
             let value = self.userDefaults.stringArray(forKey: DKKeyboardSettingsKeys.additionalLanguageIds) ?? []
             let languages = self.availableAdditionalLanguages.filter { value.contains($0.id) }
+            self.settingsLock.lock()
             self._settingsSupportedAdditionalLanguages = languages
-            return self._settingsSupportedAdditionalLanguages!
+            self.settingsLock.unlock()
+            return languages
         }
         set {
+            self.settingsLock.lock()
             self._settingsSupportedAdditionalLanguages = newValue
+            self.settingsLock.unlock()
             let languages = newValue.compactMap { $0.id }
             self.userDefaults.set(languages, forKey: DKKeyboardSettingsKeys.additionalLanguageIds)
             self.userDefaults.synchronize()

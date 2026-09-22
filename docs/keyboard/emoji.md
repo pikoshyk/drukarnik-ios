@@ -3,11 +3,11 @@
 | Field | Value |
 | --- | --- |
 | Document ID | `KEYBOARD-FS-EMOJI` |
-| Version | `1.0.3` |
+| Version | `1.0.4` |
 | Status | Active |
 | Product | Drukarnik keyboard extension |
 | Component | Emoji keyboard (`DKEmojiModel`) |
-| Last changed | 2026-09-10 |
+| Last changed | 2026-09-22 |
 | Parent | [keyboard.md](../keyboard.md) |
 
 ## Summary
@@ -108,6 +108,8 @@ Record for each new grid key: **glyph**, **Unicode name / code**, **category** (
 
 The catalog uses a **descending ladder** of `if #available` / `else if #available` blocks in `DKEmojiModel.init()`. The **newest** block must be first; each block is a **full snapshot** of all eight arrays for that OS era.
 
+**Skipping intermediate iOS versions:** If the newest branch jumps over a release that shipped new scroll keys (e.g. `iOS 17.4` → `iOS 26.6` with no `iOS 18.4` block), the top branch must still include **every** scroll key from all intermediate Unicode emoji releases that the target OS renders. Example: Emoji 16.0 (first on iOS 18.4) adds eight grid keys; they belong on the `iOS 26.6` snapshot even though that branch name is not `18.4`. Lower branches are unchanged unless you explicitly backport.
+
 ### 4. Edit `DKEmojiModel.swift`
 
 Implementation rules:
@@ -155,6 +157,7 @@ When the user asks to “add emoji for iOS X.Y”:
 
 ## Edge cases and limitations
 
+- **Ladder gaps:** A new top `#available` block copied from an older snapshot does not inherit emoji from releases between the copy source and the new gate. Diff Emojipedia for each skipped iOS emoji release (e.g. Emoji 16.0 on iOS 18.4) before closing the PR.
 - **Release totals vs scroll:** iOS 26.4-style changelogs may cite 100+ “new emojis” while the People scroll gains only a handful of new cells; see **Grid scroll vs long-press**.
 - **Simulator vs device:** Rendering depends on the host OS emoji font; testing on the **lowest** supported iOS for the new branch is required for `#available` correctness. Compare **scroll** side-by-side with the system emoji keyboard when validating catalog changes.
 - **Flags:** New subdivision or country flags are single elements in `flags`, typically in ISO-oriented order as on Apple’s flags tab.

@@ -25,7 +25,9 @@ struct DKKeyboardView: View {
                     DKKeyboardToolbarView(
                         viewModel: self.viewModel,
                         showSettingsView: self.$showSetingsView,
-                        autocompleteAction: autocompleteAction
+                        autocompleteAction: { suggestion in
+                            self.viewModel.performAutocompleteSuggestion(suggestion, autocompleteAction: autocompleteAction)
+                        }
                     )
                 }
             )

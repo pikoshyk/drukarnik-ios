@@ -33,4 +33,25 @@ final class DKEmojiModelTests: XCTestCase {
         XCTAssertTrue(model.travelplaces.contains("🛘"))
         XCTAssertTrue(model.objects.contains("🪎"))
     }
+
+    func testIOS26KeyboardSymbolScrollKeysOnIOS266Catalog() {
+        guard #available(iOS 26.6, *) else { return }
+        let model = DKEmojiModel()
+        XCTAssertTrue(model.symbols.contains("♀️"))
+        XCTAssertTrue(model.symbols.contains("♂️"))
+        XCTAssertTrue(model.symbols.contains("⚕️"))
+    }
+
+    func testEmoji16BaseGlyphsOnIOS266Catalog() {
+        guard #available(iOS 26.6, *) else { return }
+        let model = DKEmojiModel()
+        XCTAssertTrue(model.smileys.contains("🫩"))
+        XCTAssertTrue(model.smileys.contains("🫆"))
+        XCTAssertTrue(model.nature.contains("🪾"))
+        XCTAssertTrue(model.fooddrink.contains("🫜"))
+        XCTAssertTrue(model.objects.contains("🪉"))
+        XCTAssertTrue(model.objects.contains("🪏"))
+        XCTAssertTrue(model.symbols.contains("🫟"))
+        XCTAssertTrue(model.flags.contains("🇨🇶"))
+    }
 }

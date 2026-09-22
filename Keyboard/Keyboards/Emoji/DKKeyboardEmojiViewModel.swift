@@ -74,10 +74,16 @@ class DKKeyboardEmojiViewModel: Any {
     var onRecentsBlock: (() -> [String])?
     
     var onReloadCollectionViewData: (() -> Void)?
-    
+    var onReloadRecentSectionData: (() -> Void)?
+
     func reloadData() {
         self.recentSection.items = self.onRecentsBlock?() ?? []
         self.onReloadCollectionViewData?()
+    }
+
+    func reloadRecentSection() {
+        self.recentSection.items = self.onRecentsBlock?() ?? []
+        self.onReloadRecentSectionData?()
     }
 
     func onSectionPress(_ sectionId: DKEmojiSectionType) {

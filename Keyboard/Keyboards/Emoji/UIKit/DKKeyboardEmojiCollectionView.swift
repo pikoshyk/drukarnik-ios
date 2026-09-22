@@ -64,6 +64,18 @@ class DKKeyboardEmojiCollectionView: UICollectionView {
         self.viewModel.onReloadCollectionViewData = { [weak self] in
             self?.reloadData()
         }
+        self.viewModel.onReloadRecentSectionData = { [weak self] in
+            self?.reloadRecentSection()
+        }
+    }
+
+    func reloadRecentSection() {
+        let offset = self.contentOffset
+        UIView.performWithoutAnimation {
+            self.reloadSections(IndexSet(integer: 0))
+            self.layoutIfNeeded()
+            self.setContentOffset(offset, animated: false)
+        }
     }
 
     required init?(coder: NSCoder) {

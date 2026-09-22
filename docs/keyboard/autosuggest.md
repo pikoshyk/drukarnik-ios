@@ -3,11 +3,11 @@
 | Field | Value |
 | --- | --- |
 | Document ID | `KEYBOARD-FS-AUTOSUGGEST` |
-| Version | `1.3.2` |
+| Version | `1.4.0` |
 | Status | Active |
 | Product | Drukarnik keyboard extension |
 | Component | Toolbar autocomplete |
-| Last changed | 2026-09-10 |
+| Last changed | 2026-09-22 |
 | Parent | [keyboard.md](../keyboard.md) |
 
 ## Summary
@@ -111,7 +111,7 @@ An item is treated as emoji when its text has no letters and contains emoji (inc
 - [ ] When input already matches conversion and the lexicon has no emoji for the Cyrillic key, the bar shows the options row.
 - [ ] When input already matches conversion and the lexicon has emoji, the bar shows emoji only (empty left and center columns).
 - [ ] Tapping a word suggestion inserts only that suggestion’s text, not emoji from the same bar.
-- [ ] Tapping an emoji suggestion inserts only that emoji.
+- [ ] Tapping an emoji suggestion inserts only that emoji and records it in emoji recents («Нядаўнія») using the same rules as the emoji keyboard (usage history, sort by recency, at most 32 distinct emoji).
 - [ ] Space does not auto-replace the current word with a suggestion.
 - [ ] Latin layout looks up emoji by the Cyrillic conversion of the typed word, not by Latin lexicon keys.
 - [ ] All-caps input yields an all-caps word suggestion; a leading capital yields a leading capital.
